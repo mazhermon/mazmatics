@@ -114,3 +114,14 @@
     flex-direction: column;
   }
 }
+
+/* // custom start */
+
+.siteTitle__welcometo {
+  font-size: 1.5rem;
+  transform: translateY(1rem);
+}
+
+.siteTitle__mazmatics {
+  font-size: 6rem;
+}
