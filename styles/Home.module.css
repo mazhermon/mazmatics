@@ -1,6 +1,10 @@
 .container {
   padding: 0 2rem;
-  background: linear-gradient(99.92deg, rgba(217, 217, 217, 0) 9.9%, rgba(217, 217, 217, 0.6) 110.37%);
+  background: linear-gradient(
+    99.92deg,
+    rgba(217, 217, 217, 0) 9.9%,
+    rgba(217, 217, 217, 0.6) 110.37%
+  );
 }
 
 .main {
