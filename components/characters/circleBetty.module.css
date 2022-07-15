@@ -1,0 +1,30 @@
+/* position Betty in the parent compontent of each instance */
+
+.charCircleBetty {
+  --bettySize: 800px;
+  height: var(--bettySize);
+}
+
+.charCircleBetty::before,
+.charCircleBetty::after {
+  position: absolute;
+  width: var(--bettySize);
+  height: calc(var(--bettySize) / 2);
+  transform-origin: 50% 100%;
+  background-color: #c5f8ff;
+  /* // TODO can we use CSS custom props in here? */
+}
+
+.charCircleBetty::before {
+  content: '';
+  border-radius: var(--bettySize) var(--bettySize) 0 0;
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.charCircleBetty::after {
+  bottom: 0;
+  content: '';
+  /* background-color: blue; */
+  border-radius: 0 0 var(--bettySize) var(--bettySize);
+}

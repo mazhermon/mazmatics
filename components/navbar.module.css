@@ -1,0 +1,27 @@
+.navbar {
+  background-color: var(--gray-5);
+  padding: 1.5rem 1rem;
+  color: white;
+}
+
+.logo {
+  font-family: var(--font-headings);
+  font-size: 1.5rem;
+}
+
+.tagline {
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  position: relative;
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+.tagline::before {
+  content: '';
+  border-left: 1px solid white;
+  height: 2rem;
+  position: absolute;
+  left: 0;
+  top: 0;
+}

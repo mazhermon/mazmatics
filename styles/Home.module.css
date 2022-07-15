@@ -1,9 +1,10 @@
 .container {
+  position: relative;
   padding: 0 2rem;
   background: linear-gradient(
     99.92deg,
-    rgba(217, 217, 217, 0) 9.9%,
-    rgba(217, 217, 217, 0.6) 110.37%
+    rgba(217, 217, 217, 0) 58.9%,
+    rgba(217, 217, 217, 1) 93.37%
   );
 }
 
@@ -13,7 +14,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -50,15 +51,27 @@
   font-size: 4rem;
 }
 
-.title,
-.description {
+.product_book1 {
   text-align: center;
 }
 
-.description {
+.product_book1__heading {
+  font-family: var(--font-headings);
   margin: 4rem 0;
   line-height: 1.5;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  margin-bottom: 0;
+  background-color: var(--yellow-1);
+  padding: 0 2rem;
+}
+
+.product_book1__subtitle {
+  color: var(--black);
+  font-family: var(--font-script);
+  font-size: 2rem;
+  margin-top: -0.5rem;
+  margin-bottom: 0;
+  transform: rotate(-6deg);
 }
 
 .code {
@@ -131,31 +144,28 @@
   font-size: 6rem;
 }
 
-.charCircleGuy {
-  position: relative;
-  height: 500px;
-}
-
-.charCircleGuy::before,
-.charCircleGuy::after {
+.charCircleBettyPositioner {
   position: absolute;
+  top: -1rem;
+  left: -200px;
+  z-index: -1;
+  /* figure this out later */
+}
+
+/* // sign up form move to module */
+.signup {
   width: 500px;
-  height: 250px;
-  transform-origin: 50% 100%;
-  background-color: #c5f8ff;
-  /* // TODO can we use CSS custom props in here? */
 }
 
-.charCircleGuy::before {
-  content: '';
-  border-radius: 500px 500px 0 0;
-  top: 0;
-  transform: rotate(-45deg);
+.signup .embedForm.embedForm.embedForm.embedForm.embedForm {
+  background-color: none !important;
+  border: 3px solid red !important;
 }
 
-.charCircleGuy::after {
-  bottom: 0;
-  content: '';
-  /* background-color: blue; */
-  border-radius: 0 0 500px 500px;
+.signup h4 {
+  font-family: var(--font-copy) !important;
+  text-align: left !important;
+  font-size: 1.5rem !important;
+  margin-bottom: -0.5rem !important;
+  font-weight: bold !important;
 }
