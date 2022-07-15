@@ -1,5 +1,6 @@
 .container {
   padding: 0 2rem;
+  background: linear-gradient(99.92deg, rgba(217, 217, 217, 0) 9.9%, rgba(217, 217, 217, 0.6) 110.37%);
 }
 
 .main {
@@ -124,4 +125,33 @@
 
 .siteTitle__mazmatics {
   font-size: 6rem;
+}
+
+.charCircleGuy {
+  position: relative;
+  height: 500px;
+}
+
+.charCircleGuy::before,
+.charCircleGuy::after {
+  position: absolute;
+  width: 500px;
+  height: 250px;
+  transform-origin: 50% 100%;
+  background-color: #c5f8ff;
+  /* // TODO can we use CSS custom props in here? */
+}
+
+.charCircleGuy::before {
+  content: '';
+  border-radius: 500px 500px 0 0;
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.charCircleGuy::after {
+  bottom: 0;
+  content: '';
+  /* background-color: blue; */
+  border-radius: 0 0 500px 500px;
 }
