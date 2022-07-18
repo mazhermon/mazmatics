@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           <div className={styles.siteTitle__welcometo}>Welcome to</div>
           <div className={styles.siteTitle__mazmatics}>Mazmatics</div>
           <p className={styles.siteTitle__promise}>
-            We help kids say "I like math"
+            We help kids say &quot;I like math&quot;
           </p>
         </h1>
         <div className={styles.product_book1}>
