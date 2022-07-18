@@ -4,6 +4,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
 import { CharCircleBetty } from '../components/characters/circleBetty'
+import { Banner } from '../components/banner'
 
 const Home: NextPage = () => {
   return (
@@ -33,6 +34,8 @@ const Home: NextPage = () => {
         <div className={styles.signup}>
           <div className="ml-embedded" data-form="ltd6tR"></div>
         </div>
+
+        <Banner className={styles.homeBanner1} />
 
         {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>

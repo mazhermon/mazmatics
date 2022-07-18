@@ -1,0 +1,36 @@
+.banner {
+  font-family: var(--font-headings);
+  font-size: 1.2rem;
+  background-color: var(--purple-2);
+  padding: 2rem;
+  width: 100%;
+  position: relative;
+}
+
+.banner p {
+  text-align: center;
+  margin: 0;
+}
+
+.banner::before,
+.banner::after {
+  content: '';
+  position: absolute;
+  background-color: var(--purple-2);
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  text-align: center;
+}
+
+.banner::before {
+  left: -2rem;
+}
+
+.banner::after {
+  right: -2rem;
+}
+
+.banner__mainText {
+  font-size: 3rem;
+}

@@ -9,7 +9,7 @@
 }
 
 .main {
-  min-height: 100vh;
+  min-height: calc(100vh - var(--nav-height));
   padding: 4rem 0;
   flex: 1;
   display: flex;
@@ -152,20 +152,7 @@
   /* figure this out later */
 }
 
-/* // sign up form move to module */
-.signup {
-  width: 500px;
-}
-
-.signup .embedForm.embedForm.embedForm.embedForm.embedForm {
-  background-color: none !important;
-  border: 3px solid red !important;
-}
-
-.signup h4 {
-  font-family: var(--font-copy) !important;
-  text-align: left !important;
-  font-size: 1.5rem !important;
-  margin-bottom: -0.5rem !important;
-  font-weight: bold !important;
+/* //banner position */
+.homeBanner1 {
+  margin-top: 3rem;
 }

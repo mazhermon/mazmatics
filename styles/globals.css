@@ -5,6 +5,8 @@
   --blue-2: #c5f8ff;
   --purple-2: #ba90ff;
 
+  --nav-height: 65px;
+
   --font-headings: 'Daruma', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-script: 'Pacifico', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -71,3 +73,40 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* // sign up form global */
+/* // sign up form move to module */
+.signup {
+}
+
+.ml-form-embedContainer {
+  min-width: 500px;
+}
+.embedForm.embedForm.embedForm.embedForm.embedForm {
+  background-color: none !important;
+}
+
+.embedForm.embedForm.embedForm.embedForm.embedForm h4 {
+  font-family: var(--font-copy) !important;
+  text-align: left !important;
+  font-size: 1.5rem !important;
+  margin-bottom: -0.5rem !important;
+  font-weight: bold !important;
+}
+
+input {
+  /* border: 8px solid black !important; */
+  box-shadow: inset 0 0 0 3px black;
+}
+
+/* .ml-form-embedContainer
+  #mlb2-866379.ml-form-embedContainer
+  .ml-form-embedWrapper
+  .ml-form-embedBody
+  .ml-form-fieldRow
+  .ml-field-group
+  input {
+  border: 6px solid var(--black) !important;
+  color: red !important;
+  transform: rotate(45deg);
+} */

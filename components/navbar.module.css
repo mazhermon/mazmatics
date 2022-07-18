@@ -1,7 +1,12 @@
 .navbar {
   background-color: var(--gray-5);
-  padding: 1.5rem 1rem;
+  padding: 0 1rem;
+  height: var(--nav-height);
   color: white;
+  display: flex;
+  justify-content: flex-start;
+  flex-flow: row nowrap;
+  align-items: center;
 }
 
 .logo {
