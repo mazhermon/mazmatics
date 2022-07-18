@@ -1,8 +1,12 @@
 .banner {
+  --container-padding: 2rem;
+}
+
+.banner {
   font-family: var(--font-headings);
   font-size: 1.2rem;
   background-color: var(--purple-2);
-  padding: 2rem;
+  padding: calc(var(--container-padding) / 2) var(--container-padding);
   width: 100%;
   position: relative;
 }
@@ -16,21 +20,61 @@
 .banner::after {
   content: '';
   position: absolute;
-  background-color: var(--purple-2);
+  background-color: inherit;
   top: 0;
   bottom: 0;
-  width: 2rem;
+  width: calc(var(--container-padding) + 1px);
   text-align: center;
 }
 
 .banner::before {
-  left: -2rem;
+  left: calc(-1 * var(--container-padding));
 }
 
 .banner::after {
-  right: -2rem;
+  right: calc(-1 * var(--container-padding));
 }
 
-.banner__mainText {
-  font-size: 3rem;
+/* sizes */
+.small {
+  margin: 4rem 0;
+  line-height: 1.2;
+  font-size: 2.2rem;
+  margin-bottom: 0;
+  /* padding-left: var(--container-padding);
+  padding-left: var(--container-padding); */
+
+  @media screen and (min-width: 30rem) {
+    font-size: 2rem;
+    /* line-height: 1.5; */
+  }
+}
+
+.med {
+  line-height: 1.2;
+  margin-bottom: 0;
+}
+.med .banner__mainText {
+  margin: 4rem 0;
+  font-size: 2rem;
+  margin: 0;
+  /* padding-left: var(--container-padding);
+  padding-left: var(--container-padding); */
+
+  @media screen and (min-width: 30rem) {
+    font-size: 2.5rem;
+    /* line-height: 1.5; */
+  }
+}
+
+.large {
+}
+
+/* colors */
+.yellow {
+  background-color: var(--yellow-1);
+}
+
+.purple {
+  background-color: var(--purple-2);
 }

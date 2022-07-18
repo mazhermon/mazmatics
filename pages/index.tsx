@@ -22,21 +22,32 @@ const Home: NextPage = () => {
         <h1 className={styles.title}>
           <div className={styles.siteTitle__welcometo}>Welcome to</div>
           <div className={styles.siteTitle__mazmatics}>Mazmatics</div>
+          <p className={styles.siteTitle__promise}>
+            We help kids say "I like math"
+          </p>
         </h1>
-
         <div className={styles.product_book1}>
           <h2 className={styles.product_book1__heading}>
-            Fun Math 4 kids play-book
+            <Banner
+              className={styles.homeBanner1}
+              title="Fun Math 4 kids play-book"
+              size="small"
+              color="yellow"
+            />
           </h2>
           <p className={styles.product_book1__subtitle}>out soon as!</p>
         </div>
-
         <div className={styles.signup}>
           <div className="ml-embedded" data-form="ltd6tR"></div>
         </div>
 
-        <Banner className={styles.homeBanner1} />
-
+        <Banner
+          className={styles.homeBanner1}
+          title="Fun Math 4 kids book"
+          subtitle="Volume 1 – coming soon"
+          size="med"
+          color="purple"
+        />
         {/* <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h2>Documentation &rarr;</h2>

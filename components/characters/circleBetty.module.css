@@ -1,7 +1,9 @@
 /* position Betty in the parent compontent of each instance */
 
+/* // use --bettySize: 100%; in global styles */
+
 .charCircleBetty {
-  --bettySize: 800px;
+  width: var(--bettySize);
   height: var(--bettySize);
 }
 
@@ -19,7 +21,7 @@
   content: '';
   border-radius: var(--bettySize) var(--bettySize) 0 0;
   top: 0;
-  transform: rotate(-45deg);
+  transform: rotate(-65deg);
 }
 
 .charCircleBetty::after {

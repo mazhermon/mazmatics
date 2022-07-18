@@ -13,6 +13,8 @@
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-copy: 'Primer', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  --bettySize: 200px;
 }
 
 @font-face {
@@ -80,7 +82,10 @@ a {
 }
 
 .ml-form-embedContainer {
-  min-width: 500px;
+  min-width: 300px;
+  @media screen and (min-width: 30rem) {
+    min-width: 500px;
+  }
 }
 .embedForm.embedForm.embedForm.embedForm.embedForm {
   background-color: none !important;

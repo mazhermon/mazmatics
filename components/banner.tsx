@@ -1,12 +1,27 @@
 import styles from './banner.module.css'
 
 type Props = {
-  className: any
+  className?: string
+  title: string
+  subtitle?: string
+  size?: 'small' | 'med' | 'large'
+  color?: 'yellow' | 'purple'
 }
 
-export const Banner: React.FC<Props> = ({ className }) => (
-  <div className={`${styles.banner} ${className}`}>
-    <p className={styles.banner__mainText}>Fun Math 4 kids book</p>
-    <p>Volume 1 – coming soon</p>
+export const Banner: React.FC<Props> = ({
+  className,
+  title,
+  color,
+  subtitle,
+  size,
+}) => (
+  <div
+    className={`${styles.banner} ${className} 
+        ${size ? styles[size] : styles.med}
+        ${color ? styles[color] : styles.yellow}
+    `}
+  >
+    <p className={styles.banner__mainText}>{title}</p>
+    <p>{subtitle}</p>
   </div>
 )
