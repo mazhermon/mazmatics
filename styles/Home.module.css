@@ -1,12 +1,30 @@
 .container {
   position: relative;
-  overflow: hidden;
+  max-width: 1800px;
+  margin: 0 auto;
   padding: 0 2rem;
-  background: linear-gradient(
-    99.92deg,
-    rgba(217, 217, 217, 0) 58.9%,
-    rgba(217, 217, 217, 1) 93.37%
-  );
+  overflow: hidden;
+}
+@media screen and (min-width: 400rem) {
+  .container {
+    overflow: visible;
+  }
+}
+
+@media screen and (min-width: 30rem) {
+  .container {
+    border: 3px solid blue;
+  }
+}
+@media screen and (min-width: 50rem) {
+  .container {
+    border: 3px solid green;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .container {
+    border: 3px solid orange;
+  }
 }
 
 .main {
@@ -143,61 +161,43 @@
 }
 
 /* // custom start */
-.homeHeader {
-  position: relative;
-  display: flex;
-  flex-flow: column nowrap;
-  align-items: center;
-}
-
-.lindy {
-  position: absolute;
-  right: -110px;
-  width: 180px;
-  top: -10px;
-}
-
-.siteTitle {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.siteTitle__welcometo {
-  text-align: center;
-  /* font-family: var(--font-script); */
-  font-size: 1.2rem;
-  transform: translateY(0.25rem);
-}
-
-.siteTitle__mazmatics {
-  font-size: 2.5rem;
-  @media screen and (min-width: 30rem) {
-    border: 3px solid red;
-    font-size: 6rem;
-  }
-}
-
-.siteTitle__promise {
-  font-family: var(--font-copy);
-  /* font-family: var(--font-script); */
-  font-size: 1.1rem;
-  margin: 0;
-  margin-top: 5px;
-  width: 120px;
-  text-align: center;
-  /* margin-top: 0.5rem; */
-}
 
 .charCircleBettyPositioner {
   --bettySize: 200px;
   transform: rotate(-0deg);
 
   position: absolute;
-  top: 4rem;
+  top: 3rem;
   left: -75px;
   z-index: -1;
+}
+@media screen and (min-width: 30rem) {
+  .charCircleBettyPositioner {
+    --bettySize: 250px;
+    transform: rotate(27deg);
+    top: 1rem;
+    left: -100px;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 50rem) {
+  .charCircleBettyPositioner {
+    --bettySize: 500px;
+    top: 1rem;
+    left: -185px;
+    z-index: -1;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .charCircleBettyPositioner {
+    --bettySize: 900px;
+    /* transform: rotate(-0deg); */
+
+    position: absolute;
+    top: -5rem;
+    left: -275px;
+    z-index: -1;
+  }
 }
 
 /* //banner position */
@@ -208,14 +208,36 @@
   }
 }
 
+.homeBanner2 {
+  background-color: var(--purple-2);
+}
+
+@media screen and (min-width: 30rem) {
+  .homeBanner2.homeBanner2.homeBanner2 {
+    padding: 1rem;
+  }
+}
+@media screen and (min-width: 50rem) {
+  .homeBanner2.homeBanner2.homeBanner2 {
+    padding: 2.5rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .homeBanner2.homeBanner2.homeBanner2 {
+    padding: 6rem;
+  }
+}
+
 .signup {
   position: relative;
   border-bottom: none;
   margin-bottom: -1px;
   box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.4);
+  background-color: white;
   max-width: 100%;
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
+  z-index: 0;
 }
 
 .signup::before {

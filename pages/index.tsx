@@ -1,16 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+
 import styles from '../styles/Home.module.css'
-import lindyImage from '../public/images/lindyLarge.png'
-
-import { CharCircleBetty } from '../components/characters/circleBetty'
 import { Banner } from '../components/banner'
-
-const lindyImageSize = {
-  width: 2213,
-  height: 2633,
-}
+import { CharCircleBetty } from '../components/characters/circleBetty'
+import { HomeHeader } from '../components/home/homeHeader'
 
 const Home: NextPage = () => {
   return (
@@ -26,37 +20,18 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         {/* this could be it's own componentn */}
-        <div className={styles.homeHeader}>
-          <h1 className={styles.siteTitle}>
-            <span className={styles.siteTitle__welcometo}>Welcome to</span>
-            <span className={styles.siteTitle__mazmatics}>Mazmatics</span>
-            <span className={styles.siteTitle__promise}>
-              We help kids say <wbr />
-              &quot;I like math&quot;
-            </span>
-          </h1>
-          <div className={styles.product_book1}>
-            <h2 className={styles.product_book1__heading}>
-              <Banner
-                className={styles.homeBanner1}
-                title="Fun Math 4 kids play-book"
-                size="small"
-                color="yellow"
-              />
-            </h2>
-            <p className={styles.product_book1__subtitle}>out soon as!</p>
-          </div>
+        <HomeHeader />
 
-          <div className={styles.lindy}>
-            {/* use useState to set the width based on breakpoint in js */}
-            <Image
-              alt="Giant Girl adventurer sitting down smiling"
-              src={lindyImage}
-              layout="intrinsic"
-              width={lindyImageSize.width / 7}
-              height={lindyImageSize.height / 7}
+        <div className={styles.product_book1}>
+          <h2 className={styles.product_book1__heading}>
+            <Banner
+              className={styles.homeBanner1}
+              title="Fun Math 4 kids play-book"
+              size="small"
+              color="yellow"
             />
-          </div>
+          </h2>
+          <p className={styles.product_book1__subtitle}>out soon as!</p>
         </div>
 
         <div className={styles.pointer}></div>
@@ -67,7 +42,7 @@ const Home: NextPage = () => {
         </div>
 
         <Banner
-          className={styles.homeBanner1}
+          className={styles.homeBanner2}
           title="Fun Math 4 kids book"
           subtitle="Volume 1 – coming soon"
           size="med"

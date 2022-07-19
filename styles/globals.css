@@ -92,10 +92,21 @@ a {
 .signup {
 }
 
+body {
+  background: linear-gradient(
+    99.92deg,
+    rgba(217, 217, 217, 0) 58.9%,
+    rgba(217, 217, 217, 1) 93.37%
+  );
+}
+
 .ml-form-embedContainer {
   min-width: 300px;
-  @media screen and (min-width: 30rem) {
-    min-width: 500px;
+}
+
+@media screen and (min-width: 50rem) {
+  .ml-form-embedContainer {
+    min-width: 400px;
   }
 }
 .embedForm.embedForm.embedForm.embedForm.embedForm {

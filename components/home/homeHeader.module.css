@@ -1,0 +1,78 @@
+.homeHeader {
+  position: relative;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 100%;
+  max-width: 440px;
+}
+
+.lindy {
+  position: absolute;
+  right: -110px;
+  width: 180px;
+  top: -10px;
+  z-index: 1;
+}
+@media screen and (min-width: 50rem) {
+  .lindy {
+    position: absolute;
+    right: -520px;
+    width: 600px;
+    top: -10px;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .lindy {
+    position: absolute;
+    right: -810px;
+    width: 900px;
+    top: -50px;
+  }
+}
+
+.siteTitle {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.siteTitle__welcometo {
+  text-align: center;
+  /* font-family: var(--font-script); */
+  font-size: 1.2rem;
+  transform: translateY(0.25rem);
+}
+@media screen and (min-width: 30rem) {
+  .siteTitle__welcometo {
+    font-size: 1.4rem;
+  }
+}
+
+.siteTitle__mazmatics {
+  font-size: 2.5rem;
+}
+@media screen and (min-width: 30rem) {
+  .siteTitle__mazmatics {
+    font-size: 4rem;
+  }
+}
+
+.siteTitle__promise {
+  font-family: var(--font-copy);
+  /* font-family: var(--font-script); */
+  font-size: 1.1rem;
+  margin: 0;
+  margin-top: 5px;
+  width: 120px;
+  text-align: center;
+  /* margin-top: 0.5rem; */
+}
+@media screen and (min-width: 30rem) {
+  .siteTitle__promise {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+}

@@ -3,8 +3,17 @@
 /* // use --bettySize: 100%; in global styles */
 
 .charCircleBetty {
+  position: relative;
   width: var(--bettySize);
   height: var(--bettySize);
+}
+
+.hungry {
+  border: 3px solid green;
+}
+
+.chomp {
+  border: 3px solid orange;
 }
 
 .charCircleBetty::before,
@@ -29,4 +38,62 @@
   content: '';
   /* background-color: blue; */
   border-radius: 0 0 var(--bettySize) var(--bettySize);
+}
+
+.eye {
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--black);
+  position: absolute;
+  top: 28%;
+  left: 38%;
+  z-index: 2;
+  border-radius: 50%;
+  transform: scaleY(1), rotate(-20deg);
+
+  animation: blink 5s ease-out 2s infinite;
+}
+@media screen and (min-width: 30rem) {
+  .eye {
+    width: 1.8rem;
+    height: 2rem;
+    top: 25%;
+    left: 35%;
+  }
+}
+@media screen and (min-width: 50rem) {
+  .eye {
+    width: 3rem;
+    height: 3.3rem;
+    top: 35%;
+    left: 38%;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .eye {
+    width: 5rem;
+    height: 5.5rem;
+    top: 35%;
+    left: 38%;
+  }
+}
+
+.eyeBrow {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 4rem;
+  height: 1rem;
+  z-index: 2;
+  background-color: var(--black);
+}
+
+@keyframes blink {
+  0% {
+    transform: scaleY(0.3);
+  }
+  5%,
+  100% {
+    transform: scaleY(1);
+  }
 }
