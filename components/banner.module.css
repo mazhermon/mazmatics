@@ -3,12 +3,13 @@
 }
 
 .banner {
+  position: relative;
+
   font-family: var(--font-headings);
   font-size: 1.2rem;
   background-color: var(--purple-2);
   padding: calc(var(--container-padding) / 2) var(--container-padding);
   width: 100%;
-  position: relative;
 }
 
 .banner p {
@@ -66,10 +67,17 @@
     /* line-height: 1.5; */
   }
 }
-@media screen and (min-width: 30rem) {
+@media screen and (min-width: 50rem) {
   .med .banner__mainText {
     font-size: 2.5rem;
-    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .med {
+    font-size: 1.8rem;
+  }
+  .med .banner__mainText {
+    font-size: 3rem;
   }
 }
 

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import lindyImage from '../../public/images/lindyLarge.png'
+import { CharCircleBetty } from '../characters/circleBetty'
 
 import styles from './homeHeader.module.css'
 
@@ -18,6 +19,10 @@ export const HomeHeader = () => (
         &quot;I like math&quot;
       </span>
     </h1>
+
+    <div className={styles.charCircleBettyPositioner}>
+      <CharCircleBetty />
+    </div>
 
     <div className={styles.lindy}>
       {/* use useState to set the width based on breakpoint in js */}

@@ -6,6 +6,7 @@ type Props = {
   subtitle?: string
   size?: 'small' | 'med' | 'large'
   color?: 'yellow' | 'purple'
+  children?: React.ReactNode
 }
 
 export const Banner: React.FC<Props> = ({
@@ -14,6 +15,7 @@ export const Banner: React.FC<Props> = ({
   color,
   subtitle,
   size,
+  children,
 }) => (
   <div
     className={`${styles.banner} ${className} 
@@ -23,5 +25,6 @@ export const Banner: React.FC<Props> = ({
   >
     <p className={styles.banner__mainText}>{title}</p>
     <p>{subtitle}</p>
+    {children}
   </div>
 )

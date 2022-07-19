@@ -71,22 +71,27 @@
 }
 @media screen and (min-width: 80rem) {
   .eye {
-    width: 5rem;
-    height: 5.5rem;
+    width: 4rem;
+    height: 4.5rem;
     top: 35%;
     left: 38%;
   }
 }
 
-.eyeBrow {
+/* .eyebrow {
   position: absolute;
-  top: 30%;
-  left: 40%;
+  top: 35%;
+  left: 32%;
+  transform: rotate(-65deg);
   width: 4rem;
   height: 1rem;
+  border-radius: 50px;
   z-index: 2;
   background-color: var(--black);
-}
+  display: none;
+
+  
+} */
 
 @keyframes blink {
   0% {
