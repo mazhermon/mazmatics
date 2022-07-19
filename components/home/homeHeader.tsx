@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import lindyImage from '../../public/images/lindyLarge.png'
 
-import { Banner } from '../banner'
 import styles from './homeHeader.module.css'
 
 const lindyImageSize = {
