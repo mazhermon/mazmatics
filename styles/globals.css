@@ -13,6 +13,8 @@
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-copy: 'Primer', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  /* --font-copy: 'Primer', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
 
   --bettySize: 200px;
 }
@@ -49,6 +51,15 @@
   font-weight: bold;
   font-style: normal;
   font-display: swap;
+}
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html,
@@ -93,6 +104,7 @@ a {
 
 .embedForm.embedForm.embedForm.embedForm.embedForm h4 {
   font-family: var(--font-copy) !important;
+  /* font-family: var(--font-headings) !important; */
   text-align: left !important;
   font-size: 1.5rem !important;
   margin-bottom: -0.5rem !important;
