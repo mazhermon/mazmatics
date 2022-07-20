@@ -6,6 +6,10 @@ import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
 
 const Home: NextPage = () => {
+  // use any click to look for the target
+  // if it is the text input, animate Betty to look down
+  // if it is the submit button, animate Betty to CHOMP
+  // eslint-disable-next-line
   const onPageClick = (e: any) => {
     console.log('page click target is: ', e?.currentTarget)
   }
