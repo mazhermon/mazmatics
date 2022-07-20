@@ -80,7 +80,18 @@
 
   border-top: 20px solid var(--purple-2);
   margin-bottom: 1.5rem;
+  animation: pointer 0.5s ease-out 1s 1 forwards;
 }
+
+@keyframes pointer {
+  from {
+    transform: translateY(-1rem);
+  }
+  to {
+    transform: translateY(0.8rem);
+  }
+}
+
 .code {
   background: #fafafa;
   border-radius: 5px;
@@ -154,6 +165,7 @@
 }
 
 .signup::before {
+  pointer-events: none;
   content: '';
   border-top-left-radius: 7px;
   border-top-right-radius: 7px;
