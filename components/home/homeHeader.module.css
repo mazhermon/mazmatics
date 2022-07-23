@@ -79,7 +79,6 @@
 }
 
 .charCircleBettyPositioner {
-  
   --bettySize: 200px;
   transform: rotate(15deg);
 
