@@ -1,8 +1,8 @@
 .container {
   position: relative;
-  max-width: 1800px;
+  max-width: var(--site-container-max-width);
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: var(--site-container-padding);
   overflow: hidden;
 
   --waves-x-adjust: 10rem;
@@ -28,13 +28,14 @@
   .container {
     border: 3px solid green;
     --signup-margin-bottom: 2rem;
+    --waves-banner2-padding: 5rem 0 8rem 0;
   }
 }
 @media screen and (min-width: 80rem) {
   .container {
     border: 3px solid orange;
     --signup-margin-bottom: 5rem;
-    --waves-banner2-padding: 6rem;
+    --waves-banner2-padding: 2rem 0 8rem 0;
     --waves-x-adjust: 20rem;
     --waves-scale-adjust: 1.5, 0.5;
   }
@@ -162,6 +163,20 @@
   border-top-right-radius: 7px;
   z-index: 2;
   transition: width 0.5s ease-out;
+}
+
+.signupLoading {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: -1;
+  font-family: var(--font-script);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .signup::before {

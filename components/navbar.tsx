@@ -3,11 +3,13 @@ import styles from './navbar.module.css'
 
 export const Navbar = () => {
   return (
-    <div className={styles.navbar}>
+    <nav className={styles.navbar}>
       <Link href="/">
-        <a className={styles.logo}>Mazmatics</a>
+        <a aria-label="home" className={styles.logo}>
+          Mazmatics
+        </a>
       </Link>
       <span className={styles.tagline}>for home-play </span>
-    </div>
+    </nav>
   )
 }
