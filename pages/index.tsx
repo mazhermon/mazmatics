@@ -1,3 +1,4 @@
+import React, { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -6,12 +7,26 @@ import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
 
 const Home: NextPage = () => {
-  // use any click to look for the target
-  // if it is the text input, animate Betty to look down
-  // if it is the submit button, animate Betty to CHOMP
+  const [isInputFocus, setIsInputFocus] = useState(false)
+  const [isSubmitClicked, setIsSubmitClicked] = useState(false)
+
+  const handleOnInputFun = () => {
+    setIsInputFocus(true)
+  }
+  const handleOnSignupFun = () => {
+    setIsSubmitClicked(true)
+  }
+
   // eslint-disable-next-line
   const onPageClick = (e: any) => {
-    console.log('page click target is --: ', e?.target)
+    if (!e.target.type) return
+
+    if (e.target.type === 'email') {
+      handleOnInputFun()
+    }
+    if (e.target.type === 'submit') {
+      handleOnSignupFun()
+    }
   }
   return (
     <div onClick={onPageClick} className={styles.container}>
@@ -25,7 +40,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <HomeHeader />
+        <HomeHeader
+          isInputFocus={isInputFocus}
+          isSubmitClicked={isSubmitClicked}
+        />
         <div className={styles.product_book1}>
           <h2 className={styles.product_book1__heading}>
             <Banner

@@ -8,25 +8,17 @@
   height: var(--bettySize);
 }
 
-.hungry {
-  border: 3px solid green;
-}
-
-.chomp {
-  border: 3px solid orange;
-}
-
 .charCircleBetty::before,
 .charCircleBetty::after {
   position: absolute;
   width: var(--bettySize);
   height: calc(var(--bettySize) / 2);
-  transform-origin: 50% 100%;
   background-color: #c5f8ff;
   /* // TODO can we use CSS custom props in here? */
 }
 
 .charCircleBetty::before {
+  transform-origin: 50% 100%;
   content: '';
   border-radius: var(--bettySize) var(--bettySize) 0 0;
   top: 0;
@@ -34,9 +26,9 @@
 }
 
 .charCircleBetty::after {
+  transform-origin: 50% 0;
   bottom: 0;
   content: '';
-  /* background-color: blue; */
   border-radius: 0 0 var(--bettySize) var(--bettySize);
 }
 
@@ -53,12 +45,28 @@
 
   animation: blink 5s ease-out 2s infinite;
 }
+
+.eyeClosed {
+  opacity: 0;
+
+  position: absolute;
+  top: 28%;
+  left: 36%;
+  z-index: 2;
+  transform: rotate(-20deg);
+}
+.eyeClosed svg {
+  width: 30px;
+}
+
 @media screen and (min-width: 30rem) {
   .eye {
     width: 1.8rem;
     height: 2rem;
     top: 25%;
     left: 35%;
+  }
+  .eyeClosed {
   }
 }
 @media screen and (min-width: 50rem) {
@@ -68,6 +76,14 @@
     top: 35%;
     left: 38%;
   }
+  .eyeClosed {
+    top: 38%;
+    left: 36%;
+  }
+
+  .eyeClosed svg {
+    width: 60px;
+  }
 }
 @media screen and (min-width: 80rem) {
   .eye {
@@ -76,22 +92,14 @@
     top: 35%;
     left: 38%;
   }
+  .eyeClosed {
+    top: 36%;
+    left: 36%;
+  }
+  .eyeClosed svg {
+    width: 80px;
+  }
 }
-
-/* .eyebrow {
-  position: absolute;
-  top: 35%;
-  left: 32%;
-  transform: rotate(-65deg);
-  width: 4rem;
-  height: 1rem;
-  border-radius: 50px;
-  z-index: 2;
-  background-color: var(--black);
-  display: none;
-
-  
-} */
 
 @keyframes blink {
   0% {
@@ -100,5 +108,64 @@
   5%,
   100% {
     transform: scaleY(1);
+  }
+}
+
+.charCircleBettyAnimationWrapper {
+  transform-origin: 50%;
+}
+
+.charCircleBettyAnimationWrapper.lookDown {
+  animation: lookDown 0.7s cubic-bezier(0.53, -0.32, 0.54, 1.25) forwards;
+}
+
+.charCircleBettyAnimationWrapper.chomp .eye {
+  opacity: 0;
+}
+.charCircleBettyAnimationWrapper.chomp .eyeClosed {
+  opacity: 1;
+}
+.charCircleBettyAnimationWrapper.chomp .charCircleBetty::before {
+  animation: chompTop 0.7s cubic-bezier(0.53, -0.32, 0.54, 1.66) forwards;
+}
+.charCircleBettyAnimationWrapper.chomp .charCircleBetty::after {
+  animation: chompBottom 0.7s cubic-bezier(0.53, -0.32, 0.54, 1.25) forwards;
+}
+
+@keyframes lookDown {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+
+@keyframes chompTop {
+  0% {
+    transform: rotate(-65deg);
+  }
+  50% {
+    transform: rotate(-32deg);
+  }
+  75% {
+    transform: rotate(-45deg);
+  }
+  100% {
+    transform: rotate(-32deg);
+  }
+}
+@keyframes chompBottom {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+  75% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(-25deg);
   }
 }

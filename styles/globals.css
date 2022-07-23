@@ -131,6 +131,14 @@ textarea {
   box-shadow: inset 0 0 0 3px black;
 }
 
+input.ml-error.ml-error,
+.ml-error.ml-error input,
+.ml-error textarea,
+.ml-error select {
+  box-shadow: 0 0px 2px 4px tomato;
+  position: relative;
+}
+
 /* .ml-form-embedContainer
   #mlb2-866379.ml-form-embedContainer
   .ml-form-embedWrapper

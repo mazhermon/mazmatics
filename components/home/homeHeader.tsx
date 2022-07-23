@@ -9,8 +9,16 @@ const lindyImageSize = {
   height: 2633,
 }
 
-export const HomeHeader = () => (
-  <div className={styles.homeHeader}>
+type Props = {
+  isInputFocus: boolean
+  isSubmitClicked: boolean
+}
+
+export const HomeHeader: React.FC<Props> = ({
+  isInputFocus,
+  isSubmitClicked,
+}) => (
+  <div className={`${styles.homeHeader} `}>
     <h1 className={styles.siteTitle}>
       <span className={styles.siteTitle__welcometo}>Welcome to</span>
       <span className={styles.siteTitle__mazmatics}>Mazmatics</span>
@@ -21,7 +29,10 @@ export const HomeHeader = () => (
     </h1>
 
     <div className={styles.charCircleBettyPositioner}>
-      <CharCircleBetty />
+      <CharCircleBetty
+        isInputFocus={isInputFocus}
+        isSubmitClicked={isSubmitClicked}
+      />
     </div>
 
     <div className={styles.lindy}>

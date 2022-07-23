@@ -1,5 +1,5 @@
 import { Navbar } from './navbar'
-import { Footer } from './footer'
+// import { Footer } from './footer'
 
 type Props = {
   children: React.ReactNode
@@ -10,7 +10,7 @@ export const Layout: React.FC<Props> = ({ children }) => {
     <>
       <Navbar />
       <main>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
