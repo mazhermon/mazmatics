@@ -1,10 +1,18 @@
 import React, { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import Image from 'next/image'
+
+import bookBannerImage from '../public/images/emailFunCOver.jpg'
 
 import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
+
+const bookBannerImageSize = {
+  width: 1940,
+  height: 600,
+}
 
 const Home: NextPage = () => {
   const [isInputFocus, setIsInputFocus] = useState(false)
@@ -53,9 +61,42 @@ const Home: NextPage = () => {
               color="yellow"
             />
           </h2>
-          <p className={styles.product_book1__subtitle}>out soon as!</p>
+          <p className={styles.product_book1__subtitle}>out now!</p>
+          <div className={styles.pointer}></div>
+          <div className={styles.product_book1_buyNowBlock}>
+            <p className={styles.product_book1_buyNowLocation}>
+              Live in <strong>NZ or Australia?</strong>
+            </p>
+            <a
+              href="https://www.amazon.com.au/dp/0473648911"
+              className={styles.product_book1_buyNowLink}
+            >
+              Buy now NZ &amp; AU
+            </a>
+          </div>
+
+          <div className={styles.product_book1_buyNowBlock}>
+            <p className={styles.product_book1_buyNowLocation}>
+              Live in the <strong>USA?</strong>
+            </p>
+            <a
+              href="https://www.amazon.com/dp/0473648911"
+              className={styles.product_book1_buyNowLinkUSA}
+            >
+              Buy now USA
+            </a>
+          </div>
         </div>
-        <div className={styles.pointer}></div>
+
+        <div className={styles.bannerPhoto}>
+          <Image
+            alt="Giant Girl adventurer sitting down smiling"
+            src={bookBannerImage}
+            layout="intrinsic"
+            width={bookBannerImageSize.width}
+            height={bookBannerImageSize.height}
+          />
+        </div>
 
         <div className={styles.signup}>
           <div className={styles.signupLoading}>Loading sign up form...</div>
@@ -79,7 +120,7 @@ const Home: NextPage = () => {
         <Banner
           className={styles.homeBanner2}
           title="Fun Math 4 kids book"
-          subtitle="Volume 1 – coming soon"
+          subtitle="Volume 1 – out now"
           size="med"
           color="purple"
         />

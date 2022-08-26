@@ -97,10 +97,11 @@
 .pointer {
   width: 0;
   height: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
+  margin: 0 auto;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
 
-  border-top: 20px solid var(--purple-2);
+  border-top: 40px solid var(--yellow-1);
   margin-bottom: 1.5rem;
   animation: pointer 0.5s ease-out 1s 1 forwards;
 }
@@ -245,4 +246,49 @@
     transform: scale(var(--waves-scale-adjust))
       translate(10rem, var(--waves-y-adjust));
   }
+}
+
+/* CTA links */
+.product_book1_buyNowBlock {
+  padding: 1rem;
+}
+.product_book1_buyNowLink,
+.product_book1_buyNowLinkUSA {
+  font-weight: bold;
+  display: inline-block;
+  border: 6px solid var(--yellow-1);
+  color: white;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  font-family: var(--font-button);
+  padding: 20px;
+  background-color: var(--black);
+  border-radius: 9px;
+}
+
+.product_book1_buyNowLinkUSA {
+  border-color: var(--purple-2);
+}
+
+.product_book1_buyNowLink:hover,
+.product_book1_buyNowLinkUSA:hover {
+  transform: translateY(-2px);
+  background-color: black;
+  /* #fff406; */
+  box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.product_book1_buyNowLink:active,
+.product_book1_buyNowLinkUSA:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+.product_book1_buyNowLocation {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.bannerPhoto {
+  margin: 1rem -2rem 3rem -2rem;
 }
