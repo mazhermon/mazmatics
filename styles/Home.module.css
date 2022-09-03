@@ -324,7 +324,7 @@
 
 .hitmeLink {
   transform: translateY(-9px);
-  font-size: 3rem;
+  font-size: 1.6rem;
   display: inline-block;
   width: auto;
   margin: 0;
@@ -333,6 +333,13 @@
   -webkit-background-clip: text;
   color: transparent;
   transform: translateY(0);
+}
+
+@media screen and (min-width: 50rem) {
+  .hitmeLink {
+    transform: translateY(-9px);
+    font-size: 3rem;
+  }
 }
 
 .hitmeLink:hover {
