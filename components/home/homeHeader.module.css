@@ -43,8 +43,14 @@
 .siteTitle__welcometo {
   text-align: center;
   font-family: var(--font-script);
-  font-size: 1.6rem;
-  transform: translateY(0.25rem);
+  font-size: 1.2rem;
+  transform: translateY(0.55rem);
+}
+@media screen and (min-width: 30rem) {
+  .siteTitle__welcometo {
+    font-size: 1.6rem;
+    transform: translateY(0.25rem);
+  }
 }
 
 .siteTitle__logo {
@@ -78,7 +84,7 @@
   font-size: 1.1rem;
   margin: 0;
   margin-top: 5px;
-  width: 120px;
+  width: 144px;
   text-align: center;
   /* margin-top: 0.5rem; */
 }
