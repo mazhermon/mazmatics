@@ -5,7 +5,7 @@
 .banner {
   position: relative;
 
-  font-family: var(--font-headings);
+  font-family: var(--font-headings-fun);
   font-size: 1.2rem;
   background-color: var(--purple-2);
   padding: calc(var(--container-padding) / 2) var(--container-padding);

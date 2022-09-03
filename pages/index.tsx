@@ -63,28 +63,45 @@ const Home: NextPage = () => {
           </h2>
           <p className={styles.product_book1__subtitle}>out now!</p>
           <div className={styles.pointer}></div>
-          <div className={styles.product_book1_buyNowBlock}>
-            <p className={styles.product_book1_buyNowLocation}>
-              Live in <strong>NZ or Australia?</strong>
-            </p>
-            <a
-              href="https://www.amazon.com.au/dp/0473648911"
-              className={styles.product_book1_buyNowLink}
-            >
-              Buy now NZ &amp; AU
-            </a>
-          </div>
 
-          <div className={styles.product_book1_buyNowBlock}>
-            <p className={styles.product_book1_buyNowLocation}>
-              Live in the <strong>USA?</strong>
-            </p>
-            <a
-              href="https://www.amazon.com/dp/0473648911"
-              className={styles.product_book1_buyNowLinkUSA}
-            >
-              Buy now USA
-            </a>
+          <h2>Available globally through Amazon</h2>
+
+          <div className={styles.product_book1__linkGroup}>
+            <div className={styles.product_book1_buyNowBlock}>
+              <p className={styles.product_book1_buyNowLocation}>
+                Live in the <strong>USA?</strong>
+              </p>
+              <a
+                href="https://www.amazon.com/dp/0473648911"
+                className={styles.product_book1_buyNowLink}
+              >
+                Buy now USA
+              </a>
+            </div>
+
+            <div className={styles.product_book1_buyNowBlock}>
+              <p className={styles.product_book1_buyNowLocation}>
+                Live in <strong>NZ or Australia?</strong>
+              </p>
+              <a
+                href="https://www.amazon.com.au/dp/0473648911"
+                className={styles.product_book1_buyNowLink}
+              >
+                Buy now NZ &amp; AU
+              </a>
+            </div>
+
+            <div className={styles.product_book1_buyNowBlock}>
+              <p className={styles.product_book1_buyNowLocation}>
+                Live in <strong>the UK?</strong>
+              </p>
+              <a
+                href="https://www.amazon.co.uk/dp/0473648911"
+                className={styles.product_book1_buyNowLink}
+              >
+                Buy UK
+              </a>
+            </div>
           </div>
         </div>
 
@@ -96,6 +113,17 @@ const Home: NextPage = () => {
             width={bookBannerImageSize.width}
             height={bookBannerImageSize.height}
           />
+        </div>
+
+        <div className={styles.feedback}>
+          <h2>Feedback welcome</h2>
+          <p>We&apos;d love to hear from you with feedback and ideas</p>
+          <a
+            className={styles.hitmeLink}
+            href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
+          >
+            hello@mazmatics.com
+          </a>
         </div>
 
         <div className={styles.signup}>

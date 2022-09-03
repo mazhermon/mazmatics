@@ -71,6 +71,7 @@
 }
 
 .product_book1 {
+  width: 80vw;
   text-align: center;
   z-index: 2;
 }
@@ -156,6 +157,8 @@
   margin-top: 0rem;
   padding-top: 3rem;
   padding-bottom: 3rem;
+  max-width: 500px;
+  margin: auto;
 }
 /* TODO: do custom props instead */
 @media screen and (min-width: 30rem) {
@@ -252,8 +255,8 @@
 .product_book1_buyNowBlock {
   padding: 1rem;
 }
-.product_book1_buyNowLink,
-.product_book1_buyNowLinkUSA {
+.product_book1_buyNowLink {
+  width: 100%;
   font-weight: bold;
   display: inline-block;
   border: 6px solid var(--yellow-1);
@@ -266,20 +269,27 @@
   border-radius: 9px;
 }
 
-.product_book1_buyNowLinkUSA {
+/* // do by href */
+.product_book1_buyNowLink[href*='www.amazon.com'] {
   border-color: var(--purple-2);
 }
 
-.product_book1_buyNowLink:hover,
-.product_book1_buyNowLinkUSA:hover {
+.product_book1_buyNowLink[href*='www.amazon.com.au'] {
+  border-color: var(--yellow-1);
+}
+
+.product_book1_buyNowLink[href*='www.amazon.co.uk'] {
+  border-color: var(--blue-2);
+}
+
+.product_book1_buyNowLink:hover {
   transform: translateY(-2px);
   background-color: black;
   /* #fff406; */
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
-.product_book1_buyNowLink:active,
-.product_book1_buyNowLinkUSA:active {
+.product_book1_buyNowLink:active {
   box-shadow: none;
   transform: translateY(2px);
 }
@@ -292,3 +302,55 @@
 .bannerPhoto {
   margin: 1rem -2rem 3rem -2rem;
 }
+
+.product_book1__linkGroup {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-content: space-between;
+}
+
+/* // clean up with new components */
+.feedback {
+  width: 80vw;
+  padding: 1rem 2rem 4rem 2rem;
+  /* background: rgba(255, 255, 255, 0.9); */
+  text-align: center !important;
+  font-family: var(--font-copy);
+
+  margin-bottom: 2rem;
+}
+
+.hitmeLink {
+  transform: translateY(-9px);
+  font-size: 3rem;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  cursor: pointer !important;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: translateY(0);
+}
+
+.hitmeLink:hover {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--yellow-1);
+  transform: translateY(-1px);
+}
+
+.hitmeLink:active {
+  transform: translateY(1px);
+  text-decoration-color: var(--blue-2);
+}
+
+/* violet,
+    indigo,
+    blue,
+    green,
+    yellow,
+    orange,
+    red */

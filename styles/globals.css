@@ -3,6 +3,7 @@
   --gray-5: #3a3a39;
   --yellow-1: #fff73e;
   --blue-2: #c5f8ff;
+  --blue-4: #47a5f1;
   --purple-2: #ba90ff;
 
   --site-container-max-width: 1800px;
@@ -10,11 +11,14 @@
 
   --nav-height: 65px;
 
-  --font-headings: 'Daruma', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  --font-headings: 'Outfit', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --font-headings-fun: 'Daruma', -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
   --font-script: 'Pacifico', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --font-copy: 'Primer', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+  --font-copy: 'Outfit', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-button: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -39,7 +43,7 @@
   font-style: normal;
   font-display: swap;
 }
-@font-face {
+/* @font-face {
   font-family: 'Primer';
   src: url('/fonts/primer/primer_print.woff');
   src: url('/fonts/primer/primer_print.woff2');
@@ -51,6 +55,31 @@
   font-family: 'Primer';
   src: url('/fonts/primer/primer_print_bold.woff');
   src: url('/fonts/primer/primer_print_bold.woff2');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+} */
+
+@font-face {
+  font-family: 'Outfit';
+  src: url('/fonts/outfit/Outfit-Regular.woff');
+  src: url('/fonts/outfit/Outfit-Regular.woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('/fonts/outfit/Outfit-Medium.woff');
+  src: url('/fonts/outfit/Outfit-Medium.woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Outfit';
+  src: url('/fonts/outfit/Outfit-Bold.woff');
+  src: url('/fonts/outfit/Outfit-Bold.woff2');
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -76,8 +105,7 @@ body {
 h1,
 h2,
 h3 {
-  font-family: 'Daruma', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: var(--font-headings);
   color: var(--black);
 }
 
@@ -120,9 +148,9 @@ body {
   font-family: var(--font-copy) !important;
   /* font-family: var(--font-headings) !important; */
   text-align: left !important;
-  font-size: 1.5rem !important;
+  font-size: 1.2rem !important;
 
-  font-weight: bold !important;
+  font-weight: 300 !important;
 }
 
 input,
