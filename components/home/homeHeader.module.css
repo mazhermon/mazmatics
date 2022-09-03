@@ -46,6 +46,17 @@
   font-size: 1.6rem;
   transform: translateY(0.25rem);
 }
+
+.siteTitle__logo {
+  transform: scale(0.7);
+}
+
+@media screen and (min-width: 30rem) {
+  .siteTitle__logo {
+    transform: scale(1);
+  }
+}
+
 @media screen and (min-width: 30rem) {
   .siteTitle__welcometo {
     font-size: 1.4rem;

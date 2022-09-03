@@ -28,6 +28,7 @@ export const HomeHeader: React.FC<Props> = ({
     <h1 className={styles.siteTitle}>
       <span className={styles.siteTitle__welcometo}>Welcome to</span>
       <Image
+        className={styles.siteTitle__logo}
         alt="Mazmatics logo"
         src={mazmaticsLogo}
         layout="intrinsic"
