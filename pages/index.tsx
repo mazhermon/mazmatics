@@ -8,6 +8,7 @@ import bookBannerImage from '../public/images/emailFunCOver.jpg'
 import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
+import { Reviews } from '../components/reviews'
 
 const bookBannerImageSize = {
   width: 1940,
@@ -107,7 +108,7 @@ const Home: NextPage = () => {
 
         <div className={styles.bannerPhoto}>
           <Image
-            alt="Giant Girl adventurer sitting down smiling"
+            alt="Banner showing the book cover over a background showing internal pages"
             src={bookBannerImage}
             layout="intrinsic"
             width={bookBannerImageSize.width}
@@ -115,9 +116,14 @@ const Home: NextPage = () => {
           />
         </div>
 
+        <Reviews />
+
         <div className={styles.feedback}>
           <h2>Feedback welcome</h2>
-          <p>We&apos;d love to hear from you with feedback and ideas</p>
+          <p>
+            We&apos;d love to hear from you with feedback and ideas. Or just say
+            hi 😄
+          </p>
           <a
             className={styles.hitmeLink}
             href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
