@@ -9,6 +9,7 @@ import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
 import { Reviews } from '../components/reviews'
+import MailingList from '../components/mailinglist'
 
 const bookBannerImageSize = {
   width: 1940,
@@ -49,6 +50,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <div style={{ marginBottom: '5rem' }}>
+          <MailingList />
+        </div>
         <HomeHeader
           isInputFocus={isInputFocus}
           isSubmitClicked={isSubmitClicked}
