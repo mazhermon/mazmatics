@@ -14,7 +14,6 @@
   width: var(--bettySize);
   height: calc(var(--bettySize) / 2);
   background-color: #c5f8ff;
-  /* // TODO can we use CSS custom props in here? */
 }
 
 .charCircleBetty::before {
@@ -46,9 +45,9 @@
   animation: blink 5s ease-out 2s infinite;
 }
 
-.eye__small {
-  width: 0.7rem;
-  height: 0.7rem;
+.eye__small.eye__small {
+  width: 0.8rem;
+  height: 0.8rem;
 }
 
 .eyeClosed {
@@ -60,6 +59,15 @@
   z-index: 2;
   transform: rotate(-20deg);
 }
+
+.eyeClosed__small.eyeClosed__small {
+  transform: translate(-36px, -25px) scale(0.35) rotate(-20deg);
+}
+
+.eyeClosed__small.eyeClosed__small svg {
+  width: 60px;
+}
+
 .eyeClosed svg {
   width: 30px;
 }
@@ -70,10 +78,6 @@
     height: 2rem;
     top: 25%;
     left: 35%;
-  }
-  .eye__small {
-    width: 1rem;
-    height: 1rem;
   }
 }
 @media screen and (min-width: 50rem) {
@@ -91,11 +95,6 @@
   .eyeClosed svg {
     width: 60px;
   }
-
-  .eye__small {
-    width: 1.2rem;
-    height: 1.2rem;
-  }
 }
 @media screen and (min-width: 80rem) {
   .eye {
@@ -110,10 +109,6 @@
   }
   .eyeClosed svg {
     width: 80px;
-  }
-  .eye__small {
-    width: 1.2rem;
-    height: 1.2rem;
   }
 }
 
@@ -153,7 +148,7 @@
     transform: rotate(0);
   }
   to {
-    transform: rotate(45deg);
+    transform: rotate(75deg);
   }
 }
 

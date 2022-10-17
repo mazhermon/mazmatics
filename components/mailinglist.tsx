@@ -5,7 +5,17 @@ import styles from './mailinglist.module.css'
 import { TickCircle } from './icons/tickCircle'
 import { CrossCircle } from './icons/crossCircle'
 
-const MailingList = () => {
+type Props = {
+  onMailingListInputFocused: () => void
+  onMailingListFormSubmitted: () => void
+  onMailingListInputBlurred: () => void
+}
+
+const MailingList: React.FC<Props> = ({
+  onMailingListInputFocused,
+  onMailingListFormSubmitted,
+  onMailingListInputBlurred
+}) => {
   const [email, setEmail] = useState('')
   const [state, setState] = useState('IDLE')
   const [errorMessage, setErrorMessage] = useState(null)
@@ -13,6 +23,15 @@ const MailingList = () => {
   const onFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     subscribeToMailingList()
+    onMailingListFormSubmitted()
+  }
+
+  const onSignupInputClick = () => {
+    onMailingListInputFocused()
+  }
+
+  const onSignupInputBlur = () => {
+    onMailingListInputBlurred()
   }
 
   const subscribeToMailingList = async () => {
@@ -41,6 +60,8 @@ const MailingList = () => {
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          onClick={onSignupInputClick}
+          onBlur={onSignupInputBlur}
         />
 
         {state === 'ERROR' && (

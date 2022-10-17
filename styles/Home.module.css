@@ -176,6 +176,7 @@
 }
 
 .signup {
+  margin-top: 7rem;
   position: relative;
   min-height: 190px;
   min-width: 300px;
@@ -369,6 +370,7 @@
   text-decoration-color: var(--blue-2);
 }
 
+/* use this in a gradient to make a rainbow sometime */
 /* violet,
     indigo,
     blue,
@@ -379,44 +381,11 @@
 
 /* // test out having a second circle betty */
 .charCircleBettyPositioner {
-  --bettySize: 100px;
+  --bettySize: 140px;
   transform: rotate(15deg);
   position: absolute;
-  top: -63px;
-  left: -30px;
+  top: -10rem;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 999;
 }
-@media screen and (min-width: 30rem) {
-  .charCircleBettyPositioner {
-    --bettySize: 150px;
-    transform: rotate(27deg);
-    top: -2rem;
-    left: -64px;
-  }
-}
-@media screen and (min-width: 50rem) {
-  .charCircleBettyPositioner {
-    --bettySize: 200px;
-    top: -4rem;
-    left: -111px;
-  }
-}
-
-/* @media screen and (min-width: 80rem) {
-  .charCircleBettyPositioner {
-    --bettySize: 500px;
-    transform: rotate(-0deg);
-
-    position: absolute;
-    top: -5rem;
-    left: -575px;
-    z-index: -1;
-  }
-} */
-
-/* @media screen and (min-width: 100rem) {
-  .charCircleBettyPositioner {
-    top: -5rem;
-    left: -565px;
-  }
-} */

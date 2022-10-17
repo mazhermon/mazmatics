@@ -21,26 +21,20 @@ const Home: NextPage = () => {
   const [isInputFocus, setIsInputFocus] = useState(false)
   const [isSubmitClicked, setIsSubmitClicked] = useState(false)
 
+  // Fun animation during mailing list sign up - just for a laugh
   const handleOnInputFun = () => {
     setIsInputFocus(true)
   }
+  const handleOnInputBlurFun = () => {
+    setIsInputFocus(false)
+  }
+
   const handleOnSignupFun = () => {
     setIsSubmitClicked(true)
   }
 
-  // eslint-disable-next-line
-  const onPageClick = (e: any) => {
-    if (!e.target.type) return
-
-    if (e.target.type === 'email') {
-      handleOnInputFun()
-    }
-    if (e.target.type === 'submit') {
-      handleOnSignupFun()
-    }
-  }
   return (
-    <div onClick={onPageClick} className={styles.container}>
+    <div className={styles.container}>
       <Head>
         <title>Mazmatics fun math 4 kids</title>
         <meta
@@ -142,7 +136,11 @@ const Home: NextPage = () => {
               small={true}
             />
           </div>
-          <MailingList />
+          <MailingList
+            onMailingListInputFocused={handleOnInputFun}
+            onMailingListFormSubmitted={handleOnSignupFun}
+            onMailingListInputBlurred={handleOnInputBlurFun}
+          />
         </div>
 
         <div className={styles.waves}>

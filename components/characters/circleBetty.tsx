@@ -19,7 +19,9 @@ export const CharCircleBetty: React.FC<Props> = ({
   >
     <div className={styles.charCircleBetty}>
       <div className={`${styles.eye} ${small && styles.eye__small}`}></div>
-      <div className={styles.eyeClosed}>
+      <div
+        className={`${styles.eyeClosed} ${small && styles.eyeClosed__small}`}
+      >
         <svg
           width="93"
           height="58"
