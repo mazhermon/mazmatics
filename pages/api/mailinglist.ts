@@ -1,8 +1,16 @@
 // https://developers.mailerlite.com/reference/create-a-subscriber
 import axios from 'axios'
+import type { NextApiRequest, NextApiResponse } from 'next'
+
+type Data = {
+  email?: string
+  groups?: Array<string>
+  status?: string
+  error?: string | null
+}
 
 interface IEmailSignup {
-  (arg0: any, arg1: any): any
+  (arg0: NextApiRequest, arg1: NextApiResponse<Data>): void
 }
 
 function getRequestParams(email: string) {
@@ -36,6 +44,15 @@ const EmailSignup: IEmailSignup = async (req, res) => {
     })
   }
 
+  //TODO write some tests for this
+  const emailRegex = /^\w+([\.\-\+]?\w+)*@\w+([\.\-\+]?\w+)*(\.\w{2,3})+$/g
+  const validEmail = email && emailRegex.test(email)
+  if (!validEmail) {
+    return res.status(400).json({
+      error: 'Please enter valid email address',
+    })
+  }
+
   try {
     const { url, headers, data } = getRequestParams(email)
     await axios.post(url, data, { headers })
@@ -44,7 +61,6 @@ const EmailSignup: IEmailSignup = async (req, res) => {
     return res.status(400).json({
       error:
         'Sorry, something went wrong. You can try again or just email hello@mazmatics.com for help',
-      debug: error,
     })
   }
 }

@@ -188,6 +188,21 @@
   border-top-right-radius: 7px;
   z-index: 2;
   transition: width 0.5s ease-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 1rem;
+  padding-bottom: 0.5rem;
+}
+
+@media screen and (min-width: 30rem) {
+  .signup {
+    width: 450px;
+    padding: 2rem;
+    padding-bottom: 0;
+  }
 }
 
 .signupLoading {
@@ -361,3 +376,47 @@
     yellow,
     orange,
     red */
+
+/* // test out having a second circle betty */
+.charCircleBettyPositioner {
+  --bettySize: 100px;
+  transform: rotate(15deg);
+  position: absolute;
+  top: -63px;
+  left: -30px;
+  z-index: 999;
+}
+@media screen and (min-width: 30rem) {
+  .charCircleBettyPositioner {
+    --bettySize: 150px;
+    transform: rotate(27deg);
+    top: -2rem;
+    left: -64px;
+  }
+}
+@media screen and (min-width: 50rem) {
+  .charCircleBettyPositioner {
+    --bettySize: 200px;
+    top: -4rem;
+    left: -111px;
+  }
+}
+
+/* @media screen and (min-width: 80rem) {
+  .charCircleBettyPositioner {
+    --bettySize: 500px;
+    transform: rotate(-0deg);
+
+    position: absolute;
+    top: -5rem;
+    left: -575px;
+    z-index: -1;
+  }
+} */
+
+/* @media screen and (min-width: 100rem) {
+  .charCircleBettyPositioner {
+    top: -5rem;
+    left: -565px;
+  }
+} */

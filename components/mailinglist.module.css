@@ -1,0 +1,109 @@
+.mailingList {
+  padding: 1rem;
+  min-height: 195px;
+}
+.mailingListTitle {
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+.mailingList__inner {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+@media screen and (min-width: 30rem) {
+  .mailingList__inner {
+    flex-flow: row nowrap;
+  }
+}
+
+/* // TODO make a new component for inputs */
+.emailInput {
+  padding: 0.8rem;
+  font-size: 16px;
+  border-radius: 3px;
+  border: 3px solid var(--gray-4);
+}
+
+.emailInput__error:not(:focus) {
+  border-color: var(--validation-error-color);
+}
+
+.emailInput:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px #fff, inset 0 0 0 3px var(--purple-3);
+}
+
+/* make a button component for this */
+/* maybe style here then move to component? */
+.signupButton {
+  font-family: var(--font-button);
+  border-radius: 3px;
+  border: none;
+  padding: 9px 18px;
+  color: #fff;
+  font-size: 16px;
+  background-color: var(--purple-3);
+}
+.signupButton:focus-visible {
+  outline: none;
+  box-shadow: inset 0 0 0 3px #fff, 0 0 0 3px var(--purple-3);
+}
+
+.signupButton__isLoading {
+}
+
+/* // TODO make own component? */
+.validationMessage {
+  border-radius: 3px;
+  padding: 0.8rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.validationMessage svg {
+  width: 24px;
+}
+
+.validationMessage__error {
+  color: #fff;
+  background-color: var(--validation-error-color);
+}
+
+.validationMessage__error svg {
+  fill: #fff;
+}
+
+.validationMessage__error::before {
+  position: absolute;
+  top: -9px;
+  left: 9px;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+
+  border-bottom: 9px solid var(--validation-error-color);
+}
+
+.validationMessage__success {
+  background-color: var(--validation-success-color);
+}
+
+.validationMessage__wideForm {
+  display: none;
+}
+
+@media screen and (min-width: 30rem) {
+  .validationMessage__stackedForm {
+    display: none;
+  }
+
+  .validationMessage__wideForm {
+    display: flex;
+  }
+}

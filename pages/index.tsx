@@ -10,6 +10,7 @@ import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
 import { Reviews } from '../components/reviews'
 import MailingList from '../components/mailinglist'
+import { CharCircleBetty } from '../components/characters/circleBetty'
 
 const bookBannerImageSize = {
   width: 1940,
@@ -50,9 +51,6 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <div style={{ marginBottom: '5rem' }}>
-          <MailingList />
-        </div>
         <HomeHeader
           isInputFocus={isInputFocus}
           isSubmitClicked={isSubmitClicked}
@@ -137,8 +135,14 @@ const Home: NextPage = () => {
         </div>
 
         <div className={styles.signup}>
-          <div className={styles.signupLoading}>Loading sign up form...</div>
-          <div className="ml-embedded" data-form="ltd6tR"></div>
+          <div className={styles.charCircleBettyPositioner}>
+            <CharCircleBetty
+              isInputFocus={isInputFocus}
+              isSubmitClicked={isSubmitClicked}
+              small={true}
+            />
+          </div>
+          <MailingList />
         </div>
 
         <div className={styles.waves}>

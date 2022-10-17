@@ -10,6 +10,16 @@ export const Navbar = () => {
         </a>
       </Link>
       <span className={styles.tagline}>for home-play </span>
+
+      {/* <ul>
+        <li>
+          <Link href="/about">
+            <a aria-label="home" className={styles.logo}>
+              About
+            </a>
+          </Link>
+        </li>
+      </ul> */}
     </nav>
   )
 }

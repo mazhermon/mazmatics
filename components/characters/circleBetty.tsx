@@ -4,11 +4,13 @@ import styles from './circleBetty.module.css'
 type Props = {
   isInputFocus: boolean
   isSubmitClicked: boolean
+  small?: boolean
 }
 
 export const CharCircleBetty: React.FC<Props> = ({
   isInputFocus,
   isSubmitClicked,
+  small,
 }) => (
   <div
     className={`${styles.charCircleBettyAnimationWrapper} ${
@@ -16,7 +18,7 @@ export const CharCircleBetty: React.FC<Props> = ({
     } ${isSubmitClicked && styles.chomp}`}
   >
     <div className={styles.charCircleBetty}>
-      <div className={styles.eye}></div>
+      <div className={`${styles.eye} ${small && styles.eye__small}`}></div>
       <div className={styles.eyeClosed}>
         <svg
           width="93"

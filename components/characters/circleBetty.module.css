@@ -46,6 +46,11 @@
   animation: blink 5s ease-out 2s infinite;
 }
 
+.eye__small {
+  width: 0.7rem;
+  height: 0.7rem;
+}
+
 .eyeClosed {
   opacity: 0;
 
@@ -66,7 +71,9 @@
     top: 25%;
     left: 35%;
   }
-  .eyeClosed {
+  .eye__small {
+    width: 1rem;
+    height: 1rem;
   }
 }
 @media screen and (min-width: 50rem) {
@@ -84,6 +91,11 @@
   .eyeClosed svg {
     width: 60px;
   }
+
+  .eye__small {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
 }
 @media screen and (min-width: 80rem) {
   .eye {
@@ -98,6 +110,10 @@
   }
   .eyeClosed svg {
     width: 80px;
+  }
+  .eye__small {
+    width: 1.2rem;
+    height: 1.2rem;
   }
 }
 
