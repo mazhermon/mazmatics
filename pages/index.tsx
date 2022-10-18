@@ -61,6 +61,21 @@ const Home: NextPage = () => {
           <p className={styles.product_book1__subtitle}>out now!</p>
           <div className={styles.pointer}></div>
 
+          <div className={styles.nzShopDetails}>
+            <h2>Available direct for NZ only</h2>
+            <p>No login required :)</p>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.product_book1_buyNowLink}
+              href="https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations"
+            >
+              NZ Shop
+            </a>
+          </div>
+
+          <p className={styles.orDivider}>or</p>
+
           <h2>Available globally through Amazon</h2>
 
           <div className={styles.product_book1__linkGroup}>
@@ -72,7 +87,7 @@ const Home: NextPage = () => {
                 href="https://www.amazon.com/dp/0473648911"
                 className={styles.product_book1_buyNowLink}
               >
-                Buy now USA
+                Buy on Amazon.com
               </a>
             </div>
 
@@ -84,7 +99,7 @@ const Home: NextPage = () => {
                 href="https://www.amazon.com.au/dp/0473648911"
                 className={styles.product_book1_buyNowLink}
               >
-                Buy now NZ &amp; AU
+                Buy on Amazon Australia
               </a>
             </div>
 
@@ -96,10 +111,14 @@ const Home: NextPage = () => {
                 href="https://www.amazon.co.uk/dp/0473648911"
                 className={styles.product_book1_buyNowLink}
               >
-                Buy UK
+                Buy on Amazon UK
               </a>
             </div>
           </div>
+          <p>
+            or search &lsquo;Mazmatics&rsquo; on your local Amazon for your
+            country
+          </p>
         </div>
 
         <div className={styles.bannerPhoto}>

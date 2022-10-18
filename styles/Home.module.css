@@ -273,6 +273,7 @@
 }
 .product_book1_buyNowLink {
   width: 100%;
+  max-width: 500px;
   font-weight: bold;
   display: inline-block;
   border: 6px solid var(--yellow-1);
@@ -286,6 +287,9 @@
 }
 
 /* // do by href */
+.product_book1_buyNowLink[href*='shop.mazmatics.com'] {
+}
+
 .product_book1_buyNowLink[href*='www.amazon.com'] {
   border-color: var(--purple-2);
 }
@@ -388,4 +392,14 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
+}
+
+/* .nzShopDetails {
+  margin-bottom: 3rem;
+} */
+
+.orDivider {
+  margin: 2rem 0;
+  font-family: var(--font-script);
+  font-size: 2rem;
 }
