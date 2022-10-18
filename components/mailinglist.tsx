@@ -14,7 +14,7 @@ type Props = {
 const MailingList: React.FC<Props> = ({
   onMailingListInputFocused,
   onMailingListFormSubmitted,
-  onMailingListInputBlurred
+  onMailingListInputBlurred,
 }) => {
   const [email, setEmail] = useState('')
   const [state, setState] = useState('IDLE')
