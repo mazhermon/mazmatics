@@ -51,7 +51,11 @@ const MailingList: React.FC<Props> = ({
     <form className={styles.mailingList} onSubmit={onFormSubmit}>
       <h2 className={styles.mailingListTitle}>Join the mailing list</h2>
       <div className={styles.mailingList__inner}>
+        <label className="sr-only" htmlFor="mailingListEmailInput">
+          Your Email
+        </label>
         <input
+          id="mailingListEmailInput"
           className={`${styles.emailInput} ${
             state === 'ERROR' && styles.emailInput__error
           }`}
