@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Button } from '../components/button'
 
 import bookBannerImage from '../public/images/emailFunCOver.jpg'
+import bookProductImage from '../public/images/mazmatics_bookCoverWeb1.jpg'
 
 import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
@@ -15,6 +18,11 @@ import { CharCircleBetty } from '../components/characters/circleBetty'
 const bookBannerImageSize = {
   width: 1940,
   height: 600,
+}
+
+const bookProductImageSize = {
+  width: 901,
+  height: 901,
 }
 
 const Home: NextPage = () => {
@@ -61,9 +69,32 @@ const Home: NextPage = () => {
           <p className={styles.product_book1__subtitle}>out now!</p>
           <div className={styles.pointer}></div>
 
-          <div className={styles.nzShopDetails}>
-            <h2>Available direct for NZ only</h2>
-            <p>No login required :)</p>
+          {/* <Link href="/get-the-book">Get the book</Link> */}
+          <Button variant="primary" href="/get-the-book">
+            Get the book
+          </Button>
+
+          <div>
+            <Link href="/get-the-book">
+              <a
+                className={`${styles.navLink} ${styles.navLinkCTA}`}
+                aria-label="get the book"
+              >
+                {/* TODO: animate some hands coming in to grab the Book
+                crayon style transparent PNGs */}
+                <Image
+                  alt="Book cover for Mazmatics Fun Math for Kids Volume 1"
+                  src={bookProductImage}
+                  layout="intrinsic"
+                  width={bookProductImageSize.width}
+                  height={bookProductImageSize.height}
+                />
+              </a>
+            </Link>
+          </div>
+
+          {/* <div className={styles.nzShopDetails}>
+            <h2>Available direct in Aotearoa</h2>
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -72,13 +103,13 @@ const Home: NextPage = () => {
             >
               NZ Shop
             </a>
-          </div>
+          </div> */}
 
-          <p className={styles.orDivider}>or</p>
+          {/* <p className={styles.orDivider}>or</p> */}
 
-          <h2>Available globally through Amazon</h2>
+          {/* <h2>Available globally through Amazon</h2> */}
 
-          <div className={styles.product_book1__linkGroup}>
+          {/* <div className={styles.product_book1__linkGroup}>
             <div className={styles.product_book1_buyNowBlock}>
               <p className={styles.product_book1_buyNowLocation}>
                 Live in the <strong>USA?</strong>
@@ -118,8 +149,10 @@ const Home: NextPage = () => {
           <p>
             or search &lsquo;Mazmatics&rsquo; on your local Amazon for your
             country
-          </p>
+          </p> */}
         </div>
+
+        {/* // TODO CUSTOMER TESTIMONIALS HERE <<<< */}
 
         <div className={styles.bannerPhoto}>
           <Image

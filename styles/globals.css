@@ -1,5 +1,6 @@
 :root {
   --black: #3a3a39;
+  --white: #fff;
   --gray-5: #3a3a39;
   --gray-4: #646461;
   --yellow-1: #fff73e;
@@ -7,6 +8,9 @@
   --blue-4: #47a5f1;
   --purple-2: #ba90ff;
   --purple-3: #8c5fd5;
+
+  --gradient-1: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  --box-shadow-1: 0px 4px 16px -6px rgba(0, 0, 0, 0.75);
 
   /* --validation-success-color: #88f295; */
   --validation-success-color: #affeb8;

@@ -1,0 +1,54 @@
+.button {
+}
+
+.buttonLinkEl {
+  --boxShadowStart: 0px 4px 16px -6px rgba(0, 0, 0, 0.75);
+  --boxShadowHover: 0 4px 7px 4px rgba(0, 0, 0, 0.3);
+  --boxShadowActive: 2px 2px 5px -3px rgba(0, 0, 0, 1);
+
+  display: block;
+  padding: 0.7rem;
+  padding-bottom: 0.9rem;
+  margin: 0;
+  margin-bottom: 1rem;
+  background: var(--black);
+  border-radius: 4px;
+  color: var(--white);
+  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.6) inset;
+  transition: transform 0.2s ease-out;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.buttonLinkEl.primary {
+  /* text-transform: uppercase; */
+  padding: 0.9rem;
+  padding-bottom: 1.1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--white);
+  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.2) inset;
+  background-image: var(--gradient-1);
+}
+
+.buttonLinkEl:hover {
+  transform: translateY(-1px);
+  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.6) inset,
+    var(--boxShadowHover);
+}
+
+.buttonLinkEl.primary:hover {
+  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.2) inset,
+    var(--boxShadowHover);
+}
+
+.buttonLinkEl:active {
+  transform: translateY(1px);
+  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.6) inset,
+    var(--boxShadowActive);
+}
+.buttonLinkEl.primary:active {
+  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.2) inset,
+    var(--boxShadowActive);
+}

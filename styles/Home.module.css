@@ -74,6 +74,7 @@
   width: 80vw;
   text-align: center;
   z-index: 2;
+  transform: translateY(-2rem);
 }
 
 .product_book1__heading {
