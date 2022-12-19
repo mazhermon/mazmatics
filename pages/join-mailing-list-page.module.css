@@ -1,0 +1,7 @@
+.container {
+  position: relative;
+  max-width: var(--site-container-max-width);
+  margin: 0 auto;
+  padding: var(--site-container-padding);
+  overflow: hidden;
+}

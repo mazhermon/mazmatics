@@ -1,0 +1,51 @@
+.container {
+  position: relative;
+  max-width: var(--site-container-max-width);
+  margin: 0 auto;
+  padding: var(--site-container-padding);
+  overflow: hidden;
+
+  --waves-x-adjust: 10rem;
+  --waves-y-adjust: -5rem;
+  --waves-scale-adjust: 3.2, 0.8;
+  --waves-banner2-padding: 7rem 0;
+
+  --signup-margin-bottom: -1px;
+}
+@media screen and (min-width: 400rem) {
+  .container {
+    overflow: visible;
+  }
+}
+
+.waves {
+  width: 100%;
+  position: relative;
+  margin-bottom: -4px;
+}
+
+.waves svg {
+  transform-origin: 100%;
+  position: absolute;
+  transform: scale(var(--waves-scale-adjust))
+    translate(var(--waves-x-adjust), var(--waves-y-adjust));
+  fill: var(--purple-2);
+  bottom: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .waves svg {
+    animation: wavesAnimate 1.8s ease-out forwards;
+  }
+}
+
+@keyframes wavesAnimate {
+  from {
+    transform: scale(var(--waves-scale-adjust))
+      translate(0rem, var(--waves-y-adjust));
+  }
+  to {
+    transform: scale(var(--waves-scale-adjust))
+      translate(10rem, var(--waves-y-adjust));
+  }
+}

@@ -9,28 +9,13 @@
 }
 
 .lindy {
-  position: absolute;
-  right: -110px;
-  width: 180px;
-  top: -10px;
-  z-index: 1;
+  width: 200px;
 }
+
 @media screen and (min-width: 50rem) {
-  .lindy {
-    position: absolute;
-    right: -520px;
-    width: 600px;
-    top: -10px;
-  }
 }
 
 @media screen and (min-width: 80rem) {
-  .lindy {
-    position: absolute;
-    right: -860px;
-    width: 900px;
-    top: -50px;
-  }
 }
 
 .siteTitle {

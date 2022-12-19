@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import lindyImage from '../../public/images/lindyLarge.png'
 import mazmaticsLogo from '../../public/images/Mazmatics-logo.png'
-import { CharCircleBetty } from '../characters/circleBetty'
+// import { CharCircleBetty } from '../characters/circleBetty'
 
 import styles from './homeHeader.module.css'
 
@@ -20,10 +20,7 @@ type Props = {
   isSubmitClicked: boolean
 }
 
-export const HomeHeader: React.FC<Props> = ({
-  isInputFocus,
-  isSubmitClicked,
-}) => (
+export const HomeHeader: React.FC<Props> = () => (
   <div className={`${styles.homeHeader} `}>
     <h1 className={styles.siteTitle}>
       <span className={styles.siteTitle__welcometo}>Welcome to</span>
@@ -42,12 +39,12 @@ export const HomeHeader: React.FC<Props> = ({
       </span>
     </h1>
 
-    <div className={styles.charCircleBettyPositioner}>
+    {/* <div className={styles.charCircleBettyPositioner}>
       <CharCircleBetty
         isInputFocus={isInputFocus}
         isSubmitClicked={isSubmitClicked}
       />
-    </div>
+    </div> */}
 
     <div className={styles.lindy}>
       {/* use useState to set the width based on breakpoint in js */}

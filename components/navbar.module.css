@@ -1,12 +1,31 @@
 .navbar {
+  width: 100%;
+  height: auto;
+  flex-flow: column nowrap;
+  /* // */
   background-color: var(--gray-5);
   padding: 0 1rem;
-  height: var(--nav-height);
   color: white;
   display: flex;
   justify-content: flex-start;
-  flex-flow: row nowrap;
-  align-items: center;
+  align-items: flex-start;
+  box-shadow: 0px 4px 16px -6px rgba(0, 0, 0, 0.75);
+
+  /* // move to later */
+  /* align-items: center; */
+  /* height: var(--nav-height); */
+  /* flex-flow: row nowrap; */
+}
+
+.navbarMenuOpen {
+}
+
+.menuToggleButton {
+  background: none;
+  border: none;
+}
+.menuToggleButton svg {
+  fill: #fff;
 }
 
 .logo {
@@ -15,6 +34,7 @@
 }
 
 .tagline {
+  display: none; /* do later */
   font-family: var(--font-script);
   font-size: 1.2rem;
   position: relative;
@@ -29,4 +49,52 @@
   position: absolute;
   left: 0;
   top: 0;
+}
+
+.navList {
+  /* flex: 1; */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: flex-start;
+  list-style: none;
+  padding-left: 0.5rem;
+
+  /* // later */
+  /* align-items: center; */
+  /* flex-flow: row nowrap; */
+}
+
+.navHeader {
+  width: 100%;
+  padding: 0.8rem 0;
+}
+
+.navbarMenuOpen .navHeader {
+  border-bottom: 1px solid white;
+}
+
+.navList li {
+  padding: 1rem 0;
+}
+
+.navLink {
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  margin-right: 1rem;
+}
+
+a.navLinkCTA {
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 0.4rem 0.5rem;
+  width: 100%;
+}
+
+li.getTheBookCTA {
+  transform: translateX(-0.5rem);
+  order: -1;
+  width: 100%;
+  /* channge later */
 }
