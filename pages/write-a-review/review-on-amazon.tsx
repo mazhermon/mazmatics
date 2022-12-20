@@ -2,6 +2,8 @@ import Link from 'next/link'
 import Head from 'next/head'
 import styles from './review-on-amazon.module.css'
 
+import { Reviews } from '../../components/reviews'
+
 const ReviewOnAmazon = () => {
   return (
     <>
@@ -25,7 +27,7 @@ const ReviewOnAmazon = () => {
             really appreciate you taking the time, thank you :).
           </p>
 
-          <ul className={styles.product_book1__linkGroup}>
+          {/* <ul className={styles.product_book1__linkGroup}>
             <li className={styles.product_book1_reviewItem}>
               <a
                 target="_blank"
@@ -61,7 +63,9 @@ const ReviewOnAmazon = () => {
               </a>
               <span>Buy on Amazon UK</span>
             </li>
-          </ul>
+          </ul> */}
+
+          <Reviews />
 
           <p>
             If you have ideas for how we can get better we&apos;d love to hear

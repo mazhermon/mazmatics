@@ -404,3 +404,11 @@
   font-family: var(--font-script);
   font-size: 2rem;
 }
+
+.bigSunSingle {
+  position: absolute;
+  width: auto;
+  height: auto;
+  top: 0;
+  right: 0;
+}

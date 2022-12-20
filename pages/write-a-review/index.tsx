@@ -25,12 +25,12 @@ const WriteAReview = () => {
 
           <ul>
             <li>
-              <Link href="/write-a-review">
+              <Link href="/write-a-review/review-on-amazon">
                 <a>Review on Amazon</a>
               </Link>
             </li>
             <li>
-              <Link href="/feedback">
+              <Link href="/write-a-review/review-on-google">
                 <a>Review on Google</a>
               </Link>
             </li>

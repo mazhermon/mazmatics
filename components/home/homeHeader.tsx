@@ -29,8 +29,8 @@ export const HomeHeader: React.FC<Props> = () => (
         alt="Mazmatics logo"
         src={mazmaticsLogo}
         layout="intrinsic"
-        width={logoImageSizes.width / 3}
-        height={logoImageSizes.height / 3}
+        width={logoImageSizes.width}
+        height={logoImageSizes.height}
       />
 
       <span className={styles.siteTitle__promise}>

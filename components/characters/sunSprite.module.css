@@ -1,0 +1,14 @@
+.sunCanvas {
+  width: 450px;
+  height: 400px;
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.imageToLoadForCanvas {
+  opacity: 0;
+  height: 1px;
+}

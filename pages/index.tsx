@@ -4,16 +4,19 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Button } from '../components/button'
+import dynamic from 'next/dynamic'
 
 import bookBannerImage from '../public/images/emailFunCOver.jpg'
 import bookProductImage from '../public/images/mazmatics_bookCoverWeb1.jpg'
+// import sunImage from '../public/images/sunSingle-min.png'
 
 import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
-import { Reviews } from '../components/reviews'
+// import { Reviews } from '../components/reviews'
 import MailingList from '../components/mailinglist'
 import { CharCircleBetty } from '../components/characters/circleBetty'
+// import SunSprite from '../components/characters/sunSprite'
 
 const bookBannerImageSize = {
   width: 1940,
@@ -24,6 +27,18 @@ const bookProductImageSize = {
   width: 901,
   height: 901,
 }
+
+// const sunImageSize = {
+//   width: 1200,
+//   height: 1000,
+// }
+
+const DynamicSunSprite = dynamic(
+  () => import('../components/characters/sunSprite'),
+  {
+    ssr: false,
+  }
+)
 
 const Home: NextPage = () => {
   const [isInputFocus, setIsInputFocus] = useState(false)
@@ -53,6 +68,18 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        {/* <SunSprite /> */}
+        <DynamicSunSprite />
+        <div className={styles.bigSunSingle}>
+          {/* <Image
+            alt="A big yellow sun"
+            src={sunImage}
+            layout="intrinsic"
+            width={sunImageSize.width / 2}
+            height={sunImageSize.height / 2}
+          /> */}
+        </div>
+
         <HomeHeader
           isInputFocus={isInputFocus}
           isSubmitClicked={isSubmitClicked}
@@ -164,7 +191,7 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <Reviews />
+        {/* <Reviews /> */}
 
         <div className={styles.feedback}>
           <h2>Feedback welcome</h2>
@@ -215,7 +242,11 @@ const Home: NextPage = () => {
           subtitle="Volume 1 – out now"
           size="med"
           color="purple"
-        />
+        >
+          <Button variant="secondary" href="/get-the-book">
+            Get the book
+          </Button>
+        </Banner>
       </main>
     </div>
   )

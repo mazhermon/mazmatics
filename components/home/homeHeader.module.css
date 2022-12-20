@@ -11,6 +11,7 @@
 .lindy {
   width: 200px;
   z-index: 1;
+  transform: translate(-18px, 12px) scaleX(-1);
 }
 
 @media screen and (min-width: 50rem) {
