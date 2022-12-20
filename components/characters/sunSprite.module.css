@@ -1,6 +1,6 @@
 .sunCanvas {
-  width: 450px;
-  height: 400px;
+  width: 300px;
+  height: 267px;
   display: block;
   position: absolute;
   top: 0;
@@ -11,4 +11,23 @@
 .imageToLoadForCanvas {
   opacity: 0;
   height: 1px;
+}
+
+@media screen and (min-width: 30rem) {
+  .sunCanvas {
+    width: 450px;
+    height: 400px;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .sunCanvas {
+    width: 675px;
+    height: 600px;
+  }
+}
+@media screen and (min-width: 100rem) {
+  .sunCanvas {
+    width: 900px;
+    height: 800px;
+  }
 }

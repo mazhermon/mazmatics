@@ -24,8 +24,15 @@
   background-color: inherit;
   top: 0;
   bottom: 0;
-  width: calc(var(--container-padding) + 1px);
+  width: 100vw;
+  z-index: -1;
   text-align: center;
+}
+@media screen and (min-width: 50rem) {
+  .banner::before,
+  .banner::after {
+    width: calc(var(--container-padding) + 1px);
+  }
 }
 
 .banner::before {

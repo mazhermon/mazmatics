@@ -1,8 +1,5 @@
 import React, { useRef, useState, useEffect } from 'react'
 
-// import Image from 'next/image'
-
-// import sunSpriteImage from '../../public/images/sunSprite-min.png'
 import styles from './sunSprite.module.css'
 
 const imageData = {
@@ -13,6 +10,14 @@ const imageData = {
     width: 900,
     height: 800,
   },
+}
+
+let lastSunFrame = 0
+let srcX = 0
+const srcY = 0
+
+function between(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min) + min)
 }
 
 const SunSprite = () => {
@@ -40,27 +45,20 @@ const SunSprite = () => {
   }, [])
 
   useEffect(() => {
-    console.log('loadedSpriteImage changed', loadedSpriteImage)
-  }, [loadedSpriteImage])
-
-  let srcX = 0
-  const srcY = 0
-
-  function between(min, max) {
-    return Math.floor(Math.random() * (max - min) + min)
-  }
-
-  useEffect(() => {
     const drawImage = (ctx: any) => {
-      //   console.log('calling loop draw')
+      console.log('calling loop draw')
       if (!loadedSpriteImage || !ctx) return
 
-      // now need to slow the animation down a lot
+      // doing this as I want janky timing lol
+      const staggerAnimationNumber = between(0, 10)
+      const shouldChangeFrame = staggerAnimationNumber > 3
 
       const magicNum = between(0, 3)
-      srcX = magicNum * imageData.frameSize.width
+      srcX = shouldChangeFrame
+        ? magicNum * imageData.frameSize.width
+        : lastSunFrame
 
-      //   console.log('magic', magicNum)
+      lastSunFrame = srcX
 
       ctx.clearRect(0, 0, imageData.frameSize.width, imageData.frameSize.height)
 
@@ -80,12 +78,11 @@ const SunSprite = () => {
     const ctx = canvasRef?.current?.getContext('2d')
 
     const loopingFunction = () => {
-      // set the src x and y randomly
       drawImage(ctx)
-      window.requestAnimationFrame(loopingFunction)
     }
 
-    window.requestAnimationFrame(loopingFunction)
+    // not using req animation frame as I don't need the high fps
+    setInterval(loopingFunction, 800)
   }, [loadedSpriteImage, canvasRef])
 
   return (
