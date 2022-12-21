@@ -8,25 +8,48 @@ type Props = {
   external?: boolean
   children?: React.ReactNode
   variant?: 'primary' | 'secondary'
+  className?: string
 }
 
-export const Button: React.FC<Props> = ({ children, href, variant }) => {
+export const Button: React.FC<Props> = ({
+  children,
+  href,
+  variant,
+  external,
+  className,
+}) => {
+  if (external) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`${className} ${styles.buttonLinkEl} ${
+          variant === 'primary' && styles.primary
+        }`}
+      >
+        {children}
+      </a>
+    )
+  }
   if (href) {
     return (
       <Link href={href}>
         <a
-          className={`${styles.buttonLinkEl} ${
+          className={`${className} ${styles.buttonLinkEl} ${
             variant === 'primary' && styles.primary
           }`}
         >
-          Get the book
+          {children}
         </a>
       </Link>
     )
   }
 
   return (
-    <button className={`${styles.button} ${styles.buttonRealButton}`}>
+    <button
+      className={`${className} ${styles.button} ${styles.buttonRealButton}`}
+    >
       {children}
     </button>
   )

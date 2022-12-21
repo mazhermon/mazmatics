@@ -7,7 +7,7 @@
 
   font-family: var(--font-headings-fun);
   font-size: 1.2rem;
-  background-color: var(--purple-2);
+  /* background-color: var(--purple-2); */
   padding: calc(var(--container-padding) / 2) var(--container-padding);
   width: 100%;
 }
@@ -17,7 +17,7 @@
   margin: 0;
 }
 
-.banner::before,
+/* .banner::before,
 .banner::after {
   content: '';
   position: absolute;
@@ -27,21 +27,31 @@
   width: 100vw;
   z-index: -1;
   text-align: center;
+} */
+
+.banner::before {
+  left: -50vw;
 }
+/* .banner::after {
+  right: -50vw;
+} */
+
 @media screen and (min-width: 50rem) {
   .banner::before,
   .banner::after {
-    width: calc(var(--container-padding) + 1px);
+    /* width: calc(var(--container-padding) + 1px); */
   }
 }
 
 .banner::before {
-  left: calc(-1 * var(--container-padding));
+  /* width: 100vw;
+  z-index: -1; */
+  /* left: -50%; */
 }
 
-.banner::after {
+/* .banner::after {
   right: calc(-1 * var(--container-padding));
-}
+} */
 
 /* sizes */
 .small {
@@ -96,6 +106,47 @@
   background-color: var(--yellow-1);
 }
 
-.purple {
+.purple .banner__content {
   background-color: var(--purple-2);
+}
+
+.banner svg {
+  margin-bottom: -1px; /* get rid of white line */
+  width: 100%;
+}
+
+.purple path {
+  fill: var(--purple-2);
+}
+
+.waves {
+  display: flex;
+}
+
+/* .waves {
+  position: absolute;
+  top: -56px;
+  left: 0;
+  right: 0;
+} */
+
+.banner__content {
+  padding: 2rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .waves svg {
+    animation: wavesAnimate 1.8s ease-out forwards;
+  }
+}
+
+@keyframes wavesAnimate {
+  from {
+    transform: scale(var(--waves-scale-adjust))
+      translate(0rem, var(--waves-y-adjust));
+  }
+  to {
+    transform: scale(var(--waves-scale-adjust))
+      translate(10rem, var(--waves-y-adjust));
+  }
 }

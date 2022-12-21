@@ -60,7 +60,7 @@
   align-items: center;
 }
 
-.main::after {
+/* .main::after {
   position: absolute;
   bottom: 0;
   content: '';
@@ -68,7 +68,7 @@
   height: 150px;
   background-color: var(--purple-2);
   z-index: -1;
-}
+} */
 
 .product_book1 {
   width: 80vw;
@@ -79,6 +79,10 @@
 
 .product_book1__heading {
   margin: 0;
+}
+
+.homeCTAbutton {
+  margin-bottom: 2rem;
 }
 
 /* //out soon as */
@@ -176,7 +180,7 @@
   padding: var(--waves-banner2-padding);
 }
 
-.signup {
+/* .signup {
   margin-top: 7rem;
   position: relative;
   min-height: 190px;
@@ -197,9 +201,9 @@
 
   padding: 1rem;
   padding-bottom: 0.5rem;
-}
+} */
 
-@media screen and (min-width: 30rem) {
+/* @media screen and (min-width: 30rem) {
   .signup {
     width: 450px;
     padding: 2rem;
@@ -266,7 +270,7 @@
     transform: scale(var(--waves-scale-adjust))
       translate(10rem, var(--waves-y-adjust));
   }
-}
+} */
 
 /* CTA links */
 .product_book1_buyNowBlock {
@@ -334,6 +338,7 @@
 
 /* // clean up with new components */
 .feedback {
+  margin-top: 7rem;
   width: 80vw;
   padding: 3rem 2rem 4rem 2rem;
   /* background: rgba(255, 255, 255, 0.9); */
@@ -405,10 +410,10 @@
   font-size: 2rem;
 }
 
-.bigSunSingle {
+/* .bigSunSingle {
   position: absolute;
   width: auto;
   height: auto;
   top: 0;
   right: 0;
-}
+} */

@@ -3,5 +3,92 @@
   max-width: var(--site-container-max-width);
   margin: 0 auto;
   padding: var(--site-container-padding);
+  padding-top: 7rem;
   overflow: hidden;
 }
+
+.bookImage {
+  margin: 0 auto;
+  max-width: 400px;
+  box-shadow: var(--box-shadow-1);
+}
+@media screen and (min-width: 50rem) {
+  .bookImage {
+    max-width: 800px;
+  }
+}
+
+.pageHeader {
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 1rem;
+  text-align: center;
+  margin-top: -1.2rem;
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 50rem) {
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* get from amazon */
+.product_book1__linkGroup {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product_book1_buyNowBlock {
+  margin-bottom: 2.5rem;
+}
+
+.product_book1_buyNowBlock a {
+  margin-bottom: 0.25rem;
+}
+.product_book1_buyNowBlock span {
+  font-style: italic;
+  display: block;
+  text-align: center;
+}
+
+.contentButtonGroup {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 50rem) {
+  .contentButtonGroup {
+    display: flex;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+  }
+}
+
+@media screen and (min-width: 80rem) {
+  .contentButtonGroup {
+    width: 800px;
+  }
+  .contentButtonGroup > * {
+    flex: 1;
+  }
+}
+
+/* // get from amazon */
+.getFromAmazonContent {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.nzShopDetails {
+  max-width: 400px;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+

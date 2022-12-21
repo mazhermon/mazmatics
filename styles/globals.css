@@ -120,6 +120,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  min-height: 100vh;
 }
 
 h1,
@@ -127,11 +128,27 @@ h2,
 h3 {
   font-family: var(--font-headings);
   color: var(--black);
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
+@media screen and (min-width: 50rem) {
+  h1 {
+    font-size: 2.5rem;
+  }
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+main a {
+  color: var(--blue-4);
+  text-decoration: underline;
 }
 
 * {
@@ -140,8 +157,8 @@ a {
 
 body {
   background: linear-gradient(
-    99.92deg,
-    rgba(217, 217, 217, 0) 58.9%,
+    250deg,
+    rgba(120, 201, 239, 0) 58.9%,
     rgba(217, 217, 217, 1) 93.37%
   );
 }
@@ -187,3 +204,14 @@ input.ml-error.ml-error,
   color: red !important;
   transform: rotate(45deg);
 } */
+
+/* // quick hacks */
+.footerBannerGlobal .bannerContent {
+  padding-top: 9rem;
+}
+
+@media screen and (min-width: 70rem) {
+  .footerBannerGlobal .bannerContent {
+    padding-top: 4rem;
+  }
+}

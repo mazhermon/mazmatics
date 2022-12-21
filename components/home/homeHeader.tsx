@@ -15,12 +15,7 @@ const logoImageSizes = {
   height: 230,
 }
 
-type Props = {
-  isInputFocus: boolean
-  isSubmitClicked: boolean
-}
-
-export const HomeHeader: React.FC<Props> = () => (
+export const HomeHeader = () => (
   <div className={`${styles.homeHeader} `}>
     <h1 className={styles.siteTitle}>
       <span className={styles.siteTitle__welcometo}>Welcome to</span>
@@ -34,7 +29,7 @@ export const HomeHeader: React.FC<Props> = () => (
       />
 
       <span className={styles.siteTitle__promise}>
-        We help kids say <wbr />
+        We help kids say <br />
         &quot;I like math&quot;
       </span>
     </h1>

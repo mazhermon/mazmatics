@@ -15,6 +15,7 @@ const imageData = {
 let lastSunFrame = 0
 let srcX = 0
 const srcY = 0
+let setInternalSunAnimateID: any
 
 function between(min: number, max: number): number {
   return Math.floor(Math.random() * (max - min) + min)
@@ -41,6 +42,12 @@ const SunSprite = () => {
 
     if (typeof window !== 'undefined') {
       loadImage()
+    }
+
+    return () => {
+      // cancel the setInternal
+      console.log('should be calling celar internal')
+      clearInterval(setInternalSunAnimateID)
     }
   }, [])
 
@@ -82,7 +89,8 @@ const SunSprite = () => {
     }
 
     // not using req animation frame as I don't need the high fps
-    setInterval(loopingFunction, 800)
+    console.log('setting the internal calling celar internal')
+    setInternalSunAnimateID = setInterval(loopingFunction, 800)
   }, [loadedSpriteImage, canvasRef])
 
   return (

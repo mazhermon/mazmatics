@@ -1,10 +1,8 @@
 import React from 'react'
-// import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
 
-// import bookBannerImage from '../public/images/emailFunCOver.jpg'
+import { Button } from '../../components/button'
 import bookCoverImage from '../../public/images/mazmatics_bookCoverWeb1.jpg'
 
 import styles from './get-the-book.module.css'
@@ -23,31 +21,32 @@ const GetTheBook = () => {
         </Head>
 
         <main className={styles.main}>
-          <h1>Get the book</h1>
-          <Image
-            alt="Book cover of Fun Math for Kids volume one by Mazmatics"
-            src={bookCoverImage}
-            layout="intrinsic"
-            width="450"
-            height="450"
-          />
+          <h1 className={styles.pageHeader}>Get the book</h1>
+          <div className={styles.subtitle}>for the kids in your life</div>
 
-          <Link href="/get-the-book/get-from-amazon">
-            <a aria-label="home" className={styles.logo}>
-              Get from Amazon <span>International</span>
-            </a>
-          </Link>
+          <div className={styles.contentGrid}>
+            <div className={styles.contentButtonGroup}>
+              <Button
+                external={true}
+                variant="secondary"
+                href="https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations"
+              >
+                Get direct NZ
+              </Button>
+              <Button variant="primary" href="/get-the-book/get-from-amazon">
+                Get from Amazon <span>International</span>
+              </Button>
+            </div>
 
-          <div className={styles.nzShopDetails}>
-            <a
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.product_book1_buyNowLink}
-              href="https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations"
-            >
-              Get direct NZ
-              <span>NZ only</span>
-            </a>
+            <div className={styles.bookImage}>
+              <Image
+                alt="Book cover of Fun Math for Kids volume one by Mazmatics"
+                src={bookCoverImage}
+                layout="intrinsic"
+                width="900"
+                height="900"
+              />
+            </div>
           </div>
         </main>
       </div>
