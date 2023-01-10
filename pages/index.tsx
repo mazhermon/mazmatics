@@ -11,6 +11,11 @@ import { HomeHeader } from '../components/home/homeHeader'
 import { Reviews } from '../components/reviews'
 import MailingList from '../components/mailinglist'
 import { CharCircleBetty } from '../components/characters/circleBetty'
+import {
+  TESTIMONIAL_DATA,
+  ITestimonial,
+} from '../components/testimonials/testimonailsData'
+import { Testimonial } from '../components/testimonials/testimonial'
 
 const bookBannerImageSize = {
   width: 1940,
@@ -63,7 +68,7 @@ const Home: NextPage = () => {
 
           <div className={styles.nzShopDetails}>
             <h2>Available direct for NZ only</h2>
-            <p>No login required :)</p>
+
             <a
               target="_blank"
               rel="noopener noreferrer"
@@ -130,6 +135,33 @@ const Home: NextPage = () => {
             height={bookBannerImageSize.height}
           />
         </div>
+
+        <h3>
+          Feedback from <strong>kids</strong>
+        </h3>
+        {TESTIMONIAL_DATA.kids.map((testimonial: ITestimonial) => {
+          const { person, quote } = testimonial
+          return (
+            <Testimonial
+              key={person.trim().replace(' ', '')}
+              person={person}
+              quote={quote}
+            />
+          )
+        })}
+        <h3>
+          Feedback from <strong>adults</strong>
+        </h3>
+        {TESTIMONIAL_DATA.adults.map((testimonial: ITestimonial) => {
+          const { person, quote } = testimonial
+          return (
+            <Testimonial
+              key={person.trim().replace(' ', '')}
+              person={person}
+              quote={quote}
+            />
+          )
+        })}
 
         <Reviews />
 
