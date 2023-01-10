@@ -403,3 +403,8 @@
   font-family: var(--font-script);
   font-size: 2rem;
 }
+
+.imageGal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minMax(300px, 1fr));
+}

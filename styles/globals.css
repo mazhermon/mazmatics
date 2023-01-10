@@ -135,11 +135,11 @@ a {
 }
 
 body {
-  background: linear-gradient(
+  /* background: linear-gradient(
     99.92deg,
     rgba(217, 217, 217, 0) 58.9%,
     rgba(217, 217, 217, 1) 93.37%
-  );
+  ); */
 }
 
 .ml-form-embedContainer {

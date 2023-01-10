@@ -4,6 +4,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import bookBannerImage from '../public/images/emailFunCOver.jpg'
+import mazAPlus001 from '../public/images/Mazmatics-a-plus-001.jpg'
+import mazAPlus002 from '../public/images/Mazmatics-a-plus-002.jpg'
+import mazAPlus003 from '../public/images/Mazmatics-a-plus-003.jpg'
+import mazAPlus004 from '../public/images/Mazmatics-a-plus-004.jpg'
+// import mazAPlus005 from '../public/images/Mazmatics-a-plus-005.jpg'
+import mazAPlus006 from '../public/images/Mazmatics-a-plus-006.jpg'
 
 import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
@@ -20,6 +26,11 @@ import { Testimonial } from '../components/testimonials/testimonial'
 const bookBannerImageSize = {
   width: 1940,
   height: 600,
+}
+
+const contentImageSize = {
+  width: 1200,
+  height: 1200,
 }
 
 const Home: NextPage = () => {
@@ -136,6 +147,8 @@ const Home: NextPage = () => {
           />
         </div>
 
+        <h2>Customer testimonials</h2>
+
         <h3>
           Feedback from <strong>kids</strong>
         </h3>
@@ -165,6 +178,14 @@ const Home: NextPage = () => {
 
         <Reviews />
 
+        <Image
+          alt="illustration of kids from Mazmatics Fun Math for kids book"
+          src={mazAPlus006}
+          layout="intrinsic"
+          width={contentImageSize.width / 3}
+          height={contentImageSize.height / 3}
+        />
+
         <div className={styles.feedback}>
           <h2>Feedback welcome</h2>
           <p>
@@ -177,6 +198,38 @@ const Home: NextPage = () => {
           >
             hello@mazmatics.com
           </a>
+        </div>
+
+        <h2>Look inside</h2>
+        <div className={styles.imageGal}>
+          <Image
+            alt="Parent pointing to the map in the fantasy story Lindys Quest"
+            src={mazAPlus001}
+            layout="intrinsic"
+            width={contentImageSize.width}
+            height={contentImageSize.height}
+          />
+          <Image
+            alt="Parent shows kid teh secret code cracker page"
+            src={mazAPlus002}
+            layout="intrinsic"
+            width={contentImageSize.width}
+            height={contentImageSize.height}
+          />
+          <Image
+            alt="kid writing in the book for a cookies math question"
+            src={mazAPlus003}
+            layout="intrinsic"
+            width={contentImageSize.width}
+            height={contentImageSize.height}
+          />
+          <Image
+            alt="a page of practice exercises and drawings"
+            src={mazAPlus004}
+            layout="intrinsic"
+            width={contentImageSize.width}
+            height={contentImageSize.height}
+          />
         </div>
 
         <div className={styles.signup}>
