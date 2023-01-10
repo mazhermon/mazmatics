@@ -37,6 +37,7 @@ const Home: NextPage = () => {
               title="Fun Math 4 kids play-book"
               size="small"
               color="yellow"
+              waves={true}
             />
           </h2>
           <p className={styles.product_book1__subtitle}>out now!</p>

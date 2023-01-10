@@ -26,7 +26,7 @@ export const Banner: React.FC<Props> = ({
     `}
   >
     {waves && (
-      <div className={`${styles.waves} ${color && styles[color]}`}>
+      <div className={`${styles.waves}`}>
         <svg
           data-name="Layer 1"
           xmlns="http://www.w3.org/2000/svg"

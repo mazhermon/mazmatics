@@ -1,0 +1,32 @@
+.testimonial {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.leftQuote,
+.rightQuote {
+  color: var(--blue-4);
+  height: 36px;
+}
+
+.leftQuote {
+  font-size: 3rem;
+  height: 36px;
+  transform: translateX(-1rem);
+}
+
+.rightQuote {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-left: 0.8rem;
+}
+
+.footer {
+  margin-top: 1rem;
+}
+
+.person {
+  font-style: italic;
+}

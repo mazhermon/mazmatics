@@ -1,5 +1,7 @@
 .banner {
   --container-padding: 2rem;
+
+  --home-waves-y-adjust: -4rem;
 }
 
 .banner {
@@ -8,8 +10,14 @@
   font-family: var(--font-headings-fun);
   font-size: 1.2rem;
   /* background-color: var(--purple-2); */
-  padding: calc(var(--container-padding) / 2) var(--container-padding);
+  padding: 0;
   width: 100%;
+}
+
+@media screen and (min-width: 50rem) {
+  .banner {
+    padding: calc(var(--container-padding) / 2) var(--container-padding);
+  }
 }
 
 .banner p {
@@ -105,6 +113,9 @@
 .yellow {
   background-color: var(--yellow-1);
 }
+.yellow svg {
+  fill: var(--yellow-1);
+}
 
 .purple .banner__content {
   background-color: var(--purple-2);
@@ -121,6 +132,7 @@
 
 .waves {
   display: flex;
+  transform: translate(-5rem) scaleX(1);
 }
 
 /* .waves {
@@ -143,10 +155,10 @@
 @keyframes wavesAnimate {
   from {
     transform: scale(var(--waves-scale-adjust))
-      translate(0rem, var(--waves-y-adjust));
+      translate(0rem, var(--home-waves-y-adjust));
   }
   to {
     transform: scale(var(--waves-scale-adjust))
-      translate(10rem, var(--waves-y-adjust));
+      translateY(7rem, var(--home-waves-y-adjust));
   }
 }

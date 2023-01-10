@@ -52,7 +52,7 @@
 
 .main {
   min-height: calc(100vh - var(--nav-height));
-  padding: 2rem 0 0 0;
+  /* padding: 2rem 0 0 0; */
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -164,6 +164,8 @@
   padding-bottom: 3rem;
   max-width: 500px;
   margin: auto;
+  transform: translateX(-2.3rem);
+  width: 100vw;
 }
 /* TODO: do custom props instead */
 @media screen and (min-width: 30rem) {

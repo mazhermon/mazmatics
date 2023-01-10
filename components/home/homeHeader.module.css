@@ -25,6 +25,7 @@
   flex-flow: column nowrap;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 0.3rem;
 }
 
 .siteTitle__welcometo {

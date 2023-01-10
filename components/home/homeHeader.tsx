@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import lindyImage from '../../public/images/lindyLarge.png'
 import mazmaticsLogo from '../../public/images/Mazmatics-logo.png'
+import { Button } from '../button'
 // import { CharCircleBetty } from '../characters/circleBetty'
 
 import styles from './homeHeader.module.css'
@@ -33,6 +34,12 @@ export const HomeHeader = () => (
         &quot;I like math&quot;
       </span>
     </h1>
+
+    <div className={styles.homeCTAbutton}>
+      <Button variant="primary" href="/get-the-book">
+        Get the book today
+      </Button>
+    </div>
 
     {/* <div className={styles.charCircleBettyPositioner}>
       <CharCircleBetty

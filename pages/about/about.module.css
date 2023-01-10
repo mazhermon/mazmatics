@@ -1,0 +1,31 @@
+/* .aboutTextWrapper {
+} */
+
+.testimonial {
+  position: relative;
+  margin: 2rem 0;
+}
+
+.testimonial::before,
+.testimonial::after {
+  color: var(--blue-4);
+  font-size: 3rem;
+}
+
+.testimonial::before {
+  content: '&ldquo;';
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.testimonial::after {
+  bottom: 0;
+  right: 0;
+  content: '&rdquo;';
+  position: absolute;
+}
+
+.aboutTextWrapper h3 {
+  margin-top: 3.8rem;
+}

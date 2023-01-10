@@ -19,6 +19,7 @@
   color: var(--white);
   box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.6) inset;
   transition: transform 0.2s ease-out;
+  text-decoration: none;
   max-width: 400px;
 }
 

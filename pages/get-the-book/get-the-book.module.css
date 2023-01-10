@@ -3,7 +3,7 @@
   max-width: var(--site-container-max-width);
   margin: 0 auto;
   padding: var(--site-container-padding);
-  padding-top: 7rem;
+  padding-top: 2rem;
   overflow: hidden;
 }
 
@@ -90,5 +90,3 @@
   margin-top: 3rem;
   text-align: center;
 }
-
-

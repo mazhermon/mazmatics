@@ -10,6 +10,17 @@
   --purple-3: #8c5fd5;
 
   --gradient-1: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  /* --gradient-sunshine: linear-gradient(
+    180deg,
+    #47a5f1 11%,
+    rgba(0, 212, 255, 0) 100%
+  ); */
+  /* --gradient-sunshine: linear-gradient(
+    180deg,
+    rgba(71, 165, 241, 1) 0%,
+    rgba(0, 212, 255, 1) 49%,
+    rgba(0, 212, 255, 0) 100%
+  ); */
   --box-shadow-1: 0px 4px 16px -6px rgba(0, 0, 0, 0.75);
 
   /* --validation-success-color: #88f295; */
@@ -132,7 +143,7 @@ h3 {
 }
 
 h1 {
-  font-size: 1.8rem;
+  font-size: 2.2rem;
 }
 
 @media screen and (min-width: 50rem) {
@@ -156,12 +167,37 @@ main a {
 }
 
 body {
-  background: linear-gradient(
+  font-size: 1rem;
+  line-height: 1.5;
+  /* background: linear-gradient(
     250deg,
     rgba(120, 201, 239, 0) 58.9%,
     rgba(217, 217, 217, 1) 93.37%
-  );
+  ); */
 }
+
+.basicPageContainer {
+  padding: var(--site-container-padding);
+  max-width: var(--site-container-max-width);
+}
+
+.longCopyLayoutArea h2 {
+  margin-top: 4rem;
+}
+
+.longCopyLayoutArea h3 {
+  margin-top: 2rem;
+}
+
+/* body::before {
+  content: '';
+  background: var(--gradient-sunshine);
+  z-index: -1;
+  height: 35vh;
+  width: 100%;
+  position: absolute;
+  display: block;
+} */
 
 .ml-form-embedContainer {
   min-width: 300px;
