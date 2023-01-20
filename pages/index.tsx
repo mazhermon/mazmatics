@@ -147,7 +147,24 @@ const Home: NextPage = () => {
           />
         </div>
 
-        <h2>Customer testimonials</h2>
+        <div className={styles.signup}>
+          <div className={styles.charCircleBettyPositioner}>
+            <CharCircleBetty
+              isInputFocus={isInputFocus}
+              isSubmitClicked={isSubmitClicked}
+              small={true}
+            />
+          </div>
+          <MailingList
+            onMailingListInputFocused={handleOnInputFun}
+            onMailingListFormSubmitted={handleOnSignupFun}
+            onMailingListInputBlurred={handleOnInputBlurFun}
+          />
+        </div>
+
+        <h2 className={styles.customerTestimonialsTitle}>
+          Customer testimonials
+        </h2>
 
         <h3>
           Feedback from <strong>kids</strong>
@@ -187,16 +204,31 @@ const Home: NextPage = () => {
         />
 
         <div className={styles.feedback}>
-          <h2>Feedback welcome</h2>
+          <h2 className="bigTitle">Feedback &amp; testimonials welcome</h2>
           <p>
             We&apos;d love to hear from you with feedback and ideas. Or just say
-            hi 😄
+            hi 😄.
+          </p>
+          <p>
+            If you loved the book, telling others by sending us a customer
+            testimonial helps us out a lot. Or just tell your friends.
           </p>
           <a
             className={styles.hitmeLink}
             href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
           >
             hello@mazmatics.com
+          </a>
+        </div>
+
+        <div className={styles.insta}>
+          <h2>Follow us</h2>
+          <p>Share your experience with us on Instagram</p>
+          <a
+            className={styles.hitmeLink}
+            href="https://www.instagram.com/mazmaticsfun4kids/"
+          >
+            @mazmaticsfun4kids
           </a>
         </div>
 

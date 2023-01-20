@@ -125,6 +125,11 @@ h3 {
   color: var(--black);
 }
 
+/* h2.bigTitle {
+  font-size: 3rem;
+  font-weight: normal;
+} */
+
 a {
   color: inherit;
   text-decoration: none;

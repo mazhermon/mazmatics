@@ -320,7 +320,11 @@
 }
 
 .bannerPhoto {
-  margin: 1rem -2rem 0 -2rem;
+  margin: 1rem -2rem 5rem -2rem;
+}
+
+.customerTestimonialsTitle {
+  margin-top: 6rem;
 }
 
 .product_book1__linkGroup {
@@ -332,7 +336,8 @@
 }
 
 /* // clean up with new components */
-.feedback {
+.feedback,
+.insta {
   width: 80vw;
   padding: 3rem 2rem 4rem 2rem;
   /* background: rgba(255, 255, 255, 0.9); */
@@ -399,7 +404,7 @@
 } */
 
 .orDivider {
-  margin: 2rem 0;
+  margin: 0;
   font-family: var(--font-script);
   font-size: 2rem;
 }

@@ -1,5 +1,6 @@
 .navbar {
   background-color: var(--gray-5);
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
   padding: 0 1rem;
   height: var(--nav-height);
   color: white;
