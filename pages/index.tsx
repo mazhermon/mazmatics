@@ -22,6 +22,7 @@ import {
   ITestimonial,
 } from '../components/testimonials/testimonailsData'
 import { Testimonial } from '../components/testimonials/testimonial'
+import { FrontPageNews } from '../components/FrontPageNews'
 
 const bookBannerImageSize = {
   width: 1940,
@@ -146,6 +147,14 @@ const Home: NextPage = () => {
             height={bookBannerImageSize.height}
           />
         </div>
+
+        <FrontPageNews />
+
+        <p className={styles.leadCopy}>
+          Fun Math 4 Kids is an activity and story book that supports kids to
+          practise their maths and have some fun along the way. Do some maths,
+          do some drawing, read a story, solve a code...
+        </p>
 
         <div className={styles.signup}>
           <div className={styles.charCircleBettyPositioner}>

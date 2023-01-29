@@ -2,9 +2,11 @@
   --black: #3a3a39;
   --gray-5: #3a3a39;
   --gray-4: #646461;
+  --gray-1: #f2f2f1;
   --yellow-1: #fff73e;
   --blue-2: #c5f8ff;
   --blue-4: #47a5f1;
+  --blue-5: #207bc5;
   --purple-2: #ba90ff;
   --purple-3: #8c5fd5;
 
@@ -147,6 +149,13 @@ body {
   ); */
 }
 
+body,
+p {
+  font-family: var(--font-copy);
+  line-height: 1.2;
+  font-size: 1.2rem;
+}
+
 .ml-form-embedContainer {
   min-width: 300px;
 }
@@ -188,3 +197,36 @@ input.ml-error.ml-error,
   color: red !important;
   transform: rotate(45deg);
 } */
+
+/* // global hit me link for ease of sharing */
+.hitmeLink {
+  transform: translateY(-9px);
+  font-size: 1.6rem;
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  cursor: pointer !important;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: translateY(0);
+}
+
+@media screen and (min-width: 50rem) {
+  .hitmeLink {
+    transform: translateY(-9px);
+    font-size: 3rem;
+  }
+}
+
+.hitmeLink:hover {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--yellow-1);
+  transform: translateY(-1px);
+}
+
+.hitmeLink:active {
+  transform: translateY(1px);
+  text-decoration-color: var(--blue-2);
+}

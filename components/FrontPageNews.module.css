@@ -1,0 +1,52 @@
+.stuffArticleSection {
+  padding: 3rem 0;
+  text-align: center;
+  margin-bottom: 2rem;
+  margin-top: -3px;
+  position: relative;
+}
+
+.stuffArticleSection::before {
+  content: '';
+  display: block;
+  height: 390px;
+  position: absolute;
+  top: -10px;
+  width: 152vw;
+  left: -30vw;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+}
+
+.stuffArticleSection::after {
+  content: '';
+  display: block;
+  height: 540px;
+  position: absolute;
+  top: 289px;
+  width: 152vw;
+  left: -30vw;
+  z-index: -1;
+  background-color: var(--gray-1);
+}
+
+.stuffLinkSmall {
+  color: var(--blue-4);
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.stuffLinkSmall:hover {
+  color: var(--blue-5);
+}
+.newsPaperImage {
+  transform: rotate(15deg);
+  transition: transform 0.3s ease-out;
+}
+
+.newsPaperImage:hover {
+  transform: rotate(0);
+}
+
+.youTubeEmbed {
+  margin-top: 4rem;
+}
