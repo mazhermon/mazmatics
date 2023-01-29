@@ -11,6 +11,7 @@
   align-items: center;
   margin-left: -4rem;
   margin-right: -4rem;
+  margin-top: 4rem;
 }
 @media screen and (min-width: 50rem) {
   .reviewSection {
@@ -135,6 +136,19 @@
   display: block;
   text-align: center;
   width: 100%;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  -webkit-background-clip: text;
+  color: transparent;
+  transform: translateY(0);
+}
+
+.hitmeLink {
+  transform: translateY(-9px);
+  /* font-size: 1.6rem; */
+  display: inline-block;
+  width: auto;
+  margin: 0;
+  cursor: pointer !important;
   background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
   -webkit-background-clip: text;
   color: transparent;

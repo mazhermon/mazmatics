@@ -20,8 +20,18 @@ export const Reviews = () => (
         <Star />
       </div>
 
-      <p>Write a us a review on Amazon to help spread the word.</p>
+      <p>Write us a review on Amazon to help spread the word.</p>
       <p>This is the best way to support the project, thanks team!</p>
+      <p>
+        (No Amazon account? Just{' '}
+        <a
+          className={styles.hitmeLink}
+          href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
+        >
+          email us your review{' '}
+        </a>{' '}
+        if you like.)
+      </p>
       <ul className={styles.reviewLinkList}>
         <li>
           <a className={styles.feedbackButtonLink} href={reviewUrlUS}>
