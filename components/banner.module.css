@@ -1,6 +1,5 @@
 .banner {
   --container-padding: 2rem;
-
   --home-waves-y-adjust: -4rem;
 }
 
@@ -11,12 +10,14 @@
   font-size: 1.2rem;
   /* background-color: var(--purple-2); */
   padding: 0;
-  width: 100%;
+  min-width: 100%;
+  /* margin-left: calc(var(--site-container-padding) * -2);
+  margin-right: calc(var(--site-container-padding) * -2); */
 }
 
 @media screen and (min-width: 50rem) {
   .banner {
-    padding: calc(var(--container-padding) / 2) var(--container-padding);
+    /* padding: calc(var(--container-padding) / 2) var(--container-padding); */
   }
 }
 
@@ -63,17 +64,18 @@
 
 /* sizes */
 .small {
-  margin: 0;
+  /* margin: 0; */
   line-height: 1.2;
   font-size: 2.2rem;
   margin-bottom: 0;
   /* padding-left: var(--container-padding);
   padding-left: var(--container-padding); */
-
-  @media screen and (min-width: 30rem) {
+}
+@media screen and (min-width: 30rem) {
+  .small {
     font-size: 2rem;
-    /* line-height: 1.5; */
   }
+  /* line-height: 1.5; */
 }
 
 .med {
@@ -86,12 +88,8 @@
   margin: 0;
   /* padding-left: var(--container-padding);
   padding-left: var(--container-padding); */
-
-  @media screen and (min-width: 30rem) {
-    font-size: 2.5rem;
-    /* line-height: 1.5; */
-  }
 }
+
 @media screen and (min-width: 50rem) {
   .med .banner__mainText {
     font-size: 2.5rem;
@@ -110,7 +108,7 @@
 }
 
 /* colors */
-.yellow {
+.yellow .banner__content {
   background-color: var(--yellow-1);
 }
 .yellow svg {
@@ -123,7 +121,7 @@
 
 .banner svg {
   margin-bottom: -1px; /* get rid of white line */
-  width: 100%;
+  min-width: 100%;
 }
 
 .purple path {
@@ -132,27 +130,30 @@
 
 .waves {
   display: flex;
-  transform: translate(-5rem) scaleX(1);
+  /* transform: translate(-5rem) scaleX(1); */
 }
 
 /* .waves {
+  
   position: absolute;
   top: -56px;
+
   left: 0;
   right: 0;
 } */
 
 .banner__content {
+  /* background-color: ; */
   padding: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .waves svg {
     animation: wavesAnimate 1.8s ease-out forwards;
   }
-}
+} */
 
-@keyframes wavesAnimate {
+/* @keyframes wavesAnimate {
   from {
     transform: scale(var(--waves-scale-adjust))
       translate(0rem, var(--home-waves-y-adjust));
@@ -161,4 +162,4 @@
     transform: scale(var(--waves-scale-adjust))
       translateY(7rem, var(--home-waves-y-adjust));
   }
-}
+} */

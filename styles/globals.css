@@ -120,6 +120,7 @@
 
 html {
   box-sizing: border-box;
+  font-size: 100%;
 }
 *,
 *::before,
@@ -257,7 +258,7 @@ input.ml-error.ml-error,
 /* // global hit me link for ease of sharing */
 .hitmeLink {
   transform: translateY(-9px);
-  font-size: 1.6rem;
+  font-size: 2.4rem;
   display: inline-block;
   width: auto;
   margin: 0;

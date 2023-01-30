@@ -1,4 +1,5 @@
 import styles from './banner.module.css'
+import { Container } from './Container'
 
 type Props = {
   className?: string
@@ -41,9 +42,11 @@ export const Banner: React.FC<Props> = ({
       </div>
     )}
     <div className={`${styles.banner__content} bannerContent`}>
-      <p className={styles.banner__mainText}>{title}</p>
-      <p>{subtitle}</p>
-      {children}
+      <Container>
+        <p className={styles.banner__mainText}>{title}</p>
+        <p>{subtitle}</p>
+        {children}
+      </Container>
     </div>
   </div>
 )

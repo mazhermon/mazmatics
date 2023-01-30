@@ -1,0 +1,31 @@
+/* // shared container */
+.container {
+  /* border: 3px solid blue; */
+  position: relative;
+  max-width: var(--site-container-max-width);
+  margin: 0 auto;
+  padding: var(--site-container-padding);
+  overflow: hidden;
+}
+/* @media screen and (min-width: 400rem) {
+    .container {
+      overflow: visible;
+    }
+  } */
+
+/* // responsive custom prop changes */
+/* @media screen and (min-width: 30rem) {
+    .container {
+      border: 3px solid blue;
+    }
+  } */
+/* @media screen and (min-width: 50rem) {
+    .container {
+      border: 3px solid green;
+    }
+  } */
+/* @media screen and (min-width: 80rem) {
+    .container {
+      border: 3px solid orange;
+    }
+  } */

@@ -71,7 +71,7 @@
 } */
 
 .product_book1 {
-  width: 80vw;
+  width: 100vw;
   text-align: center;
   z-index: 2;
   transform: translateY(-2rem);
@@ -82,7 +82,8 @@
 }
 
 .homeCTAbutton {
-  margin-bottom: 2rem;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
 /* //out soon as */
@@ -159,21 +160,21 @@
 
 /* //banner position */
 .homeBanner1.homeBanner1.homeBanner1 {
-  margin-top: 0rem;
+  /* margin-top: 0rem;
   padding-top: 3rem;
-  padding-bottom: 3rem;
-  max-width: 500px;
-  margin: auto;
+  padding-bottom: 3rem; */
+  /* max-width: 500px; */
+  /* margin: auto;
   transform: translateX(-2.3rem);
-  width: 100vw;
+  width: 100vw; */
 }
 /* TODO: do custom props instead */
-@media screen and (min-width: 30rem) {
+/* @media screen and (min-width: 30rem) {
   .homeBanner1.homeBanner1.homeBanner1 {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-}
+} */
 
 .homeBanner2.homeBanner2.homeBanner2 {
   background-color: var(--purple-2);
@@ -333,10 +334,6 @@
 .bannerPhoto:hover {
 }
 
-.customerTestimonialsTitle {
-  margin-top: 6rem;
-}
-
 .product_book1__linkGroup {
   background: rgba(255, 255, 255, 0.9);
   padding: 1rem;
@@ -348,7 +345,7 @@
 /* // clean up with new components */
 .feedback,
 .insta {
-  width: 80vw;
+  /* width: 80vw; */
   padding: 3rem 2rem 4rem 2rem;
   /* background: rgba(255, 255, 255, 0.9); */
   text-align: center !important;
@@ -427,12 +424,6 @@
   right: 0;
 } */
 
-.imageGal {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minMax(270px, 1fr));
-  gap: 1rem;
-}
-
 .leadCopy {
   font-size: 1.8rem;
   color: var(--gray-5);
@@ -440,4 +431,5 @@
   text-align: left;
   line-height: 1.4;
   margin: 0 0 6rem 0;
+  margin-bottom: 20rem;
 }

@@ -133,16 +133,22 @@
 .footerBanner {
   width: 100vw;
   transform: translateY(-12rem);
+  overflow-x: hidden;
 }
 
-.footerBanner::after {
+.siteFooter {
+  position: relative;
+}
+.siteFooter::after {
   content: '';
   width: 100vw;
   height: 200px;
   background-color: var(--purple-2);
   position: absolute;
-  top: 100%;
+  /* top: 100%; */
+  bottom: 0;
   left: 0;
+  z-index: -1;
 }
 
 .footerBannerInner.footerBannerInner {
