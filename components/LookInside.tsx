@@ -15,7 +15,7 @@ const contentImageSize = {
 
 export const LookInside = () => (
   <>
-    <h2>Look inside</h2>
+    <h2 className={styles.lookInsideTitle}>Look inside</h2>
     <div className={styles.imageGal}>
       <Image
         alt="Parent pointing to the map in the fantasy story Lindys Quest"

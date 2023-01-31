@@ -1,5 +1,9 @@
 .imageGal {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minMax(270px, 1fr));
-    gap: 1rem;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minMax(270px, 1fr));
+  gap: 1rem;
+}
+
+.lookInsideTitle {
+  text-align: center;
+}

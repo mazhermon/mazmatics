@@ -88,17 +88,24 @@
 
 /* //out soon as */
 .product_book1__subtitle {
-  color: var(--black);
+  color: var(--white);
   /* font-family: var(--font-script); */
   font-family: var(--font-headings);
-  font-size: 2rem;
+  font-size: 2.7rem;
   margin-top: -1.2rem;
   margin-bottom: 1rem;
-  transform: rotate(-6deg);
+  transform: translateY(0.7rem) rotate(-6deg);
 
   @media screen and (min-width: 30rem) {
     margin-top: -0.5rem;
   }
+}
+
+.outNowWrapper {
+  transform: translateY(-2.3rem);
+  color: white;
+  background-image: var(--gradient-1);
+  padding: 4rem;
 }
 
 .pointer {
@@ -107,10 +114,11 @@
   margin: 0 auto;
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
-
-  border-top: 40px solid var(--yellow-1);
+  /* transform: translateY(-1rem); */
+  border-top: 40px solid var(--purple-2);
   margin-bottom: 1.5rem;
-  animation: pointer 0.5s ease-out 1s 1 forwards;
+  animation: 0.5s ease-out 1s 7 alternate infinite;
+  animation-iteration-count: 7;
 }
 
 @keyframes pointer {
@@ -158,8 +166,15 @@
   }
 }
 
+.kidsDrawing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* //banner position */
 .homeBanner1.homeBanner1.homeBanner1 {
+  transform: translateY(-2.3rem);
   /* margin-top: 0rem;
   padding-top: 3rem;
   padding-bottom: 3rem; */

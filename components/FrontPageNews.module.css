@@ -50,9 +50,11 @@
 } */
 
 .copyWrapper {
+  transform: translateY(-3rem) rotate(-3deg);
   background: rgba(255, 255, 255, 0.9);
   border-radius: 9px;
   padding: 2rem;
+  box-shadow: var(--box-shadow-1);
 }
 
 .youTubeEmbed {

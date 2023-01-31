@@ -56,7 +56,9 @@ const Home: NextPage = () => {
               waves={true}
             />
           </h2>
-          <p className={styles.product_book1__subtitle}>out now!</p>
+          <div className={styles.outNowWrapper}>
+            <p className={styles.product_book1__subtitle}>out now!</p>
+          </div>
           <div className={styles.pointer}></div>
 
           {/* <Link href="/get-the-book">Get the book</Link> */}
@@ -100,13 +102,15 @@ const Home: NextPage = () => {
         <Reviews />
 
         <Container>
-          <Image
-            alt="illustration of kids from Mazmatics Fun Math for kids book"
-            src={mazAPlus006}
-            layout="intrinsic"
-            width={contentImageSize.width / 3}
-            height={contentImageSize.height / 3}
-          />
+          <div className={styles.kidsDrawing}>
+            <Image
+              alt="illustration of kids from Mazmatics Fun Math for kids book"
+              src={mazAPlus006}
+              layout="intrinsic"
+              width={contentImageSize.width / 3}
+              height={contentImageSize.height / 3}
+            />
+          </div>
 
           <div className={styles.feedback}>
             <h2 className="bigTitle">Feedback &amp; testimonials welcome</h2>

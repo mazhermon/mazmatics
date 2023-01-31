@@ -82,6 +82,11 @@
   line-height: 1.2;
   margin-bottom: 0;
 }
+
+.banner__mainText {
+  font-family: var(--font-headings-fun);
+}
+
 .med .banner__mainText {
   margin: 4rem 0;
   font-size: 2rem;
