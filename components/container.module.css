@@ -7,6 +7,10 @@
   padding: var(--site-container-padding);
   overflow: hidden;
 }
+
+.container.white {
+  background-color: var(--white);
+}
 /* @media screen and (min-width: 400rem) {
     .container {
       overflow: visible;

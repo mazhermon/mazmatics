@@ -104,8 +104,9 @@
 .outNowWrapper {
   transform: translateY(-2.3rem);
   color: white;
-  background-image: var(--gradient-1);
-  padding: 4rem;
+  /* background-image: var(--gradient-1); */
+  background-color: var(--black);
+  padding: 2rem;
 }
 
 .pointer {
@@ -174,7 +175,8 @@
 
 /* //banner position */
 .homeBanner1.homeBanner1.homeBanner1 {
-  transform: translateY(-2.3rem);
+  /* transform: translateY(-2.3rem); */
+  margin-top: -2.3rem;
   /* margin-top: 0rem;
   padding-top: 3rem;
   padding-bottom: 3rem; */
@@ -182,6 +184,15 @@
   /* margin: auto;
   transform: translateX(-2.3rem);
   width: 100vw; */
+}
+@media screen and (min-width: 60rem) {
+  .homeBanner1.homeBanner1.homeBanner1 {
+    /* transform: translateY(-9.3rem); */
+    margin-top: -9.3rem;
+  }
+  .homeBanner1.homeBanner1.homeBanner1 .bannerContent {
+    padding-bottom: 8rem !important;
+  }
 }
 /* TODO: do custom props instead */
 /* @media screen and (min-width: 30rem) {

@@ -2,10 +2,11 @@ import React from 'react'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import Link from 'next/link'
-import { Button } from '../components/button'
+// import Link from 'next/link'
+// import { Button } from '../components/button'
 
-import bookProductImage from '../public/images/mazmatics_bookCoverWeb1.jpg'
+// import bookProductImage from '../public/images/mazmatics_bookCoverWeb1.jpg'
+
 // import bookBannerImage from '../public/images/emailFunCOver.jpg'
 
 // import mazAPlus005 from '../public/images/Mazmatics-a-plus-005.jpg'
@@ -22,10 +23,10 @@ import { Container } from '../components/Container'
 import { LookInside } from '../components/LookInside'
 import { TestimonialList } from '../components/testimonials/TestimonialList'
 
-const bookProductImageSize = {
-  width: 901,
-  height: 901,
-}
+// const bookProductImageSize = {
+//   width: 901,
+//   height: 901,
+// }
 
 const contentImageSize = {
   width: 1200,
@@ -62,39 +63,9 @@ const Home: NextPage = () => {
           <div className={styles.pointer}></div>
 
           {/* <Link href="/get-the-book">Get the book</Link> */}
-
-          <div>
-            <Link href="/get-the-book">
-              <a
-                className={`${styles.navLink} ${styles.navLinkCTA}`}
-                aria-label="get the book"
-              >
-                {/* TODO: animate some hands coming in to grab the Book
-                crayon style transparent PNGs */}
-                <Image
-                  alt="Book cover for Mazmatics Fun Math for Kids Volume 1"
-                  src={bookProductImage}
-                  layout="intrinsic"
-                  width={bookProductImageSize.width}
-                  height={bookProductImageSize.height}
-                />
-              </a>
-            </Link>
-          </div>
-          <div className={styles.homeCTAbutton}>
-            <Button variant="primary" href="/get-the-book">
-              Get the book
-            </Button>
-          </div>
         </div>
         <FrontPageNews />
         <Container>
-          <p className={styles.leadCopy}>
-            Fun Math 4 Kids is an activity and story book that supports kids to
-            practise their maths and have some fun along the way. Do some maths,
-            do some drawing, read a story, solve a code...
-          </p>
-
           <JoinMailingList />
           <TestimonialList />
         </Container>

@@ -18,45 +18,48 @@ const logoImageSizes = {
 
 export const HomeHeader = () => (
   <div className={`${styles.homeHeader} `}>
-    <h1 className={styles.siteTitle}>
-      <span className={styles.siteTitle__welcometo}>Welcome to</span>
-      <Image
-        className={styles.siteTitle__logo}
-        alt="Mazmatics logo"
-        src={mazmaticsLogo}
-        layout="intrinsic"
-        width={logoImageSizes.width}
-        height={logoImageSizes.height}
-      />
+    <div className={styles.homeHeader__content}>
+      <div className={styles.siteTitle}>
+        <h1 className={styles.homeHeading1}>
+          <span className={styles.siteTitle__welcometo}>Welcome to</span>
+          <span className="sr-only">Mazmatics</span>
+        </h1>
+        <Image
+          className={styles.siteTitle__logo}
+          alt="Mazmatics"
+          src={mazmaticsLogo}
+          layout="intrinsic"
+          width={logoImageSizes.width}
+          height={logoImageSizes.height}
+        />
 
-      <span className={styles.siteTitle__promise}>
-        We help kids say <br />
-        &quot;I like math&quot;
-      </span>
-    </h1>
+        <span className={styles.siteTitle__promise}>
+          We help kids say <br />
+          &quot;I like math&quot;
+        </span>
+      </div>
 
-    <div className={styles.homeCTAbutton}>
-      <Button variant="primary" href="/get-the-book">
-        Get the book today
-      </Button>
+      <div className={styles.homeCTAbutton}>
+        <Button
+          className={styles.homeHeaderCTA}
+          variant="primary"
+          href="/get-the-book"
+        >
+          Get the book today
+        </Button>
+      </div>
     </div>
-
-    {/* <div className={styles.charCircleBettyPositioner}>
-      <CharCircleBetty
-        isInputFocus={isInputFocus}
-        isSubmitClicked={isSubmitClicked}
-      />
-    </div> */}
-
-    <div className={styles.lindy}>
-      {/* use useState to set the width based on breakpoint in js */}
-      <Image
-        alt="Giant Girl adventurer sitting down smiling"
-        src={lindyImage}
-        layout="intrinsic"
-        width={lindyImageSize.width / 3}
-        height={lindyImageSize.height / 3}
-      />
+    <div className={styles.homeHeader__heroImage}>
+      <div className={styles.lindy}>
+        {/* use useState to set the width based on breakpoint in js */}
+        <Image
+          alt="Giant Girl adventurer sitting down smiling"
+          src={lindyImage}
+          layout="intrinsic"
+          width={lindyImageSize.width / 3}
+          height={lindyImageSize.height / 3}
+        />
+      </div>
     </div>
   </div>
 )

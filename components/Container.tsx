@@ -4,8 +4,20 @@ import styles from './container.module.css'
 
 type Props = {
   children: React.ReactNode
+  className?: string
+  bgColor?: string
 }
 
-export const Container: React.FC<Props> = ({ children }) => (
-  <div className={styles.container}>{children}</div>
+export const Container: React.FC<Props> = ({
+  children,
+  className,
+  bgColor,
+}) => (
+  <div
+    className={`${styles.container} ${
+      bgColor ? styles[bgColor] : 'dog'
+    } ${className}`}
+  >
+    {children}
+  </div>
 )

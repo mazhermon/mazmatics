@@ -1,0 +1,44 @@
+.getTheBookBanner {
+  margin-bottom: 2rem;
+}
+
+.homeCTAbuttonArea {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr;
+  padding: 4rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.leadCopy p {
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 60rem) {
+  .getTheBookBanner {
+    display: grid;
+    gap: 4rem;
+    align-items: center;
+    grid-template-columns: 380px 1fr;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-bottom: 4rem;
+  }
+
+  .homeCTAbuttonArea {
+    padding: 2rem;
+  }
+
+  .leadCopy {
+    margin-top: 3rem;
+    /* padding: 2rem; */
+    text-align: left;
+  }
+
+  .leadCopy p {
+    font-size: 1.8rem;
+  }
+}
