@@ -21,11 +21,11 @@ const Wholesalers = () => (
         </tr>
         <tr>
           <th scope="row">Purchase price</th>
-          <td>$11.99</td>
+          <td>$11.99 +GST</td>
         </tr>
         <tr>
           <th scope="row">Consignment price</th>
-          <td>$13.50</td>
+          <td>$13.50 +GST</td>
         </tr>
       </tbody>
     </table>
