@@ -1,0 +1,41 @@
+.bookstore {
+  position: relative;
+  padding: 2rem 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.bookstore::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  height: 9px;
+  width: 100%;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+}
+.bookstore__image {
+}
+.bookstore__info {
+  flex: 1;
+}
+
+.name {
+  font-weight: bold;
+  font-family: var(--font-headings);
+}
+.address {
+}
+
+.website {
+  display: block;
+  margin: 1rem 0;
+  /* font-size: 2rem; */
+}
+
+.description {
+}
+
+a.nameLink {
+  color: var(--black);
+  text-decoration: none;
+}

@@ -23,6 +23,7 @@ import {
 } from '../components/testimonials/testimonailsData'
 import { Testimonial } from '../components/testimonials/testimonial'
 import { FrontPageNews } from '../components/FrontPageNews'
+import { SupportYourLocalBookstore } from '../components/supportYourLocalBookstore'
 
 const bookBannerImageSize = {
   width: 1940,
@@ -78,6 +79,8 @@ const Home: NextPage = () => {
           <p className={styles.product_book1__subtitle}>out now!</p>
           <div className={styles.pointer}></div>
 
+          <SupportYourLocalBookstore />
+          <p className={styles.orDivider}>or</p>
           <div className={styles.nzShopDetails}>
             <h2>Available direct for NZ only</h2>
 

@@ -1,0 +1,21 @@
+.wholesalers {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 3rem;
+  padding-top: 9rem;
+}
+
+.contactEmailLink {
+  color: var(--blue-5);
+  text-decoration: underline;
+}
+.contactEmailLink:hover {
+  color: var(--purple-3);
+  text-decoration: underline;
+}
+
+.backLink {
+  display: block;
+  margin-top: 7rem;
+}
