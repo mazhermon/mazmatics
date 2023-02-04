@@ -6,6 +6,11 @@
   padding-top: 9rem;
 }
 
+.wholesalers h2 {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
 .contactEmailLink {
   color: var(--blue-5);
   text-decoration: underline;
@@ -18,4 +23,29 @@
 .backLink {
   display: block;
   margin-top: 7rem;
+}
+
+.wholesaleTable {
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+}
+.wholesaleTable th {
+  text-align: left;
+  font-weight: normal;
+  border-bottom: 1px solid var(--gray-3);
+}
+.wholesaleTable td {
+  text-align: right;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--gray-3);
+}
+.wholesaleTable tbody {
+}
+.wholesaleTable tr {
+  border-bottom: 1px solid var(--gray-5);
+}
+
+.moreInfo {
+  margin-top: 2rem;
 }
