@@ -26,9 +26,14 @@
 }
 
 .wholesaleTable {
-  width: 320px;
+  width: 286px;
   margin: 0 auto;
   margin-bottom: 3rem;
+}
+@media screen and (min-width: 40rem) {
+  .wholesaleTable {
+    width: 320px;
+  }
 }
 .wholesaleTable th {
   text-align: left;
