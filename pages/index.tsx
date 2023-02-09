@@ -82,8 +82,6 @@ const Home: NextPage = () => {
           <SupportYourLocalBookstore />
           <p className={styles.orDivider}>or</p>
           <div className={styles.nzShopDetails}>
-            <h2>Available direct for NZ only</h2>
-
             <a
               target="_blank"
               rel="noopener noreferrer"
