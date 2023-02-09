@@ -34,6 +34,28 @@ const Stockists = () => (
           ></BookStore>
         </li>
       </ul>
+
+      <h2>South Island</h2>
+      <ul className={styles.stockists__list}>
+        <li>
+          <BookStore
+            name="Timaru Booksellers"
+            location="331 Stafford Street, Timaru, NZ 7910"
+            phone="(03) 6831 387"
+            website="bayhillbooks.co.nz"
+            url="https://bayhillbooks.co.nz/"
+          ></BookStore>
+        </li>
+        <li>
+          <BookStore
+            name="The Twizel Bookshop"
+            location="inside the Hydro Cafe, Twizel"
+            phone="(03) 6831 387"
+            website="bayhillbooks.co.nz"
+            url="https://bayhillbooks.co.nz/"
+          ></BookStore>
+        </li>
+      </ul>
     </div>
   </div>
 )

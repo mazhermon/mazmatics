@@ -209,6 +209,11 @@ input.ml-error.ml-error,
   color: var(--blue-5);
   text-decoration: underline;
 }
+
+.copyArea h2 {
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+}
 .copyArea a:hover {
   color: var(--purple-3);
   text-decoration: underline;
