@@ -5,18 +5,25 @@
   margin-top: -3px;
   width: 100%;
   position: relative;
+  max-width: 100%;
 }
 
 /* .stuffArticleSection::before {
   content: '';
   display: block;
-  height: 690px;
+  height: 250px;
   position: absolute;
-  top: -380px;
-  width: 100vw;
-  left: 0;
-  background-color: var(--gray-1);
-  z-index: -1;
+  top: -10px;
+  width: 172vw;
+  left: -30vw;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  pointer-events: none;
+}
+@media screen and (min-width: 40rem) {
+  .stuffArticleSection::before {
+    width: 152vw;
+    height: 390px;
+  }
 }
 
 .stuffArticleSection::after {
@@ -24,6 +31,16 @@
   display: block;
   height: 800px;
   position: absolute;
+  top: 289px;
+  width: 172vw;
+  left: -30vw;
+  z-index: -1;
+  background-color: var(--gray-1);
+  pointer-events: none;
+}
+@media screen and (min-width: 40rem) {
+  .stuffArticleSection::after {
+    width: 152vw;
   top: 189px;
   width: 100vw;
   left: 0;

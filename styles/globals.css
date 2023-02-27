@@ -3,6 +3,7 @@
   --white: #fff;
   --gray-5: #3a3a39;
   --gray-4: #646461;
+  --gray-3: #a2a29f;
   --gray-1: #f2f2f1;
   --yellow-1: #fff73e;
   --blue-2: #c5f8ff;
@@ -187,7 +188,7 @@ body {
 body,
 p {
   font-family: var(--font-copy);
-  line-height: 1.2;
+  line-height: 1.3;
   font-size: 1.2rem;
 }
 .basicPageContainer {
@@ -215,6 +216,11 @@ p {
 
 .ml-form-embedContainer {
   min-width: 300px;
+}
+
+.container {
+  padding: var(--site-container-padding);
+  max-width: var(--site-container-max-width);
 }
 
 @media screen and (min-width: 50rem) {
@@ -256,6 +262,20 @@ input.ml-error.ml-error,
 } */
 
 /* // global hit me link for ease of sharing */
+.copyArea a {
+  color: var(--blue-5);
+  text-decoration: underline;
+}
+
+.copyArea h2 {
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+}
+.copyArea a:hover {
+  color: var(--purple-3);
+  text-decoration: underline;
+}
+
 .hitmeLink {
   transform: translateY(-9px);
   font-size: 2.4rem;
