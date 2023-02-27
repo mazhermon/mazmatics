@@ -13,3 +13,7 @@
   color: transparent;
   font-size: 2rem;
 }
+
+.bookstoreBuyer {
+  transform: translateY(0.8rem);
+}

@@ -13,6 +13,19 @@ const Stockists = () => (
       <h1>NZ Stockists</h1>
       <p>Mazmatics is proud to be available at the following NZ locations:</p>
 
+      <h2>Auckland</h2>
+      <ul className={styles.stockists__list}>
+        <li>
+          <BookStore
+            name="The Dorothy Butler Children's Bookshop"
+            location="1 Jervois Road, Ponsonby, Auckland 1011"
+            phone="09 376 7283"
+            website="dorothybutler.co.nz"
+            url="https://dorothybutler.co.nz/p/fun-math-4-for-kids-good-foundations-volume-1?barcode=9780473648916"
+          ></BookStore>
+        </li>
+      </ul>
+
       <h2>Wellington</h2>
       <ul className={styles.stockists__list}>
         <li>

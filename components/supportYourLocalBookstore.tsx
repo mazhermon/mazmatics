@@ -21,7 +21,7 @@ export const SupportYourLocalBookstore = () => {
           </Link>
         </p>
 
-        <p>Are you a bookstore buyer?</p>
+        <p className={styles.bookstoreBuyer}>Are you a bookstore buyer?</p>
         <p>
           <Link href="/wholesalers">
             <a aria-label="home" className={styles.logo}>
