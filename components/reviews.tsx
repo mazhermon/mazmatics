@@ -11,7 +11,9 @@ const reviewUrlUK = `http://amazon.co.uk/review/create-review?&asin=${ASIN}`
 export const Reviews = () => (
   <div className={styles.reviewSection}>
     <div className={styles.reviewSection__header}>
-      <h2 className={styles.reviewSection__header__heading}>Support Mazmatics by writing a review</h2>
+      <h2 className={styles.reviewSection__header__heading}>
+        Support Mazmatics by writing a review
+      </h2>
       <p>
         <a
           className={styles.emailTopLink}
