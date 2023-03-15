@@ -58,6 +58,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 /* .main::after {
@@ -106,7 +108,18 @@
   color: white;
   /* background-image: var(--gradient-1); */
   background-color: var(--black);
+  background-color: var(--purple-2);
   padding: 2rem;
+
+  /* --x-offset: -0.0925em;
+  --y-offset: 0.0925em;
+  --stroke: 0.095em;
+  --background-color: var(--purple-2);
+  --stroke-color: var(--yellow-1);
+
+  text-shadow: var(--x-offset) var(--y-offset) 0px var(--background-color),
+    calc(var(--x-offset) - var(--stroke)) calc(var(--y-offset) + var(--stroke))
+      0px var(--stroke-color); */
 }
 
 .pointer {
@@ -459,3 +472,21 @@
   margin: 0 0 6rem 0;
   margin-bottom: 20rem;
 }
+
+/* // decoration */
+.squaresAndCurvesHomePositioner {
+  position: absolute;
+
+  max-width: 100%;
+  width: 100%;
+
+  z-index: -1;
+  overflow-x: hidden;
+}
+.squaresAndCurvesHomePositionerInner {
+  /* border: 3px solid green; */
+  opacity: 0.1;
+  width: 100%;
+  transform: rotate(-45deg) scale(0.5);
+}
+

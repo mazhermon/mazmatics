@@ -2,10 +2,17 @@
 .container {
   /* border: 3px solid blue; */
   position: relative;
-  max-width: var(--site-container-max-width);
+  max-width: 100vw;
+  /* border: 4px solid green; */
   margin: 0 auto;
   padding: var(--site-container-padding);
   overflow: hidden;
+}
+@media screen and (min-width: 100rem) {
+  .container {
+    max-width: var(--site-container-max-width);
+    /* border: 4px solid red; */
+  }
 }
 
 .container.white {

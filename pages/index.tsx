@@ -22,6 +22,7 @@ import JoinMailingList from './join-mailing-list'
 import { Container } from '../components/Container'
 import { LookInside } from '../components/LookInside'
 import { TestimonialList } from '../components/testimonials/TestimonialList'
+import { SquaresAndCurvesOne } from '../components/patterns/SquaresAndCurvesOne'
 
 // const bookProductImageSize = {
 //   width: 901,
@@ -67,8 +68,17 @@ const Home: NextPage = () => {
         <FrontPageNews />
         <Container>
           <JoinMailingList />
+        </Container>
+
+        <Container>
           <TestimonialList />
         </Container>
+
+        <div className={styles.squaresAndCurvesHomePositioner}>
+          <div className={styles.squaresAndCurvesHomePositionerInner}>
+            <SquaresAndCurvesOne />
+          </div>
+        </div>
 
         <Reviews />
 

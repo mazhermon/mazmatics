@@ -11,6 +11,7 @@ type Props = {
   children?: React.ReactNode
   variant?: 'primary' | 'secondary'
   className?: string
+  onClick?: () => void
 }
 
 export const Button: React.FC<Props> = ({
@@ -20,8 +21,9 @@ export const Button: React.FC<Props> = ({
   variant,
   external,
   className,
+  onClick,
 }) => {
-  const buttonLinkStyles = clsx({
+  const buttonLinkStyles = clsx(className, {
     [styles.buttonLinkEl]: true,
     [styles.primary]: variant === 'primary',
     [styles.fullWidth]: fullWidth,
@@ -49,10 +51,7 @@ export const Button: React.FC<Props> = ({
   }
 
   return (
-    <button
-      className={`${className} ${styles.button} ${styles.buttonRealButton}`}
-    >
-      yo
+    <button onClick={onClick} className={buttonLinkStyles}>
       {children}
     </button>
   )

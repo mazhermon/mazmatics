@@ -31,6 +31,7 @@ export const Navbar = () => {
       <div className={styles.navHeader}>
         <button className={styles.menuToggleButton} onClick={toggleMenu}>
           {menuOpen ? <CrossIcon large={true} /> : <MenuIcon />}
+          <span className="sr-only">Toggle main navigation</span>
         </button>
         <Link href="/">
           <a aria-label="home" className={styles.logo}>

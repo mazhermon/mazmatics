@@ -25,6 +25,8 @@
     rgba(0, 212, 255, 0) 100%
   ); */
   --box-shadow-1: 0px 4px 16px -6px rgba(0, 0, 0, 0.75);
+  --box-shadow-2: 10px 14px 21px -9px rgba(0, 0, 0, 0.95);
+  --box-shadow-3: 0px 4px 16px -6px rgba(0, 0, 0, 0.35);
 
   /* --validation-success-color: #88f295; */
   --validation-success-color: #affeb8;
@@ -131,6 +133,7 @@ html {
 
 html,
 body {
+  overflow-x: hidden;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -296,6 +299,13 @@ input.ml-error.ml-error,
   }
 }
 
+h3 strong {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--purple-2);
+  transform: translateY(-1px);
+}
+
 .hitmeLink:hover {
   text-decoration-line: underline;
   text-decoration-style: wavy;
@@ -311,9 +321,24 @@ input.ml-error.ml-error,
 .footerBannerGlobal .bannerContent {
   padding-top: 9rem;
 }
+.footerBannerGlobal a {
+  display: block;
+  margin: 2rem auto;
+}
+
+.footerBannerGlobal button {
+  margin-top: 12rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
 
 @media screen and (min-width: 70rem) {
   .footerBannerGlobal .bannerContent {
     padding-top: 4rem;
   }
+}
+
+.quoteMark {
+  font-family: var(--font-headings);
 }

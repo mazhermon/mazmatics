@@ -1,0 +1,4 @@
+.linesContainer line {
+  stroke: var(--purple-2);
+  stroke-width: 4px;
+}

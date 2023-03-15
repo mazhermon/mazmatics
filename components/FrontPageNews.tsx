@@ -50,6 +50,23 @@ export const FrontPageNews = () => (
                 Check out the front page article article here
               </a>
             </p>
+            <p>
+              <span className={styles.megaQuoteMark}>&#8220;</span>What do you
+              get when you add one Wellington dad with a web developer
+              background, two drawing-mad kids and a goal to make maths fun?
+              Answer: Mazmatics Maz Hermon​ is no maths expert, but always
+              enjoyed the subject and wanted his children to as well. That’s why
+              he decided to create, illustrate and publish his own maths
+              exercise book “designed for home play, not homework”.
+            </p>
+            <p>
+              <a
+                className={styles.stuffLinkSmall}
+                href="https://www.stuff.co.nz/national/education/130947181/dad-writes-maths-book-designed-for-home-play-not-homework"
+              >
+                Continue reading the full article on Stuff.co.nz
+              </a>
+            </p>
           </div>
         </div>
       </div>

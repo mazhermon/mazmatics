@@ -75,6 +75,16 @@ export const Footer = () => {
           <Button variant="secondary" href="/get-the-book">
             Get the book
           </Button>
+
+          <Button
+            onClick={() => {
+              window.scrollTo({ top: 0 })
+            }}
+            variant="secondary"
+          >
+            <span className={styles.backToTopPointer}></span>
+            Back to top
+          </Button>
         </Banner>
       </div>
     </div>

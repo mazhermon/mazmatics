@@ -5,9 +5,14 @@ import styles from './testimonialList.module.css'
 import { TESTIMONIAL_DATA, ITestimonial } from './testimonailsData'
 import { Testimonial } from './testimonial'
 
+import {Lines} from '../patterns/Lines';
+
 export const TestimonialList = () => {
   return (
     <div className={styles.testimonialList}>
+      <div className={styles.decorativeWrapper}>
+        <Lines />
+      </div>
       <h2 className={styles.customerTestimonialsTitle}>
         Customer testimonials
       </h2>

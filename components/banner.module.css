@@ -7,7 +7,7 @@
   position: relative;
 
   font-family: var(--font-headings-fun);
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   /* background-color: var(--purple-2); */
   padding: 0;
   min-width: 100%;
@@ -18,6 +18,8 @@
 @media screen and (min-width: 50rem) {
   .banner {
     /* padding: calc(var(--container-padding) / 2) var(--container-padding); */
+    /* border: 3px solid red; */
+    font-size: 6rem;
   }
 }
 
@@ -90,29 +92,34 @@
 
 .med .banner__mainText {
   margin: 4rem 0;
-  font-size: 2rem;
+  font-size: 3.2rem;
+  font-weight: bold;
   margin: 0;
-  /* padding-left: var(--container-padding);
-  padding-left: var(--container-padding); */
 }
 
 @media screen and (min-width: 50rem) {
   .med .banner__mainText {
-    font-size: 2.5rem;
+    font-size: 5.5rem;
+    font-weight: bold;
   }
 }
 @media screen and (min-width: 60rem) {
   .med .banner__mainText {
     font-size: 3rem;
+    font-size: 6.5rem;
+    /* background-color: gold; */
   }
 }
 @media screen and (min-width: 80rem) {
   /* .med {
     font-size: 1.8rem;
   } */
-  /* .med .banner__mainText {
-    font-size: 3rem;
-  } */
+  .med .banner__mainText {
+    font-size: 9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* background-color: blue; */
+  }
 }
 
 .large {
@@ -157,6 +164,7 @@
   /* background-color: ; */
   padding: 2rem;
   padding-bottom: 3rem;
+  /* // << here be dragons with side scroll. dont know why  - maybe ??*/
 }
 @media screen and (min-width: 60rem) {
   .banner__content {

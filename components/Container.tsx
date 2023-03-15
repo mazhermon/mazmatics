@@ -15,7 +15,7 @@ export const Container: React.FC<Props> = ({
 }) => (
   <div
     className={`${styles.container} ${
-      bgColor ? styles[bgColor] : 'dog'
+      bgColor ? styles[bgColor] : ''
     } ${className}`}
   >
     {children}

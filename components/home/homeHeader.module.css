@@ -22,6 +22,20 @@
   width: 200px;
   z-index: 1;
   transform: translate(-18px, 12px) scaleX(-1);
+  position: relative;
+}
+
+.lindy::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: skew(30deg) translate(40px, -20px);
+  border-radius: 50%;
+  z-index: -1;
 }
 
 @media screen and (min-width: 60rem) {
@@ -29,6 +43,13 @@
     width: 441px;
     z-index: 1;
     transform: translate(-18px, -12px) scaleX(-1);
+  }
+  .lindy::after {
+    width: 380px;
+    height: 50px;
+    /* display: none; */
+
+    transform: skew(30deg) translate(40px, -30px);
   }
 }
 @media screen and (min-width: 50rem) {
@@ -55,6 +76,22 @@
   align-items: center;
   margin-bottom: 0.3rem;
 }
+
+.iLikeMath {
+  font-family: var(--font-script);
+  font-size: 3rem;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-top: 0.3rem;
+  margin-bottom: 0.8rem;
+}
+@media screen and (min-width: 60rem) {
+  .iLikeMath {
+    font-size: 4rem;
+  }
+}
+
 @media screen and (min-width: 60rem) {
   .siteTitle {
     /* align-items: flex-start; */
@@ -79,6 +116,10 @@
   .siteTitle__welcometo {
     font-size: 1.6rem;
   }
+}
+
+.MainLogo {
+  transform: translateY(-1.5rem);
 }
 
 .siteTitle__logo {
@@ -116,7 +157,8 @@
   font-size: 1.1rem;
   margin: 0;
   margin-top: 5px;
-  width: 144px;
+  transform: translateY(-1rem);
+  /* width: 144px; */
   text-align: center;
   /* margin-top: 0.5rem; */
 }
@@ -179,5 +221,32 @@
   .charCircleBettyPositioner {
     top: -5rem;
     left: -565px;
+  }
+}
+
+.homeCTAbutton {
+  max-width: 90vw;
+  margin-top: 1.5rem;
+  margin: 0 auto;
+}
+
+.homeHeaderCTA {
+  margin: 0 auto;
+}
+
+/* // decoration */
+.sineShineHomePositioner {
+  position: absolute;
+  transform: rotate(45deg) translate(10%, -40%) scaleX(-1);
+  /* border: 8px solid red; */
+  width: 100%;
+  opacity: 0.5;
+  z-index: -1;
+}
+@media screen and (min-width: 60rem) {
+  .sineShineHomePositioner {
+   
+    transform: rotate(-45deg) translate(20%, -1300px) scale(1.2);
+   
   }
 }

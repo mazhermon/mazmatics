@@ -1,0 +1,7 @@
+.sineShine path {
+  border: 8px saddlebrown solid;
+  fill: none;
+  stroke: #fff73e;
+  stroke-miterlimit: 10;
+  stroke-width: 9px;
+}

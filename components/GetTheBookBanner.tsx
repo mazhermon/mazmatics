@@ -4,8 +4,9 @@ import Image from 'next/image'
 
 import styles from './getTheBookBanner.module.css'
 
-import bookProductImageClearCut from '../public/images/mazmaticsBookCoverWebSmall-min.png'
+import bookProductImageClearCut from '../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
 import { Button } from './button'
+import { Grain } from './patterns/Grain'
 
 const bookProductImageSize = {
   width: 600,
@@ -15,11 +16,9 @@ const bookProductImageSize = {
 export const GetTheBookBanner = () => {
   return (
     <div className={styles.getTheBookBanner}>
+      <Grain />
       <Link href="/get-the-book">
-        <a
-          className={`${styles.navLink} ${styles.navLinkCTA}`}
-          aria-label="get the book"
-        >
+        <a className={`${styles.getTheBookImage}`} aria-label="get the book">
           {/* TODO: animate some hands coming in to grab the Book
                 crayon style transparent PNGs */}
           <Image

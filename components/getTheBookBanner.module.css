@@ -2,6 +2,23 @@
   margin-bottom: 2rem;
 }
 
+.getTheBookImage {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: block;
+}
+
+.getTheBookImage > span {
+  border: 9px solid white;
+  display: block;
+  box-shadow: var(--box-shadow-2), 0.7rem 0.7rem var(--purple-2),
+    -0.7rem -0.7rem var(--blue-4);
+}
+
+.getTheBookImage img {
+  filter: brightness(1.1);
+}
+
 .homeCTAbuttonArea {
   display: flex;
   flex-flow: column nowrap;
@@ -17,6 +34,10 @@
   font-size: 1.4rem;
 }
 
+.bookProductImageClearCut {
+  max-width: 100%;
+}
+
 @media screen and (min-width: 60rem) {
   .getTheBookBanner {
     display: grid;
@@ -26,6 +47,11 @@
     max-width: 900px;
     margin: 0 auto;
     margin-bottom: 4rem;
+  }
+
+  .getTheBookImage {
+    padding-right: 0;
+    display: block;
   }
 
   .homeCTAbuttonArea {
