@@ -38,9 +38,9 @@
 
 .reviewSectionHeading {
   margin-bottom: 2rem;
-  margin-top: 5.3rem;
+  margin-top: 0;
   font-size: 2rem;
-  color: white;
+  /* color: white; */
   text-align: center;
 }
 @media screen and (min-width: 50rem) {
@@ -58,6 +58,13 @@
   padding: 4rem 1.5rem;
   background-color: rgba(255, 255, 255, 0.95);
   text-align: center;
+  margin-bottom: 4rem;
+}
+
+.whiteOverlay p {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 @media screen and (min-width: 50rem) {
   .whiteOverlay {
@@ -67,6 +74,7 @@
 }
 
 .feedbackButtonLink {
+  text-decoration: none;
   transform: translateY(-9px);
   font-size: 1.1rem;
   padding: 1rem;
@@ -82,9 +90,17 @@
 
   border: 4px solid;
   border-radius: 10px;
+
+  margin-top: 2rem;
   /* border-image-slice: 1;
   border-width: 5px;
   border-image-source: linear-gradient(to left, var(--purple-2), var(--blue-4)); */
+}
+
+.feedbackButtonLink:hover {
+  background-color: var(--purple-2);
+  /* border-color: var(--black); */
+  color: var(--white);
 }
 
 .feedbackButtonLink__google {
@@ -108,13 +124,14 @@
   border-color: var(--blue-4);
 }
 .feedbackButtonLink[href*='amazon.com.au']:hover {
-  background-color: var(--yellow-1);
-  border-color: var(--black);
-  color: var(--black);
+  background-color: var(--blue-4);
+  /* border-color: var(--black); */
+  color: var(--white);
 }
 
 .feedbackButtonLink[href*='amazon.co.uk'] {
   border-color: var(--yellow-1);
+  text-decoration: underline;
 }
 
 .reviewLinkList {
@@ -164,6 +181,8 @@
   -webkit-background-clip: text;
   color: transparent;
   transform: translateY(0);
+  text-decoration: underline;
+  text-decoration-color: var(--purple-2);
 }
 
 .hitmeLink {

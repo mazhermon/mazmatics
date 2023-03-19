@@ -245,6 +245,6 @@
 }
 @media screen and (min-width: 60rem) {
   .sineShineHomePositioner {
-    transform: rotate(-45deg) translate(20%, -1300px) scale(1.2);
+    transform: rotate(-45deg) translate(40%, -900px) scale(0.8);
   }
 }

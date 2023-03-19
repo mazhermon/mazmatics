@@ -14,20 +14,32 @@ export const Reviews = () => (
       <h2 className={styles.reviewSection__header__heading}>
         Support Mazmatics by writing a review
       </h2>
+    </div>
+
+    <div className={styles.whiteOverlay}>
+      <h3 className={styles.reviewSectionHeading}>Tell us what you think</h3>
+      <p>
+        You can email us your review using this link, or check out the other
+        options below. We love feedback and hearing from you about what worked
+        for your kids and what didn&apos;t
+      </p>
+      <p>
+        Let us know if you&apos;re happy for us to use a quote or two here on
+        the site etc.
+      </p>
       <p>
         <a
-          className={styles.emailTopLink}
+          className={`${styles.emailTopLink} ${styles.feedbackButtonLink} ${styles.feedbackButtonLink__google}`}
           href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
         >
-          You can email us your review{' '}
+          email us your review or feedback
         </a>
       </p>
-      <p>Or...</p>
     </div>
 
     {/* TODO split out more components */}
-    <h3 className={styles.reviewSectionHeading}>Review us on Google</h3>
     <div className={styles.whiteOverlay}>
+      <h3 className={styles.reviewSectionHeading}>Review us on Google</h3>
       <div className={styles.stars}>
         <Star />
         <Star />
@@ -44,8 +56,8 @@ export const Reviews = () => (
         Write us a Google Review
       </a>
     </div>
-    <h3 className={styles.reviewSectionHeading}>Review us on Amazon</h3>
     <div className={styles.whiteOverlay}>
+      <h3 className={styles.reviewSectionHeading}>Review us on Amazon</h3>
       <div className={styles.stars}>
         <Star />
         <Star />

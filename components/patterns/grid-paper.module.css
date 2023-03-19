@@ -9,7 +9,7 @@
   width: 100vw;
   min-height: 300px;
 
-  opacity: 0.4;
+  opacity: 0.8;
   z-index: -1;
   transform: translate(40%, 900px);
   overflow: visible;

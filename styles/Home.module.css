@@ -110,6 +110,8 @@
   background-color: var(--black);
   background-color: var(--purple-2);
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 
   /* --x-offset: -0.0925em;
   --y-offset: 0.0925em;
@@ -190,6 +192,7 @@
 .homeBanner1.homeBanner1.homeBanner1 {
   /* transform: translateY(-2.3rem); */
   margin-top: -2.3rem;
+  z-index: 1;
   /* margin-top: 0rem;
   padding-top: 3rem;
   padding-bottom: 3rem; */
@@ -475,17 +478,19 @@
 
 /* // decoration */
 .squaresAndCurvesHomePositioner {
+  /* display: none; // TODO: maybe bring this back later */
+  display: none;
   position: absolute;
-
   max-width: 100%;
   width: 100%;
-
   z-index: -1;
   overflow-x: hidden;
 }
+.squaresAndCurvesHomePositioner svg {
+  max-width: 50%;
+}
 .squaresAndCurvesHomePositionerInner {
-  /* border: 3px solid green; */
   opacity: 0.1;
   width: 100%;
-  transform: rotate(-45deg) scale(0.5);
+  transform: rotate(-45deg) scale(0.5) translateX(-1900px);
 }

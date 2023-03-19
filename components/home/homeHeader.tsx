@@ -35,7 +35,7 @@ export const HomeHeader = () => {
     <div className={styles.homeHeader}>
       <GridPaper />
       <div className={styles.sineShineHomePositioner}>
-        <SineShine version="1" />
+        <SineShine version="2" />
       </div>
       <div className={styles.homeHeader__content}>
         <div className={styles.siteTitle}>
