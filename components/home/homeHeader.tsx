@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import Image from 'next/image'
 import lindyImage from '../../public/images/lindyLarge.png'
 import mazmaticsLogo from '../../public/images/Mazmatics-logo.png'
@@ -8,6 +8,7 @@ import { Button } from '../button'
 import styles from './homeHeader.module.css'
 import { GridPaper } from '../patterns/GridPaper'
 import { SineShine } from '../patterns/SineShine'
+import { AppContext } from '../../context/appContext'
 
 const lindyImageSize = {
   width: 2213,
@@ -20,16 +21,7 @@ const logoImageSizes = {
 }
 
 export const HomeHeader = () => {
-  const [lang, setLang] = useState<string | null>(null)
-  useEffect(() => {
-    // TODO make a lang context for this
-    if (window !== undefined) {
-      setLang(window.navigator.language)
-    }
-
-    // en-GB
-    // console.log(lang)
-  }, [])
+  const { userLang } = useContext(AppContext)
 
   return (
     <div className={styles.homeHeader}>
@@ -58,7 +50,7 @@ export const HomeHeader = () => {
             <div>We help kids say...</div>
             <div className={styles.iLikeMath}>
               <span className={`quoteMark ${styles.quoteMark}`}>&ldquo;</span>I
-              like math{lang === 'en-GB' && <span>s</span>}
+              like math{userLang !== 'en-US' && <span>s</span>}
               <span className={`quoteMark ${styles.quoteMark}`}>&rdquo;</span>
             </div>
           </div>

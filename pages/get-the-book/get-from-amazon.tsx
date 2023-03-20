@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 // import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+
+import { AppContext } from '../../context/appContext'
 // import Link from 'next/link'
 
 // import bookBannerImage from '../public/images/emailFunCOver.jpg'
@@ -11,16 +13,7 @@ import styles from './get-the-book.module.css'
 import { Button } from '../../components/button'
 
 const GetFromAmazon = () => {
-  const [lang, setLang] = useState<string | null>(null)
-  useEffect(() => {
-    if (window !== undefined) {
-      setLang(window.navigator.language)
-    }
-    // if (/^en\b/.test(navigator.language)) {
-    //   doLangSelect(window.navigator.language)
-    // }
-    console.log(lang)
-  }, [])
+  const { userLang } = useContext(AppContext)
 
   return (
     <>
@@ -44,7 +37,7 @@ const GetFromAmazon = () => {
             <ul className={styles.product_book1__linkGroup}>
               <li className={styles.product_book1_buyNowBlock}>
                 <Button
-                  variant={lang === 'en-GB' ? 'primary' : 'secondary'}
+                  variant={userLang !== 'en-US' ? 'primary' : 'secondary'}
                   external={true}
                   href="https://www.amazon.com.au/dp/0473648911"
                 >
@@ -56,7 +49,7 @@ const GetFromAmazon = () => {
               <li className={styles.product_book1_buyNowBlock}>
                 <Button
                   external={true}
-                  variant={lang === 'en-US' ? 'primary' : 'secondary'}
+                  variant={userLang === 'en-US' ? 'primary' : 'secondary'}
                   href="https://www.amazon.com/dp/0473648911"
                 >
                   USA

@@ -1,6 +1,7 @@
 // import dynamic from 'next/dynamic'
 import { Navbar } from './navbar'
 import { Footer } from './footer'
+import { AppContextProvider } from '../context/appContext'
 
 type Props = {
   children: React.ReactNode
@@ -16,10 +17,12 @@ type Props = {
 export const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
-      <Navbar />
-      {/* <DynamicSunSprite /> */}
-      <main>{children}</main>
-      <Footer />
+      <AppContextProvider>
+        <Navbar />
+        {/* <DynamicSunSprite /> */}
+        <main>{children}</main>
+        <Footer />
+      </AppContextProvider>
     </>
   )
 }
