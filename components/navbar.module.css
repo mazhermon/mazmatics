@@ -2,7 +2,6 @@
   width: 100%;
   height: auto;
   flex-flow: column nowrap;
-  /* // */
   background-color: var(--gray-5);
   background: var(--gradient-1);
   padding: 0 1rem;
@@ -11,22 +10,23 @@
   justify-content: flex-start;
   align-items: flex-start;
   box-shadow: var(--box-shadow-1);
-
-  /* // move to later */
-  /* align-items: center; */
-  /* height: var(--nav-height); */
-  /* flex-flow: row nowrap; */
-}
-
-.navbarMenuOpen {
 }
 
 .menuToggleButton {
   background: none;
   border: none;
+  margin-right: 20px;
 }
+/* @media screen and (min-width: 65rem) {
+  .menuToggleButton {
+    display: none;
+  }
+} */
+
 .menuToggleButton svg {
   fill: #fff;
+  width: 40px;
+  height: 40px;
 }
 
 .logo {
@@ -52,50 +52,104 @@
   top: 0;
 }
 
-.navList {
-  /* flex: 1; */
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: flex-end;
-  align-items: flex-start;
-  list-style: none;
-  padding-left: 0.5rem;
+/* // exists for animation */
+.navListParent {
+  width: 100%;
+}
 
-  /* // later */
-  /* align-items: center; */
-  /* flex-flow: row nowrap; */
+.navList {
+  margin: 0;
+  margin-top: 1rem;
+  padding: 0;
+  /* display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end;
+  align-items: flex-start; */
+  list-style: none;
+  width: 100%;
+}
+
+/* //hide before x rem wide */
+
+.largeScreenNav {
+  margin-left: auto;
+}
+.navList__horizontal {
+  display: none;
+}
+@media screen and (min-width: 65rem) {
+  /* .navList__stacked {
+    display: none;
+  } */
+  .navList__horizontal {
+    display: flex;
+    margin: 0;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    justify-content: flex-end;
+    align-items: flex-start;
+  }
 }
 
 .navHeader {
   width: 100%;
   padding: 0.8rem 0;
+  display: flex;
+  align-items: center;
 }
 
 .navbarMenuOpen .navHeader {
   border-bottom: 1px solid white;
 }
-
-.navList li {
-  padding: 1rem 0;
+@media screen and (min-width: 65rem) {
+  .navbarMenuOpen .navHeader {
+    border-bottom: none;
+  }
 }
 
 .navLink {
-  padding: 1rem 0;
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0.5rem;
   margin-bottom: 1rem;
-  font-size: 1.1rem;
-  margin-right: 1rem;
+  font-size: 1.2rem;
+  border-radius: 3px;
 }
 
-a.navLinkCTA {
-  border: 1px solid white;
-  border-radius: 4px;
-  padding: 0.4rem 0.5rem;
-  width: 100%;
+.navList__horizontal .navLink__active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 3px solid var(--yellow-1);
+}
+.navList__stacked .navLink__active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  top: 1rem;
+  left: -1.5rem;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--yellow-1);
+}
+.navList__horizontal .navLink {
+  margin: 0;
+}
+.navLink:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
-li.getTheBookCTA {
-  transform: translateX(-0.5rem);
-  order: -1;
-  width: 100%;
-  /* channge later */
+@media screen and (min-width: 30rem) {
+  .navLink {
+    font-size: 1.6rem;
+  }
+}
+@media screen and (min-width: 65rem) {
+  .navLink {
+    font-size: 1.2rem;
+  }
 }

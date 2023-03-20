@@ -8,6 +8,7 @@ import { useRouter } from 'next/router'
 
 import { MenuIcon } from './icons/menu'
 import { CrossIcon } from './icons/cross'
+import { NavBarLinks } from './NavBarLinks'
 
 export const Navbar = () => {
   const router = useRouter()
@@ -39,52 +40,14 @@ export const Navbar = () => {
           </a>
         </Link>
         <span className={styles.tagline}>Fun learning for kids</span>
+
+        <div className={styles.largeScreenNav}>
+          <NavBarLinks mode="horizontal" />
+        </div>
       </div>
 
-      <div ref={NavListParentRef}>
-        {menuOpen && (
-          <ol className={styles.navList}>
-            <li>
-              <Link href="/">
-                <a className={styles.navLink}>Home</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a className={styles.navLink}>About</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/write-a-review">
-                <a className={styles.navLink}>Write a review</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/feedback">
-                <a className={styles.navLink}>Feedback</a>
-              </Link>
-            </li>
-            {/* <li>
-          <Link href="/contact">
-            <a className={styles.navLink}>Contact</a>
-          </Link>
-        </li> */}
-            <li>
-              <Link href="/join-mailing-list">
-                <a aria-label="home" className={styles.navLink}>
-                  Mailing list
-                </a>
-              </Link>
-            </li>
-            <li className={styles.getTheBookCTA}>
-              <Link href="/get-the-book">
-                <a className={`${styles.navLink} ${styles.navLinkCTA}`}>
-                  Get the book
-                </a>
-              </Link>
-            </li>
-          </ol>
-        )}
+      <div className={styles.navListParent} ref={NavListParentRef}>
+        {menuOpen && <NavBarLinks mode="stacked" />}
       </div>
     </nav>
   )
