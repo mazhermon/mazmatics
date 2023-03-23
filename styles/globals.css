@@ -44,6 +44,9 @@
   --font-headings-fun: 'Daruma', -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
+  --font-headings-display: 'Bungee Shade', 'Outfit', -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
   --font-script: 'Pacifico', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-copy: 'Outfit', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -141,7 +144,22 @@ body {
   min-height: 100vh;
 }
 
-h1,
+h1 {
+  font-family: var(--font-headings-display);
+  color: var(--purple-3);
+  font-weight: normal;
+  margin-top: 5rem;
+
+  /* // start at 2.2 ? */
+  font-size: 4rem;
+}
+@media screen and (min-width: 50rem) {
+  h1 {
+    font-size: 2.5rem;
+    font-size: 5.5rem;
+  }
+}
+
 h2,
 h3 {
   font-family: var(--font-headings);
@@ -149,14 +167,12 @@ h3 {
   font-weight: normal;
 }
 
-h1 {
-  font-size: 2.2rem;
+h2 {
+  font-size: 3rem;
 }
 
-@media screen and (min-width: 50rem) {
-  h1 {
-    font-size: 2.5rem;
-  }
+h3 {
+  font-size: 1.8rem;
 }
 
 /* h2.bigTitle {
@@ -265,6 +281,13 @@ input.ml-error.ml-error,
 } */
 
 /* // global hit me link for ease of sharing */
+.copyArea {
+}
+
+.copyArea--med p {
+  font-size: 1.6rem;
+}
+
 .copyArea a {
   color: var(--blue-5);
   text-decoration: underline;
@@ -331,6 +354,16 @@ h3 strong {
   margin-left: auto;
   margin-right: auto;
   display: block;
+  background: none;
+  border: none;
+  box-shadow: none;
+}
+
+.footerBannerGlobal button:hover {
+  background: none;
+  border: none;
+  box-shadow: none;
+  border: 3px solid var(--blue-2);
 }
 
 @media screen and (min-width: 70rem) {

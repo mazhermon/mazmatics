@@ -160,11 +160,13 @@
   margin: 20px auto;
   width: 0;
   height: 0;
+  background: none;
   margin: 0 auto;
+  margin-bottom: 20px;
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
   /* transform: translateY(-1rem); */
-  border-bottom: 40px solid var(--purple-2);
+  border-bottom: 40px solid var(--white);
 
   animation: 0.5s ease-out 1s 7 alternate infinite;
   animation-iteration-count: 7;

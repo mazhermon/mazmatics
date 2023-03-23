@@ -392,8 +392,9 @@
   /* background: rgba(255, 255, 255, 0.9); */
   text-align: center !important;
   font-family: var(--font-copy);
-
+  margin: 0 auto;
   margin-bottom: 2rem;
+  max-width: 600px;
 }
 
 .hitmeLink {

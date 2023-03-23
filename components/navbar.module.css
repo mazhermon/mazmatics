@@ -10,6 +10,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   box-shadow: var(--box-shadow-1);
+  overflow: hidden;
 }
 
 .menuToggleButton {
@@ -120,10 +121,17 @@
 .navList__horizontal .navLink__active::after {
   content: '';
   position: absolute;
+  top: 50px;
   bottom: 0;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   right: 0;
-  border-bottom: 3px solid var(--yellow-1);
+  /* border-bottom: 3px solid var(--yellow-1); */
+  width: 30px;
+  height: 30px;
+  background-color: var(--yellow-1);
+  border-radius: 50%;
+
 }
 .navList__stacked .navLink__active::after {
   content: '';

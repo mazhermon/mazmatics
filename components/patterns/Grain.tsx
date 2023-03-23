@@ -2,7 +2,11 @@ import React from 'react'
 
 import styles from './grain.module.css'
 
-export const Grain = ({ mode = 'light' }) => {
+type Props = {
+  mode?: 'light'
+}
+
+export const Grain: React.FC<Props> = ({ mode = 'light' }) => {
   if (mode === 'light') {
     return (
       <svg
@@ -10,8 +14,6 @@ export const Grain = ({ mode = 'light' }) => {
         xmlns="http://www.w3.org/2000/svg"
         version="1.1"
         viewBox="0 0 700 700"
-        // width="700"
-        // height="700"
       >
         <defs>
           <linearGradient

@@ -1,36 +1,86 @@
 .container {
-  position: relative;
+  /* position: relative;
   max-width: var(--site-container-max-width);
   margin: 0 auto;
   padding: var(--site-container-padding);
   padding-top: 2rem;
-  overflow: hidden;
+  overflow: hidden; */
 }
 
-.bookImage {
-  margin: 0 auto;
+.main {
+  position: relative;
+}
+
+.contentGrid {
+  display: grid;
   max-width: 400px;
+  justify-content: center;
+  column-gap: 2rem;
+  margin: 4rem auto;
+  grid-template-areas:
+    'image'
+    'a'
+    'b';
+}
+@media screen and (min-width: 50rem) {
+  .contentGrid {
+    max-width: 1200px;
+    grid-template-columns: repeat(1fr, 2fr);
+    grid-template-rows: 80px auto;
+    grid-template-areas:
+      'image a'
+      'image b';
+  }
+}
+
+.action1 {
+  grid-area: a;
+}
+.action2 {
+  grid-area: b;
+}
+.bookImage {
+  display: inline-block;
+  margin-bottom: 3rem;
+  grid-area: image;
+  filter: brightness(1.1);
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bookImage > span {
   box-shadow: var(--box-shadow-1);
 }
 @media screen and (min-width: 50rem) {
   .bookImage {
-    max-width: 800px;
+    max-width: 350px;
   }
 }
 
 .pageHeader {
   text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 50rem) {
+  .pageHeader {
+    max-width: unset;
+  }
 }
 
 .subtitle {
-  font-size: 1rem;
   text-align: center;
   margin-top: -1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
+  /* font-weight: bold; */
+  color: var(--purple-3);
+  font-size: 1.8rem;
 }
 @media screen and (min-width: 50rem) {
   .subtitle {
-    font-size: 1.2rem;
+    transform: translateY(-1.5rem);
+    font-size: 3.2rem;
   }
 }
 
@@ -54,7 +104,21 @@
   text-align: center;
 }
 
-.contentButtonGroup {
+.getTheBookCopy {
+  display: none;
+  max-width: 400px;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.brandName {
+  font-weight: bold;
+}
+
+.brandPromise {
+  /* color: var(--purple-3); */
+}
+
+/* .contentButtonGroup {
   margin-bottom: 2rem;
 }
 @media screen and (min-width: 50rem) {
@@ -67,6 +131,10 @@
     gap: 12px;
     align-items: center;
   }
+} */
+
+.lookInside {
+  margin-top: 1rem;
 }
 
 @media screen and (min-width: 80rem) {
@@ -89,4 +157,14 @@
   max-width: 400px;
   margin-top: 3rem;
   text-align: center;
+}
+
+/* // decoration */
+.decorationGridPaper {
+  position: relative;
+  transform: translate(-200px, -900px);
+  z-index: -1;
+}
+.decorationSquareGrain {
+  position: relative;
 }

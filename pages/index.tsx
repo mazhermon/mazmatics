@@ -67,6 +67,7 @@ const Home: NextPage = () => {
         </div>
         <FrontPageNews />
         <Container>
+          <LookInside />
           <JoinMailingList />
         </Container>
 
@@ -121,8 +122,6 @@ const Home: NextPage = () => {
               @mazmaticsfun4kids
             </a>
           </div>
-
-          <LookInside />
         </Container>
       </main>
     </div>
