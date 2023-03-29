@@ -13,6 +13,8 @@ const Stockists = () => (
       <h1>NZ Stockists</h1>
       <p>Mazmatics is proud to be available at the following NZ locations:</p>
 
+      <p>(If you&apos;re outside of NZ you can ask at your local bookshop before checking on Amazon for your area of the world. International Bookshops can now order Fun Math 4 Kids via Ingram Spark)</p>
+
       <h2>Auckland</h2>
       <ul className={styles.stockists__list}>
         <li>
@@ -46,15 +48,34 @@ const Stockists = () => (
             url="https://www.thechildrensbookshop.co.nz/p/fun-math-for-kids-volume-1-good-foundations?barcode=9780473648916"
           ></BookStore>
         </li>
+        <li>
+          <BookStore
+            name="Unity Books"
+            location="57 Willis Street, Wellington Central, Wellington 6011"
+            phone="04 499 4245"
+            website="unitybooksonline.co.nz"
+            url="http://unitybooksonline.co.nz/"
+          ></BookStore>
+        </li>
       </ul>
 
       <h2>South Island</h2>
       <ul className={styles.stockists__list}>
+        
+        <li>
+          <BookStore
+            name="Scorpio Books & Telling Tales"
+            location="BNZ Centre - 120 Hereford Street Christchurch 8011"
+            phone="03 3778 462"
+            website="scorpiobooks.co.nz"
+            url="https://scorpiobooks.co.nz/product/fun-math-4-kids-with-mazmatics-vol-1/"
+          ></BookStore>
+        </li>
         <li>
           <BookStore
             name="Timaru Booksellers"
             location="331 Stafford Street, Timaru, NZ 7910"
-            phone="(03) 6831 387"
+            phone="03 6831 387"
             website="bayhillbooks.co.nz"
             url="https://bayhillbooks.co.nz/"
           ></BookStore>
@@ -63,7 +84,7 @@ const Stockists = () => (
           <BookStore
             name="The Twizel Bookshop"
             location="inside the Hydro Cafe, Twizel"
-            phone="(03) 6831 387"
+            phone="03 6831 387"
             website="bayhillbooks.co.nz"
             url="https://bayhillbooks.co.nz/"
           ></BookStore>

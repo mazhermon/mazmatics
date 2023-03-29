@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.stockists h2 {
+  margin-top: 12rem;
+}
+
 .stockists__list {
   list-style: none;
   padding-left: 0;
