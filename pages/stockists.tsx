@@ -13,7 +13,11 @@ const Stockists = () => (
       <h1>NZ Stockists</h1>
       <p>Mazmatics is proud to be available at the following NZ locations:</p>
 
-      <p>(If you&apos;re outside of NZ you can ask at your local bookshop before checking on Amazon for your area of the world. International Bookshops can now order Fun Math 4 Kids via Ingram Spark)</p>
+      <p>
+        (If you&apos;re outside of NZ you can ask at your local bookshop before
+        checking on Amazon for your area of the world. International Bookshops
+        can now order Fun Math 4 Kids via Ingram Spark)
+      </p>
 
       <h2>Auckland</h2>
       <ul className={styles.stockists__list}>
@@ -61,7 +65,6 @@ const Stockists = () => (
 
       <h2>South Island</h2>
       <ul className={styles.stockists__list}>
-        
         <li>
           <BookStore
             name="Scorpio Books & Telling Tales"
