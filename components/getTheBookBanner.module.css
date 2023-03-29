@@ -17,6 +17,8 @@
 
 .getTheBookImage img {
   filter: brightness(1.1);
+  z-index: 999;
+  position: relative;
 }
 
 .homeCTAbuttonArea {

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import Image from 'next/image'
 import lindyImage from '../../public/images/lindyLarge.png'
-import mazmaticsLogo from '../../public/images/Mazmatics-logo.png'
+// import mazmaticsLogo from '../../public/images/Mazmatics-logo.png'
 import { Button } from '../button'
 // import { CharCircleBetty } from '../characters/circleBetty'
 
@@ -15,10 +15,10 @@ const lindyImageSize = {
   height: 2633,
 }
 
-const logoImageSizes = {
-  width: 1001,
-  height: 230,
-}
+// const logoImageSizes = {
+//   width: 1001,
+//   height: 230,
+// }
 
 export const HomeHeader = () => {
   const { userLang } = useContext(AppContext)
@@ -30,24 +30,27 @@ export const HomeHeader = () => {
         <SineShine version="2" />
       </div>
       <div className={styles.homeHeader__content}>
+      
+
         <div className={styles.siteTitle}>
-          <h1 className={styles.homeHeading1}>
-            <span className={styles.siteTitle__welcometo}>Welcome to</span>
-            <span className="sr-only">Mazmatics</span>
-          </h1>
+          <span className={styles.siteTitle__welcometo}>Welcome to</span>
           <div className={styles.MainLogo}>
-            <Image
+            <h1 className={styles.homeHeading1}>
+              <span className="sr-only">Welcome to </span>
+              Mazmatics
+            </h1>
+            {/* <Image
               className={styles.siteTitle__logo}
               alt="Mazmatics"
               src={mazmaticsLogo}
               layout="intrinsic"
               width={logoImageSizes.width}
               height={logoImageSizes.height}
-            />
+            /> */}
           </div>
 
           <div className={styles.siteTitle__promise}>
-            <div>We help kids say...</div>
+            <div className={styles.weHelpKidsSay}>We help kids say...</div>
             <div className={styles.iLikeMath}>
               <span className={`quoteMark ${styles.quoteMark}`}>&ldquo;</span>I
               like math{userLang !== 'en-US' && <span>s</span>}

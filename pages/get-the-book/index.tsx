@@ -62,8 +62,8 @@ const GetTheBook = () => {
                   className={`copyArea copyArea--med ${styles.getTheBookCopy}`}
                 >
                   <p className={styles.brandPromise}>
-                    <span className={styles.brandName}>Mazmatics</span> &#8212; supporting positive early experiences with{' '}
-                    {mathsWord}
+                    <span className={styles.brandName}>Mazmatics</span> &#8212;
+                    supporting positive early experiences with {mathsWord}
                   </p>
                   {/* <p>
                     Fun {mathsWord} 4 Kids is an activity &amp; story book that

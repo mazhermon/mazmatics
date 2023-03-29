@@ -397,6 +397,15 @@
   max-width: 600px;
 }
 
+.homeHeaderColorWrap {
+  background-color: aqua;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  
+}
+
+
 .hitmeLink {
   transform: translateY(-9px);
   font-size: 1.6rem;
@@ -495,3 +504,4 @@
   width: 100%;
   transform: rotate(-45deg) scale(0.5) translateX(-1900px);
 }
+

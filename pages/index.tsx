@@ -47,7 +47,9 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <HomeHeader />
+        <div className={styles.homeHeaderColorWrap}>
+          <HomeHeader />
+        </div>
         <div className={styles.product_book1}>
           <h2 className={styles.product_book1__heading}>
             <Banner

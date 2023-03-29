@@ -309,10 +309,16 @@ input.ml-error.ml-error,
   width: auto;
   margin: 0;
   cursor: pointer !important;
-  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
-  -webkit-background-clip: text;
-  color: transparent;
+  /* // TODO check on non gradient link color */
   transform: translateY(0);
+}
+@supports (background-clip: text) or (-webkit-background-clip: text) {
+  .hitmeLink {
+    background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }
 
 @media screen and (min-width: 50rem) {

@@ -131,7 +131,6 @@
   height: 30px;
   background-color: var(--yellow-1);
   border-radius: 50%;
-
 }
 .navList__stacked .navLink__active::after {
   content: '';

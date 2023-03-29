@@ -75,6 +75,26 @@
   justify-content: flex-start;
   align-items: center;
   margin-bottom: 0.3rem;
+  color: var(--purple-3);
+}
+
+.siteTitle__welcometo {
+  text-align: center;
+  font-family: var(--font-script);
+  font-size: 1.2rem;
+  /* color: var(--black); */
+  margin-top: 0;
+  /* margin-bottom: 2rem; */
+}
+@media screen and (min-width: 30rem) {
+  .siteTitle__welcometo {
+    font-size: 1.6rem;
+  }
+}
+
+.weHelpKidsSay {
+  /* color: var(--black); */
+  font-family: var(--font-script);
 }
 
 .iLikeMath {
@@ -83,6 +103,7 @@
   background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
   -webkit-background-clip: text;
   color: transparent;
+  color: var(--purple-3);
   margin-top: 0.3rem;
   margin-bottom: 0.8rem;
 }
@@ -99,27 +120,24 @@
 }
 
 .homeHeading1 {
-  margin-bottom: 0;
+  margin: 0;
 }
 @media screen and (min-width: 30rem) {
-  .homeHeading1 {
-    transform: translateY(1rem);
-  }
-}
-
-.siteTitle__welcometo {
-  text-align: center;
-  font-family: var(--font-script);
-  font-size: 1.2rem;
-}
-@media screen and (min-width: 30rem) {
-  .siteTitle__welcometo {
-    font-size: 1.6rem;
-  }
 }
 
 .MainLogo {
-  transform: translateY(-1.5rem);
+  /* transform: translateY(-1.5rem); */
+  margin-top: 0.5rem;
+  margin-bottom: 1.2rem;
+  /* height: 90px; */
+  font-family: var(--font-headings-display);
+  font-size: 3rem;
+  /* color: var(--purple-3); */
+}
+@media screen and (min-width: 30rem) {
+  .MainLogo {
+    /* font-size: 1.6rem; */
+  }
 }
 
 .siteTitle__logo {
@@ -127,7 +145,7 @@
 }
 @media screen and (min-width: 30rem) {
   .siteTitle__logo {
-    transform: scale(1);
+    /* transform: scale(0.8); */
   }
 }
 @media screen and (min-width: 60rem) {
