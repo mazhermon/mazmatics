@@ -401,10 +401,9 @@
   /* background-color: aqua; */
   /* background-color: var(--purple-2); */
   width: 100%;
-  
+
   display: flex;
   justify-content: center;
-  
 }
 
 /* top pattern */
@@ -413,7 +412,7 @@
   left: 0;
   right: 0;
   top: 0;
-  bottom:0;
+  bottom: 0;
   z-index: -1;
   overflow: hidden;
   /* border: 3px solid green; */
@@ -426,7 +425,6 @@
   .gridPaperHomePageHeader svg {
     transform: scale(1);
   }
-  
 }
 
 /* bottom grid pattern */
@@ -435,13 +433,11 @@
   display: none;
 }
 .gridPaperHomePageLower svg {
-
   transform: translate(-10%, 1200px) scale(0.5);
 }
 .gridPaperHomePageLower g {
-  transform: rotate(45deg);  
+  transform: rotate(45deg);
 }
-
 
 .hitmeLink {
   transform: translateY(-9px);
@@ -541,4 +537,3 @@
   width: 100%;
   transform: rotate(-45deg) scale(0.5) translateX(-1900px);
 }
-

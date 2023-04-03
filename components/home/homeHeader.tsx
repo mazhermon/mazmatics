@@ -25,16 +25,11 @@ export const HomeHeader = () => {
 
   return (
     <div className={styles.homeHeader}>
-     
-
       {/* <div className={styles.sineShineHomePositioner}>
         <SineShine version="2" />
       </div> */}
 
-      
-
       <div className={styles.homeHeader__content}>
-      
         <div className={styles.siteTitle}>
           <span className={styles.siteTitle__welcometo}>Welcome to</span>
           <div className={styles.MainLogo}>

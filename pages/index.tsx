@@ -51,9 +51,9 @@ const Home: NextPage = () => {
           <GridPaper />
         </div>
         <div className={styles.homeHeaderColorWrap}>
-        <div className={styles.gridPaperHomePageHeader}>
-          <GridPaper />
-        </div>
+          <div className={styles.gridPaperHomePageHeader}>
+            <GridPaper />
+          </div>
           <HomeHeader />
         </div>
         <div className={styles.product_book1}>
@@ -79,7 +79,7 @@ const Home: NextPage = () => {
           <JoinMailingList />
         </Container>
 
-        <Container className='longCopyLayoutArea'>
+        <Container className="longCopyLayoutArea">
           <TestimonialList />
         </Container>
 

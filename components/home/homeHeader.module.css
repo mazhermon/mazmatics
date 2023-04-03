@@ -50,7 +50,6 @@
   }
 }
 
-
 .homeHeader__content {
   margin-top: 2rem;
 }
@@ -107,7 +106,6 @@
   margin: 0;
 }
 
-
 .MainLogo {
   margin-top: 0.5rem;
   margin-bottom: 1.2rem;
@@ -123,7 +121,6 @@
 .siteTitle__logo {
   transform: scale(0.7);
 }
-
 
 @media screen and (min-width: 30rem) {
   .siteTitle__welcometo {
@@ -154,7 +151,6 @@
     width: 100%;
   }
 }
-
 
 .charCircleBettyPositioner {
   --bettySize: 200px;
