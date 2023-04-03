@@ -22,7 +22,7 @@ import JoinMailingList from './join-mailing-list'
 import { Container } from '../components/Container'
 import { LookInside } from '../components/LookInside'
 import { TestimonialList } from '../components/testimonials/TestimonialList'
-import { SquaresAndCurvesOne } from '../components/patterns/SquaresAndCurvesOne'
+import { GridPaper } from '../components/patterns/GridPaper'
 
 // const bookProductImageSize = {
 //   width: 901,
@@ -47,7 +47,13 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <div className={styles.gridPaperHomePageLower}>
+          <GridPaper />
+        </div>
         <div className={styles.homeHeaderColorWrap}>
+        <div className={styles.gridPaperHomePageHeader}>
+          <GridPaper />
+        </div>
           <HomeHeader />
         </div>
         <div className={styles.product_book1}>
@@ -73,15 +79,9 @@ const Home: NextPage = () => {
           <JoinMailingList />
         </Container>
 
-        <Container>
+        <Container className='longCopyLayoutArea'>
           <TestimonialList />
         </Container>
-
-        <div className={styles.squaresAndCurvesHomePositioner}>
-          <div className={styles.squaresAndCurvesHomePositionerInner}>
-            <SquaresAndCurvesOne />
-          </div>
-        </div>
 
         <Reviews />
 

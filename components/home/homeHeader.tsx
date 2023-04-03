@@ -6,8 +6,8 @@ import { Button } from '../button'
 // import { CharCircleBetty } from '../characters/circleBetty'
 
 import styles from './homeHeader.module.css'
-import { GridPaper } from '../patterns/GridPaper'
-import { SineShine } from '../patterns/SineShine'
+// import { GridPaper } from '../patterns/GridPaper'
+// import { SineShine } from '../patterns/SineShine'
 import { AppContext } from '../../context/appContext'
 
 const lindyImageSize = {
@@ -25,13 +25,16 @@ export const HomeHeader = () => {
 
   return (
     <div className={styles.homeHeader}>
-      <GridPaper />
-      <div className={styles.sineShineHomePositioner}>
+     
+
+      {/* <div className={styles.sineShineHomePositioner}>
         <SineShine version="2" />
-      </div>
-      <div className={styles.homeHeader__content}>
+      </div> */}
+
       
 
+      <div className={styles.homeHeader__content}>
+      
         <div className={styles.siteTitle}>
           <span className={styles.siteTitle__welcometo}>Welcome to</span>
           <div className={styles.MainLogo}>

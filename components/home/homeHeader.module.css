@@ -9,7 +9,6 @@
 }
 @media screen and (min-width: 60rem) {
   .homeHeader {
-    /* border: 3px solid blue; */
     display: grid;
     align-items: start;
     grid-template-columns: 1fr 400px;
@@ -47,18 +46,13 @@
   .lindy::after {
     width: 380px;
     height: 50px;
-    /* display: none; */
-
     transform: skew(30deg) translate(40px, -30px);
   }
 }
-@media screen and (min-width: 50rem) {
-}
 
-@media screen and (min-width: 80rem) {
-}
 
 .homeHeader__content {
+  margin-top: 2rem;
 }
 
 .homeHeader__heroImage {
@@ -82,9 +76,7 @@
   text-align: center;
   font-family: var(--font-script);
   font-size: 1.2rem;
-  /* color: var(--black); */
   margin-top: 0;
-  /* margin-bottom: 2rem; */
 }
 @media screen and (min-width: 30rem) {
   .siteTitle__welcometo {
@@ -93,12 +85,10 @@
 }
 
 .weHelpKidsSay {
-  /* color: var(--black); */
-  font-family: var(--font-script);
 }
 
 .iLikeMath {
-  font-family: var(--font-script);
+  /* font-family: var(--font-script); */
   font-size: 3rem;
   background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
   -webkit-background-clip: text;
@@ -113,46 +103,27 @@
   }
 }
 
-@media screen and (min-width: 60rem) {
-  .siteTitle {
-    /* align-items: flex-start; */
-  }
-}
-
 .homeHeading1 {
   margin: 0;
 }
-@media screen and (min-width: 30rem) {
-}
+
 
 .MainLogo {
-  /* transform: translateY(-1.5rem); */
   margin-top: 0.5rem;
   margin-bottom: 1.2rem;
-  /* height: 90px; */
   font-family: var(--font-headings-display);
-  font-size: 3rem;
-  /* color: var(--purple-3); */
+  font-size: 2rem;
 }
 @media screen and (min-width: 30rem) {
   .MainLogo {
-    /* font-size: 1.6rem; */
+    font-size: 3rem;
   }
 }
 
 .siteTitle__logo {
   transform: scale(0.7);
 }
-@media screen and (min-width: 30rem) {
-  .siteTitle__logo {
-    /* transform: scale(0.8); */
-  }
-}
-@media screen and (min-width: 60rem) {
-  /* .siteTitle__logo {
-    transform: translateX(-22px);
-  } */
-}
+
 
 @media screen and (min-width: 30rem) {
   .siteTitle__welcometo {
@@ -171,14 +142,11 @@
 
 .siteTitle__promise {
   font-family: var(--font-copy);
-  /* font-family: var(--font-script); */
   font-size: 1.1rem;
   margin: 0;
   margin-top: 5px;
   transform: translateY(-1rem);
-  /* width: 144px; */
   text-align: center;
-  /* margin-top: 0.5rem; */
 }
 @media screen and (min-width: 30rem) {
   .siteTitle__promise {
@@ -186,17 +154,7 @@
     width: 100%;
   }
 }
-/* @media screen and (min-width: 60rem) {
-  .siteTitle__promise {
-    text-align: left;
-  }
-} */
 
-/* @media screen and (min-width: 60rem) {
-  .homeHeaderCTA {
-    margin-left: 0;
-  }
-} */
 
 .charCircleBettyPositioner {
   --bettySize: 200px;
@@ -253,10 +211,9 @@
 }
 
 /* // decoration */
-.sineShineHomePositioner {
+/* .sineShineHomePositioner {
   position: absolute;
   transform: rotate(45deg) translate(10%, -40%) scaleX(-1);
-  /* border: 8px solid red; */
   width: 100%;
   opacity: 0.5;
   z-index: -1;
@@ -265,4 +222,4 @@
   .sineShineHomePositioner {
     transform: rotate(-45deg) translate(40%, -900px) scale(0.8);
   }
-}
+} */

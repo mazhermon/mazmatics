@@ -151,11 +151,11 @@ h1 {
   margin-top: 5rem;
 
   /* // start at 2.2 ? */
-  font-size: 4rem;
+  font-size: 3rem;
+  /* font-size: 4rem; */
 }
 @media screen and (min-width: 50rem) {
   h1 {
-    font-size: 2.5rem;
     font-size: 5.5rem;
   }
 }
@@ -220,7 +220,14 @@ p {
 }
 
 .longCopyLayoutArea h3 {
-  margin-top: 2rem;
+  margin-top: 3rem;
+}
+@media screen and (min-width: 60rem) {
+  .longCopyLayoutArea h3 {
+    margin-top: 9rem;
+  }
+  
+  
 }
 
 /* body::before {

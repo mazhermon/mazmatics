@@ -11,7 +11,7 @@
 
   opacity: 0.8;
   z-index: -1;
-  transform: translate(40%, 900px);
+  /* transform: translate(40%, 900px); */
   overflow: visible;
   pointer-events: none;
 }
@@ -22,6 +22,6 @@
   display: block;
   /* position: absolute; */
   left: 0;
-  transform: rotate(45deg);
+  /* transform: rotate(45deg); */
   transform-origin: 50%;
 }

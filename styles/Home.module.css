@@ -104,7 +104,7 @@
 }
 
 .outNowWrapper {
-  transform: translateY(-2.3rem);
+  /* transform: translateY(-0.3rem); */
   color: white;
   /* background-image: var(--gradient-1); */
   background-color: var(--black);
@@ -130,7 +130,7 @@
   margin: 0 auto;
   border-left: 40px solid transparent;
   border-right: 40px solid transparent;
-  /* transform: translateY(-1rem); */
+  transform: translateY(1rem);
   border-top: 40px solid var(--purple-2);
   margin-bottom: 1.5rem;
   animation: 0.5s ease-out 1s 7 alternate infinite;
@@ -398,11 +398,48 @@
 }
 
 .homeHeaderColorWrap {
-  background-color: aqua;
+  /* background-color: aqua; */
+  /* background-color: var(--purple-2); */
   width: 100%;
+  
   display: flex;
   justify-content: center;
   
+}
+
+/* top pattern */
+.gridPaperHomePageHeader {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom:0;
+  z-index: -1;
+  overflow: hidden;
+  /* border: 3px solid green; */
+}
+.gridPaperHomePageHeader svg {
+  opacity: 0.4;
+  transform: scale(1.8);
+}
+@media screen and (min-width: 60rem) {
+  .gridPaperHomePageHeader svg {
+    transform: scale(1);
+  }
+  
+}
+
+/* bottom grid pattern */
+.gridPaperHomePageLower {
+  position: absolute;
+  display: none;
+}
+.gridPaperHomePageLower svg {
+
+  transform: translate(-10%, 1200px) scale(0.5);
+}
+.gridPaperHomePageLower g {
+  transform: rotate(45deg);  
 }
 
 
