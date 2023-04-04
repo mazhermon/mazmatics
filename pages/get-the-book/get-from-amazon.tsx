@@ -1,22 +1,31 @@
 import React, { useContext } from 'react'
-// import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
 import { AppContext } from '../../context/appContext'
-// import Link from 'next/link'
-
-// import bookBannerImage from '../public/images/emailFunCOver.jpg'
-import bookCoverImage from '../../public/images/mazmatics_bookCoverWeb1.jpg'
+import bookProductImageClearCut from '../../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
 
 import styles from './get-the-book.module.css'
 import { Button } from '../../components/button'
+import { Grain } from '../../components/patterns/Grain'
+import { GridPaper } from '../../components/patterns/GridPaper'
+
+const bookProductImageSize = {
+  width: 900,
+  height: 1350,
+}
 
 const GetFromAmazon = () => {
   const { userLang } = useContext(AppContext)
 
   return (
     <>
+      <div className={styles.decorationSquareGrain}>
+        <Grain />
+      </div>
+      <div className={styles.decorationGridPaper}>
+        <GridPaper />
+      </div>
       <div className={styles.container}>
         <Head>
           <title>Get from Amazon</title>
@@ -68,14 +77,18 @@ const GetFromAmazon = () => {
               </li>
             </ul>
 
-            {/* // TODO iamge of lindy thinking */}
-            <Image
-              alt="Book cover of Fun Math for Kids volume one by Mazmatics"
-              src={bookCoverImage}
-              layout="intrinsic"
-              width="450"
-              height="450"
-            />
+            {/* // TODO image of lindy thinking */}
+
+
+            <div className={styles.bookImage}>
+              <Image
+                alt="Book cover for Mazmatics Fun Math for Kids Volume 1"
+                src={bookProductImageClearCut}
+                layout="intrinsic"
+                width={bookProductImageSize.width * 0.5}
+                height={bookProductImageSize.height * 0.5}
+              />
+            </div>
 
             <div className={styles.nzShopDetails}>
               or if you&apos;re in Aotearoa NZ you can get books shipped

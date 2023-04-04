@@ -7,6 +7,10 @@
   overflow: hidden; */
 }
 
+.container h1 {
+  text-align: center;
+}
+
 .main {
   position: relative;
 }
@@ -77,7 +81,7 @@
   color: var(--purple-3);
   font-size: 1.8rem;
 }
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 70rem) {
   .subtitle {
     transform: translateY(-1.5rem);
     font-size: 3.2rem;
@@ -162,9 +166,24 @@
 /* // decoration */
 .decorationGridPaper {
   position: relative;
-  transform: translate(-200px, -900px);
+  transform: translate(20%, 0) scale(0.6);
   z-index: -1;
+}
+.decorationGridPaper svg {
+  transform: rotate(45deg);
+}
+@media screen and (min-width: 40rem) {
+  .decorationGridPaper {
+    position: relative;
+    transform: translate(20%, 100px) scale(0.6);
+    
+  }
+  .decorationGridPaper svg {
+    transform: rotate(45deg);
+  } 
 }
 .decorationSquareGrain {
   position: relative;
+  opacity: 0.7;
+  z-index: -1;
 }

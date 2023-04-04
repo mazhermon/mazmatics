@@ -156,6 +156,11 @@ h1 {
 }
 @media screen and (min-width: 50rem) {
   h1 {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (min-width: 70rem) {
+  h1 {
     font-size: 5.5rem;
   }
 }
