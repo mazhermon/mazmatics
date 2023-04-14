@@ -1,0 +1,73 @@
+.aboutHeader {
+  padding: 3rem;
+  background-color: var(--blue-2);
+  overflow: hidden;
+  position: relative;
+}
+@media screen and (min-width: 50rem) {
+  .aboutHeader {
+    padding: 5rem;
+  }
+}
+.aboutHeader__heading {
+  margin-top: 0;
+  margin-bottom: 0.2rem;
+}
+
+.aboutHeader__introText {
+  max-width: 400px;
+  padding-right: 3rem;
+  /* background-color: white; */
+}
+@media screen and (min-width: 60rem) {
+  .aboutHeader__introText {
+    max-width: 600px;
+    padding-right: 5rem;
+    /* background-color: white; */
+  }
+}
+
+.aboutHeader__introText p {
+  font-size: 1.3rem;
+  /* line-height: 1.4; */
+}
+
+.subtitle.subtitle {
+  font-size: 2rem;
+  color: var(--purple-3);
+  font-weight: bold;
+}
+
+.sineShinePositioner {
+  position: absolute;
+  right: -58%;
+  width: 30%;
+  top: -100px;
+}
+.sineShinePositioner svg {
+  transform: rotate(45deg) scale(3.5) translate(10px, -50px);
+}
+@media screen and (min-width: 40rem) {
+  .sineShinePositioner {
+    right: -20%;
+  }
+  .sineShinePositioner svg {
+    transform: rotate(45deg) scale(2.5) translate(50px, -90px);
+  }
+}
+@media screen and (min-width: 60rem) {
+  .sineShinePositioner {
+    right: -30%;
+  }
+  .sineShinePositioner svg {
+    transform: rotate(45deg) scale(1.8);
+  }
+}
+@media screen and (min-width: 90rem) {
+  .sineShinePositioner {
+    right: 0;
+  }
+  .sineShinePositioner svg {
+    transform: rotate(45deg) scale(1.5);
+  }
+}

@@ -11,6 +11,8 @@
   align-items: flex-start;
   box-shadow: var(--box-shadow-1);
   overflow: hidden;
+  z-index: 1;
+  position: relative;
 }
 
 .menuToggleButton {

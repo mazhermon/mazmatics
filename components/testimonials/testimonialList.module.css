@@ -5,10 +5,17 @@
   /* background-color: var(--white); */
   padding: 3rem;
   z-index: 1;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .customerTestimonialsTitle {
   margin-top: 6rem;
+}
+
+.customerTestimonialsIntro {
+  max-width: 600px;
 }
 
 .decorativeWrapper {

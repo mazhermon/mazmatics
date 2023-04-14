@@ -16,6 +16,10 @@ export const TestimonialList = () => {
       <h2 className={styles.customerTestimonialsTitle}>
         Customer testimonials
       </h2>
+      <p className={styles.customerTestimonialsIntro}>
+        A Big thanks to everyone who provides feedback. Good or bad, we love
+        your feedback. Contact links on mazmatics.com
+      </p>
 
       <h3>
         Feedback from <strong>kids</strong>

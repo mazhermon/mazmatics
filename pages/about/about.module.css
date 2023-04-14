@@ -1,6 +1,16 @@
 /* .aboutTextWrapper {
 } */
 
+.aboutPage section {
+  padding: 3rem;
+}
+@media screen and (min-width: 50rem) {
+  .aboutPage section {
+    padding: 5rem;
+    padding-bottom: 7rem;
+  }
+}
+
 .testimonial {
   position: relative;
   margin: 2rem 0;
@@ -29,3 +39,122 @@
 .aboutTextWrapper h3 {
   margin-top: 3.8rem;
 }
+
+.section1 p {
+  max-width: 50ch;
+}
+.section1__content {
+  max-width: 600px;
+}
+.section1__decoration svg {
+  /* margin: auto; */
+  width: 90%;
+  max-width: 500px;
+}
+
+@media screen and (min-width: 50rem) {
+  .contentGridType1 {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.shortStorySection {
+  background-color: var(--purple-2);
+  color: var(--white);
+}
+.shortStorySection .section1__decoration svg {
+  width: 100%;
+  max-width: 400px;
+}
+
+.shortStorySection .section1__decoration {
+  color: var(--purple-3);
+  transform: translateX(-1.7rem);
+  padding-top: 7rem;
+}
+@media screen and (min-width: 50rem) {
+  .shortStorySection .section1__decoration {
+    display: flex;
+    justify-content: center;
+    padding-top: 3.5rem;
+
+    transform: translateX(0);
+  }
+}
+
+.shortStorySection h2 {
+  color: var(--white);
+}
+
+.longStorySection {
+  background-color: var(--white);
+}
+.lookInsideWrapper {
+  position: relative;
+  background-color: var(--yellow-1);
+  padding: 5rem 2rem;
+}
+
+.gridPaperWrapper {
+  background-color: var(--white);
+  overflow: hidden;
+
+  box-shadow: 1px 13px 10px -2px rgba(0, 0, 0, 0.08) inset,
+    1px -9px 10px -2px rgba(0, 0, 0, 0.08) inset;
+}
+.gridPaperWrapper svg {
+  z-index: 1;
+}
+.gridPaperWrapper,
+.sunShineWrapper {
+  position: relative;
+  height: 16rem;
+}
+
+.valuesSection {
+  background-color: var(--yellow-1);
+}
+
+.sunShineWrapper {
+  height: 18rem;
+  overflow: hidden;
+  /* background-color: var(--blue-1); */
+}
+@media screen and (min-width: 30rem) {
+  .sunShineWrapper {
+    height: 46rem;
+  }
+}
+@media screen and (min-width: 60rem) {
+  .sunShineWrapper {
+    height: 46rem;
+  }
+}
+
+.sunShineWrapper g {
+  /* stroke: var(--blue-4); */
+}
+
+.sunShineWrapper svg,
+.sunShineWrapper canvas {
+  z-index: 1;
+}
+.sunShineWrapper svg {
+  opacity: 0.3;
+}
+
+.spaceSection.spaceSection {
+  background-color: var(--green-1);
+  padding-bottom: 12rem;
+}
+
+.gettingInvolvedSection {
+  /* background-image: var(--gradient-1); */
+  background-color: var(--blue-2);
+  /* color: var(--white); */
+}
+/* .gettingInvolvedSection h3 {
+  color: var(--white);
+} */

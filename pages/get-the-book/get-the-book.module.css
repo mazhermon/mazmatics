@@ -176,11 +176,10 @@
   .decorationGridPaper {
     position: relative;
     transform: translate(20%, 100px) scale(0.6);
-    
   }
   .decorationGridPaper svg {
     transform: rotate(45deg);
-  } 
+  }
 }
 .decorationSquareGrain {
   position: relative;

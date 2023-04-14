@@ -79,7 +79,6 @@ const GetFromAmazon = () => {
 
             {/* // TODO image of lindy thinking */}
 
-
             <div className={styles.bookImage}>
               <Image
                 alt="Book cover for Mazmatics Fun Math for Kids Volume 1"

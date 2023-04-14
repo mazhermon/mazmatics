@@ -1,7 +1,16 @@
+.sineShine {
+  /* border: 8px saddlebrown tomato; */
+}
 .sineShine path {
-  border: 8px saddlebrown solid;
+  /* border: 8px saddlebrown tomato; */
   fill: none;
-  stroke: #fff73e;
+  stroke: var(--yellow-1);
   stroke-miterlimit: 10;
   stroke-width: 9px;
+  stroke-linecap: round;
+}
+
+.purple :global path {
+  /* stroke: red !important; */
+  stroke: var(--purple-2);
 }
