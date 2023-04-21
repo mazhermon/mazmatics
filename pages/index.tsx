@@ -18,11 +18,16 @@ import { HomeHeader } from '../components/home/homeHeader'
 import { Reviews } from '../components/reviews'
 
 import { FrontPageNews } from '../components/FrontPageNews'
-import JoinMailingList from './join-mailing-list'
+import JoinMailingList from '../components/join-mailing-list'
+//pages/join-mailing-list.tsx
+///components/join-mailing-list.tsx
 import { Container } from '../components/Container'
 import { LookInside } from '../components/LookInside'
 import { TestimonialList } from '../components/testimonials/TestimonialList'
 import { GridPaper } from '../components/patterns/GridPaper'
+import { SineShine } from '../components/patterns/SineShine'
+import { FacebookIcon } from '../components/icons/facebook'
+import { InstaIcon } from '../components/icons/insta'
 
 // const bookProductImageSize = {
 //   width: 901,
@@ -83,19 +88,28 @@ const Home: NextPage = () => {
           <TestimonialList />
         </Container>
 
-        <Reviews />
+        <div className={styles.bigStripeDeco}>
+          <GridPaper />
+        </div>
 
         <Container>
-          <div className={styles.kidsDrawing}>
-            <Image
-              alt="illustration of kids from Mazmatics Fun Math for kids book"
-              src={mazAPlus006}
-              layout="intrinsic"
-              width={contentImageSize.width / 3}
-              height={contentImageSize.height / 3}
-            />
-          </div>
+          <Reviews />
+        </Container>
 
+        {/* <div className={styles.decorationPositioner}>
+          <SineShine />
+        </div> */}
+
+        <div className={styles.kidsDrawing}>
+          <Image
+            alt="illustration of kids from Mazmatics Fun Math for kids book"
+            src={mazAPlus006}
+            layout="intrinsic"
+            width={contentImageSize.width / 3}
+            height={contentImageSize.height / 3}
+          />
+        </div>
+        <Container>
           <div className={styles.feedback}>
             <h2 className="bigTitle">Feedback &amp; testimonials welcome</h2>
             <p>
@@ -116,13 +130,26 @@ const Home: NextPage = () => {
 
           <div className={styles.insta}>
             <h2>Follow us</h2>
-            <p>Share your experience with us on Instagram</p>
+            <p>Share your experience with us on Instagram or Facebook</p>
             <a
+              target="_blank"
+              rel="noopener noreferrer"
               className={styles.hitmeLink}
               href="https://www.instagram.com/mazmaticsfun4kids/"
             >
+              <InstaIcon />
               @mazmaticsfun4kids
             </a>
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.hitmeLink}
+              href="https://www.facebook.com/mazmaticsfunforkids"
+            >
+              <FacebookIcon />
+              Mazmatics
+            </a>
+            <p>And sign up for very occasional emails below</p>
           </div>
         </Container>
       </main>

@@ -71,6 +71,7 @@ export const Footer = () => {
           subtitle="Volume 1 – out now"
           size="med"
           color="purple"
+          variant="fun"
         >
           <Button variant="secondary" href="/get-the-book">
             Get the book

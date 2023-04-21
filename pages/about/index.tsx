@@ -18,6 +18,7 @@ const DynamicSunSprite = dynamic(
 
 import styles from './about.module.css'
 import { AboutHeader } from './components/AboutHeader'
+import { WriteInThisBook } from '../../components/doodles/writeInThisBook'
 
 const About = () => (
   <div className={styles.aboutPage}>
@@ -84,6 +85,7 @@ const About = () => (
       <div className={styles.sunShineWrapper}>
         <GridPaper />
         <DynamicSunSprite />
+        <WriteInThisBook />
       </div>
 
       <section className={`${styles.section1} ${styles.spaceSection}`}>

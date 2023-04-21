@@ -9,6 +9,7 @@ type Props = {
   color?: 'yellow' | 'purple'
   children?: React.ReactNode
   waves?: boolean
+  variant?: 'fun'
 }
 
 export const Banner: React.FC<Props> = ({
@@ -19,11 +20,13 @@ export const Banner: React.FC<Props> = ({
   size,
   children,
   waves,
+  variant,
 }) => (
   <div
     className={`${styles.banner} ${className} 
         ${size ? styles[size] : styles.med}
         ${color ? styles[color] : styles.yellow}
+        ${variant && styles[variant]}
     `}
   >
     {waves && (

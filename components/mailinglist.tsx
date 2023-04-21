@@ -4,6 +4,7 @@ import axios from 'axios'
 import styles from './mailinglist.module.css'
 import { TickCircle } from './icons/tickCircle'
 import { CrossCircle } from './icons/crossCircle'
+import { LoaderRing } from './icons/loaders/loaderRing'
 
 type Props = {
   onMailingListInputFocused: () => void
@@ -84,7 +85,7 @@ const MailingList: React.FC<Props> = ({
           type="submit"
           disabled={state === 'LOADING'}
         >
-          Join
+          {state === 'LOADING' ? <LoaderRing /> : 'Join'}
         </button>
       </div>
 

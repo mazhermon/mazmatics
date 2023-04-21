@@ -1,81 +1,21 @@
-.container {
-  position: relative;
-  max-width: var(--site-container-max-width);
-  margin: 0 auto;
-  padding: var(--site-container-padding);
-  overflow: hidden;
+.joinTheMailingListPage {
+  margin-bottom: -5rem;
+  padding: 0 3rem;
 }
-
-.signup {
-  margin-top: 12rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
-  position: relative;
-  min-height: 190px;
-  min-width: 300px;
-  border-bottom: none;
-  /* margin-bottom: var(--signup-margin-bottom); */
-  box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.4);
-  background-color: white;
-  max-width: 100%;
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  z-index: 2;
-  transition: width 0.5s ease-out;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 1rem;
-  padding-bottom: 0.5rem;
-}
-
-@media screen and (min-width: 30rem) {
-  .signup {
-    width: 450px;
-    padding: 2rem;
-    padding-bottom: 0;
+@media screen and (min-width: 60rem) {
+  .joinTheMailingListPage {
+    margin-bottom: -10rem;
+    padding: 0 7rem;
   }
 }
 
-.signupLoading {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: -1;
-  font-family: var(--font-script);
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.joinTheMailingListPage p {
+  max-width: 30ch;
 }
 
-.signup::before {
-  pointer-events: none;
-  content: '';
-  border-top-left-radius: 7px;
-  border-top-right-radius: 7px;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  border: 10px solid var(--purple-2);
-  z-index: 1;
-}
-
-.charCircleBettyPositioner {
-  --bettySize: 140px;
-  transform: rotate(15deg);
-  position: absolute;
-  top: -10rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 999;
-  padding-top: 3rem;
+.joinTheMailingListPage .subtitle {
+  font-family: var(--font-script) !important;
+  margin-top: -2.2rem;
+  font-size: 2rem;
+  color: var(--purple-3);
 }

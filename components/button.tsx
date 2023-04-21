@@ -28,7 +28,6 @@ export const Button: React.FC<Props> = ({
     [styles.primary]: variant === 'primary',
     [styles.fullWidth]: fullWidth,
   })
-  console.log('say what')
   // const fullWidthClass = fullWidth ? styles.fullWidth : 'dogs'
   if (external) {
     return (

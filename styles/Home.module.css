@@ -81,6 +81,7 @@
 
 .product_book1__heading {
   margin: 0;
+  color: var(--black);
 }
 
 .homeCTAbutton {
@@ -186,6 +187,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: scale(1.4);
+  width: 100vw;
+  max-width: auto;
+}
+
+.kidsDrawing img {
+  box-shadow: var(--box-shadow-3);
+  border: 4px solid red;
 }
 
 /* //banner position */
@@ -387,14 +396,28 @@
 /* // clean up with new components */
 .feedback,
 .insta {
-  /* width: 80vw; */
-  padding: 3rem 2rem 4rem 2rem;
-  /* background: rgba(255, 255, 255, 0.9); */
-  text-align: center !important;
+  /* text-align: center !important; */
   font-family: var(--font-copy);
   margin: 0 auto;
   margin-bottom: 2rem;
-  max-width: 600px;
+
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  background-color: white;
+  /* box-shadow: var(--box-shadow-3); */
+  /* max-width: 500px; */
+}
+
+.insta .hitmeLink {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+@media screen and (min-width: 40rem) {
+  .insta .hitmeLink {
+    font-size: 1.8rem;
+  }
 }
 
 .homeHeaderColorWrap {
@@ -439,6 +462,14 @@
   transform: rotate(45deg);
 }
 
+.bigStripeDeco {
+  position: relative;
+  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  min-height: 20rem;
+  width: 100%;
+  box-shadow: var(--box-shadow-inset-double);
+}
+
 .hitmeLink {
   transform: translateY(-9px);
   font-size: 1.6rem;
@@ -454,8 +485,8 @@
 
 @media screen and (min-width: 50rem) {
   .hitmeLink {
-    transform: translateY(-9px);
-    font-size: 3rem;
+    /* transform: translateY(-9px); */
+    font-size: 2rem;
   }
 }
 
@@ -536,4 +567,15 @@
   opacity: 0.1;
   width: 100%;
   transform: rotate(-45deg) scale(0.5) translateX(-1900px);
+}
+
+.decorationPositioner {
+  position: relative;
+  width: 80%;
+}
+.decorationPositioner svg {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transform: scale(0.3) translate(-30%, 200px) rotate(-45deg);
 }

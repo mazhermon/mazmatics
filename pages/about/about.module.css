@@ -101,8 +101,7 @@
   background-color: var(--white);
   overflow: hidden;
 
-  box-shadow: 1px 13px 10px -2px rgba(0, 0, 0, 0.08) inset,
-    1px -9px 10px -2px rgba(0, 0, 0, 0.08) inset;
+  box-shadow: var(--box-shadow-inset-double);
 }
 .gridPaperWrapper svg {
   z-index: 1;

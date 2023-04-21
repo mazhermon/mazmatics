@@ -1,0 +1,18 @@
+.writeInThisBook {
+  position: absolute;
+  bottom: 4rem;
+  width: 50%;
+  max-width: 500px;
+  margin: 2rem;
+
+  z-index: 1;
+  opacity: 1 !important;
+}
+@media screen and (min-width: 70rem) {
+  .writeInThisBook {
+    margin-left: 9rem;
+  }
+}
+.writeInThisBook path {
+  fill: var(--purple-2);
+}
