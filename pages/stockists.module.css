@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.stockists h2:not(:first-child) {
+  margin-top: 9rem;
+}
+
 .stockists__list {
   list-style: none;
   padding-left: 0;
@@ -11,4 +15,14 @@
 
 .backLink {
   text-decoration: none;
+}
+.nzLocations {
+  margin-top: 2rem;
+  margin-bottom: -2rem;
+}
+
+.outsideOfNzInfo {
+  font-size: 0.9rem;
+  line-height: 1.2;
+  max-width: 500px;
 }
