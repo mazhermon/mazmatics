@@ -25,7 +25,6 @@ import { Container } from '../components/Container'
 import { LookInside } from '../components/LookInside'
 import { TestimonialList } from '../components/testimonials/TestimonialList'
 import { GridPaper } from '../components/patterns/GridPaper'
-import { SineShine } from '../components/patterns/SineShine'
 import { FacebookIcon } from '../components/icons/facebook'
 import { InstaIcon } from '../components/icons/insta'
 

@@ -45,19 +45,11 @@ const GetTheBook = () => {
           <Container>
             <div className={styles.contentGrid}>
               <div className={styles.action1}>
-                <Button
-                  external={true}
-                  variant="secondary"
-                  href="https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations"
-                >
-                  Get direct NZ
-                </Button>
-              </div>
-              <div className={styles.action2}>
+                <span className={styles.marketDescription}>International</span>
+
                 <Button variant="primary" href="/get-the-book/get-from-amazon">
                   Get from Amazon <span>International</span>
                 </Button>
-
                 <div
                   className={`copyArea copyArea--med ${styles.getTheBookCopy}`}
                 >
@@ -72,6 +64,23 @@ const GetTheBook = () => {
                     {mathsWord}, do some drawing, read a story, solve a code...
                   </p> */}
                 </div>
+              </div>
+              <div className={styles.action2}>
+                <span className={styles.marketDescription}>
+                  Aotearoa / New Zealand
+                </span>
+                <Button
+                  external={true}
+                  variant="secondary"
+                  href="https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations"
+                >
+                  Get direct
+                </Button>
+              </div>
+              <div className={styles.action3}>
+                <Button variant="secondary" href="/stockists">
+                  Find a Bookshop
+                </Button>
               </div>
 
               <div className={styles.bookImage}>
