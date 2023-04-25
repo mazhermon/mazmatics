@@ -108,6 +108,10 @@ const Home: NextPage = () => {
             height={contentImageSize.height / 3}
           />
         </div>
+
+        <div className={styles.drawingGridDeco}>
+          <GridPaper />
+        </div>
         <Container>
           <div className={styles.feedback}>
             <h2 className="bigTitle">Feedback &amp; testimonials welcome</h2>
