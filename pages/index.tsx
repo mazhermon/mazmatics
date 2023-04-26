@@ -1,16 +1,11 @@
 import React from 'react'
-import type { NextPage } from 'next'
+import { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-// import Link from 'next/link'
-// import { Button } from '../components/button'
 
-// import bookProductImage from '../public/images/mazmatics_bookCoverWeb1.jpg'
-
-// import bookBannerImage from '../public/images/emailFunCOver.jpg'
-
-// import mazAPlus005 from '../public/images/Mazmatics-a-plus-005.jpg'
 import mazAPlus006 from '../public/images/Mazmatics-a-plus-006.jpg'
+
+        //                 /public/images/Mazmatics-a-plus-001.jpg
 
 import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
@@ -19,19 +14,13 @@ import { Reviews } from '../components/reviews'
 
 import { FrontPageNews } from '../components/FrontPageNews'
 import JoinMailingList from '../components/join-mailing-list'
-//pages/join-mailing-list.tsx
-///components/join-mailing-list.tsx
+
 import { Container } from '../components/Container'
 import { LookInside } from '../components/LookInside'
 import { TestimonialList } from '../components/testimonials/TestimonialList'
 import { GridPaper } from '../components/patterns/GridPaper'
 import { FacebookIcon } from '../components/icons/facebook'
 import { InstaIcon } from '../components/icons/insta'
-
-// const bookProductImageSize = {
-//   width: 901,
-//   height: 901,
-// }
 
 const contentImageSize = {
   width: 1200,
@@ -94,10 +83,6 @@ const Home: NextPage = () => {
         <Container>
           <Reviews />
         </Container>
-
-        {/* <div className={styles.decorationPositioner}>
-          <SineShine />
-        </div> */}
 
         <div className={styles.kidsDrawing}>
           <Image
