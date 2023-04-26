@@ -69,7 +69,7 @@ const About = () => (
 
       <section className={`${styles.section1} ${styles.valuesSection}`}>
         <Container>
-          <h2>Values</h2>
+          <h2 className={styles.titleOnLightBG}>Values</h2>
           <p>
             Mazmatics values{' '}
             <strong>
@@ -215,13 +215,6 @@ const About = () => (
           </p>
         </Container>
       </section>
-      {/* <section className={styles.section1}>
-        <Container></Container>
-      </section> */}
-
-      {/* <h3>
-        Feedback from <strong>kids</strong>
-      </h3> */}
 
       <div className={styles.gridPaperWrapper}>
         <GridPaper />
@@ -230,67 +223,6 @@ const About = () => (
       <div>
         <TestimonialList />
       </div>
-      {/* {TESTIMONIAL_DATA.kids.map((testimonial: ITestimonial) => {
-        const { person, quote } = testimonial
-        return (
-          <Testimonial
-            key={person.trim().replace(' ', '')}
-            person={person}
-            quote={quote}
-          />
-        )
-      })} */}
-      {/* <h3>
-        Feedback from <strong>adults</strong>
-      </h3>
-      {TESTIMONIAL_DATA.adults.map((testimonial: ITestimonial) => {
-        const { person, quote } = testimonial
-        return (
-          <Testimonial
-            key={person.trim().replace(' ', '')}
-            person={person}
-            quote={quote}
-          />
-        )
-      })} */}
-      {/* <p className={styles.testimonial}>
-        When I picked this up I was immediately drawn to the colloquial language
-        and easy to follow format. It&apos;s written the way people speak so
-        it&apos;s super easy to relate to. It uses real world examples that are
-        relevant and entertaining. This makes math fun! Breath of fresh air.
-        Thank you.
-        <br />– <span>Rachel Turner</span>
-      </p>
-      <hr />
-      <p className={styles.testimonial}>
-        This book is excellent, starting out with kids jokes to gently and
-        hilariously introduce simple math. The illustrated story in the book
-        contextualises math in a way that kids can relate to. The math gets more
-        complex relatively quickly but keeps up the same non pressured
-        conversational style, using drawings to clearly break down the
-        principles. Great book, would highly recommend.
-        <br />– <span>Caro Robertson</span>
-      </p>
-      <hr />
-      <p className={styles.testimonial}>
-        Awesome little practice book. It&apos;s full of stories and drawings.
-        There&apos;s room to scribble or draw and even some dice you can fold
-        and cut out with your kids for math games. Explains the exercises well
-        and gives some good tips on how to think about and solve the math
-        problems. It&apos;s written in a really fun kid-friendly way- even has
-        some encouragement along the way! Really recommend.
-        <br />– <span>Paulina</span>
-      </p>
-      <hr />
-      <p className={styles.testimonial}>
-        Mazmatics definitely does what it says it will do! I got my nieces and
-        nephews all a Mazmatics book for Christmas and they all loved it!
-        Perfect for ages 6+, and adults will enjoy it too The hot favourite for
-        the kids was the dog poop exercise. This is a brilliant resource for
-        kids, it makes math fun for them, which is the best way for little
-        brains to learn!
-        <br />– <span>Dee Johnston</span>
-      </p> */}
     </div>
   </div>
 )

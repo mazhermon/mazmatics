@@ -4,6 +4,10 @@
 .aboutPage section {
   padding: 3rem;
 }
+
+.titleOnLightBG {
+  color: var(--black);
+}
 @media screen and (min-width: 50rem) {
   .aboutPage section {
     padding: 5rem;

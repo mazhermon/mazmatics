@@ -25,3 +25,8 @@
   top: 22rem;
   right: 22rem; */
 }
+
+.testimonialList h2,
+.testimonialList h3 {
+  text-align: center;
+}

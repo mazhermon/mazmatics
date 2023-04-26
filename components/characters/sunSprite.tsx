@@ -52,7 +52,7 @@ const SunSprite = () => {
   }, [])
 
   useEffect(() => {
-    const drawImage = (ctx: any) => {
+    const drawImage = (ctx: unknown) => {
       console.log('calling loop draw')
       if (!loadedSpriteImage || !ctx) return
 
@@ -66,10 +66,13 @@ const SunSprite = () => {
         : lastSunFrame
 
       lastSunFrame = srcX
-
-      ctx.clearRect(0, 0, imageData.frameSize.width, imageData.frameSize.height)
-
-      ctx?.drawImage(
+      ;(ctx as any).clearRect(
+        0,
+        0,
+        imageData.frameSize.width,
+        imageData.frameSize.height
+      )
+      ;(ctx as any).drawImage(
         loadedSpriteImage as CanvasImageSource,
         srcX,
         srcY,
@@ -90,7 +93,7 @@ const SunSprite = () => {
 
     // not using req animation frame as I don't need the high fps
     console.log('setting the internal calling celar internal')
-    setInternalSunAnimateID = setInterval(loopingFunction, 800)
+    setInternalSunAnimateID = setInterval(loopingFunction, 500)
   }, [loadedSpriteImage, canvasRef])
 
   return (
