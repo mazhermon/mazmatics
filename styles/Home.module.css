@@ -409,16 +409,12 @@
 /* // clean up with new components */
 .feedback,
 .insta {
-  /* text-align: center !important; */
   font-family: var(--font-copy);
   margin: 0 auto;
   margin-bottom: 2rem;
 
-  padding: 2rem;
   background-color: rgba(255, 255, 255, 0.8);
   background-color: white;
-  /* box-shadow: var(--box-shadow-3); */
-  /* max-width: 500px; */
 }
 
 .insta .hitmeLink {
@@ -430,6 +426,11 @@
 @media screen and (min-width: 40rem) {
   .insta .hitmeLink {
     font-size: 1.8rem;
+  }
+
+  .feedback,
+  .insta {
+    padding: 2rem;
   }
 }
 
