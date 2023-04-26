@@ -22,6 +22,13 @@
 .customerTestimonialsIntro {
   max-width: 600px;
   margin: 0 auto;
+  padding: 1rem;
+  text-align: center;
+}
+@media screen and (min-width: 60rem) {
+  .customerTestimonialsIntro {
+    padding: 0;
+  }
 }
 
 .decorativeWrapper {
