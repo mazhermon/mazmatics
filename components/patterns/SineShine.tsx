@@ -4,7 +4,7 @@ import { clsx } from 'clsx'
 import { sineShine1 } from './svg/sineShine1'
 import { sineShine2 } from './svg/sineShine2'
 
-import styles from './sineShine.module.css'
+import styles from './SineShine.module.css'
 
 type Props = {
   version?: '1' | '2'

@@ -4,9 +4,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 import mazAPlus006 from '../public/images/Mazmatics-a-plus-006.jpg'
-
-        //                 /public/images/Mazmatics-a-plus-001.jpg
-
 import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
