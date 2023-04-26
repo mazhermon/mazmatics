@@ -13,11 +13,8 @@ const DynamicSunSprite = dynamic(
   }
 )
 
-//Users/mazhermon/Sites/mazmatics/mazmatics.comNextJS/mazmatics/pages/about/index.tsx
-//Users/mazhermon/Sites/mazmatics/mazmatics.comNextJS/mazmatics/components/characters/sunSprite.tsx
-
 import styles from './about.module.css'
-import { AboutHeader } from './components/AboutHeader'
+import { AboutHeader } from '../../components/About/AboutHeader'
 import { WriteInThisBook } from '../../components/doodles/writeInThisBook'
 
 const About = () => (

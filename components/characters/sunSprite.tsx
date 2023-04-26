@@ -46,14 +46,13 @@ const SunSprite = () => {
 
     return () => {
       // cancel the setInternal
-      console.log('should be calling celar internal')
+      // console.log('should be calling celar internal')
       clearInterval(setInternalSunAnimateID)
     }
   }, [])
 
   useEffect(() => {
     const drawImage = (ctx: unknown) => {
-      console.log('calling loop draw')
       if (!loadedSpriteImage || !ctx) return
 
       // doing this as I want janky timing lol
@@ -92,7 +91,7 @@ const SunSprite = () => {
     }
 
     // not using req animation frame as I don't need the high fps
-    console.log('setting the internal calling celar internal')
+    // console.log('setting the internal calling celar internal')
     setInternalSunAnimateID = setInterval(loopingFunction, 500)
   }, [loadedSpriteImage, canvasRef])
 

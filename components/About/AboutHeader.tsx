@@ -1,4 +1,4 @@
-import { SineShine } from '../../../components/patterns/SineShine'
+import { SineShine } from '../patterns/SineShine'
 import styles from './AboutHeader.module.css'
 
 import React from 'react'
