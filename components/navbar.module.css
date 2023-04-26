@@ -123,7 +123,7 @@
 .navList__horizontal .navLink__active::after {
   content: '';
   position: absolute;
-  top: 50px;
+  top: 54px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);

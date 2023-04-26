@@ -18,11 +18,15 @@
 }
 .nzLocations {
   margin-top: 2rem;
-  margin-bottom: -2rem;
+  /* margin-bottom: -2rem; */
 }
 
 .outsideOfNzInfo {
   font-size: 0.9rem;
   line-height: 1.2;
   max-width: 500px;
+}
+
+.wholeSaleInfoLink {
+  /* margin-top: 7rem; */
 }

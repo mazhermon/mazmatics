@@ -1,9 +1,5 @@
 .wholesalers {
-  text-align: center;
-  max-width: 600px;
   margin: 0 auto;
-  padding: 3rem;
-  padding-top: 9rem;
 }
 
 .wholesalers h2 {
@@ -27,12 +23,15 @@
 
 .wholesaleTable {
   width: 286px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
+  padding-left: 2rem;
+  margin-left: -2.2rem;
+  border-left: 9px solid var(--blue-4);
   margin-bottom: 3rem;
 }
 @media screen and (min-width: 40rem) {
   .wholesaleTable {
-    width: 320px;
+    width: 400px;
   }
 }
 .wholesaleTable th {

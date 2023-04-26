@@ -160,11 +160,19 @@ h1 {
   color: var(--purple-3);
   font-weight: normal;
   margin-top: 5rem;
+  line-height: 1.2;
 
   /* // start at 2.2 ? */
   font-size: 3rem;
   /* font-size: 4rem; */
 }
+.hyphenated {
+  /* insert the U+2010 character to specify a hyphenation point */
+  word-wrap: break-word;
+  word-break: break-all;
+  hyphens: auto;
+}
+
 @media screen and (min-width: 50rem) {
   h1 {
     font-size: 3.5rem;
