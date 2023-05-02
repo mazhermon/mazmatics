@@ -74,7 +74,7 @@ const GetTheBook = () => {
                   variant="secondary"
                   href="https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations"
                 >
-                  Get direct
+                  NZ Shop
                 </Button>
               </div>
               <div className={styles.action3}>
