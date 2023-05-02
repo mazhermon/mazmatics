@@ -1,9 +1,18 @@
 import Link from 'next/link'
 import { BookStore } from '../components/bookstore'
 import styles from './stockists.module.css'
+import Head from 'next/head'
 
 const Stockists = () => (
   <div className="container copyArea">
+    <Head>
+      <title>Bookstores and stockists</title>
+      <meta
+        name="description"
+        content="Mazmatics is proud to be available at the following NZ bookstores and also available internationally through Amazon and Ingram Spark"
+      />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
     <div className={styles.stockists}>
       <Link href="/">
         <a aria-label="home" className={styles.backLink}>

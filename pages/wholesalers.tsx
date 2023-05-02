@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import styles from './wholesalers.module.css'
 import { Container } from '../components/Container'
+import Head from 'next/head'
 
 const DynamicSunSprite = dynamic(
   () => import('../components/characters/sunSprite'),
@@ -12,6 +13,14 @@ const DynamicSunSprite = dynamic(
 
 const Wholesalers = () => (
   <Container>
+    <Head>
+      <title>Mazmatics wholesale info</title>
+      <meta
+        name="description"
+        content="Mazmatics is proud to be available for bookstores either by direct wholesale or via Ingram Spark"
+      />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
     <DynamicSunSprite />
     <div className={`${styles.wholesalers} copyArea`}>
       <h1>

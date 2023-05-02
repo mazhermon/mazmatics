@@ -1,4 +1,5 @@
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
 
 import { Container } from '../../components/Container'
 import { LookInside } from '../../components/LookInside'
@@ -19,6 +20,15 @@ import { WriteInThisBook } from '../../components/doodles/writeInThisBook'
 
 const About = () => (
   <div className={styles.aboutPage}>
+    <Head>
+      <title>About Mazmatics</title>
+      <meta
+        name="description"
+        content={`About Mazmatics. Mazmatics is an activity book and learning resource that helps to
+        make math fun and useful for kids and early learners of all ages.`}
+      />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
     <AboutHeader />
     <div className="longCopyLayoutArea"></div>
     <div className={`longCopyLayoutArea ${styles.aboutTextWrapper}`}>
