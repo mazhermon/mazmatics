@@ -4,6 +4,9 @@ import styles from './review-on-amazon.module.css'
 
 import { Reviews } from '../../components/reviews'
 
+// Not yet linking to this page from the nav,
+// while it is available via search or direct access
+
 const ReviewOnAmazon = () => {
   return (
     <>

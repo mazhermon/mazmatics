@@ -95,7 +95,7 @@ const Stockists = () => (
 
         <h2 id="southIslandAnchor">South Island</h2>
         <ul className={styles.stockists__list}>
-          <li>
+          {/* <li>
             <BookStore
               name="Scorpio Books & Telling Tales"
               location="BNZ Centre - 120 Hereford Street Christchurch 8011"
@@ -103,7 +103,7 @@ const Stockists = () => (
               website="scorpiobooks.co.nz"
               url="https://scorpiobooks.co.nz/product/fun-math-4-kids-with-mazmatics-vol-1/"
             ></BookStore>
-          </li>
+          </li> */}
           <li>
             <BookStore
               name="Timaru Booksellers"

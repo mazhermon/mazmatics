@@ -19,6 +19,29 @@ const youTubeEmbedSizeRatioKeeper = {
 export const FrontPageNews = () => (
   <>
     <div className={styles.stuffArticleSection}>
+      <div className={styles.youTubeEmbedSmall}>
+        <iframe
+          width={youTubeEmbedSizeRatioKeeper.width}
+          height={youTubeEmbedSizeRatioKeeper.height}
+          src="https://www.youtube.com/embed/YX0lDhgvFT8"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
+
+      <div className={styles.youTubeEmbedLarge}>
+        <iframe
+          width={youTubeEmbedSizeRatioKeeper.width * 2}
+          height={youTubeEmbedSizeRatioKeeper.height * 2}
+          src="https://www.youtube.com/embed/YX0lDhgvFT8"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowFullScreen
+        ></iframe>
+      </div>
       <div className={styles.stuffContainerCustomTop}>
         <GetTheBookBanner />
         <div className={styles.stuffLinkTopBannner}>
@@ -69,30 +92,6 @@ export const FrontPageNews = () => (
             </p>
           </div>
         </div>
-      </div>
-
-      <div className={styles.youTubeEmbedSmall}>
-        <iframe
-          width={youTubeEmbedSizeRatioKeeper.width}
-          height={youTubeEmbedSizeRatioKeeper.height}
-          src="https://www.youtube.com/embed/YX0lDhgvFT8"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
-      </div>
-
-      <div className={styles.youTubeEmbedLarge}>
-        <iframe
-          width={youTubeEmbedSizeRatioKeeper.width * 2}
-          height={youTubeEmbedSizeRatioKeeper.height * 2}
-          src="https://www.youtube.com/embed/YX0lDhgvFT8"
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
       </div>
     </div>
   </>

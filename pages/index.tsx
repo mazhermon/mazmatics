@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -18,6 +18,7 @@ import { TestimonialList } from '../components/testimonials/TestimonialList'
 import { GridPaper } from '../components/patterns/GridPaper'
 import { FacebookIcon } from '../components/icons/facebook'
 import { InstaIcon } from '../components/icons/insta'
+import { AppContext } from '../context/appContext'
 
 const contentImageSize = {
   width: 1200,
@@ -25,6 +26,10 @@ const contentImageSize = {
 }
 
 const Home: NextPage = () => {
+  const { mathsWord } = useContext(AppContext)
+
+  const bannerHelpText = `Will you help your kids with ${mathsWord} today?`
+
   return (
     <div className={styles.homePageWrapper}>
       <Head>
@@ -46,11 +51,15 @@ const Home: NextPage = () => {
           </div>
           <HomeHeader />
         </div>
+
+        <FrontPageNews />
+
         <div className={styles.product_book1}>
           <h2 className={styles.product_book1__heading}>
             <Banner
               className={styles.homeBanner1}
-              title="Fun Math 4 kids play-book"
+              title={bannerHelpText}
+              // title="Fun Math 4 kids play-book"
               // size="small"
               color="yellow"
               waves={true}
@@ -63,7 +72,6 @@ const Home: NextPage = () => {
 
           {/* <Link href="/get-the-book">Get the book</Link> */}
         </div>
-        <FrontPageNews />
         <Container>
           <LookInside />
           <JoinMailingList />
