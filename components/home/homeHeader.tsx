@@ -52,7 +52,9 @@ export const HomeHeader = () => {
           </div>
         </div>
 
-        <GetTheBookLinks />
+        <div className={styles.getTheBooksHomeWrapper}>
+          <GetTheBookLinks />
+        </div>
 
         {/* <div className={styles.homeCTAbutton}>
           <Button
