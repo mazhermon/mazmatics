@@ -6,7 +6,7 @@ import bookProductImageClearCut from '../../public/images/Mazmatics_Fun_Math_For
 import styles from './getTheBookLinks.module.css'
 import { useContext } from 'react'
 import { AppContext } from '../../context/appContext'
-import { FreeSample } from '../freeSample'
+import { FreeSampleDownload } from '../freeSample'
 
 export const GetTheBookLinks = () => {
   const bookProductImageSize = {
@@ -53,7 +53,7 @@ export const GetTheBookLinks = () => {
         <Button variant="secondary" href="/stockists">
           Find a Bookshop
         </Button>
-        <FreeSample />
+        <FreeSampleDownload />
       </div>
 
       <div className={styles.action3}></div>

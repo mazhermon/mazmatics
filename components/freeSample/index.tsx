@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './freeSample.module.css'
 import { Button } from '../button'
 
-export const FreeSample = () => (
+export const FreeSampleDownload = () => (
   <>
     <div className={styles.freeSampleText}>
       <p>Try before you buy with this free sampler digital edition</p>
