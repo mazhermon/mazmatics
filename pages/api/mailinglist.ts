@@ -60,7 +60,7 @@ const EmailSignup: IEmailSignup = async (req, res) => {
   } catch (error) {
     return res.status(400).json({
       error:
-        'Sorry, something went wrong. You can try again or just email hello@mazmatics.com for help',
+        'Sorry, something went wrong. You can try again or just email hellomazmatics@gmail.com for help',
     })
   }
 }

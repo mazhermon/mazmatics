@@ -29,9 +29,9 @@ export const Reviews = () => (
         You can email us your review to{' '}
         <a
           className={`${styles.hitMeLink}`}
-          href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
+          href="mailto:hellomazmatics@gmail.com?subject=Hi Mazmatics"
         >
-          hello@mazmatics.com
+          hellomazmatics@gmail.com
         </a>
         , or check out the other options below. We love feedback and hearing
         from you about what worked for your kids and what didn&apos;t.
@@ -43,7 +43,7 @@ export const Reviews = () => (
 
       <a
         className={`${styles.emailTopLink} ${styles.feedbackButtonLink} ${styles.feedbackButtonLink__google}`}
-        href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
+        href="mailto:hellomazmatics@gmail.com?subject=Hi Mazmatics"
       >
         email us your review or feedback
       </a>

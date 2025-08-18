@@ -62,9 +62,9 @@ const Wholesalers = () => (
           consignment terms at{' '}
           <a
             className={styles.contactEmailLink}
-            href="mailto:hello@mazmatics.com?subject=Hi Mazmatics, Wholesaler enquiry"
+            href="mailto:hellomazmatics@gmail.com?subject=Hi Mazmatics, Wholesaler enquiry"
           >
-            hello@mazmatics.com
+            hellomazmatics@gmail.com
           </a>{' '}
         </p>
         <p>

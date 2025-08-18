@@ -107,9 +107,9 @@ const Home: NextPage = () => {
             </p>
             <a
               className={styles.hitmeLink}
-              href="mailto:hello@mazmatics.com?subject=Hi Mazmatics"
+              href="mailto:hellomazmatics@gmail.com?subject=Hi Mazmatics"
             >
-              hello@mazmatics.com
+              hellomazmatics@gmail.com
             </a>
           </div>
 
