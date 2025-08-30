@@ -36,9 +36,9 @@ const Wholesalers = () => (
         options for fundraising initiatives.
       </p>
 
-      <h2>Wholesale discounts</h2>
+      {/* <h2>Wholesale discounts</h2> */}
 
-      <table className={styles.wholesaleTable}>
+      {/* <table className={styles.wholesaleTable}>
         <caption className="sr-only">Wholesale Prices</caption>
         <tbody>
           <tr>
@@ -54,12 +54,12 @@ const Wholesalers = () => (
             <td>$13.50 +GST</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
 
       <div className="moreInfo">
         <p>
-          Please contact us for more information on minimum orders and
-          consignment terms at{' '}
+          Please contact us for more information on wholesale prices, minimum
+          orders and consignment terms at{' '}
           <a
             className={styles.contactEmailLink}
             href="mailto:hellomazmatics@gmail.com?subject=Hi Mazmatics, Wholesaler enquiry"

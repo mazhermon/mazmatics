@@ -8,5 +8,6 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "prettier.configPath": ".prettierrc.json" // Tell VSCode to use Prettier as default file formatter
+  "prettier.configPath": ".prettierrc.json",
+  "cSpell.words": ["gtag"] // Tell VSCode to use Prettier as default file formatter
 }

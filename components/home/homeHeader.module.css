@@ -219,3 +219,12 @@
     transform: rotate(-45deg) translate(40%, -900px) scale(0.8);
   }
 } */
+
+.getTheBooksHomeWrapper {
+  padding: 0 1.3rem;
+}
+@media screen and (min-width: 50rem) {
+  .getTheBooksHomeWrapper {
+    padding: 0;
+  }
+}

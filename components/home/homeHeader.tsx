@@ -1,24 +1,19 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import Image from 'next/image'
 import lindyImage from '../../public/images/lindyLarge.png'
 // import mazmaticsLogo from '../../public/images/Mazmatics-logo.png'
-import { Button } from '../button'
 // import { CharCircleBetty } from '../characters/circleBetty'
 
 import styles from './homeHeader.module.css'
 // import { GridPaper } from '../patterns/GridPaper'
 // import { SineShine } from '../patterns/SineShine'
 import { AppContext } from '../../context/appContext'
+import { GetTheBookLinks } from '../getTheBookLinks'
 
 const lindyImageSize = {
   width: 2213,
   height: 2633,
 }
-
-// const logoImageSizes = {
-//   width: 1001,
-//   height: 230,
-// }
 
 export const HomeHeader = () => {
   const { userLang } = useContext(AppContext)
@@ -48,7 +43,7 @@ export const HomeHeader = () => {
           </div>
 
           <div className={styles.siteTitle__promise}>
-            <div className={styles.weHelpKidsSay}>We help kids say...</div>
+            <div className={styles.weHelpKidsSay}>Help your kids to say...</div>
             <div className={styles.iLikeMath}>
               <span className={`quoteMark ${styles.quoteMark}`}>&ldquo;</span>I
               like math{userLang !== 'en-US' && <span>s</span>}
@@ -57,16 +52,22 @@ export const HomeHeader = () => {
           </div>
         </div>
 
-        <div className={styles.homeCTAbutton}>
+        <div className={styles.getTheBooksHomeWrapper}>
+          <GetTheBookLinks />
+        </div>
+
+        {/* <div className={styles.homeCTAbutton}>
           <Button
             className={styles.homeHeaderCTA}
             variant="primary"
             href="/get-the-book"
           >
-            Buy the book
+            Show me how to get the paperback
           </Button>
-        </div>
+        </div> */}
+        {/* <div className={styles.homeCTAbutton}> */}
       </div>
+
       <div className={styles.homeHeader__heroImage}>
         <div className={styles.lindy}>
           {/* use useState to set the width based on breakpoint in js */}
