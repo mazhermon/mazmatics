@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import mazAPlus006 from '../public/images/Mazmatics-a-plus-006.jpg'
 import styles from '../styles/Home.module.css'
@@ -93,7 +93,7 @@ const Home: NextPage = () => {
           <Image
             alt="illustration of kids from Mazmatics Fun Math for kids book"
             src={mazAPlus006}
-            layout="intrinsic"
+            // layout="intrinsic"
             width={contentImageSize.width / 3}
             height={contentImageSize.height / 3}
           />

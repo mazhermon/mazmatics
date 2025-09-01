@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 import lindyImage from '../../public/images/lindyLarge.png'
 // import mazmaticsLogo from '../../public/images/Mazmatics-logo.png'
 // import { CharCircleBetty } from '../characters/circleBetty'
@@ -74,7 +74,7 @@ export const HomeHeader = () => {
           <Image
             alt="Giant Girl adventurer sitting down smiling"
             src={lindyImage}
-            layout="intrinsic"
+            // layout="intrinsic"
             width={lindyImageSize.width / 3}
             height={lindyImageSize.height / 3}
           />

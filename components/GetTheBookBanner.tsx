@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import styles from './getTheBookBanner.module.css'
 
@@ -17,18 +17,20 @@ export const GetTheBookBanner = () => {
   return (
     <div className={styles.getTheBookBanner}>
       <Grain />
-      <Link href="/get-the-book">
-        <a className={`${styles.getTheBookImage}`} aria-label="get the book">
-          {/* TODO: animate some hands coming in to grab the Book
+      <Link
+        href="/get-the-book"
+        className={`${styles.getTheBookImage}`}
+        aria-label="get the book"
+      >
+        {/* TODO: animate some hands coming in to grab the Book
                 crayon style transparent PNGs */}
-          <Image
-            alt="Book cover for Mazmatics Fun Math for Kids Volume 1"
-            src={bookProductImageClearCut}
-            layout="intrinsic"
-            width={bookProductImageSize.width * 0.75}
-            height={bookProductImageSize.height * 0.75}
-          />
-        </a>
+        <Image
+          alt="Book cover for Mazmatics Fun Math for Kids Volume 1"
+          src={bookProductImageClearCut}
+          // layout="intrinsic"
+          width={bookProductImageSize.width * 0.75}
+          height={bookProductImageSize.height * 0.75}
+        />
       </Link>
       <div className={styles.homeCTAbuttonArea}>
         <Button fullWidth={true} variant="primary" href="/get-the-book">

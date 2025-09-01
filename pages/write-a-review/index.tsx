@@ -28,12 +28,12 @@ const WriteAReview = () => {
         {/* <ul>
             <li>
               <Link href="/write-a-review/review-on-amazon">
-                <a>Review on Amazon</a>
+                Review on Amazon
               </Link>
             </li>
             <li>
               <Link href="/write-a-review/review-on-google">
-                <a>Review on Google</a>
+                Review on Google
               </Link>
             </li>
           </ul> */}
@@ -41,9 +41,7 @@ const WriteAReview = () => {
         <p>
           If you have ideas for how we can get better we&apos;d love to hear
           that too. Check out the
-          <Link href="/feedback">
-            <a>feedback page</a>
-          </Link>
+          <Link href="/feedback">feedback page</Link>
           for more info.
         </p>
       </div>

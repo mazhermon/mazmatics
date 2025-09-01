@@ -14,10 +14,8 @@ const Stockists = () => (
       <link rel="icon" href="/favicon.ico" />
     </Head>
     <div className={styles.stockists}>
-      <Link href="/">
-        <a aria-label="home" className={styles.backLink}>
-          &lt; Back
-        </a>
+      <Link href="/" aria-label="home" className={styles.backLink}>
+        &lt; Back
       </Link>
       <h1>NZ Stockists</h1>
 

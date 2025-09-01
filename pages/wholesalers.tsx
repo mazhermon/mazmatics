@@ -68,10 +68,8 @@ const Wholesalers = () => (
           </a>{' '}
         </p>
         <p>
-          <Link href="/">
-            <a aria-label="home" className={styles.backLink}>
-              &lt; Back
-            </a>
+          <Link href="/" aria-label="home" className={styles.backLink}>
+            &lt; Back
           </Link>
         </p>
       </div>

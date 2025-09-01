@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import frontPageImage from '../public/images/MazmaticsFrontPageNews500web.png'
 import styles from './FrontPageNews.module.css'
@@ -50,7 +50,7 @@ export const FrontPageNews = () => (
               <Image
                 alt="Mazmatics on the front page of the Dom Post NZ"
                 src={frontPageImage}
-                layout="intrinsic"
+                // layout="intrinsic"
                 width={frontPageImageSize.width * 0.75}
                 height={frontPageImageSize.height * 0.75}
               />

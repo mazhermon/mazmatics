@@ -34,10 +34,8 @@ export const Navbar = () => {
           {menuOpen ? <CrossIcon large={true} /> : <MenuIcon />}
           <span className="sr-only">Toggle main navigation</span>
         </button>
-        <Link href="/">
-          <a aria-label="home" className={styles.logo}>
-            Mazmatics
-          </a>
+        <Link href="/" aria-label="home" className={styles.logo}>
+          Mazmatics
         </Link>
         <span className={styles.tagline}>Fun learning for kids</span>
 

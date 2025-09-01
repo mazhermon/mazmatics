@@ -41,9 +41,7 @@ const Feedback = () => {
               what energises us to keep going. Thanks so much to everyone who
               gets in touch with us to share your experience. You might like to
               help us spead the word by&nbsp;
-              <Link href="/write-a-review">
-                <a>writing a review</a>
-              </Link>
+              <Link href="/write-a-review">writing a review</Link>
               &nbsp; or sharing a picture on social media and telling your
               besties about us.
             </p>

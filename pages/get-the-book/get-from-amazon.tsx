@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Head from 'next/head'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import { AppContext } from '../../context/appContext'
 import bookProductImageClearCut from '../../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
@@ -83,7 +83,7 @@ const GetFromAmazon = () => {
               <Image
                 alt="Book cover for Mazmatics Fun Math for Kids Volume 1"
                 src={bookProductImageClearCut}
-                layout="intrinsic"
+                // layout="intrinsic"
                 width={bookProductImageSize.width * 0.5}
                 height={bookProductImageSize.height * 0.5}
               />

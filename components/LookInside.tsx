@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 import styles from './lookInside.module.css'
 
@@ -20,28 +20,28 @@ export const LookInside = () => (
       <Image
         alt="Parent pointing to the map in the fantasy story Lindys Quest"
         src={mazAPlus001}
-        layout="intrinsic"
+        // layout="intrinsic"
         width={contentImageSize.width}
         height={contentImageSize.height}
       />
       <Image
         alt="Parent shows kid teh secret code cracker page"
         src={mazAPlus002}
-        layout="intrinsic"
+        // layout="intrinsic"
         width={contentImageSize.width}
         height={contentImageSize.height}
       />
       <Image
         alt="kid writing in the book for a cookies math question"
         src={mazAPlus003}
-        layout="intrinsic"
+        // layout="intrinsic"
         width={contentImageSize.width}
         height={contentImageSize.height}
       />
       <Image
         alt="a page of practice exercises and drawings"
         src={mazAPlus004}
-        layout="intrinsic"
+        // layout="intrinsic"
         width={contentImageSize.width}
         height={contentImageSize.height}
       />

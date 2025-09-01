@@ -43,8 +43,8 @@ export const Button: React.FC<Props> = ({
   }
   if (href) {
     return (
-      <Link href={href}>
-        <a className={buttonLinkStyles}>{children}</a>
+      <Link href={href} className={buttonLinkStyles}>
+        {children}
       </Link>
     )
   }

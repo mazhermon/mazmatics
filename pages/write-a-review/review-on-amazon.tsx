@@ -73,9 +73,7 @@ const ReviewOnAmazon = () => {
           <p>
             If you have ideas for how we can get better we&apos;d love to hear
             that too. Check out the
-            <Link href="/feedback">
-              <a>feedback page</a>
-            </Link>
+            <Link href="/feedback">feedback page</Link>
             for more info.
           </p>
         </main>
