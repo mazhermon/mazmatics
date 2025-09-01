@@ -13,6 +13,7 @@ import { LookInside } from '../../components/LookInside'
 import { Container } from '../../components/Container'
 import { AppContext } from '../../context/appContext'
 import { GetTheBookLinks } from '../../components/getTheBookLinks'
+import { FreeSampleDownload } from '../../components/freeSample'
 // const bookProductImageSize = {
 //   width: 900,
 //   height: 1350,
@@ -49,6 +50,7 @@ const GetTheBook = () => {
             <Container>
               <LookInside />
             </Container>
+            <FreeSampleDownload />
           </section>
         </main>
       </div>

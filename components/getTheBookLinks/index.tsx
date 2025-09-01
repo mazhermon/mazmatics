@@ -6,7 +6,7 @@ import bookProductImageClearCut from '../../public/images/Mazmatics_Fun_Math_For
 import styles from './getTheBookLinks.module.css'
 import { useContext } from 'react'
 import { AppContext } from '../../context/appContext'
-import { FreeSampleDownload } from '../freeSample'
+// import { FreeSampleDownload } from '../freeSample'
 
 export const GetTheBookLinks = () => {
   const bookProductImageSize = {
@@ -14,17 +14,50 @@ export const GetTheBookLinks = () => {
     height: 1350,
   }
 
-  const { mathsWord } = useContext(AppContext)
+  const { mathsWord, userLang } = useContext(AppContext)
+
   return (
     <div className={styles.contentGrid}>
       <div className={styles.action1}>
-        <span className={styles.marketDescription}>
-          USA, Australia & International
-        </span>
+        <span className={styles.marketDescription}></span>
 
-        <Button variant="primary" href="/get-the-book/get-from-amazon">
+        <ul className={styles.product_book1__linkGroup}>
+          <li className={styles.product_book1_buyNowBlock}>
+            <Button
+              variant={userLang !== 'en-US' ? 'primary' : 'secondary'}
+              external={true}
+              href="https://www.amazon.com.au/dp/0473648911"
+            >
+              Buy on Amazon Australia
+            </Button>
+            <span>Use this for shipping to NZ</span>
+          </li>
+
+          <li className={styles.product_book1_buyNowBlock}>
+            <Button
+              external={true}
+              variant={userLang === 'en-US' ? 'primary' : 'secondary'}
+              href="https://www.amazon.com/dp/0473648911"
+            >
+              Buy on Amazon.com
+            </Button>
+            <span>For shipping to USA</span>
+          </li>
+
+          <li className={styles.product_book1_buyNowBlock}>
+            <Button
+              external={true}
+              href="https://www.amazon.co.uk/dp/0473648911"
+            >
+              Buy on Amazon UK
+            </Button>
+            <span>...I&apos;ll let you guess what this is for :)</span>
+          </li>
+        </ul>
+
+        {/* <Button variant="primary" href="/get-the-book/get-from-amazon">
           Get from Amazon <span>International</span>
-        </Button>
+        </Button> */}
         <div className={`copyArea copyArea--med ${styles.getTheBookCopy}`}>
           <p className={styles.brandPromise}>
             <span className={styles.brandName}>Mazmatics</span> &#8212;
@@ -38,7 +71,7 @@ export const GetTheBookLinks = () => {
                       </p> */}
         </div>
       </div>
-      <div className={styles.action2}>
+      {/* <div className={styles.action2}>
         <span className={styles.marketDescription}>Aotearoa / New Zealand</span>
         <Button
           external={true}
@@ -47,16 +80,18 @@ export const GetTheBookLinks = () => {
         >
           NZ Shop
         </Button>
-      </div>
+      </div> */}
 
-      <div className={styles.action3}>
+      {/* <div className={styles.action3}>
         <Button variant="secondary" href="/stockists">
           Find a Bookshop
         </Button>
+      </div> */}
+      {/* <div>
         <FreeSampleDownload />
-      </div>
+      </div> */}
 
-      <div className={styles.action3}></div>
+      {/* <div className={styles.action3}></div> */}
 
       <div className={styles.bookImage}>
         <Image
