@@ -4,6 +4,16 @@ A human-readable narrative of what's changed on the `redesign-may` branch and wh
 
 ---
 
+## 2026-05-01 — Implementation plan written
+
+**What:** Wrote the bite-sized implementation plan at `docs/superpowers/plans/2026-05-01-mazmatics-redesign-may.md` — 26 tasks (25 core + 1 opportunistic), each with exact file paths, complete code blocks, expected commands and outputs, and a dedicated commit message. Plan covers Day 1 morning foundations (Tasks 1-11), Day 1pm + Day 2 hero rebuild (Tasks 12-17), and Day 3 hierarchy + Look Inside + a11y (Tasks 18-25).
+
+**Why:** Spec → plan handoff per the superpowers workflow. The plan assumes an executor with no prior project context — every step has the code or command they need.
+
+**Auto-mode handoff is at Task 11.** Tasks 1-11 run with Maz watching the first focused block; once that lands cleanly, auto mode through to Task 25.
+
+---
+
 ## 2026-05-01 — Amazon CTA pattern locked in (Pattern C)
 
 **What:** Added §8.5 to the spec specifying the Amazon CTA pattern. Replaces the current 3-button (AU / US / UK) layout with a single locale-aware primary button that includes shipping reassurance copy ("ships to Aotearoa NZ"), plus an inline "other regions" expander. Server renders a US default; client-side hydration swaps to detected locale to avoid hydration mismatches and layout shift. `amazon_cta_click` GA event gains a `region` parameter for future analysis.
