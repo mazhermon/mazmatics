@@ -34,3 +34,8 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# claude code / playwright runtime
+.playwright-mcp/
+.claude/skills/
+skills-lock.json
