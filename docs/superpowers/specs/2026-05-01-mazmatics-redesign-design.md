@@ -57,7 +57,7 @@ Source of truth becomes `styles/tokens.css` (extracted from current `globals.css
 
 ### New shared components
 - **`components/SiteHead`** — wraps `next/head`; takes `title`, `description`, `path`, `ogImage`, structured-data overrides. Single source of meta on every page.
-- **`components/AmazonCTAButton`** — locale-aware buy button; reads `userLang` from `AppContext`, defaults to AU for NZ, etc. Fires `amazon_cta_click` GA event.
+- **`components/AmazonCTAButton`** — implements the [Amazon CTA pattern](#85-amazon-cta-pattern). Reads `userLang` from `AppContext`, picks one locale-matched storefront, renders shipping-reassurance copy when match confidence is high, exposes "other regions" via an inline expander. Fires `amazon_cta_click` with a `region` parameter (`AU` / `US` / `UK`).
 - **`components/LookInside`** *(rebuild)* — accessible lightbox carousel of page-sample images. Keyboard-navigable, focus-trapped, esc-closeable. Fires `look_inside_open`.
 - **`components/PersistentBuyCTA`** — slot in the navbar; uses `AmazonCTAButton` at small scale.
 - **`components/SectionDivider`** — replaces ad-hoc grid-paper sections; consolidates the three different divider patterns currently in use into one canonical scrappy-register dividing element.
@@ -234,6 +234,47 @@ ISBN to be confirmed with Maz (can be pulled from the Amazon listing). The ASIN 
 
 ### Robots / sitemap
 - Keep existing `robots.txt`. Add a `sitemap.xml` (Next.js can generate at build time via `next-sitemap`; small ask, Phase 1 budget allows).
+
+## 8.5 Amazon CTA pattern
+
+> Specifically called out by Maz as a conversion concern. The current 3-buttons-with-styled-primary approach reads as messy on mobile and adds unnecessary decision friction. This is the most consequential conversion decision on the site.
+
+**Pattern: single locale-aware primary button with explicit shipping copy and an inline "other regions" expander.**
+
+### Behaviour
+- **Primary button** (one only): "Buy on Amazon — ships to [country]" when locale match is high-confidence; falls back to plain "Buy on Amazon" with a US default otherwise.
+  - Tiny region badge in the button corner (AU / US / UK) so users can see at a glance which storefront they'll land on.
+  - Mobile target ≥44×44 CSS px (AAA reach).
+- **Inline link below the primary**: "Buying from another region?" — toggles a small inline list of AU / US / UK direct links.
+  - Uses `aria-expanded`, keyboard navigable, no full-page modal.
+  - Hidden entirely when locale is high-confidence and match is unambiguous (no point in offering options most people don't need).
+
+### Locale → storefront mapping
+
+| Detected locale | Storefront | Shipping copy |
+|---|---|---|
+| `en-US` | amazon.com | "Order from Amazon US — Prime eligible" |
+| `en-GB` | amazon.co.uk | "Buy on Amazon — ships within the UK" |
+| `en-AU` | amazon.com.au | "Buy on Amazon — ships within Australia" |
+| `en-NZ` | amazon.com.au | "Buy on Amazon — ships to Aotearoa NZ from Australia" |
+| any other locale (fr-CA, de-DE, etc.) | amazon.com (default) | (no shipping copy — plain "Buy on Amazon") |
+| locale undetected at SSR | amazon.com (server default) | (no shipping copy until hydration) |
+
+### Server/client coordination
+- **Server render** uses the US default for the primary button so the initial HTML is stable and identical for every visitor.
+- **Client hydration** reads `userLang` and swaps to the matched locale.
+- This avoids React hydration mismatches (we already see a #418 error on `/stockists` from a similar locale-driven render — `AmazonCTAButton` will not repeat that bug).
+- Layout must not shift between server render and client swap — same button dimensions, same vertical rhythm, only text/href changes.
+
+### Replacing existing usages
+- `components/getTheBookLinks/index.tsx` — three current `Button` calls become one `AmazonCTAButton`.
+- `components/freeSample/index.tsx` — the "Buy on Amazon Australia / .com / .co.uk" trio becomes one `AmazonCTAButton`.
+- `components/PersistentBuyCTA` (new) — uses `AmazonCTAButton` at small scale in the navbar.
+
+### Out of scope for Phase 1
+- A/B testing infrastructure for CTA variants — Phase 2 decision once we have GA data.
+- Showing live Amazon price in the button — requires Product Advertising API; not pursuing in Phase 1.
+- "Order from Amazon Canada" — book isn't published there yet; revisit later.
 
 ## 9. Accessibility plan
 

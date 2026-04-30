@@ -4,6 +4,14 @@ A human-readable narrative of what's changed on the `redesign-may` branch and wh
 
 ---
 
+## 2026-05-01 — Amazon CTA pattern locked in (Pattern C)
+
+**What:** Added §8.5 to the spec specifying the Amazon CTA pattern. Replaces the current 3-button (AU / US / UK) layout with a single locale-aware primary button that includes shipping reassurance copy ("ships to Aotearoa NZ"), plus an inline "other regions" expander. Server renders a US default; client-side hydration swaps to detected locale to avoid hydration mismatches and layout shift. `amazon_cta_click` GA event gains a `region` parameter for future analysis.
+
+**Why:** Maz flagged the 3-button approach as a specific conversion concern. With referred parents on mobile and book sales as the primary goal, decision speed beats option visibility — and explicit shipping copy is a meaningful purchase-friction killer for international book sales.
+
+---
+
 ## 2026-05-01 — Brainstorming + spec phase complete
 
 **What:** Set up the project for the redesign. Wrote `CLAUDE.md`, `DESIGN.md` (current design system audit + findings), `PRODUCT.md` (audience, brand, voice), and the implementation spec at `docs/superpowers/specs/2026-05-01-mazmatics-redesign-design.md`. Captured 10 baseline screenshots of the live site at `docs/audit/screenshots/`.
