@@ -11,7 +11,6 @@ export const FreeSampleDownload = () => {
       event_category: 'free_sample_downloaded',
       event_label: 'free_sample_downloaded',
     })
-    debugger
     window.location.href =
       '/downloads/Mazmatics_FunMathForKids_vol1_Free_Sample_PDF.pdf'
   }
