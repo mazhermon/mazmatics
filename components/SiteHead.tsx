@@ -13,7 +13,11 @@ const SITE_NAME = 'Mazmatics'
 const DEFAULT_TITLE = 'Mazmatics — Fun maths book for kids 7-10'
 const DEFAULT_DESCRIPTION =
   'Help kids say "I like math". A paperback activity & story book for ages 7-10, available on Amazon.'
-const DEFAULT_OG_IMAGE = 'https://mazmatics.com/og/home.png'
+// Placeholder OG image (book cover at 900x1350). Maz to supply a designed
+// 1200x630 PNG when convenient; update DEFAULT_OG_IMAGE_WIDTH/HEIGHT then.
+const DEFAULT_OG_IMAGE = 'https://mazmatics.com/og/home.jpg'
+const DEFAULT_OG_IMAGE_WIDTH = '900'
+const DEFAULT_OG_IMAGE_HEIGHT = '1350'
 const SITE_ORIGIN = 'https://mazmatics.com'
 
 export const SiteHead: React.FC<SiteHeadProps> = ({
@@ -41,8 +45,9 @@ export const SiteHead: React.FC<SiteHeadProps> = ({
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
+      <meta property="og:image:width" content={DEFAULT_OG_IMAGE_WIDTH} />
+      <meta property="og:image:height" content={DEFAULT_OG_IMAGE_HEIGHT} />
+      <meta property="og:image:alt" content="Mazmatics: Fun Math 4 Kids Vol. 1 paperback book cover" />
       <meta property="og:url" content={canonical} />
 
       <meta name="twitter:card" content="summary_large_image" />
