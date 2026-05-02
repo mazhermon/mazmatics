@@ -2,15 +2,11 @@ import React from 'react'
 
 import styles from './freeSample.module.css'
 import { Button } from '../button'
+import { trackFreeSampleDownload } from '../../lib/gtag'
 
 export const FreeSampleDownload = () => {
   const onFreeSampleDownloadAnalytics = () => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    gtag('event', 'free_sample_downloaded', {
-      event_category: 'free_sample_downloaded',
-      event_label: 'free_sample_downloaded',
-    })
+    trackFreeSampleDownload()
     window.location.href =
       '/downloads/Mazmatics_FunMathForKids_vol1_Free_Sample_PDF.pdf'
   }
