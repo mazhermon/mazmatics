@@ -29,6 +29,22 @@ const nextConfig = {
 
   // Output settings
   output: 'standalone', // for Docker / Vercel standalone builds
+
+  // Redirect deleted routes to preserve external backlinks
+  async redirects() {
+    return [
+      {
+        source: '/stockists',
+        destination: '/get-the-book',
+        permanent: true,
+      },
+      {
+        source: '/wholesalers',
+        destination: '/get-the-book',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = nextConfig
