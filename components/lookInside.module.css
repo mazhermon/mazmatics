@@ -8,3 +8,167 @@
   /* text-align: center; */
   color: var(--black);
 }
+
+.thumbButton {
+  background: none;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  cursor: zoom-in;
+  display: block;
+  width: 100%;
+  border-radius: 4px;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+
+.thumbButton:hover,
+.thumbButton:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -8px rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+.thumbButton:focus-visible {
+  outline: 3px solid var(--purple-2);
+  outline-offset: 4px;
+}
+
+/* Modal / lightbox */
+.modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(20, 10, 40, 0.92);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: lookInsideFadeIn 0.15s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modal {
+    animation: none;
+  }
+}
+
+@keyframes lookInsideFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modalContent {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalImage {
+  width: 100%;
+  max-width: 1100px;
+  max-height: calc(100vh - 6rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* The Image component renders a wrapper span; let it size to the available area */
+.modalImage > span {
+  max-width: 100%;
+  max-height: calc(100vh - 6rem);
+}
+
+.modalImage img {
+  max-width: 100% !important;
+  max-height: calc(100vh - 6rem) !important;
+  width: auto !important;
+  height: auto !important;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.6);
+  background-color: var(--white);
+}
+
+.modalClose,
+.modalNav {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--purple-3);
+  border: 0;
+  width: 48px;
+  height: 48px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.1s ease-out, background-color 0.1s ease-out;
+}
+
+.modalClose:hover,
+.modalNav:hover {
+  background: var(--white);
+  transform: scale(1.05);
+}
+
+.modalClose:focus-visible,
+.modalNav:focus-visible {
+  outline: 3px solid var(--yellow-1);
+  outline-offset: 3px;
+}
+
+.modalClose {
+  top: 0.5rem;
+  right: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.modalNavPrev {
+  left: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modalNavPrev:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.modalNavNext {
+  right: 0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modalNavNext:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+@media screen and (min-width: 50rem) {
+  .modalClose {
+    top: 1rem;
+    right: 1rem;
+  }
+  .modalNavPrev {
+    left: 1.5rem;
+  }
+  .modalNavNext {
+    right: 1.5rem;
+  }
+}
+
+.modalCounter {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  margin: 1rem 0 0;
+  font-family: var(--font-copy);
+}
