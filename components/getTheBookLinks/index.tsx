@@ -4,12 +4,15 @@ import { Button } from '../../components/button'
 import bookProductImageClearCut from '../../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
 
 import styles from './getTheBookLinks.module.css'
-import { useContext, useId, useState } from 'react'
+import { useContext, useEffect, useId, useState } from 'react'
 import { AppContext } from '../../context/appContext'
 import {
-  storefrontFor,
-  shippingCopyFor,
   ALL_STOREFRONTS,
+  STOREFRONTS,
+  resolveCountry,
+  regionForCountry,
+  shippingCopyForCountry,
+  type Country,
   type Storefront,
 } from '../../lib/locale'
 import { trackAmazonCTA } from '../../lib/gtag'
@@ -136,22 +139,38 @@ interface CompactBuyBlockProps {
 }
 
 const CompactBuyBlock: React.FC<CompactBuyBlockProps> = ({
-  userLang,
   mathsWord,
   bookProductImageSize,
 }) => {
   const [showOthers, setShowOthers] = useState(false)
+  const [country, setCountry] = useState<Country>(null)
   const expanderId = useId()
 
-  // SSR-safe: server renders without locale; first paint shows AU default
-  // (most visitors are NZ/AU). Hydration swaps to the detected locale.
-  const matched = storefrontFor(userLang)
-  const shipping = shippingCopyFor(userLang)
-  const others: Storefront[] = ALL_STOREFRONTS.filter((s) => s.region !== matched.region)
+  // Resolve country client-side after hydration. Timezone is the strongest
+  // signal (e.g. NZ users with macOS English-UK have navigator.language =
+  // 'en-GB' but timezone = 'Pacific/Auckland'). Falls back through
+  // explicit-region locales, then null → AU storefront default.
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    let timezone: string | undefined
+    try {
+      timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
+    } catch {
+      timezone = undefined
+    }
+    const languages = window.navigator.languages
+    const locale = window.navigator.language
+    setCountry(resolveCountry({ locale, languages, timezone }))
+  }, [])
 
-  const handlePrimary = () => trackAmazonCTA({ region: matched.region, location: 'home_hero' })
-  const handleOther = (region: 'AU' | 'US' | 'UK') => () =>
-    trackAmazonCTA({ region, location: 'home_hero_other_region' })
+  const region = regionForCountry(country)
+  const matched = STOREFRONTS[region]
+  const shipping = shippingCopyForCountry(country)
+  const others: Storefront[] = ALL_STOREFRONTS.filter((s) => s.region !== region)
+
+  const handlePrimary = () => trackAmazonCTA({ region, location: 'home_hero' })
+  const handleOther = (otherRegion: 'AU' | 'US' | 'UK') => () =>
+    trackAmazonCTA({ region: otherRegion, location: 'home_hero_other_region' })
 
   return (
     <div className={styles.contentGrid}>

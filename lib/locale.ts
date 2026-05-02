@@ -1,4 +1,5 @@
 export type Region = 'AU' | 'US' | 'UK'
+export type Country = 'NZ' | 'AU' | 'US' | 'GB' | null
 
 export interface Storefront {
   region: Region
@@ -8,7 +9,7 @@ export interface Storefront {
 
 const ASIN = '0473648911'
 
-const STOREFRONTS: Record<Region, Storefront> = {
+export const STOREFRONTS: Record<Region, Storefront> = {
   AU: {
     region: 'AU',
     url: `https://www.amazon.com.au/dp/${ASIN}`,
@@ -27,6 +28,84 @@ const STOREFRONTS: Record<Region, Storefront> = {
 }
 
 export const ALL_STOREFRONTS: Storefront[] = [STOREFRONTS.AU, STOREFRONTS.US, STOREFRONTS.UK]
+
+/**
+ * Resolve the user's country from available signals.
+ *
+ * Priority is **timezone first**, then explicit-region locale, then en-GB.
+ * Why: many NZ/AU macOS users have `navigator.language === 'en-GB'` (UK
+ * English with NZ region), so language alone misclassifies them as UK.
+ * Timezone is a much stronger signal for actual physical location.
+ *
+ * Returns null when no signal matches (server-side, or unsupported browser).
+ */
+export function resolveCountry(input: {
+  locale?: string
+  languages?: readonly string[]
+  timezone?: string
+}): Country {
+  const { locale, languages, timezone } = input
+
+  // 1. Timezone (most reliable).
+  if (timezone) {
+    if (timezone === 'Pacific/Auckland' || timezone === 'Pacific/Chatham') return 'NZ'
+    if (timezone.startsWith('Australia/')) return 'AU'
+    if (timezone === 'Europe/London') return 'GB'
+    if (timezone.startsWith('America/')) return 'US'
+  }
+
+  // 2. Locale with an explicit, unambiguous region tag.
+  const allLangs = [locale, ...(languages || [])].filter(Boolean) as string[]
+  for (const l of allLangs) {
+    const lower = l.toLowerCase()
+    if (lower === 'en-nz') return 'NZ'
+    if (lower === 'en-au') return 'AU'
+    if (lower === 'en-us') return 'US'
+  }
+
+  // 3. en-GB only counts as GB if timezone didn't classify us elsewhere first
+  //    (handled above). At this point, no timezone signal — so en-GB is more
+  //    likely a NZ/AU macOS user than a UK visitor; fall through.
+  if (allLangs.some((l) => l.toLowerCase() === 'en-gb')) return null
+
+  return null
+}
+
+export function regionForCountry(country: Country): Region {
+  switch (country) {
+    case 'NZ':
+    case 'AU':
+      return 'AU'
+    case 'GB':
+      return 'UK'
+    case 'US':
+      return 'US'
+    default:
+      // Default storefront when we can't tell — NZ/AU is Maz's biggest visitor
+      // segment, so AU storefront is the safest fallback (and serves NZ).
+      return 'AU'
+  }
+}
+
+/**
+ * Confidence-building shipping copy keyed off detected country, not just locale.
+ * NZ users (timezone-detected) get NZ-specific copy even when their browser
+ * language is en-GB.
+ */
+export function shippingCopyForCountry(country: Country): string | null {
+  switch (country) {
+    case 'NZ':
+      return 'Ships to Aotearoa NZ direct from Amazon Australia'
+    case 'AU':
+      return 'Ships within Australia'
+    case 'US':
+      return 'Prime eligible · ships within the US'
+    case 'GB':
+      return 'Ships within the UK'
+    default:
+      return null
+  }
+}
 
 export function storefrontFor(locale: string | undefined): Storefront {
   switch (locale) {
