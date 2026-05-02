@@ -44,3 +44,7 @@ skills-lock.json
 /public/sitemap.xml
 /public/sitemap-*.xml
 /public/robots.txt.lock
+
+# playwright runtime
+/test-results/
+/playwright-report/
