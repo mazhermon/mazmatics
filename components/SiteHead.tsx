@@ -27,7 +27,7 @@ export const SiteHead: React.FC<SiteHeadProps> = ({
   const fullTitle = title
     ? `${title} | ${SITE_NAME}`
     : DEFAULT_TITLE
-  const canonical = `${SITE_ORIGIN}${router.asPath.split('?')[0]}`
+  const canonical = `${SITE_ORIGIN}${router.asPath.split('?')[0].split('#')[0]}`
 
   return (
     <Head>
