@@ -1,4 +1,1 @@
-#!/usr/bin/env sh
-. "$(dirname "$0")/_/husky.sh"
-
-
+# Pre-commit hook (Husky v9+). Add commands below as needed.
