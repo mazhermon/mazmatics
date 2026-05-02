@@ -189,3 +189,55 @@
   opacity: 0.7;
   z-index: -1;
 }
+
+/* Compact mode: locale-aware single button + "other regions" expander */
+.expanderWrap {
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.expanderToggle {
+  background: none;
+  border: 0;
+  padding: 0.5rem 0.75rem;
+  min-height: 44px;
+  font-family: var(--font-copy);
+  font-size: 0.95rem;
+  color: var(--blue-5);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.expanderToggle:focus-visible {
+  outline: 2px solid var(--purple-2);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.otherRegionsList {
+  list-style: none;
+  margin: 0.25rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.otherRegionsList[hidden] {
+  display: none;
+}
+
+.otherRegionsList a {
+  display: inline-block;
+  padding: 0.4rem 0.6rem;
+  color: var(--purple-3);
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.otherRegionsList a:hover,
+.otherRegionsList a:focus-visible {
+  color: var(--blue-5);
+}

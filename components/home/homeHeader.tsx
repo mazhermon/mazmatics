@@ -53,7 +53,7 @@ export const HomeHeader = () => {
         </div>
 
         <div className={styles.getTheBooksHomeWrapper}>
-          <GetTheBookLinks />
+          <GetTheBookLinks compact />
         </div>
 
         {/* <div className={styles.homeCTAbutton}>

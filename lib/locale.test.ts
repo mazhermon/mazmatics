@@ -22,10 +22,10 @@ test('en-NZ → amazon.com.au AU storefront (NZ ships from AU)', () => {
   assert.equal(storefrontFor('en-NZ').url, 'https://www.amazon.com.au/dp/0473648911')
 })
 
-test('unknown locale falls back to US', () => {
-  assert.equal(storefrontFor('fr-CA').region, 'US')
-  assert.equal(storefrontFor('').region, 'US')
-  assert.equal(storefrontFor(undefined).region, 'US')
+test('unknown locale falls back to AU (most visitors from NZ/AU)', () => {
+  assert.equal(storefrontFor('fr-CA').region, 'AU')
+  assert.equal(storefrontFor('').region, 'AU')
+  assert.equal(storefrontFor(undefined).region, 'AU')
 })
 
 test('shipping copy for known locales', () => {

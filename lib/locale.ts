@@ -38,7 +38,9 @@ export function storefrontFor(locale: string | undefined): Storefront {
     case 'en-US':
       return STOREFRONTS.US
     default:
-      return STOREFRONTS.US
+      // Most visitors come from NZ + AU (Maz's home market), so AU is the
+      // safest default when the locale is unknown or hasn't hydrated yet.
+      return STOREFRONTS.AU
   }
 }
 
