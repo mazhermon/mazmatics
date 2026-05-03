@@ -4,6 +4,36 @@ A human-readable narrative of what's changed on the `redesign-may` branch and wh
 
 ---
 
+## 2026-05-03 — Impeccable findings applied (9 focused commits)
+
+**What:** Worked through every P0/P1/P2 item in `IMPECCABLE-REVIEW.md` as separate commits so any single visible change is revertable on its own. Order was: invisible/safe first, then visual, biggest blast-radius last.
+
+- **a11y: gate motion behind prefers-reduced-motion** — `.pointer` keyframe and footer back-to-top scroll now respect `prefers-reduced-motion`. Invisible to default users.
+- **perf: eager-load Look Inside thumbnails** — the four buy-page thumbs paint with the page instead of waiting for IntersectionObserver.
+- **refactor: extract `useResolvedCountry` hook** — timezone+languages detection moved out of `CompactBuyBlock` so /get-the-book buttons and the new nav CTA can reuse it.
+- **chore: remove unused Tailwind dependency** — installed but never configured; removed cleanly. Project stays on CSS Modules.
+- **a11y: AA-passing gradient on text-clip letterforms** — new `--gradient-text` token using `--blue-5 + --purple-3` (both AA on white) applied to global h2 and the various `.hitmeLink` / `.ukLink` letterforms. `--gradient-1` keeps its lighter stops for fills.
+- **feat(get-the-book): locale-aware primary + shipping copy** — replaces "...I'll let you guess what this is for :)" cute placeholders with explicit shipping reassurance per region.
+- **feat(home): promote value-prop to H1 + locale-aware title** — H1 is now "Help your kids to say 'I like math/maths'" instead of the brand wordmark "Mazmatics". `<title>` becomes locale-aware via `mathsWord`.
+- **feat(nav): persistent locale-aware buy CTA pill** — yellow "Get the book" pill in the nav row of every page, links direct to the matched Amazon storefront, fires `nav_buy_click`.
+- **refactor(about): hoist author bio + split Good foundations into H3s** — author warmth was buried 60% down; now sits second-on-page. The 8-paragraph "Good foundations" block becomes 3 H3 sub-sections drawn from existing copy (no new copy).
+
+**Why:** The impeccable audit verified what was real vs. screenshot artifact, then graded each finding by visual blast radius. We applied invisible/safe fixes silently and visible ones as their own commits per Maz's "section-by-section, easy to revert" rule.
+
+**Verification:** 17/17 locale tests pass, `yarn build` clean, no TypeScript errors. Everything else is "needs Maz's eyes in the browser."
+
+---
+
+## 2026-05-03 — Stitch MCP connected
+
+**What:** Registered the official Google Stitch MCP at `https://stitch.googleapis.com/mcp` (HTTP transport with `X-Goog-Api-Key` header) so coding agents can pull AI-generated UI references directly from Stitch projects without manual export.
+
+**Why:** Maz wants to use Stitch as a visual reference channel — paste a screen ID and have the agent fetch the HTML/screenshot to inform redesign work, instead of describing visuals in text.
+
+**Auth model:** API key in `~/.claude.json` headers, scoped to the local project entry. Not in repo `.env`. Not in shell rc.
+
+---
+
 ## 2026-05-01 — Implementation plan written
 
 **What:** Wrote the bite-sized implementation plan at `docs/superpowers/plans/2026-05-01-mazmatics-redesign-may.md` — 26 tasks (25 core + 1 opportunistic), each with exact file paths, complete code blocks, expected commands and outputs, and a dedicated commit message. Plan covers Day 1 morning foundations (Tasks 1-11), Day 1pm + Day 2 hero rebuild (Tasks 12-17), and Day 3 hierarchy + Look Inside + a11y (Tasks 18-25).
