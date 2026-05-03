@@ -4,17 +4,16 @@ import { Button } from '../../components/button'
 import bookProductImageClearCut from '../../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
 
 import styles from './getTheBookLinks.module.css'
-import { useContext, useEffect, useId, useState } from 'react'
+import { useContext, useId, useState } from 'react'
 import { AppContext } from '../../context/appContext'
 import {
   ALL_STOREFRONTS,
   STOREFRONTS,
-  resolveCountry,
   regionForCountry,
   shippingCopyForCountry,
-  type Country,
   type Storefront,
 } from '../../lib/locale'
+import { useResolvedCountry } from '../../context/services/useResolvedCountry'
 import { trackAmazonCTA } from '../../lib/gtag'
 // import { FreeSampleDownload } from '../freeSample'
 
@@ -143,25 +142,8 @@ const CompactBuyBlock: React.FC<CompactBuyBlockProps> = ({
   bookProductImageSize,
 }) => {
   const [showOthers, setShowOthers] = useState(false)
-  const [country, setCountry] = useState<Country>(null)
+  const country = useResolvedCountry()
   const expanderId = useId()
-
-  // Resolve country client-side after hydration. Timezone is the strongest
-  // signal (e.g. NZ users with macOS English-UK have navigator.language =
-  // 'en-GB' but timezone = 'Pacific/Auckland'). Falls back through
-  // explicit-region locales, then null → AU storefront default.
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    let timezone: string | undefined
-    try {
-      timezone = Intl.DateTimeFormat().resolvedOptions().timeZone
-    } catch {
-      timezone = undefined
-    }
-    const languages = window.navigator.languages
-    const locale = window.navigator.language
-    setCountry(resolveCountry({ locale, languages, timezone }))
-  }, [])
 
   const region = regionForCountry(country)
   const matched = STOREFRONTS[region]
