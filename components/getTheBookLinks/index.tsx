@@ -29,17 +29,28 @@ export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
     height: 1350,
   }
 
-  const { mathsWord, userLang } = useContext(AppContext)
+  const { mathsWord } = useContext(AppContext)
+  const country = useResolvedCountry()
+  const region = regionForCountry(country)
 
   if (compact) {
     return (
       <CompactBuyBlock
-        userLang={userLang}
         mathsWord={mathsWord}
         bookProductImageSize={bookProductImageSize}
       />
     )
   }
+
+  const auShipping =
+    country === 'NZ'
+      ? 'Ships to Aotearoa NZ direct from Amazon Australia'
+      : 'Ships within Australia'
+  const usShipping = 'Prime eligible · ships within the US'
+  const ukShipping = 'Ships within the UK'
+
+  const trackBuy = (clickedRegion: 'AU' | 'US' | 'UK') => () =>
+    trackAmazonCTA({ region: clickedRegion, location: 'get_the_book' })
 
   return (
     <div className={styles.contentGrid}>
@@ -49,34 +60,38 @@ export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
         <ul className={styles.product_book1__linkGroup}>
           <li className={styles.product_book1_buyNowBlock}>
             <Button
-              variant={userLang !== 'en-US' ? 'primary' : 'secondary'}
+              variant={region === 'AU' ? 'primary' : 'secondary'}
               external={true}
-              href="https://www.amazon.com.au/dp/0473648911"
+              href={STOREFRONTS.AU.url}
+              onClick={trackBuy('AU')}
             >
-              Buy on Amazon Australia
+              {STOREFRONTS.AU.label}
             </Button>
-            <span>Use this for shipping to NZ</span>
+            <span>{auShipping}</span>
           </li>
 
           <li className={styles.product_book1_buyNowBlock}>
             <Button
               external={true}
-              variant={userLang === 'en-US' ? 'primary' : 'secondary'}
-              href="https://www.amazon.com/dp/0473648911"
+              variant={region === 'US' ? 'primary' : 'secondary'}
+              href={STOREFRONTS.US.url}
+              onClick={trackBuy('US')}
             >
-              Buy on Amazon.com
+              {STOREFRONTS.US.label}
             </Button>
-            <span>For shipping to USA</span>
+            <span>{usShipping}</span>
           </li>
 
           <li className={styles.product_book1_buyNowBlock}>
             <Button
               external={true}
-              href="https://www.amazon.co.uk/dp/0473648911"
+              variant={region === 'UK' ? 'primary' : 'secondary'}
+              href={STOREFRONTS.UK.url}
+              onClick={trackBuy('UK')}
             >
-              Buy on Amazon UK
+              {STOREFRONTS.UK.label}
             </Button>
-            <span>...I&apos;ll let you guess what this is for :)</span>
+            <span>{ukShipping}</span>
           </li>
         </ul>
 
@@ -132,7 +147,6 @@ export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
 }
 
 interface CompactBuyBlockProps {
-  userLang?: string
   mathsWord?: string
   bookProductImageSize: { width: number; height: number }
 }
