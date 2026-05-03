@@ -77,6 +77,48 @@
 .largeScreenNav {
   margin-left: auto;
 }
+
+.buyCTAWrap {
+  margin-left: 0.75rem;
+  display: flex;
+  align-items: center;
+}
+@media screen and (min-width: 65rem) {
+  .buyCTAWrap {
+    margin-left: 1rem;
+  }
+}
+
+.buyCTA {
+  display: inline-block;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  background-color: var(--yellow-1);
+  color: var(--black);
+  font-family: var(--font-button);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  box-shadow: var(--box-shadow-3);
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+}
+.buyCTA:hover,
+.buyCTA:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: var(--box-shadow-1);
+  outline: none;
+}
+.buyCTA:focus-visible {
+  outline: 3px solid var(--blue-5);
+  outline-offset: 2px;
+}
+@media screen and (min-width: 30rem) {
+  .buyCTA {
+    font-size: 1.1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
 .navList__horizontal {
   display: none;
 }

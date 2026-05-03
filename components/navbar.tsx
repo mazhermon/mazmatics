@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { MenuIcon } from './icons/menu'
 import { CrossIcon } from './icons/cross'
 import { NavBarLinks } from './NavBarLinks'
+import { NavBarBuyCTA } from './NavBarBuyCTA'
 
 export const Navbar = () => {
   const router = useRouter()
@@ -41,6 +42,10 @@ export const Navbar = () => {
 
         <div className={styles.largeScreenNav}>
           <NavBarLinks mode="horizontal" />
+        </div>
+
+        <div className={styles.buyCTAWrap}>
+          <NavBarBuyCTA />
         </div>
       </div>
 
