@@ -94,6 +94,7 @@ export const LookInside = () => {
               src={page.src}
               width={contentImageSize.width}
               height={contentImageSize.height}
+              loading="eager"
             />
           </button>
         ))}
