@@ -79,7 +79,14 @@ export const Footer = () => {
 
           <Button
             onClick={() => {
-              window.scrollTo({ top: 0 })
+              const prefersReducedMotion =
+                typeof window !== 'undefined' &&
+                typeof window.matchMedia === 'function' &&
+                window.matchMedia('(prefers-reduced-motion: reduce)').matches
+              window.scrollTo({
+                top: 0,
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+              })
             }}
             variant="secondary"
           >

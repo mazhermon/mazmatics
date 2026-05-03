@@ -135,8 +135,13 @@
   transform: translateY(1rem);
   border-top: 40px solid var(--purple-2);
   margin-bottom: 1.5rem;
-  animation: 0.5s ease-out 1s 7 alternate infinite;
-  animation-iteration-count: 7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pointer {
+    animation: 0.5s ease-out 1s 7 alternate infinite;
+    animation-iteration-count: 7;
+  }
 }
 
 @keyframes pointer {
