@@ -33,10 +33,10 @@ const Home: NextPage = () => {
   return (
     <div className={styles.homePageWrapper}>
       <Head>
-        <title>Mazmatics fun math 4 kids</title>
+        <title>{`Mazmatics — Fun ${mathsWord} book for kids 7-10`}</title>
         <meta
           name="description"
-          content='Mazmatics helps kids say "I love math" by providing more opportunities for practising math to be a fun, relatable and enjoyable activity.'
+          content={`Mazmatics helps kids say "I like math" by giving them activities, stories, codes and drawing prompts that make ${mathsWord} feel fun, relatable and enjoyable.`}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

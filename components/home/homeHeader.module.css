@@ -84,9 +84,11 @@
 }
 
 .weHelpKidsSay {
+  display: block;
 }
 
 .iLikeMath {
+  display: block;
   /* font-family: var(--font-script); */
   font-size: 3rem;
   background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
@@ -140,10 +142,13 @@
 .siteTitle__promise {
   font-family: var(--font-copy);
   font-size: 1.1rem;
+  font-weight: normal;
+  color: inherit;
   margin: 0;
   margin-top: 5px;
   transform: translateY(-1rem);
   text-align: center;
+  line-height: 1.2;
 }
 @media screen and (min-width: 30rem) {
   .siteTitle__promise {

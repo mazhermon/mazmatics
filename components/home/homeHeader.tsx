@@ -28,28 +28,19 @@ export const HomeHeader = () => {
         <div className={styles.siteTitle}>
           <span className={styles.siteTitle__welcometo}>Welcome to</span>
           <div className={styles.MainLogo}>
-            <h1 className={styles.homeHeading1}>
-              <span className="sr-only">Welcome to </span>
+            <p className={styles.homeHeading1} aria-label="Mazmatics">
               Mazmatics
-            </h1>
-            {/* <Image
-              className={styles.siteTitle__logo}
-              alt="Mazmatics"
-              src={mazmaticsLogo}
-              layout="intrinsic"
-              width={logoImageSizes.width}
-              height={logoImageSizes.height}
-            /> */}
+            </p>
           </div>
 
-          <div className={styles.siteTitle__promise}>
-            <div className={styles.weHelpKidsSay}>Help your kids to say...</div>
-            <div className={styles.iLikeMath}>
+          <h1 className={styles.siteTitle__promise}>
+            <span className={styles.weHelpKidsSay}>Help your kids to say...</span>
+            <span className={styles.iLikeMath}>
               <span className={`quoteMark ${styles.quoteMark}`}>&ldquo;</span>I
               like math{userLang !== 'en-US' && <span>s</span>}
               <span className={`quoteMark ${styles.quoteMark}`}>&rdquo;</span>
-            </div>
-          </div>
+            </span>
+          </h1>
         </div>
 
         <div className={styles.getTheBooksHomeWrapper}>
