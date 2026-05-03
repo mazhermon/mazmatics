@@ -37,6 +37,53 @@ const About = () => {
       <AboutHeader />
       <div className="longCopyLayoutArea"></div>
       <div className={`longCopyLayoutArea ${styles.aboutTextWrapper}`}>
+        <section className={styles.section1}>
+          <Container>
+            <h2>About the author</h2>
+            <p>
+              Hi, I&apos;m Maz Hermon, a father of two kids (currently 9 &amp;
+              5). I&apos;m a web developer (computer coder) by day and a
+              creative hobbyist by night. I&apos;m not particularly amazing at
+              math, but I do find it enjoyable and fascinating and I love to
+              play around with learning of all sorts. I quite happily say
+              &quot;I like math&quot;, I&apos;m a big fan. I&apos;m not a
+              teacher, but I have a good imagination and like to have fun with
+              my learning. I&apos;ve written this book with my kids to offer
+              some supplementary learning resources for kids, that can sit
+              alongside and support what kids are learning in school. My vision
+              is to help kids say &quot;I like math&quot;.
+            </p>
+            <p>
+              My interest in learning math again as an adult was related to
+              using some basic trigonometry to calculate trajectories of moving
+              objects while programming some game animations with JavaScript. I
+              was delighted to have a real use case for it and to see how fun
+              and practical math can be in creative projects. I know some kids
+              can get turned off from math at an early age and start to
+              disassociate themselves from thinking &quot;yeah this is for me
+              too&quot;, so I thought this book might help kids to connect with
+              math and maybe even enjoy it. I love learning online, but I also
+              like the idea of my kids having access to paper books so math can
+              be something we do away from the computer. Both are good.
+            </p>
+            <p>
+              I live in Aotearoa New Zealand with my little family of four and
+              hope this book helps some kids of the world to say &quot;I like
+              math&quot;, wherever you are.
+            </p>
+            <p>Have fun</p>
+            <p>
+              <strong>Maz Hermon</strong>,
+              <br />
+              creator of Mazmatics
+            </p>
+          </Container>
+        </section>
+
+        <div className={styles.gridPaperWrapper}>
+          <GridPaper />
+        </div>
+
         {/* // TODO make a coloured section area thing? */}
         <section className={`${styles.section1} ${styles.shortStorySection}`}>
           <Container>
@@ -136,7 +183,9 @@ const About = () => {
 
         <section className={styles.section1}>
           <Container>
-            <h3>Good foundations</h3>
+            <h2>Good foundations</h2>
+
+            <h3>An activity book and learning resource</h3>
             <p>
               Mazmatics is an activity book and learning resource that helps to
               make math fun and useful for kids and early learners of all ages.
@@ -152,6 +201,8 @@ const About = () => {
               </strong>
               , with some fractions included.
             </p>
+
+            <h3>We need to practise our math</h3>
             <p>
               We all need good fundamentals before we can enjoy the next level
               of ideas and equations. This book is to be used alongside other
@@ -171,6 +222,8 @@ const About = () => {
                 can do and enjoy over our lifetime.
               </strong>
             </p>
+
+            <h3>Home play, not homework</h3>
             <p>
               So what&apos;s going to make practising math seem like a good idea
               for kids?
@@ -186,53 +239,6 @@ const About = () => {
             <p>Mazmatics, for home play, not homework.</p>
           </Container>
         </section>
-        <div className={styles.gridPaperWrapper}>
-          <GridPaper />
-        </div>
-
-        <section className={styles.section1}>
-          <Container>
-            <h2>About the author</h2>
-            <p>
-              Hi, I&apos;m Maz Hermon, a father of two kids (currently 9 &amp;
-              5). I&apos;m a web developer (computer coder) by day and a
-              creative hobbyist by night. I&apos;m not particularly amazing at
-              math, but I do find it enjoyable and fascinating and I love to
-              play around with learning of all sorts. I quite happily say
-              &quot;I like math&quot;, I&apos;m a big fan. I&apos;m not a
-              teacher, but I have a good imagination and like to have fun with
-              my learning. I&apos;ve written this book with my kids to offer
-              some supplementary learning resources for kids, that can sit
-              alongside and support what kids are learning in school. My vision
-              is to help kids say &quot;I like math&quot;.
-            </p>
-            <p>
-              My interest in learning math again as an adult was related to
-              using some basic trigonometry to calculate trajectories of moving
-              objects while programming some game animations with JavaScript. I
-              was delighted to have a real use case for it and to see how fun
-              and practical math can be in creative projects. I know some kids
-              can get turned off from math at an early age and start to
-              disassociate themselves from thinking &quot;yeah this is for me
-              too&quot;, so I thought this book might help kids to connect with
-              math and maybe even enjoy it. I love learning online, but I also
-              like the idea of my kids having access to paper books so math can
-              be something we do away from the computer. Both are good.
-            </p>
-            <p>
-              I live in Aotearoa New Zealand with my little family of four and
-              hope this book helps some kids of the world to say &quot;I like
-              math&quot;, wherever you are.
-            </p>
-            <p>Have fun</p>
-            <p>
-              <strong>Maz Hermon</strong>,
-              <br />
-              creator of Mazmatics
-            </p>
-          </Container>
-        </section>
-
         <div className={styles.gridPaperWrapper}>
           <GridPaper />
         </div>
