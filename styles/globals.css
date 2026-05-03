@@ -16,6 +16,10 @@
   --purple-3: #8c5fd5;
 
   --gradient-1: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  /* Darker gradient stops for letterforms — both ends pass WCAG AA on
+     white. --gradient-1 keeps its original lighter stops for fills like
+     the buy CTA pill, banner, bigStripeDeco. */
+  --gradient-text: linear-gradient(to left, var(--blue-5), var(--purple-3));
   /* --gradient-sunshine: linear-gradient(
     180deg,
     #47a5f1 11%,
@@ -200,7 +204,7 @@ h2 {
 }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   h2 {
-    background-image: linear-gradient(to left, var(--blue-4), var(--purple-2));
+    background-image: var(--gradient-text);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
@@ -376,7 +380,7 @@ input.ml-error.ml-error,
 }
 @supports (background-clip: text) or (-webkit-background-clip: text) {
   .hitmeLink {
-    background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+    background-image: var(--gradient-text);
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;

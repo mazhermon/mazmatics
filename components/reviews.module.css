@@ -189,7 +189,7 @@
   display: block;
   /* text-align: center; */
   width: 100%;
-  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  background-image: var(--gradient-text);
   -webkit-background-clip: text;
   color: transparent;
   transform: translateY(0);
@@ -204,7 +204,7 @@
   width: auto;
   margin: 0;
   cursor: pointer !important;
-  background-image: linear-gradient(to left, var(--purple-2), var(--blue-4));
+  background-image: var(--gradient-text);
   -webkit-background-clip: text;
   color: transparent;
   transform: translateY(0);
