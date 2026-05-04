@@ -1,100 +1,51 @@
-import React, { useState } from 'react'
-
-import { CharCircleBetty } from './characters/circleBetty'
-import MailingList from './mailinglist'
+import React, { useContext } from 'react'
+import Link from 'next/link'
 
 import styles from './footer.module.css'
-import { Banner } from './banner'
-import { Button } from './button'
+import { AppContext } from '../context/appContext'
+import { ALL_STOREFRONTS } from '../lib/locale'
 
-// import bookBannerImage from '../public/images/emailFunCOver.jpg'
-
-// const bookBannerImageSize = {
-//   width: 1940,
-//   height: 600,
-// }
+const COMPACT_REGION_LABEL: Record<string, string> = {
+  AU: 'Amazon AU',
+  US: 'Amazon US',
+  UK: 'Amazon UK',
+}
 
 export const Footer = () => {
-  const [isInputFocus, setIsInputFocus] = useState(false)
-  const [isSubmitClicked, setIsSubmitClicked] = useState(false)
-
-  // Fun animation during mailing list sign up - just for a laugh
-  const handleOnInputFun = () => {
-    setIsInputFocus(true)
-  }
-  const handleOnInputBlurFun = () => {
-    setIsInputFocus(false)
-  }
-
-  const handleOnSignupFun = () => {
-    setIsSubmitClicked(true)
-  }
+  const { mathsWord = 'maths' } = useContext(AppContext)
+  const year = new Date().getFullYear()
 
   return (
-    <div className={styles.siteFooter}>
-      <div className={styles.signup}>
-        <div className={styles.charCircleBettyPositioner}>
-          <CharCircleBetty
-            isInputFocus={isInputFocus}
-            isSubmitClicked={isSubmitClicked}
-            small={true}
-          />
+    <footer className={styles.siteFooter}>
+      <div className={styles.inner}>
+        <div className={styles.brandBlock}>
+          <span className={styles.brand}>Mazmatics</span>
+          <p className={styles.brandLine}>
+            © {year} Mazmatics. Sparking joy in {mathsWord} discovery.
+          </p>
         </div>
-        <MailingList
-          onMailingListInputFocused={handleOnInputFun}
-          onMailingListFormSubmitted={handleOnSignupFun}
-          onMailingListInputBlurred={handleOnInputBlurFun}
-        />
+
+        <ul className={styles.linkRow}>
+          {ALL_STOREFRONTS.map((s) => (
+            <li key={s.region}>
+              <a
+                className={styles.link}
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.label}
+              >
+                {COMPACT_REGION_LABEL[s.region] ?? s.label}
+              </a>
+            </li>
+          ))}
+          <li>
+            <Link href="/feedback" className={styles.link}>
+              Contact
+            </Link>
+          </li>
+        </ul>
       </div>
-
-      <div></div>
-
-      {/* <div className={styles.waves}>
-        <svg
-          data-name="Layer 1"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-        >
-          <path
-            d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            className="shape-fill"
-          ></path>
-        </svg>
-      </div> */}
-
-      <div className={`${styles.footerBanner} footerBannerGlobal`}>
-        <Banner
-          className={styles.footerBannerInner}
-          waves={true}
-          title="Fun Math 4 kids book"
-          subtitle="Volume 1 – out now"
-          size="med"
-          color="purple"
-          variant="fun"
-        >
-          <Button variant="secondary" href="/get-the-book">
-            Get the book
-          </Button>
-
-          <Button
-            onClick={() => {
-              const prefersReducedMotion =
-                typeof window !== 'undefined' &&
-                typeof window.matchMedia === 'function' &&
-                window.matchMedia('(prefers-reduced-motion: reduce)').matches
-              window.scrollTo({
-                top: 0,
-                behavior: prefersReducedMotion ? 'auto' : 'smooth',
-              })
-            }}
-            variant="secondary"
-          >
-            <span className={styles.backToTopPointer}></span>
-            Back to top
-          </Button>
-        </Banner>
-      </div>
-    </div>
+    </footer>
   )
 }

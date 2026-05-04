@@ -8,6 +8,8 @@ import styles from '../styles/Home.module.css'
 import { Banner } from '../components/banner'
 import { HomeHeader } from '../components/home/homeHeader'
 import { Reviews } from '../components/reviews'
+import { CoreValues } from '../components/CoreValues'
+import { StoryBento } from '../components/StoryBento'
 
 import { FrontPageNews } from '../components/FrontPageNews'
 import JoinMailingList from '../components/join-mailing-list'
@@ -42,17 +44,17 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <HomeHeader />
+
         <div className={styles.gridPaperHomePageLower}>
           <GridPaper />
         </div>
-        <div className={styles.homeHeaderColorWrap}>
-          <div className={styles.gridPaperHomePageHeader}>
-            <GridPaper />
-          </div>
-          <HomeHeader />
-        </div>
 
         <FrontPageNews />
+
+        <StoryBento />
+
+        <CoreValues />
 
         <div className={styles.product_book1}>
           <h2 className={styles.product_book1__heading}>

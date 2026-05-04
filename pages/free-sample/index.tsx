@@ -8,6 +8,7 @@ import { AppContext } from '../../context/appContext'
 import { FreeSampleDownload } from '../../components/freeSample'
 import { Banner } from '../../components/banner'
 import { GetTheBookLinks } from '../../components/getTheBookLinks'
+import { LookInside } from '../../components/LookInside'
 
 const FreeSample = () => {
   const { mathsWord } = useContext(AppContext)
@@ -32,10 +33,14 @@ const FreeSample = () => {
       </Head>
       <div className="longCopyLayoutArea"></div>
       <div className={`longCopyLayoutArea ${styles.aboutTextWrapper}`}>
+        <Container>
+          <h1 className={styles.centerMe}>Free sample</h1>
+          <LookInside variant="showcase" heading={null} />
+        </Container>
+
         {/* // TODO make a coloured section area thing? */}
         <section className={`${styles.section1} ${styles.shortStorySection}`}>
           <Container>
-            <h1 className={styles.centerMe}>Free sample</h1>
             <FreeSampleDownload />
           </Container>
           <Banner

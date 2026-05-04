@@ -1,163 +1,321 @@
-/* .aboutTextWrapper {
-} */
+.aboutPage {
+  --abt-purple: oklch(0.5 0.16 295);
+  --abt-purple-soft: oklch(0.78 0.13 295);
+  --abt-yellow: oklch(0.93 0.15 95);
+  --abt-yellow-deep: oklch(0.55 0.14 75);
+  --abt-blue: oklch(0.45 0.13 245);
+  --abt-blue-soft: oklch(0.94 0.04 240);
+  --abt-ink: oklch(0.22 0.015 290);
+  --abt-muted: oklch(0.42 0.018 290);
+}
 
 .aboutPage section {
-  padding: 3rem;
+  padding: 4rem 1.25rem;
 }
 
-.titleOnLightBG {
-  color: var(--black);
-}
-@media screen and (min-width: 50rem) {
+@media (min-width: 50rem) {
   .aboutPage section {
-    padding: 5rem;
-    padding-bottom: 7rem;
+    padding: 6rem 2rem;
   }
 }
 
-.testimonial {
-  position: relative;
-  margin: 2rem 0;
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 0.7rem;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 }
 
-.testimonial::before,
-.testimonial::after {
-  color: var(--blue-4);
-  font-size: 3rem;
+.eyebrowPurple {
+  color: var(--abt-purple);
 }
 
-.testimonial::before {
-  content: '&ldquo;';
-  position: absolute;
-  top: 0;
-  left: 0;
+.eyebrowBlue {
+  color: var(--abt-blue);
 }
 
-.testimonial::after {
-  bottom: 0;
-  right: 0;
-  content: '&rdquo;';
-  position: absolute;
+.eyebrowYellow {
+  color: var(--abt-yellow-deep);
 }
 
-.aboutTextWrapper h3 {
-  margin-top: 3.8rem;
+/* --- Author intro section (cream) --- */
+
+.authorSection {
+  background: oklch(0.985 0.008 290);
 }
 
-.section1 p {
-  max-width: 50ch;
-}
-.section1__content {
-  max-width: 600px;
-}
-.section1__decoration svg {
-  /* margin: auto; */
-  width: 90%;
-  max-width: 500px;
+.authorInner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
 }
 
-@media screen and (min-width: 50rem) {
-  .contentGridType1 {
-    display: grid;
-    gap: 3rem;
-    grid-template-columns: 1fr 1fr;
+@media (min-width: 50rem) {
+  .authorInner {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 4rem;
   }
 }
 
-.shortStorySection {
-  background-color: var(--purple-2);
-  color: var(--white);
+.authorTitle {
+  margin: 0 0 1rem;
+  font-family: var(--font-headings);
+  font-size: clamp(2rem, 4.6vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--abt-ink);
+  max-width: 22ch;
 }
-.shortStorySection .section1__decoration svg {
+
+.authorBody {
+  margin: 0 0 1.1rem;
+  max-width: 56ch;
+  font-family: var(--font-copy);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--abt-muted);
+}
+
+.authorBody:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+.signoff {
+  font-family: var(--font-script);
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: var(--abt-purple);
+  margin: 0;
+}
+
+.authorDecoration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--abt-purple);
+}
+
+.authorDecoration svg {
   width: 100%;
-  max-width: 400px;
+  max-width: 360px;
+  height: auto;
 }
 
-.shortStorySection .section1__decoration {
-  color: var(--purple-3);
-  transform: translateX(-1.7rem);
-  padding-top: 7rem;
-}
-@media screen and (min-width: 50rem) {
-  .shortStorySection .section1__decoration {
-    display: flex;
-    justify-content: center;
-    padding-top: 3.5rem;
-
-    transform: translateX(0);
+@media (min-width: 50rem) {
+  .authorDecoration svg {
+    max-width: 420px;
   }
 }
 
-.shortStorySection h2 {
-  color: var(--white);
-}
+/* --- Foundation section (pale blue) --- */
 
-.longStorySection {
-  background-color: var(--white);
-}
-.lookInsideWrapper {
+.foundationSection {
+  background: var(--abt-blue-soft);
   position: relative;
-  background-color: var(--yellow-1);
-  padding: 5rem 2rem;
-}
-
-.gridPaperWrapper {
-  background-color: var(--white);
   overflow: hidden;
-
-  box-shadow: var(--box-shadow-inset-double);
 }
-.gridPaperWrapper svg {
+
+.foundationInner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  position: relative;
   z-index: 1;
 }
-.gridPaperWrapper,
-.sunShineWrapper {
+
+@media (min-width: 50rem) {
+  .foundationInner {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: 4rem;
+    align-items: start;
+  }
+}
+
+.foundationTitle {
+  margin: 0 0 1rem;
+  font-family: var(--font-headings);
+  font-size: clamp(1.85rem, 4.2vw, 3rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--abt-ink);
+  max-width: 18ch;
+}
+
+.foundationLead {
+  margin: 0 0 2.25rem;
+  max-width: 56ch;
+  font-family: var(--font-copy);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--abt-muted);
+}
+
+.checklist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.checklistItem {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.checklistTick {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+  color: var(--abt-blue);
+}
+
+.checklistTick svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.checklistContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.checklistTitle {
+  margin: 0;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--abt-ink);
+  line-height: 1.25;
+}
+
+.checklistBody {
+  margin: 0;
+  max-width: 52ch;
+  font-family: var(--font-copy);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--abt-muted);
+}
+
+.foundationDecoration {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.foundationDecoration svg {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+}
+
+/* --- Make it yours (yellow band with sun ornament) --- */
+
+.makeItYoursSection {
+  background: var(--abt-yellow);
   position: relative;
-  height: 16rem;
-}
-
-.valuesSection {
-  background-color: var(--yellow-1);
-}
-
-.sunShineWrapper {
-  height: 18rem;
   overflow: hidden;
-  /* background-color: var(--blue-1); */
+  padding: 5rem 1.25rem 6rem;
+  text-align: center;
 }
-@media screen and (min-width: 30rem) {
-  .sunShineWrapper {
-    height: 46rem;
-  }
-}
-@media screen and (min-width: 60rem) {
-  .sunShineWrapper {
-    height: 46rem;
+
+@media (min-width: 50rem) {
+  .makeItYoursSection {
+    padding: 7rem 2rem 8rem;
   }
 }
 
-.sunShineWrapper g {
-  /* stroke: var(--blue-4); */
-}
-
-.sunShineWrapper svg,
-.sunShineWrapper canvas {
+.makeItYoursInner {
+  position: relative;
   z-index: 1;
-}
-.sunShineWrapper svg {
-  opacity: 0.3;
-}
-
-.spaceSection.spaceSection {
-  background-color: var(--green-1);
-  padding-bottom: 12rem;
+  max-width: 36rem;
+  margin: 0 auto;
 }
 
-.gettingInvolvedSection {
-  /* background-image: var(--gradient-1); */
-  background-color: var(--blue-2);
-  /* color: var(--white); */
+.makeItYoursTitle {
+  margin: 0 0 1.25rem;
+  font-family: var(--font-headings);
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+  color: var(--abt-ink);
 }
-/* .gettingInvolvedSection h3 {
-  color: var(--white);
-} */
+
+.makeItYoursBody {
+  margin: 0 auto;
+  max-width: 32rem;
+  font-family: var(--font-copy);
+  font-size: 1.15rem;
+  line-height: 1.55;
+  color: var(--abt-ink);
+}
+
+.sunOrnament {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.55;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sunOrnament svg,
+.sunOrnament canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.writeOrnament {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+  bottom: -2rem;
+  right: -2rem;
+  width: 12rem;
+  transform: rotate(8deg);
+}
+
+.writeOrnament svg {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 50rem) {
+  .writeOrnament {
+    width: 16rem;
+    bottom: -3rem;
+    right: -1rem;
+  }
+}
+
+/* --- Testimonials section --- */
+
+.testimonialsSection {
+  background: oklch(0.99 0.005 290);
+}
+
+.testimonialsInner {
+  max-width: 1180px;
+  margin: 0 auto;
+}

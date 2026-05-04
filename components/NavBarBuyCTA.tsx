@@ -25,7 +25,18 @@ export const NavBarBuyCTA: React.FC = () => {
       onClick={trackNavBuyClick}
       aria-label={label}
     >
-      Get the book
+      <span>Get the book</span>
+      <svg
+        className={styles.buyCTA__icon}
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          fill="currentColor"
+          d="M7 18a2 2 0 1 0 .001 4.001A2 2 0 0 0 7 18zm10 0a2 2 0 1 0 .001 4.001A2 2 0 0 0 17 18zM7.16 14h9.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49a1 1 0 0 0-.87-1.48H5.21l-.94-2H1v2h2l3.6 7.59-1.35 2.44C4.52 16.37 5.48 18 7 18h12v-2H7.42a.25.25 0 0 1-.22-.37L7.16 14z"
+        />
+      </svg>
     </a>
   )
 }

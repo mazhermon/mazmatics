@@ -1,0 +1,163 @@
+.section {
+  --sb-purple: oklch(0.5 0.16 295);
+  --sb-purple-soft: oklch(0.78 0.13 295);
+  --sb-blue: oklch(0.45 0.13 245);
+  --sb-blue-soft: oklch(0.78 0.13 240);
+  --sb-ink: oklch(0.22 0.015 290);
+  --sb-muted: oklch(0.42 0.018 290);
+  --sb-rule: oklch(0.78 0.04 290);
+
+  position: relative;
+  z-index: 3;
+  align-self: stretch;
+  width: 100%;
+  background: oklch(0.965 0.022 295);
+  padding: 4rem 1.25rem 3.5rem;
+}
+
+@media (min-width: 50rem) {
+  .section {
+    padding: 6rem 2rem 5rem;
+  }
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  margin: 0 0 0.75rem;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sb-purple);
+}
+
+.title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-headings);
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--sb-ink);
+  max-width: 18ch;
+}
+
+.subtitle {
+  margin: 0 0 3rem;
+  max-width: 48ch;
+  font-family: var(--font-copy);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--sb-muted);
+}
+
+@media (min-width: 50rem) {
+  .subtitle {
+    margin-bottom: 4.5rem;
+  }
+}
+
+/* Editorial spread: two stories arranged like a poster — different widths,
+   the second one indented to break monotony. No cards, no borders. */
+.spread {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 50rem) {
+  .spread {
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: 4.5rem;
+    align-items: start;
+  }
+
+  .spreadOffset {
+    transform: translateY(2.5rem);
+  }
+}
+
+.story {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  column-gap: 1.25rem;
+  row-gap: 0.6rem;
+}
+
+.numberMark {
+  font-family: var(--font-headings);
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  grid-row: 1 / span 2;
+  align-self: start;
+}
+
+.numberMarkPurple {
+  color: var(--sb-purple);
+}
+
+.numberMarkBlue {
+  color: var(--sb-blue);
+}
+
+.storyTitle {
+  margin: 0;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--sb-ink);
+  align-self: end;
+  padding-top: 0.4rem;
+  border-top: 2px solid currentColor;
+  width: max-content;
+  max-width: 100%;
+}
+
+.storyTitlePurple {
+  color: var(--sb-purple);
+}
+
+.storyTitleBlue {
+  color: var(--sb-blue);
+}
+
+.storyBody {
+  grid-column: 2;
+  margin: 0;
+  max-width: 38ch;
+  font-family: var(--font-copy);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--sb-muted);
+}
+
+.storyDeco {
+  position: absolute;
+  right: -0.5rem;
+  bottom: -1rem;
+  width: 5rem;
+  height: 5rem;
+  opacity: 0.18;
+  pointer-events: none;
+  color: var(--sb-purple-soft);
+}
+
+@media (min-width: 50rem) {
+  .storyDeco {
+    width: 7rem;
+    height: 7rem;
+    right: -1rem;
+    bottom: -1.5rem;
+  }
+}

@@ -76,7 +76,6 @@
   width: 100vw;
   text-align: center;
   z-index: 2;
-  transform: translateY(-2rem);
 }
 
 .product_book1__heading {
@@ -217,24 +216,12 @@
 
 /* //banner position */
 .homeBanner1.homeBanner1.homeBanner1 {
-  /* transform: translateY(-2.3rem); */
-  margin-top: -2.3rem;
+  margin-top: 0;
   z-index: 1;
-  /* margin-top: 0rem;
-  padding-top: 3rem;
-  padding-bottom: 3rem; */
-  /* max-width: 500px; */
-  /* margin: auto;
-  transform: translateX(-2.3rem);
-  width: 100vw; */
 }
 @media screen and (min-width: 60rem) {
-  .homeBanner1.homeBanner1.homeBanner1 {
-    /* transform: translateY(-9.3rem); */
-    margin-top: -9.3rem;
-  }
   .homeBanner1.homeBanner1.homeBanner1 .bannerContent {
-    padding-bottom: 8rem !important;
+    padding-bottom: 4rem !important;
   }
 }
 /* TODO: do custom props instead */

@@ -38,7 +38,6 @@ export const Navbar = () => {
         <Link href="/" aria-label="home" className={styles.logo}>
           Mazmatics
         </Link>
-        <span className={styles.tagline}>Fun learning for kids</span>
 
         <div className={styles.largeScreenNav}>
           <NavBarLinks mode="horizontal" />
