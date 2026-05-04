@@ -34,31 +34,35 @@
   align-self: flex-start;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.85rem;
-  border-radius: 999px;
-  background: var(--hh-yellow);
-  color: var(--hh-ink);
-  font-family: var(--font-headings);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  gap: 0.6rem;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  color: var(--hh-purple);
+  font-family: var(--font-headings-secondary);
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  border: 1px solid rgba(102, 79, 169, 0.18);
 }
 
 .newReleasePill::before {
-  content: '★';
-  color: var(--hh-purple);
+  content: '';
+  display: inline-block;
+  width: 2.25rem;
+  height: 2px;
+  background: var(--hh-yellow);
 }
 
 .heroHeading {
   margin: 0;
-  font-family: var(--font-headings);
-  font-weight: 800;
-  font-size: clamp(2.25rem, 5vw, 3.4rem);
-  line-height: 1.05;
-  letter-spacing: -0.02em;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(2.4rem, 5.4vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
   color: var(--hh-ink);
 }
 
@@ -221,8 +225,9 @@
   background: #fff;
   border-radius: 0.85rem;
   box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.25);
-  font-family: var(--font-headings);
-  font-weight: 800;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  letter-spacing: 0.01em;
 }
 
 .floatingCardEq {

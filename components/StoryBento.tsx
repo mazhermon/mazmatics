@@ -35,7 +35,9 @@ export const StoryBento: React.FC<StoryBentoProps> = ({
 }) => {
   const { mathsWord = 'maths' } = useContext(AppContext)
 
-  const defaultSubtitle = `We believe every child is naturally curious. Mazmatics translates the abstract language of ${mathsWord} into tactile, joyful experiences.`
+  const defaultSubtitle = `${
+    mathsWord.charAt(0).toUpperCase() + mathsWord.slice(1)
+  } gets stuck when it stays abstract. We give kids stories, codes and pencils so it lands.`
 
   const defaultCards: StoryBentoCard[] = [
     {

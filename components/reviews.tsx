@@ -4,84 +4,94 @@ import { Star } from './icons/star'
 
 const ASIN = '0473648911'
 
-const reviewUrlUS = `http://amazon.com/review/create-review?&asin=${ASIN}`
-const reviewUrlAU = `http://amazon.com.au/review/create-review?&asin=${ASIN}`
-const reviewUrlUK = `http://amazon.co.uk/review/create-review?&asin=${ASIN}`
+const reviewUrlUS = `https://amazon.com/review/create-review?&asin=${ASIN}`
+const reviewUrlAU = `https://amazon.com.au/review/create-review?&asin=${ASIN}`
+const reviewUrlUK = `https://amazon.co.uk/review/create-review?&asin=${ASIN}`
 
 export const Reviews = () => (
   <div className={styles.reviewSection}>
-    <div className={styles.reviewSection__header}>
+    <header className={styles.reviewSection__header}>
+      <span
+        className={styles.stars}
+        role="img"
+        aria-label="5 out of 5 stars"
+      >
+        <Star />
+        <Star />
+        <Star />
+        <Star />
+        <Star />
+      </span>
       <h2 className={styles.reviewSection__header__heading}>
-        You can support Mazmatics by writing a review...
+        A short review goes a long way.
       </h2>
-      <div className={styles.stars}>
-        <Star />
-        <Star />
-        <Star />
-        <Star />
-        <Star />
-      </div>
-    </div>
+    </header>
 
-    <div className={styles.whiteOverlay}>
-      <h3 className={styles.reviewSectionHeading}>Tell us what you think</h3>
+    <section className={styles.reviewBlock}>
+      <h3 className={styles.reviewSectionHeading}>Email a quick note</h3>
       <p>
-        You can email us your review to{' '}
-        <a
-          className={`${styles.hitMeLink}`}
-          href="mailto:hellomazmatics@gmail.com?subject=Hi Mazmatics"
-        >
-          hellomazmatics@gmail.com
-        </a>
-        , or check out the other options below. We love feedback and hearing
-        from you about what worked for your kids and what didn&apos;t.
+        The shortest path. Tell us what worked, what didn&apos;t, and whether
+        we&apos;re welcome to quote you.
       </p>
-      <p>
-        Let us know if you&apos;re happy for us to use a quote or two here on
-        the site etc.
-      </p>
-
       <a
-        className={`${styles.emailTopLink} ${styles.feedbackButtonLink} ${styles.feedbackButtonLink__google}`}
+        className={styles.feedbackButtonLink}
         href="mailto:hellomazmatics@gmail.com?subject=Hi Mazmatics"
       >
-        email us your review or feedback
+        Email hellomazmatics@gmail.com
       </a>
-    </div>
+    </section>
 
-    {/* TODO split out more components */}
-    <div className={styles.whiteOverlay}>
-      <h3 className={styles.reviewSectionHeading}>Review us on Google</h3>
-
-      <p>Good reviews really help us by making us easier to find.</p>
-      <a
-        className={`${styles.feedbackButtonLink} ${styles.feedbackButtonLink__google}`}
-        href="https://www.google.com/search?q=google+review+mazmatics&rlz=1C5CHFA_enNZ906NZ906&ei=gk8JZOK0BdnA4-EPobOeyAs&ved=0ahUKEwji_cqL8c39AhVZ4DgGHaGZB7kQ4dUDCA4&uact=5&oq=google+review+mazmatics&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQA0oECEEYAFAAWABg7gFoAHABeACAAQCIAQCSAQCYAQCgAQHAAQE&sclient=gws-wiz-serp#lrd=0x6d38afcb99cd153d:0x10ab84faecedf353,3,,,,"
-      >
-        Write us a Google Review
-      </a>
-    </div>
-
-    <div className={styles.whiteOverlay}>
-      <h3 className={styles.reviewSectionHeading}>Review us on Amazon</h3>
-
-      <p>Write us a review on Amazon to help spread the word.</p>
-
+    <section className={styles.reviewBlock}>
+      <h3 className={styles.reviewSectionHeading}>Review on Amazon</h3>
+      <p>
+        Reviews on Amazon are the single biggest thing that helps the book
+        reach more parents.
+      </p>
       <ul className={styles.reviewLinkList}>
         <li>
-          <a className={styles.feedbackButtonLink} href={reviewUrlUS}>
-            Write a review (US)
+          <a
+            className={styles.feedbackButtonLink}
+            href={reviewUrlAU}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Amazon AU / NZ
           </a>
         </li>
         <li>
-          <a className={styles.feedbackButtonLink} href={reviewUrlAU}>
-            Write a review (NZ/AU)
+          <a
+            className={styles.feedbackButtonLink}
+            href={reviewUrlUS}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Amazon US
+          </a>
+        </li>
+        <li>
+          <a
+            className={styles.feedbackButtonLink}
+            href={reviewUrlUK}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Amazon UK
           </a>
         </li>
       </ul>
-      <a className={styles.ukLink} href={reviewUrlUK}>
-        Or even in the UK? Write a review UK
+    </section>
+
+    <section className={styles.reviewBlock}>
+      <h3 className={styles.reviewSectionHeading}>Review on Google</h3>
+      <p>Good Google reviews help new readers find us.</p>
+      <a
+        className={`${styles.feedbackButtonLink} ${styles.feedbackButtonLink__google}`}
+        href="https://www.google.com/search?q=mazmatics&authuser=0#lrd=0x6d38afcb99cd153d:0x10ab84faecedf353,3"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Write a Google review
       </a>
-    </div>
+    </section>
   </div>
 )

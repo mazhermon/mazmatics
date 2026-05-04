@@ -65,10 +65,11 @@
 
 .authorTitle {
   margin: 0 0 1rem;
-  font-family: var(--font-headings);
+  font-family: var(--font-headings-display);
   font-size: clamp(2rem, 4.6vw, 3.4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  letter-spacing: -0.025em;
   line-height: 1.05;
   color: var(--abt-ink);
   max-width: 22ch;
@@ -142,10 +143,11 @@
 
 .foundationTitle {
   margin: 0 0 1rem;
-  font-family: var(--font-headings);
+  font-family: var(--font-headings-display);
   font-size: clamp(1.85rem, 4.2vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  letter-spacing: -0.025em;
   line-height: 1.05;
   color: var(--abt-ink);
   max-width: 18ch;
@@ -251,9 +253,10 @@
 
 .makeItYoursTitle {
   margin: 0 0 1.25rem;
-  font-family: var(--font-headings);
+  font-family: var(--font-headings-display);
   font-size: clamp(2.4rem, 6vw, 4.5rem);
-  font-weight: 800;
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
   letter-spacing: -0.03em;
   line-height: 0.95;
   color: var(--abt-ink);

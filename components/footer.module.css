@@ -43,10 +43,11 @@
 }
 
 .brand {
-  font-family: var(--font-headings);
-  font-size: 1.4rem;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-family: var(--font-headings-secondary);
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
   color: var(--ft-purple-soft);
   line-height: 1;
 }

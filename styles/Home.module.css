@@ -12,6 +12,121 @@
 
   --signup-margin-bottom: -1px;
 }
+
+.bookCta {
+  align-self: stretch;
+  width: 100%;
+  background: oklch(0.97 0.04 95);
+  padding: 3rem 1.25rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 50rem) {
+  .bookCta {
+    padding: 4.5rem 2rem;
+  }
+}
+
+.bookCtaInner {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.bookCtaEyebrow {
+  margin: 0;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.85rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: oklch(0.55 0.14 75);
+}
+
+.bookCtaHeading {
+  margin: 0;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(1.85rem, 4.4vw, 2.6rem);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: oklch(0.22 0.015 290);
+}
+
+.bookCtaBody {
+  margin: 0;
+  max-width: 48ch;
+  font-family: var(--font-copy);
+  font-size: 1.02rem;
+  line-height: 1.55;
+  color: oklch(0.42 0.018 290);
+}
+
+.bookCtaActions {
+  margin-top: 0.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.bookCtaPrimary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  border-radius: 999px;
+  background: oklch(0.5 0.16 295);
+  color: #fff;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  border: 2px solid oklch(0.5 0.16 295);
+  border-bottom-width: 4px;
+  border-bottom-color: oklch(0.4 0.14 295);
+  transition: transform 0.1s ease-out, background-color 0.15s ease-out;
+}
+
+.bookCtaPrimary:hover {
+  background: oklch(0.45 0.16 295);
+  transform: translateY(2px);
+  border-bottom-width: 2px;
+}
+
+.bookCtaPrimary:focus-visible {
+  outline: 3px solid oklch(0.5 0.16 295);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bookCtaPrimary {
+    transition: none;
+  }
+  .bookCtaPrimary:hover {
+    transform: none;
+  }
+}
+
+.inlineReviewLink {
+  color: var(--purple-3);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--yellow-1);
+  transition: text-decoration-color 0.15s ease-out;
+}
+
+.inlineReviewLink:hover,
+.inlineReviewLink:focus-visible {
+  text-decoration-color: var(--purple-2);
+}
 @media screen and (min-width: 400rem) {
   .container {
     overflow: visible;
@@ -51,7 +166,7 @@
 }
 
 .main {
-  min-height: calc(100vh - var(--nav-height));
+  min-height: calc(100dvh - var(--nav-height));
   /* padding: 2rem 0 0 0; */
   flex: 1;
   display: flex;
@@ -423,36 +538,6 @@
   .feedback,
   .insta {
     padding: 2rem;
-  }
-}
-
-.homeHeaderColorWrap {
-  /* background-color: aqua; */
-  /* background-color: var(--purple-2); */
-  width: 100%;
-
-  display: flex;
-  justify-content: center;
-}
-
-/* top pattern */
-.gridPaperHomePageHeader {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  z-index: -1;
-  overflow: hidden;
-  /* border: 3px solid green; */
-}
-.gridPaperHomePageHeader svg {
-  opacity: 0.4;
-  transform: scale(1.8);
-}
-@media screen and (min-width: 60rem) {
-  .gridPaperHomePageHeader svg {
-    transform: scale(1);
   }
 }
 

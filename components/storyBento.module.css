@@ -39,10 +39,11 @@
 
 .title {
   margin: 0 0 0.85rem;
-  font-family: var(--font-headings);
+  font-family: var(--font-headings-display);
   font-size: clamp(2rem, 4.4vw, 3.4rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  letter-spacing: -0.025em;
   line-height: 1;
   color: var(--sb-ink);
   max-width: 18ch;
@@ -92,11 +93,11 @@
 }
 
 .numberMark {
-  font-family: var(--font-headings);
-  font-size: clamp(2.4rem, 5.2vw, 4rem);
-  font-weight: 800;
-  line-height: 0.9;
-  letter-spacing: -0.04em;
+  font-family: var(--font-headings-secondary);
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
   grid-row: 1 / span 2;
   align-self: start;
 }

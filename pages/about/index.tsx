@@ -94,9 +94,9 @@ const About = () => {
               Building a strong foundation
             </h2>
             <p className={styles.foundationLead}>
-              The educational philosophy behind Mazmatics is rooted in proven
-              pedagogical strategies. We move past rote memorisation toward
-              genuine, joyful understanding.
+              Built from how kids actually learn: by doing, drawing and getting
+              it wrong before getting it right. No drill-and-kill. Just enough
+              challenge to keep them turning the page.
             </p>
             <ul className={styles.checklist}>
               <li className={styles.checklistItem}>
@@ -181,7 +181,10 @@ const About = () => {
         </div>
       </section>
 
-      <section className={styles.testimonialsSection}>
+      <section
+        id="testimonials"
+        className={styles.testimonialsSection}
+      >
         <div className={styles.testimonialsInner}>
           <TestimonialList />
         </div>

@@ -46,6 +46,14 @@
 
   --nav-height: 65px;
 
+  /* z-index scale — keep all stacking decisions on these tokens */
+  --z-decoration: 1;
+  --z-content: 2;
+  --z-section: 3;
+  --z-overlay: 50;
+  --z-nav: 100;
+  --z-modal: 1000;
+
   --font-headings: 'Outfit', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --font-button: var(--font-headings);
@@ -53,7 +61,10 @@
   --font-headings-fun: 'Daruma', -apple-system, BlinkMacSystemFont, Segoe UI,
     Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
     sans-serif;
-  --font-headings-display: 'Bungee Shade', 'Outfit', -apple-system,
+  --font-headings-display: 'Fraunces', 'Outfit', Georgia, -apple-system,
+    BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, serif;
+  --font-headings-secondary: 'Big Shoulders Display', 'Outfit', -apple-system,
     BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
     Droid Sans, Helvetica Neue, sans-serif;
   --font-script: 'Pacifico', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
@@ -139,6 +150,29 @@
   width: 1px;
 }
 
+.skipLink {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: var(--z-modal);
+  padding: 0.75rem 1rem;
+  background: var(--purple-3, #664fa9);
+  color: #fff;
+  font-family: var(--font-headings);
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0;
+  transform: translateY(-110%);
+  transition: transform 0.2s ease-out;
+}
+
+.skipLink:focus,
+.skipLink:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid #f6e632;
+  outline-offset: 2px;
+}
+
 html {
   box-sizing: border-box;
   font-size: 100%;
@@ -156,7 +190,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  min-height: 100vh;
+  min-height: 100dvh;
 }
 
 h1 {
@@ -247,11 +281,7 @@ main a {
 body {
   font-size: 1rem;
   line-height: 1.6;
-  /* background: linear-gradient(
-    250deg,
-    rgba(120, 201, 239, 0) 58.9%,
-    rgba(217, 217, 217, 1) 93.37%
-  ); */
+  background: #ffffff;
 }
 
 body,

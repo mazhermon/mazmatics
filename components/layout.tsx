@@ -18,9 +18,11 @@ export const Layout: React.FC<Props> = ({ children }) => {
   return (
     <>
       <AppContextProvider>
+        <a href="#main-content" className="skipLink">
+          Skip to content
+        </a>
         <Navbar />
-        {/* <DynamicSunSprite /> */}
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
       </AppContextProvider>
     </>

@@ -9,9 +9,7 @@
   top: 0;
   z-index: 100;
   width: 100%;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background: #ffffff;
   border-bottom: 2px solid var(--nav-line);
   box-shadow: 0 2px 14px -10px rgba(102, 79, 169, 0.25);
   color: var(--nav-ink);
@@ -68,12 +66,15 @@
 }
 
 .logo {
-  font-family: var(--font-headings-display);
-  font-size: 1.5rem;
-  letter-spacing: -0.02em;
-  color: var(--nav-purple-soft);
+  display: inline-flex;
+  align-items: center;
   text-decoration: none;
   line-height: 1;
+}
+
+.logo img {
+  display: block;
+  height: auto !important;
 }
 
 .logo:hover {

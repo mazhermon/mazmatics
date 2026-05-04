@@ -5,6 +5,12 @@ import { regionForCountry, STOREFRONTS } from '../lib/locale'
 import { useResolvedCountry } from '../context/services/useResolvedCountry'
 import { trackNavBuyClick } from '../lib/gtag'
 
+const COMPACT_REGION_LABEL: Record<string, string> = {
+  AU: 'Get on Amazon AU',
+  US: 'Get on Amazon US',
+  UK: 'Get on Amazon UK',
+}
+
 /**
  * Persistent locale-aware buy pill for the navbar. Lives at the right
  * edge of the nav row on every page so a 30-second skimmer who never
@@ -25,7 +31,7 @@ export const NavBarBuyCTA: React.FC = () => {
       onClick={trackNavBuyClick}
       aria-label={label}
     >
-      <span>Get the book</span>
+      <span>{COMPACT_REGION_LABEL[region] ?? 'Get the book'}</span>
       <svg
         className={styles.buyCTA__icon}
         viewBox="0 0 24 24"

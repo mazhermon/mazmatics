@@ -1,60 +1,83 @@
 import React, { useContext } from 'react'
 import Head from 'next/head'
-// import Image from 'next/image'
-
-// import { Button } from '../../components/button'
-// import bookCoverImage from '../../public/images/mazmatics_bookCoverWeb1.jpg'
-// import bookProductImageClearCut from '../../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
 
 import styles from './get-the-book.module.css'
-import { Grain } from '../../components/patterns/Grain'
-import { GridPaper } from '../../components/patterns/GridPaper'
 import { LookInside } from '../../components/LookInside'
-import { Container } from '../../components/Container'
 import { AppContext } from '../../context/appContext'
 import { GetTheBookLinks } from '../../components/getTheBookLinks'
 import { FreeSampleDownload } from '../../components/freeSample'
-// const bookProductImageSize = {
-//   width: 900,
-//   height: 1350,
-// }
 
 const GetTheBook = () => {
-  const { mathsWord } = useContext(AppContext)
+  const { mathsWord = 'maths' } = useContext(AppContext)
+
   return (
-    <>
-      <div className={styles.container}>
-        <Head>
-          <title>Get the book Fun Math 4 Kids</title>
-          <meta
-            name="description"
-            content={`Get Fun Math for kids paperback activity book today, internationally available. Mazmatics helps kids say "I love math" by providing more opportunities for practicing ${mathsWord} to be a fun, relatable and enjoyable activity.`}
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
+    <div className={styles.container}>
+      <Head>
+        <title>Get the book — Mazmatics Fun Math 4 Kids</title>
+        <meta
+          name="description"
+          content={`Get Mazmatics Fun Math 4 Kids Vol. 1 paperback. An activity and story book that helps kids 7-10 build a positive relationship with ${mathsWord}.`}
+        />
+        <link rel="canonical" href="https://www.mazmatics.com/get-the-book" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
 
-        <main className={styles.main}>
-          <h1 className={styles.pageHeader}>Get the book</h1>
-          <div className={styles.subtitle}>for the kids in your life</div>
+      <section className={styles.heroSection} aria-labelledby="gtb-heading">
+        <div className={styles.heroInner}>
+          <p className={styles.eyebrow}>Volume 1 · Out now</p>
+          <h1 id="gtb-heading" className={styles.pageTitle}>
+            Get the book.
+          </h1>
+          <p className={styles.lede}>
+            Mazmatics Fun Math 4 Kids Volume 1 is a paperback activity and
+            story book for kids 7&ndash;10. Pick the storefront that ships
+            closest to you.
+          </p>
+        </div>
+      </section>
 
-          <div className={styles.decorationSquareGrain}>
-            <Grain />
+      <section className={styles.factStrip} aria-label="Book facts">
+        <div className={styles.factGrid}>
+          <div className={styles.fact}>
+            <p className={styles.factLabel}>Format</p>
+            <p className={styles.factValue}>Paperback, 145 pages</p>
           </div>
-          <div className={styles.decorationGridPaper}>
-            <GridPaper />
+          <div className={styles.fact}>
+            <p className={styles.factLabel}>Ages</p>
+            <p className={styles.factValue}>7&ndash;10 (US grade 2&ndash;4)</p>
           </div>
+          <div className={styles.fact}>
+            <p className={styles.factLabel}>Covers</p>
+            <p className={styles.factValue}>
+              +&thinsp;&minus;&thinsp;&times;&thinsp;÷ &amp; some fractions
+            </p>
+          </div>
+          <div className={styles.fact}>
+            <p className={styles.factLabel}>Ships from</p>
+            <p className={styles.factValue}>Amazon AU · US · UK</p>
+          </div>
+        </div>
+      </section>
 
+      <section className={styles.buyOptions} aria-label="Buy options">
+        <div className={styles.buyOptionsInner}>
           <GetTheBookLinks />
+        </div>
+      </section>
 
-          <section className={styles.lookInside}>
-            <Container>
-              <LookInside />
-            </Container>
-            <FreeSampleDownload />
-          </section>
-        </main>
-      </div>
-    </>
+      <section className={styles.lookInsideSection} aria-label="Look inside">
+        <div className={styles.lookInsideInner}>
+          <h2 className={styles.lookInsideHeading}>A look inside</h2>
+          <LookInside variant="showcase" heading={null} />
+        </div>
+      </section>
+
+      <section className={styles.freeSampleSection} aria-label="Free sample">
+        <div className={styles.freeSampleInner}>
+          <FreeSampleDownload />
+        </div>
+      </section>
+    </div>
   )
 }
 
