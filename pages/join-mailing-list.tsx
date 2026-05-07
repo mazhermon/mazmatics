@@ -8,11 +8,18 @@ const JoinMailingList = () => {
   return (
     <Container className={styles.joinTheMailingListPage}>
       <Head>
-        <title>Join the mailing list</title>
+        <title>Join the mailing list — Mazmatics</title>
         <meta
           name="description"
-          content="Join the Mazmatics mailing list for monthly updates and offers"
+          content="Join the Mazmatics mailing list for monthly updates and offers."
         />
+        <link
+          rel="canonical"
+          href="https://www.mazmatics.com/join-mailing-list"
+        />
+        {/* Signup form isn't a useful organic landing page — keep out of search
+            so visitors find home/get-the-book first. */}
+        <meta name="robots" content="noindex" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Join us</h1>

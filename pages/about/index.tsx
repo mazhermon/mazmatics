@@ -38,10 +38,70 @@ const About = () => {
   return (
     <div className={styles.aboutPage}>
       <Head>
-        <title>About Mazmatics</title>
+        <title>{`About Mazmatics — Maz Hermon, the dad behind the book`}</title>
         <meta
           name="description"
-          content={`About Mazmatics. An activity book and learning resource that helps make ${mathsWord} fun and useful for kids and early learners of all ages.`}
+          content={`About Mazmatics. Why a Wellington dad and web developer wrote an activity and story book to help kids 7-10 say "I like ${mathsWord}".`}
+        />
+        <link rel="canonical" href="https://www.mazmatics.com/about" />
+        <meta property="og:type" content="profile" />
+        <meta property="og:site_name" content="Mazmatics" />
+        <meta
+          property="og:title"
+          content="About Mazmatics — Maz Hermon, the dad behind the book"
+        />
+        <meta
+          property="og:description"
+          content={`Why a Wellington dad and web developer wrote an activity and story book to help kids 7-10 say "I like ${mathsWord}".`}
+        />
+        <meta property="og:url" content="https://www.mazmatics.com/about" />
+        <meta
+          property="og:image"
+          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+        />
+        <meta property="og:image:width" content="900" />
+        <meta property="og:image:height" content="1350" />
+        <meta
+          property="og:image:alt"
+          content="Mazmatics Fun Math 4 Kids Vol. 1 book cover"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="About Mazmatics — Maz Hermon, the dad behind the book"
+        />
+        <meta
+          name="twitter:description"
+          content={`Why a Wellington dad wrote an activity book to help kids 7-10 say "I like ${mathsWord}".`}
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Person',
+              name: 'Maz Hermon',
+              jobTitle: 'Author, illustrator, web developer',
+              description: `Wellington-based dad, web developer and author of Mazmatics: Fun Math 4 Kids Vol. 1 — an activity and story book for kids 7-10.`,
+              url: 'https://www.mazmatics.com/about',
+              image:
+                'https://www.mazmatics.com/images/lindyLarge.png',
+              nationality: 'New Zealand',
+              sameAs: [
+                'https://www.instagram.com/mazmaticsfun4kids/',
+                'https://www.facebook.com/mazmaticsfunforkids',
+              ],
+              knowsAbout: [
+                'Mathematics education',
+                'Children\'s books',
+                'Illustration',
+              ],
+            }),
+          }}
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

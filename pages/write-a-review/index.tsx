@@ -7,10 +7,14 @@ const WriteAReview = () => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Write a review</title>
+        <title>Write a review — Mazmatics Fun Math 4 Kids</title>
         <meta
           name="description"
-          content="Write a review for Fun Math for Kids vol. one to help us out and help other people find the book."
+          content="Write a review for Mazmatics Fun Math 4 Kids Vol. 1. Help us out and help other parents find the book."
+        />
+        <link
+          rel="canonical"
+          href="https://www.mazmatics.com/write-a-review"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

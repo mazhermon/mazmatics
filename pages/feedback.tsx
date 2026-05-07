@@ -8,11 +8,15 @@ const Feedback = () => {
     <>
       <div className={styles.container}>
         <Head>
-          <title>Feedback</title>
+          <title>Feedback — Mazmatics</title>
           <meta
             name="description"
-            content="We love feedback, good or constructive, get in touch with us and let us know how you think we can do better as we progress."
+            content="Send Mazmatics feedback — good or constructive. We read everything."
           />
+          <link rel="canonical" href="https://www.mazmatics.com/feedback" />
+          {/* Form pages aren't useful organic landing pages — keep out of search results
+              so visitors arriving from organic queries land on home/get-the-book instead. */}
+          <meta name="robots" content="noindex" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
 

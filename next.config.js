@@ -27,8 +27,9 @@ const nextConfig = {
     NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
   },
 
-  // Output settings
-  output: 'standalone', // for Docker / Vercel standalone builds
+  // No `output` set — Vercel handles its own bundling. `output: 'standalone'`
+  // is for Docker/self-hosting and was racing with `next-sitemap`'s post-build
+  // write to /public, causing the live /sitemap.xml to 404 on production.
 
   // Redirect deleted routes to preserve external backlinks
   async redirects() {
@@ -40,6 +41,13 @@ const nextConfig = {
       },
       {
         source: '/wholesalers',
+        destination: '/get-the-book',
+        permanent: true,
+      },
+      {
+        // Pre-redesign click-through landing; functionality merged into
+        // /get-the-book via the GetTheBookLinks component.
+        source: '/get-the-book/get-from-amazon',
         destination: '/get-the-book',
         permanent: true,
       },

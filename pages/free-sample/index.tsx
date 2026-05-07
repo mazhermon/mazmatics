@@ -42,6 +42,67 @@ const FreeSample = () => {
           rel="canonical"
           href="https://www.mazmatics.com/free-sample"
         />
+        <meta property="og:type" content="book" />
+        <meta property="og:site_name" content="Mazmatics" />
+        <meta
+          property="og:title"
+          content={`Free sample — Mazmatics Fun ${mathsWord} 4 Kids`}
+        />
+        <meta
+          property="og:description"
+          content={`Three sample pages from the book. Print it or open on a screen — see if it clicks for your kid before you buy.`}
+        />
+        <meta
+          property="og:url"
+          content="https://www.mazmatics.com/free-sample"
+        />
+        <meta
+          property="og:image"
+          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+        />
+        <meta property="og:image:width" content="900" />
+        <meta property="og:image:height" content="1350" />
+        <meta
+          property="og:image:alt"
+          content="Mazmatics Fun Math 4 Kids Vol. 1 book cover"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content={`Free sample — Mazmatics Fun ${mathsWord} 4 Kids`}
+        />
+        <meta
+          name="twitter:description"
+          content="Three free sample pages from the activity book. See if it clicks before you buy."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Book',
+              name: 'Mazmatics: Fun Math 4 Kids Vol. 1 — Free sample',
+              author: { '@type': 'Person', name: 'Maz Hermon' },
+              inLanguage: 'en',
+              bookFormat: 'https://schema.org/EBook',
+              isAccessibleForFree: true,
+              audience: {
+                '@type': 'PeopleAudience',
+                suggestedMinAge: 7,
+                suggestedMaxAge: 10,
+              },
+              image:
+                'https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
+              description: `A three-page PDF sample of Mazmatics Fun ${mathsWord} 4 Kids Vol. 1. Free download to try before you buy the paperback.`,
+              publisher: { '@type': 'Organization', name: 'Mazmatics' },
+              url: 'https://www.mazmatics.com/free-sample',
+            }),
+          }}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
