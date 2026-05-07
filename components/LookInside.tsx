@@ -7,6 +7,8 @@ import mazAPlus001 from '../public/images/Mazmatics-a-plus-001.jpg'
 import mazAPlus002 from '../public/images/Mazmatics-a-plus-002.jpg'
 import mazAPlus003 from '../public/images/Mazmatics-a-plus-003.jpg'
 import mazAPlus004 from '../public/images/Mazmatics-a-plus-004.jpg'
+import mazAPlus005 from '../public/images/Mazmatics-a-plus-005.jpg'
+import mazAPlus006 from '../public/images/Mazmatics-a-plus-006.jpg'
 import { trackLookInsideOpen } from '../lib/gtag'
 
 const contentImageSize = {
@@ -14,7 +16,7 @@ const contentImageSize = {
   height: 1200,
 }
 
-const PAGES = [
+const ALL_PAGES = [
   {
     src: mazAPlus001,
     alt: 'Parent pointing to the map in the fantasy story Lindys Quest',
@@ -31,16 +33,30 @@ const PAGES = [
     src: mazAPlus004,
     alt: 'A page of practice exercises and drawings',
   },
+  {
+    src: mazAPlus005,
+    alt: 'Story spread from inside the book',
+  },
+  {
+    src: mazAPlus006,
+    alt: 'Activity spread with kid characters',
+  },
 ]
+
+// keep existing variants on the previously-shipped 4 pages so /get-the-book
+// and /free-sample don't change layout. The new `strip` variant uses all six.
+const PAGES_FOUR = ALL_PAGES.slice(0, 4)
 
 const SHOWCASE_AUTO_ADVANCE_MS = 5000
 
 interface Props {
-  /** `grid` (default) renders all pages in a responsive grid (current home-page behavior).
+  /** `grid` renders all pages in a responsive grid (legacy home-page behavior).
    *  `showcase` renders 3 desktop thumbs in a single row + an auto-scrolling embedded
-   *  carousel on mobile with prev/next/pause user controls. Both variants share the
-   *  same fullscreen modal lightbox. */
-  variant?: 'grid' | 'showcase'
+   *  carousel on mobile with prev/next/pause user controls.
+   *  `strip` renders all six pages as a full-bleed horizontal strip on desktop,
+   *  and a swipe-friendly horizontal scroll on mobile.
+   *  All variants share the same fullscreen modal lightbox. */
+  variant?: 'grid' | 'showcase' | 'strip'
   /** Heading text. Pass `null` to render no heading (e.g. when the host page has its own h1). */
   heading?: string | null
 }
@@ -49,6 +65,7 @@ export const LookInside: React.FC<Props> = ({
   variant = 'grid',
   heading = 'Look inside',
 }) => {
+  const PAGES = variant === 'strip' ? ALL_PAGES : PAGES_FOUR
   const [openIndex, setOpenIndex] = useState<number | null>(null)
   const [activeSlide, setActiveSlide] = useState(0)
   const [isPaused, setIsPaused] = useState(false)
@@ -139,18 +156,21 @@ export const LookInside: React.FC<Props> = ({
   const desktopThumbs =
     variant === 'showcase' ? PAGES.slice(0, 3) : PAGES
 
+  const containerClassName =
+    variant === 'strip'
+      ? styles.stripRow
+      : variant === 'showcase'
+      ? styles.showcaseRow
+      : styles.imageGal
+
   return (
     <>
       {heading !== null && (
         <h2 className={styles.lookInsideTitle}>{heading}</h2>
       )}
 
-      <div
-        className={
-          variant === 'showcase' ? styles.showcaseRow : styles.imageGal
-        }
-      >
-        {desktopThumbs.map((page, idx) => (
+      <div className={containerClassName}>
+        {(variant === 'strip' ? PAGES : desktopThumbs).map((page, idx) => (
           <button
             key={idx}
             type="button"

@@ -1,3 +1,13 @@
+/* Full-bleed brand-blue tinted band the homeHeader sits inside.
+   Bright enough to feel like a magazine cover but cool enough to set off Lindy's
+   grayscale illustration and the warm yellow accents (sun, book, underline). */
+.heroBand {
+  width: 100%;
+  background: oklch(0.95 0.04 235);
+  position: relative;
+  border-bottom: 1px solid oklch(0.85 0.04 235);
+}
+
 .homeHeader {
   --hh-purple: #664fa9;
   --hh-purple-soft: #b199f9;
@@ -5,6 +15,7 @@
   --hh-ink: #1b1c1c;
   --hh-muted: #494551;
 
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   gap: 2rem;
@@ -14,6 +25,60 @@
   margin: 0 auto;
   padding: 1.25rem 1.5rem 2.5rem;
   z-index: 200;
+  isolation: isolate;
+}
+
+/* Sun-sprite frame-by-frame animation.
+   Anchored to the top-left of the hero band, sitting next to the headline.
+   Sized smaller than before so it accents the eyebrow area without crushing
+   the typography. Sits behind text via the .homeHeader z-index stacking. */
+.sunCorner {
+  position: absolute;
+  top: -1rem;
+  left: -1rem;
+  right: auto;
+  width: 9rem;
+  height: 9rem;
+  pointer-events: none;
+  z-index: 0;
+  overflow: visible;
+}
+
+.sunCorner :global(canvas) {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: auto !important;
+  width: 9rem !important;
+  height: 9rem !important;
+  /* Flip horizontally so the rays read as shining rightward toward Lindy. */
+  transform: scaleX(-1);
+}
+
+@media (min-width: 60rem) {
+  .sunCorner {
+    top: -1.5rem;
+    left: -2rem;
+    width: 13rem;
+    height: 13rem;
+  }
+  .sunCorner :global(canvas) {
+    width: 13rem !important;
+    height: 13rem !important;
+  }
+}
+
+@media (min-width: 80rem) {
+  .sunCorner {
+    top: -2rem;
+    left: -3rem;
+    width: 16rem;
+    height: 16rem;
+  }
+  .sunCorner :global(canvas) {
+    width: 16rem !important;
+    height: 16rem !important;
+  }
 }
 
 @media (min-width: 60rem) {
@@ -70,16 +135,19 @@
   position: relative;
   display: inline-block;
   color: var(--hh-purple);
+  /* No stacking context here, so the ::after with z-index:-1 paints behind the
+     glyphs of this span while still in front of the hero background. */
 }
 
 .underlinedWord::after {
   content: '';
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -0.18em;
+  left: -0.1em;
+  right: -0.1em;
+  bottom: 0.08em;
   height: 0.45em;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,6 Q25,1 50,5 T100,5' fill='none' stroke='%23f6e632' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  z-index: -1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 10' preserveAspectRatio='none'%3E%3Cpath d='M0,6 Q25,1 50,5 T100,5' fill='none' stroke='%23f6e632' stroke-width='5' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   pointer-events: none;
@@ -185,12 +253,56 @@
   width: 54%;
   aspect-ratio: 2 / 3;
   bottom: 4%;
-  right: 2%;
-  transform: rotate(8deg);
+  left: 2%;
+  transform: rotate(-8deg);
+  /* bottom-left pivot makes the rotation feel hinged at the corner of the
+     book, so it lifts up-and-left naturally on hover. */
+  transform-origin: bottom left;
   filter: drop-shadow(0 18px 28px rgba(102, 79, 169, 0.28));
   pointer-events: none;
   border-radius: 6px;
   overflow: hidden;
+  transition: transform 380ms var(--ease-out-expo);
+}
+
+@media (min-width: 60rem) {
+  /* Nudge book up + left by ~50px so the sun (above the book on desktop)
+     reads as shining down onto Lindy. */
+  .bookBackdrop {
+    transform: translate(-50px, -50px) rotate(-8deg);
+  }
+}
+
+/* Hover: small extra lift up+left and a gentle anticlockwise rotation, hinged
+   at the bottom-left corner so the book reads as tilting toward the character.
+   Roughly half the previous travel — quieter, less acrobatic. */
+.lindy:hover .bookBackdrop,
+.lindy:focus-within .bookBackdrop {
+  transform: translate(-11px, -9px) rotate(-15deg);
+}
+
+@media (min-width: 60rem) {
+  .lindy:hover .bookBackdrop,
+  .lindy:focus-within .bookBackdrop {
+    transform: translate(-70px, -60px) rotate(-15deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bookBackdrop {
+    transition: none;
+  }
+  .lindy:hover .bookBackdrop,
+  .lindy:focus-within .bookBackdrop {
+    transform: rotate(-8deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (min-width: 60rem) {
+  .lindy:hover .bookBackdrop,
+  .lindy:focus-within .bookBackdrop {
+    transform: translate(-50px, -50px) rotate(-8deg);
+  }
 }
 
 .bookBackdrop > span {
@@ -216,42 +328,3 @@
   height: auto !important;
 }
 
-.floatingCard {
-  position: absolute;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.6rem 0.9rem;
-  background: #fff;
-  border-radius: 0.85rem;
-  box-shadow: 0 10px 24px -12px rgba(0, 0, 0, 0.25);
-  font-family: var(--font-headings-secondary);
-  font-weight: 900;
-  letter-spacing: 0.01em;
-}
-
-.floatingCardEq {
-  top: 1rem;
-  right: 0.5rem;
-  color: var(--hh-purple);
-  border: 1px solid rgba(102, 79, 169, 0.25);
-  transform: rotate(8deg);
-  font-size: 1.05rem;
-}
-
-.floatingCardCalc {
-  bottom: 1rem;
-  left: 0.5rem;
-  color: var(--hh-purple);
-  border: 1px solid rgba(177, 153, 249, 0.35);
-  transform: rotate(-6deg);
-  font-size: 1.5rem;
-  padding: 0.45rem 0.7rem;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .floatingCardEq,
-  .floatingCardCalc {
-    transform: none;
-  }
-}

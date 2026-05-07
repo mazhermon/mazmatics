@@ -1,96 +1,158 @@
 import { useContext } from 'react'
 import Head from 'next/head'
-
-import { Container } from '../../components/Container'
+import Link from 'next/link'
 
 import styles from './free-sample.module.css'
 import { AppContext } from '../../context/appContext'
-import { FreeSampleDownload } from '../../components/freeSample'
-import { Banner } from '../../components/banner'
-import { GetTheBookLinks } from '../../components/getTheBookLinks'
 import { LookInside } from '../../components/LookInside'
+import {
+  STOREFRONTS,
+  regionForCountry,
+  shippingCopyForCountry,
+} from '../../lib/locale'
+import { useResolvedCountry } from '../../context/services/useResolvedCountry'
+import { trackAmazonCTA, trackFreeSampleDownload } from '../../lib/gtag'
+
+const SAMPLE_PDF =
+  '/downloads/Mazmatics_FunMathForKids_vol1_Free_Sample_PDF.pdf'
 
 const FreeSample = () => {
-  const { mathsWord } = useContext(AppContext)
+  const { mathsWord = 'maths' } = useContext(AppContext)
+  const country = useResolvedCountry()
+  const region = regionForCountry(country)
+  const matched = STOREFRONTS[region]
+  const shipping = shippingCopyForCountry(country)
 
-  const bannerHelpText = `Will you help your kids with ${mathsWord} today?`
+  const onDownload = () => {
+    trackFreeSampleDownload()
+  }
+
+  const onAmazon = () =>
+    trackAmazonCTA({ region, location: 'free_sample_footer' })
+
   return (
-    <div className={styles.freeSamplePage}>
+    <div className={styles.page}>
       <Head>
-        <title>Free Sample of Mazmatics</title>
+        <title>{`Free sample — Mazmatics Fun ${mathsWord} 4 Kids`}</title>
         <meta
           name="description"
-          content={`Hello there! Are you looking to make math more exciting for your
-        little ones? Wondering how you can lend a helping hand?
-        Introducing our "Fun Math for Kids" book, a delightful journey
-        into the world of numbers that offers your children positive
-        early experiences with math, setting the stage for a lifelong
-        love of learning. Curious to explore the magic within? Well,
-        we've got a treat for you! Download a free digital sample of our
-        paperback edition`}
+          content={`Three sample pages from Mazmatics Fun ${mathsWord} 4 Kids Vol. 1. Print it or open on a screen — see if it clicks for your kid before you buy.`}
+        />
+        <link
+          rel="canonical"
+          href="https://www.mazmatics.com/free-sample"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="longCopyLayoutArea"></div>
-      <div className={`longCopyLayoutArea ${styles.aboutTextWrapper}`}>
-        <Container>
-          <h1 className={styles.centerMe}>Free sample</h1>
+
+      <section
+        className={styles.hero}
+        aria-labelledby="free-sample-heading"
+      >
+        <div className={styles.heroInner}>
+          <p className={styles.eyebrow}>Try before you buy</p>
+          <h1 id="free-sample-heading" className={styles.title}>
+            Free sample.
+          </h1>
+          <p className={styles.lede}>
+            A few pages from the book — print them or read on a screen.
+            See if it clicks for your kid before you buy.
+          </p>
+
+          <a
+            href={SAMPLE_PDF}
+            download
+            onClick={onDownload}
+            className={styles.primary}
+          >
+            <span className={styles.primaryLabel}>
+              Download the sample
+            </span>
+            <span aria-hidden="true" className={styles.primaryArrow}>
+              &darr;
+            </span>
+          </a>
+          <p className={styles.fineprint}>
+            PDF · A4 &amp; US Letter friendly
+          </p>
+        </div>
+      </section>
+
+      <section
+        className={styles.preview}
+        aria-labelledby="preview-heading"
+      >
+        <div className={styles.previewInner}>
+          <p className={styles.eyebrowAlt}>What’s in the sample</p>
+          <h2 id="preview-heading" className={styles.previewTitle}>
+            A taste of the book.
+          </h2>
+          <p className={styles.previewLede}>
+            Tap any page to see it bigger.
+          </p>
+        </div>
+        <div className={styles.previewStripWrap}>
           <LookInside variant="showcase" heading={null} />
-        </Container>
+        </div>
+      </section>
 
-        {/* // TODO make a coloured section area thing? */}
-        <section className={`${styles.section1} ${styles.shortStorySection}`}>
-          <Container>
-            <FreeSampleDownload />
-          </Container>
-          <Banner
-            className={styles.homeBanner1}
-            title={bannerHelpText}
-            // size="small"
-            color="yellow"
-            waves={true}
-          ></Banner>
-          <Container>
-            {/* <p>Have you helped your kids with {mathsWord} today?</p> */}
+      <section
+        className={styles.printNote}
+        aria-labelledby="print-note-heading"
+      >
+        <div className={styles.printInner}>
+          <p className={styles.eyebrow}>One small thing</p>
+          <h2 id="print-note-heading" className={styles.printTitle}>
+            Print it for the real thing.
+          </h2>
+          <p className={styles.printBody}>
+            The book is meant to be drawn on, traced, doodled. The PDF
+            works on screen, but a printed copy is much closer to the
+            full experience.
+          </p>
+        </div>
+      </section>
 
-            <p>
-              Hello there! Are you looking to make math more exciting for your
-              little ones? Wondering how you can lend a helping hand?
-              Introducing our &ldquo;Fun Math for Kids&rdquo; book, a delightful
-              journey into the world of numbers that offers your children
-              positive early experiences with math, setting the stage for a
-              lifelong love of learning.
-            </p>
-            <p>
-              Curious to explore the magic within? Well, we&apos;ve got a treat
-              for you! Download a free digital sample of our paperback edition.
-              Take a sneak peek before making a decision. We want you to know
-              exactly what you&apos;re getting into. For the full 145-page
-              adventure, you&apos;ll find the best value by purchasing the
-              paperback on mazmatics.com or searching on Amazon. It&apos;s more
-              cost-effective than printing and binding the entire book (trust
-              us, we&apos;ve done the math)!
-            </p>
-            <p>
-              Now, it&apos;s worth mentioning that this book is designed to be
-              tactile and hands-on, something your kids can interact with,
-              scribble on, and explore. While this digital sample isn&apos;t
-              quite the real deal, you can always print it at home to get a
-              taste of the genuine experience. We hope you enjoy this teaser! If
-              this free sample piqued your interest, just imagine the excitement
-              that awaits in the full paperback version.
-            </p>
-            <p>
-              So, will you consider getting one for the young learners in your
-              life? The adventure is just a page-turn away!
-            </p>
-            <div className={styles.section1__decoration}>
-              <GetTheBookLinks />
-              {/* <ILikeMaths /> */}
-            </div>
-          </Container>
-        </section>
-      </div>
+      <section
+        className={styles.finalCta}
+        aria-labelledby="final-cta-heading"
+      >
+        <div className={styles.finalCtaInner}>
+          <p className={styles.eyebrow}>If it clicks</p>
+          <h2 id="final-cta-heading" className={styles.finalCtaTitle}>
+            Get the whole book.
+          </h2>
+          <p className={styles.finalCtaBody}>
+            Paperback · 145 pages · kids 7–10 (US grade 2–4).
+          </p>
+
+          <a
+            href={matched.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onAmazon}
+            className={styles.amazonBtn}
+          >
+            <span className={styles.amazonLabel}>{matched.label}</span>
+            <span aria-hidden="true" className={styles.amazonArrow}>
+              &rarr;
+            </span>
+          </a>
+          {shipping && (
+            <p className={styles.shipping}>{shipping}</p>
+          )}
+
+          <p className={styles.aboutAuthor}>
+            Made by{' '}
+            <Link href="/about" className={styles.aboutLink}>
+              Maz Hermon
+              <span aria-hidden="true">&nbsp;&rarr;</span>
+            </Link>
+            , a dad in Aotearoa drawing every page so kids can meet{' '}
+            {mathsWord} on friendly ground.
+          </p>
+        </div>
+      </section>
     </div>
   )
 }

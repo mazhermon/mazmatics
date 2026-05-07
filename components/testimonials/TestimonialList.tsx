@@ -1,52 +1,48 @@
 import React from 'react'
 
 import styles from './testimonialList.module.css'
-
 import { TESTIMONIAL_DATA, ITestimonial } from './testimonailsData'
-import { Testimonial } from './testimonial'
 
-import { Lines } from '../patterns/Lines'
+const QuoteCard: React.FC<{ item: ITestimonial }> = ({ item }) => (
+  <li className={styles.card}>
+    <span className={styles.mark} aria-hidden="true">
+      &ldquo;
+    </span>
+    <blockquote className={styles.quote}>{item.quote}</blockquote>
+    <footer className={styles.attribution}>
+      <span className={styles.rule} aria-hidden="true" />
+      <span className={styles.person}>{item.person}</span>
+    </footer>
+  </li>
+)
 
-export const TestimonialList = () => {
+export const TestimonialList: React.FC = () => {
   return (
-    <div className={styles.testimonialList}>
-      <div className={styles.decorativeWrapper}>
-        <Lines />
-      </div>
-      <h2 className={styles.customerTestimonialsTitle}>
-        Customer testimonials
-      </h2>
-      <p className={styles.customerTestimonialsIntro}>
-        A Big thanks to everyone who provides feedback. Good or bad, we love
-        your feedback. Contact links on mazmatics.com
-      </p>
+    <div className={styles.section}>
+      <header className={styles.header}>
+        <p className={styles.eyebrow}>Word of mouth</p>
+        <h2 id="testimonials-heading" className={styles.title}>
+          What kids and parents say.
+        </h2>
+        <p className={styles.lede}>
+          Reviews left for the book — kids first, since they’re the
+          ones using it.
+        </p>
+      </header>
 
-      <h3>
-        Feedback from <strong>kids</strong>
-      </h3>
-      {TESTIMONIAL_DATA.kids.map((testimonial: ITestimonial) => {
-        const { person, quote } = testimonial
-        return (
-          <Testimonial
-            key={person.trim().replace(' ', '')}
-            person={person}
-            quote={quote}
-          />
-        )
-      })}
-      <h3>
-        Feedback from <strong>adults</strong>
-      </h3>
-      {TESTIMONIAL_DATA.adults.map((testimonial: ITestimonial) => {
-        const { person, quote } = testimonial
-        return (
-          <Testimonial
-            key={person.trim().replace(' ', '')}
-            person={person}
-            quote={quote}
-          />
-        )
-      })}
+      <h3 className={styles.groupHeading}>From kids</h3>
+      <ul className={styles.grid} role="list">
+        {TESTIMONIAL_DATA.kids.map((t) => (
+          <QuoteCard key={t.person.trim().replace(/\s+/g, '')} item={t} />
+        ))}
+      </ul>
+
+      <h3 className={styles.groupHeading}>From parents and gift-buyers</h3>
+      <ul className={styles.grid} role="list">
+        {TESTIMONIAL_DATA.adults.map((t) => (
+          <QuoteCard key={t.person.trim().replace(/\s+/g, '')} item={t} />
+        ))}
+      </ul>
     </div>
   )
 }

@@ -1,61 +1,61 @@
-.button {
-}
-
 .fullWidth {
   width: 100%;
   max-width: 500px;
 }
 
 .buttonLinkEl {
-  --boxShadowStart: 0px 4px 16px -6px rgba(0, 0, 0, 0.75);
-  --boxShadowHover: 0 4px 7px 4px rgba(0, 0, 0, 0.3);
-  --boxShadowActive: 2px 2px 5px -3px rgba(0, 0, 0, 1);
-
-  display: block;
+  display: inline-block;
   text-align: center;
-  font-weight: 500;
-  padding: 0.7rem;
-  padding-bottom: 0.9rem;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
   font-family: var(--font-button);
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.01em;
+  padding: 0.85rem 1.4rem;
+  margin-bottom: 1rem;
   background: var(--black);
-  border-radius: 6px;
   color: var(--white);
-  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.6) inset;
-  transition: transform 0.2s ease-out;
+  border: 1px solid var(--black);
+  border-radius: var(--radius-md, 12px);
   text-decoration: none;
+  box-shadow: 0 1px 2px oklch(0.3 0.08 295 / 0.08),
+    0 4px 12px oklch(0.3 0.08 295 / 0.06);
+  transition: transform 200ms var(--ease-out-expo),
+    box-shadow 200ms var(--ease-out-expo),
+    background 200ms var(--ease-out-expo);
   max-width: 400px;
 }
 
 .buttonLinkEl.primary {
-  /* text-transform: uppercase; */
-  padding: 0.9rem;
-  padding-bottom: 1.1rem;
-  /* font-weight: 700; */
-  font-size: 1.2rem;
+  background: var(--purple-3);
+  border-color: var(--purple-3);
   color: var(--white);
-  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.2) inset;
-  background-image: var(--gradient-1);
+  padding: 1rem 1.6rem;
+  font-size: 1.1rem;
+  box-shadow: 0 1px 2px oklch(0.4 0.13 295 / 0.18),
+    0 8px 20px oklch(0.4 0.13 295 / 0.18);
 }
 
 .buttonLinkEl:hover {
-  transform: translateY(-1px);
-  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.6) inset,
-    var(--boxShadowHover);
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px oklch(0.3 0.08 295 / 0.12),
+    0 12px 28px oklch(0.3 0.08 295 / 0.14);
 }
 
 .buttonLinkEl.primary:hover {
-  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.2) inset,
-    var(--boxShadowHover);
+  box-shadow: 0 2px 4px oklch(0.4 0.13 295 / 0.24),
+    0 16px 36px oklch(0.4 0.13 295 / 0.26);
 }
 
 .buttonLinkEl:active {
-  transform: translateY(1px);
-  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.6) inset,
-    var(--boxShadowActive);
+  transform: translateY(0);
+  transition-duration: 80ms;
 }
-.buttonLinkEl.primary:active {
-  box-shadow: -3px -70px 0px -63px rgba(0, 0, 0, 0.2) inset,
-    var(--boxShadowActive);
+
+@media (prefers-reduced-motion: reduce) {
+  .buttonLinkEl,
+  .buttonLinkEl:hover,
+  .buttonLinkEl:active {
+    transform: none;
+    transition: none;
+  }
 }

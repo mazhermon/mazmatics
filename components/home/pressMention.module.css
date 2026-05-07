@@ -1,0 +1,165 @@
+/* Compact press strip. Quiet paper-warm band with hairline rules so it sits
+   between the louder testimonials section and the drenched-yellow why-kids
+   band without competing. Editorial pull-quote pattern. */
+.section {
+  width: 100%;
+  background: var(--paper-warm, oklch(0.97 0.012 90));
+  padding: 4rem 1.25rem;
+  position: relative;
+  border-top: 1px solid oklch(0.88 0.02 290);
+  border-bottom: 1px solid oklch(0.88 0.02 290);
+}
+
+@media (min-width: 50rem) {
+  .section {
+    padding: 5rem 2rem;
+  }
+}
+
+.inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+@media (min-width: 50rem) {
+  .inner {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.6fr);
+    gap: 3.5rem;
+  }
+}
+
+/* Newspaper front-page thumbnail as a clickable polaroid. drop-shadow follows
+   the rotated alpha edge instead of a hard rectangle. */
+.thumbLink {
+  display: block;
+  max-width: 14rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  transform: rotate(-1.5deg);
+  filter: drop-shadow(0 14px 28px oklch(0.22 0.015 290 / 0.22));
+  transition: transform 280ms var(--ease-out-expo, cubic-bezier(0.22, 1, 0.36, 1));
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumbLink:hover {
+  transform: rotate(-1.5deg) translateY(-3px);
+}
+
+.thumbLink:focus-visible {
+  outline: 3px solid var(--purple-3, #664fa9);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.thumbLink :global(img) {
+  display: block;
+  border-radius: 4px;
+}
+
+@media (min-width: 50rem) {
+  .thumbLink {
+    margin: 0;
+    max-width: 16rem;
+  }
+}
+
+.copyCol {
+  max-width: 52ch;
+}
+
+.eyebrow {
+  margin: 0 0 0.4rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: oklch(0.4 0.18 295);
+}
+
+.source {
+  margin: 0 0 1.5rem;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: oklch(0.22 0.015 290);
+}
+
+.quote {
+  margin: 0 0 1.4rem;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-copy);
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: oklch(0.28 0.018 290);
+  text-wrap: pretty;
+}
+
+.quote p {
+  margin: 0;
+}
+
+.quote strong {
+  font-weight: 700;
+  color: oklch(0.22 0.015 290);
+}
+
+.openMark {
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-size: 1.8em;
+  line-height: 0;
+  color: var(--yellow-1, #f6e632);
+  margin-right: 0.05em;
+  vertical-align: -0.18em;
+}
+
+.readMore {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: oklch(0.32 0.18 295);
+  text-decoration: none;
+  border-bottom: 2px solid currentColor;
+  padding-bottom: 0.2rem;
+  transition: color 200ms ease-out, transform 200ms ease-out;
+}
+
+.readMore:hover {
+  color: oklch(0.42 0.2 295);
+  transform: translateX(2px);
+}
+
+.readMore:focus-visible {
+  outline: 3px solid var(--purple-3, #664fa9);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .thumbLink,
+  .readMore {
+    transition: none;
+  }
+  .thumbLink:hover {
+    transform: rotate(-1.5deg);
+  }
+  .readMore:hover {
+    transform: none;
+  }
+}

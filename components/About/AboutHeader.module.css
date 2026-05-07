@@ -1,73 +1,99 @@
-.aboutHeader {
-  padding: 3rem;
-  background-color: var(--blue-2);
-  overflow: hidden;
+/* Brighter brand-tinted hero — pale lavender that complements the purple
+   typography and differentiates from the home hero's blue band and the
+   yellow "Make it yours" band lower on the page. */
+.section {
+  width: 100%;
+  background: oklch(0.94 0.06 295);
+  padding: 5rem 1.25rem 4rem;
   position: relative;
-}
-@media screen and (min-width: 50rem) {
-  .aboutHeader {
-    padding: 5rem;
-  }
-}
-.aboutHeader__heading {
-  margin-top: 0;
-  margin-bottom: 0.2rem;
+  overflow: hidden;
+  border-bottom: 1px solid oklch(0.85 0.06 295);
 }
 
-.aboutHeader__introText {
-  max-width: 400px;
-  padding-right: 3rem;
-  /* background-color: white; */
-}
-@media screen and (min-width: 60rem) {
-  .aboutHeader__introText {
-    max-width: 600px;
-    padding-right: 5rem;
-    /* background-color: white; */
+@media (min-width: 50rem) {
+  .section {
+    padding: 8rem 2rem 6rem;
   }
 }
 
-.aboutHeader__introText p {
-  font-size: 1.3rem;
-  /* line-height: 1.4; */
-}
-
-.subtitle.subtitle {
-  font-size: 2rem;
-  color: var(--purple-3);
-  font-weight: bold;
-}
-
-.sineShinePositioner {
+/* SineShine squiggle decoration — the "cool squiggly lines" pattern from the
+   pre-redesign home page header. Sits behind the text on the right edge,
+   bleeding off the band. Faded and clipped via the section's overflow:hidden. */
+.shineDeco {
   position: absolute;
-  right: -58%;
-  width: 30%;
-  top: -100px;
+  top: -10%;
+  right: -8%;
+  width: 38%;
+  max-width: 28rem;
+  z-index: 0;
+  opacity: 0.7;
+  pointer-events: none;
+  transform: rotate(20deg);
 }
-.sineShinePositioner svg {
-  transform: rotate(45deg) scale(3.5) translate(10px, -50px);
+
+.shineDeco :global(svg) {
+  display: block;
+  width: 100%;
+  height: auto;
 }
-@media screen and (min-width: 40rem) {
-  .sineShinePositioner {
+
+@media (max-width: 50rem) {
+  .shineDeco {
+    width: 60%;
     right: -20%;
-  }
-  .sineShinePositioner svg {
-    transform: rotate(45deg) scale(2.5) translate(50px, -90px);
-  }
-}
-@media screen and (min-width: 60rem) {
-  .sineShinePositioner {
-    right: -30%;
-  }
-  .sineShinePositioner svg {
-    transform: rotate(45deg) scale(1.8);
+    top: -6%;
+    opacity: 0.55;
   }
 }
-@media screen and (min-width: 90rem) {
-  .sineShinePositioner {
-    right: 0;
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 38ch;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 50rem) {
+  .inner {
+    max-width: 56ch;
   }
-  .sineShinePositioner svg {
-    transform: rotate(45deg) scale(1.5);
-  }
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: oklch(0.5 0.16 295);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(2.6rem, 8vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: oklch(0.22 0.015 290);
+  margin-top: 0;
+}
+
+.lede {
+  margin: 0.5rem 0 0;
+  font-family: var(--font-headings-display);
+  font-variation-settings: 'opsz' 24;
+  font-weight: 500;
+  font-size: clamp(1.15rem, 1.7vw, 1.45rem);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: oklch(0.3 0.018 290);
+  max-width: 56ch;
+  text-wrap: pretty;
 }

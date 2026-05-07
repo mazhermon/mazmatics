@@ -1,0 +1,237 @@
+.section {
+  /* Drenched: section IS the color. Mazmatics yellow takes 100% of the surface
+     to anchor the page's visual rhythm. Dark purple-ink type on it = ~12:1 contrast,
+     comfortably AAA at body size. */
+  width: 100%;
+  background: var(--yellow-1);
+  color: oklch(0.22 0.015 290);
+  padding: 5rem 1.25rem;
+  /* full-bleed inside a centred page; the parent main is centred so we use 100vw */
+  position: relative;
+}
+
+@media (min-width: 50rem) {
+  .section {
+    padding: 8rem 2rem 7rem;
+  }
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 4rem;
+  max-width: 38ch;
+}
+
+@media (min-width: 50rem) {
+  .header {
+    margin-bottom: 6rem;
+  }
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: oklch(0.32 0.16 295);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(2.4rem, 7vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: oklch(0.22 0.015 290);
+}
+
+.lede {
+  margin: 1.25rem 0 0;
+  font-family: var(--font-copy);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: oklch(0.32 0.02 290);
+  max-width: 30ch;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4.5rem;
+}
+
+@media (min-width: 50rem) {
+  .list {
+    gap: 7rem;
+  }
+}
+
+/* one row per item; on mobile stacks number→copy→detail.
+   on desktop, an asymmetric 12-col grid alternates number / detail position so each
+   row reads differently — no card-grid monotony. */
+.row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'number'
+    'copy'
+    'detail';
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (min-width: 50rem) {
+  .row {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-areas: 'a a a a a a a a a a a a';
+    gap: 0;
+    column-gap: 1.5rem;
+    min-height: 20rem;
+  }
+
+  /* odd rows: big number left (3), copy middle (5, generous), detail right (4, modest polaroid) */
+  .row:nth-child(odd) .bigNumber {
+    grid-column: 1 / span 3;
+  }
+  .row:nth-child(odd) .copy {
+    grid-column: 4 / span 5;
+  }
+  .row:nth-child(odd) .detail {
+    grid-column: 9 / span 4;
+  }
+
+  /* even rows: detail left (4), copy middle (5), big number right (3) */
+  .row:nth-child(even) .detail {
+    grid-column: 1 / span 4;
+  }
+  .row:nth-child(even) .copy {
+    grid-column: 5 / span 5;
+  }
+  .row:nth-child(even) .bigNumber {
+    grid-column: 10 / span 3;
+    text-align: right;
+  }
+}
+
+.bigNumber {
+  grid-area: number;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: clamp(7rem, 18vw, 14rem);
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: oklch(0.22 0.015 290);
+  /* punched-out feel: solid ink at this scale, not outline — keeps the dial loud */
+  user-select: none;
+  display: block;
+}
+
+@media (min-width: 50rem) {
+  .bigNumber {
+    grid-area: auto;
+    font-size: clamp(9rem, 14vw, 17rem);
+    align-self: start;
+    margin-top: -1rem;
+  }
+}
+
+.copy {
+  grid-area: copy;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 50ch;
+}
+
+@media (min-width: 50rem) {
+  .copy {
+    grid-area: auto;
+    align-self: center;
+  }
+}
+
+.itemTitle {
+  margin: 0;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(1.6rem, 3.4vw, 2.4rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: oklch(0.22 0.015 290);
+}
+
+.itemBody {
+  margin: 0;
+  font-family: var(--font-copy);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: oklch(0.28 0.018 290);
+  text-wrap: pretty;
+}
+
+/* Editorial polaroid: image IS the element. No paper backing, no ink border —
+   that's what was producing the black outline + white side-gutters when the
+   page-image's natural ratio didn't fill its box. drop-shadow follows the alpha
+   edges of the rotated image so the shadow stays glued to it. */
+.detail {
+  grid-area: detail;
+  position: relative;
+  max-width: 18rem;
+  width: 100%;
+  transform: rotate(-1.5deg);
+  filter: drop-shadow(0 16px 28px oklch(0.22 0.015 290 / 0.22));
+}
+
+.row:nth-child(even) .detail {
+  transform: rotate(1.5deg);
+}
+
+@media (min-width: 50rem) {
+  .detail {
+    grid-area: auto;
+    align-self: center;
+    justify-self: center;
+    max-width: 20rem;
+  }
+}
+
+.detail :global(span) {
+  display: block;
+}
+
+.detail :global(img) {
+  display: block;
+  border-radius: 4px;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail,
+  .row:nth-child(even) .detail {
+    transform: none;
+  }
+}

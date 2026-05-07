@@ -6,6 +6,7 @@ import { ILikeMaths } from '../../components/characters/iLikeMaths/ILikeMaths'
 import { TestimonialList } from '../../components/testimonials/TestimonialList'
 import { CoreValues } from '../../components/CoreValues'
 import { AboutHeader } from '../../components/About/AboutHeader'
+import { StuffInterview } from '../../components/About/StuffInterview'
 import { WriteInThisBook } from '../../components/doodles/writeInThisBook'
 import { AppContext } from '../../context/appContext'
 
@@ -57,26 +58,26 @@ const About = () => {
               I&apos;m Maz Hermon, the dad behind Mazmatics.
             </h2>
             <p className={styles.authorBody}>
-              I&apos;m a web developer by day and a creative hobbyist by night,
-              writing from Aotearoa New Zealand with my little family of four.
-              I&apos;m no {mathsWord} expert, but I&apos;ve always enjoyed the
-              subject and wanted my kids to enjoy it too. I quite happily say
-              &quot;I like {mathsWord},&quot; and I want every kid to feel that
-              way.
+              Web developer by day, creative hobbyist by night. Writing
+              from Aotearoa New Zealand with my little family of four.
+              I&apos;m no {mathsWord} expert — I just happily say
+              &ldquo;I like {mathsWord}&rdquo; and I want every kid to
+              feel that way too.
             </p>
             <p className={styles.authorBody}>
-              I made this book with my kids as a supplementary resource that
-              sits alongside what they&apos;re already doing at school. My hope
-              is it helps a few more kids of the world say &quot;I like math,
-              &quot; wherever they are.
+              I made this book with my own kids, as practice between
+              lessons. My hope: it helps a few more kids around the world
+              say &ldquo;I like math&rdquo; — wherever they are.
             </p>
-            <p className={styles.signoff}>Have fun, Maz</p>
+            <p className={styles.signoff}>— Maz</p>
           </div>
           <div className={styles.authorDecoration} aria-hidden="true">
             <ILikeMaths />
           </div>
         </div>
       </section>
+
+      <StuffInterview />
 
       <CoreValues
         eyebrow="What we believe"

@@ -48,3 +48,6 @@ skills-lock.json
 # playwright runtime
 /test-results/
 /playwright-report/
+
+# transient debug screenshots at repo root (real assets live in /public/images/)
+/*.png

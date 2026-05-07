@@ -1,24 +1,22 @@
-import { SineShine } from '../patterns/SineShine'
-import styles from './AboutHeader.module.css'
-
 import React from 'react'
+import styles from './AboutHeader.module.css'
+import { SineShine } from '../patterns/SineShine'
 
-export const AboutHeader = () => (
-  <div className={styles.aboutHeader}>
-    <div className={styles.sineShinePositioner}>
-      <SineShine color="purple" version="2" />
+export const AboutHeader: React.FC = () => (
+  <section className={styles.section} aria-labelledby="about-heading">
+    <div className={styles.shineDeco} aria-hidden="true">
+      <SineShine version="2" color="purple" />
     </div>
-    <div className={styles.aboutHeader__introText}>
-      <h1 className={styles.aboutHeader__heading}>About</h1>
-      <p className={styles.subtitle}>Mazmatics Fun Math For Kids</p>
-      <p>
-        Mazmatics helps you to support the kids in your life with learning at
-        home. We create supplementary learning resources to support kids to keep
-        practicing what they&apos;re learning in school. If we can help kids to
-        develop a healthy attitude towards learning, then they&apos;ll get more
-        out of anything they come across. We help kids say &quot;I like
-        math&quot;.
+    <div className={styles.inner}>
+      <p className={styles.eyebrow}>About</p>
+      <h1 id="about-heading" className={styles.title}>
+        Why this book exists.
+      </h1>
+      <p className={styles.lede}>
+        Mazmatics makes a tactile activity and story book for kids 7–10
+        who don’t quite click with how math is taught. Not a replacement
+        for school. Practice between lessons, made to be drawn on.
       </p>
     </div>
-  </div>
+  </section>
 )

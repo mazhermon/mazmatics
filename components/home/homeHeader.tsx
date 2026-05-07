@@ -1,11 +1,17 @@
 import { useContext } from 'react'
 import Link from 'next/link'
 import Image from 'next/legacy/image'
+import dynamic from 'next/dynamic'
 
 import lindyImage from '../../public/images/lindyLarge.png'
 import bookCover from '../../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
 import { AppContext } from '../../context/appContext'
 import styles from './homeHeader.module.css'
+
+const DynamicSunSprite = dynamic(
+  () => import('../../components/characters/sunSprite'),
+  { ssr: false }
+)
 
 const lindyImageSize = {
   width: 2213,
@@ -16,9 +22,13 @@ export const HomeHeader = () => {
   const { mathsWord = 'maths' } = useContext(AppContext)
 
   return (
-    <header className={styles.homeHeader}>
+    <div className={styles.heroBand}>
+      <header className={styles.homeHeader}>
+      <div className={styles.sunCorner} aria-hidden="true">
+        <DynamicSunSprite />
+      </div>
       <div className={styles.homeHeader__content}>
-        <span className={styles.newReleasePill}>New Release</span>
+        <span className={styles.newReleasePill}>Available now</span>
 
         <h1 className={styles.heroHeading}>
           <span className={styles.underlinedWord}>Liking {mathsWord}</span> is a
@@ -64,20 +74,9 @@ export const HomeHeader = () => {
               priority
             />
           </div>
-          <div
-            className={`${styles.floatingCard} ${styles.floatingCardEq}`}
-            aria-hidden="true"
-          >
-            4 + 5 = 9!
-          </div>
-          <div
-            className={`${styles.floatingCard} ${styles.floatingCardCalc}`}
-            aria-hidden="true"
-          >
-            ✏︎
-          </div>
         </div>
       </div>
     </header>
+    </div>
   )
 }

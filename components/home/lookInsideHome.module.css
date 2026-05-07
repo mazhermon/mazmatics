@@ -1,0 +1,59 @@
+.section {
+  width: 100%;
+  padding: 5rem 1.25rem 4rem;
+}
+
+@media (min-width: 50rem) {
+  .section {
+    padding: 7rem 2rem 5rem;
+  }
+}
+
+.headerInner {
+  max-width: 1200px;
+  margin: 0 auto 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 36ch;
+}
+
+@media (min-width: 50rem) {
+  .headerInner {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.eyebrow {
+  margin: 0;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: oklch(0.5 0.16 295);
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: oklch(0.22 0.015 290);
+}
+
+.lede {
+  margin: 0.75rem 0 0;
+  font-family: var(--font-copy);
+  font-size: 1.05rem;
+  line-height: 1.5;
+  color: oklch(0.4 0.02 290);
+}
+
+.stripWrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}

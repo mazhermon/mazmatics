@@ -15,12 +15,18 @@ import {
 } from '../../lib/locale'
 import { useResolvedCountry } from '../../context/services/useResolvedCountry'
 import { trackAmazonCTA } from '../../lib/gtag'
-// import { FreeSampleDownload } from '../freeSample'
 
 interface Props {
   /** When true, render a single locale-aware Amazon button + "other regions"
    * expander instead of the full 3-button grid. Default false. */
   compact?: boolean
+}
+
+interface RegionRow {
+  region: 'AU' | 'US' | 'UK'
+  label: string
+  shipping: string
+  url: string
 }
 
 export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
@@ -31,7 +37,11 @@ export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
 
   const { mathsWord } = useContext(AppContext)
   const country = useResolvedCountry()
-  const region = regionForCountry(country)
+  /* `country` is null on SSR and the first client render; it resolves after the
+     useEffect in useResolvedCountry runs. We only highlight a matched region
+     once it's actually known — otherwise the matched row would briefly
+     mis-render (e.g. flashing "US closest to you" for an AU visitor). */
+  const region = country ? regionForCountry(country) : null
 
   if (compact) {
     return (
@@ -46,102 +56,75 @@ export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
     country === 'NZ'
       ? 'Ships to Aotearoa NZ direct from Amazon Australia'
       : 'Ships within Australia'
-  const usShipping = 'Prime eligible · ships within the US'
-  const ukShipping = 'Ships within the UK'
+
+  const rows: RegionRow[] = [
+    {
+      region: 'AU',
+      label: 'Buy on Amazon Australia',
+      shipping: auShipping,
+      url: STOREFRONTS.AU.url,
+    },
+    {
+      region: 'US',
+      label: 'Buy on Amazon US',
+      shipping: 'Prime eligible · ships within the US',
+      url: STOREFRONTS.US.url,
+    },
+    {
+      region: 'UK',
+      label: 'Buy on Amazon UK',
+      shipping: 'Ships within the UK',
+      url: STOREFRONTS.UK.url,
+    },
+  ]
 
   const trackBuy = (clickedRegion: 'AU' | 'US' | 'UK') => () =>
     trackAmazonCTA({ region: clickedRegion, location: 'get_the_book' })
 
   return (
-    <div className={styles.contentGrid}>
-      <div className={styles.action1}>
-        <span className={styles.marketDescription}></span>
-
-        <ul className={styles.product_book1__linkGroup}>
-          <li className={styles.product_book1_buyNowBlock}>
-            <Button
-              variant={region === 'AU' ? 'primary' : 'secondary'}
-              external={true}
-              href={STOREFRONTS.AU.url}
-              onClick={trackBuy('AU')}
-            >
-              {STOREFRONTS.AU.label}
-            </Button>
-            <span>{auShipping}</span>
-          </li>
-
-          <li className={styles.product_book1_buyNowBlock}>
-            <Button
-              external={true}
-              variant={region === 'US' ? 'primary' : 'secondary'}
-              href={STOREFRONTS.US.url}
-              onClick={trackBuy('US')}
-            >
-              {STOREFRONTS.US.label}
-            </Button>
-            <span>{usShipping}</span>
-          </li>
-
-          <li className={styles.product_book1_buyNowBlock}>
-            <Button
-              external={true}
-              variant={region === 'UK' ? 'primary' : 'secondary'}
-              href={STOREFRONTS.UK.url}
-              onClick={trackBuy('UK')}
-            >
-              {STOREFRONTS.UK.label}
-            </Button>
-            <span>{ukShipping}</span>
-          </li>
-        </ul>
-
-        {/* <Button variant="primary" href="/get-the-book/get-from-amazon">
-          Get from Amazon <span>International</span>
-        </Button> */}
-        <div className={`copyArea copyArea--med ${styles.getTheBookCopy}`}>
-          <p className={styles.brandPromise}>
-            <span className={styles.brandName}>Mazmatics</span> &#8212;
-            supporting positive early experiences with {mathsWord}
-          </p>
-          {/* <p>
-                        Fun {mathsWord} 4 Kids is an activity &amp; story book that
-                        supports kids to practise their {mathsWord} and have some
-                        fun along the way. Do some
-                        {mathsWord}, do some drawing, read a story, solve a code...
-                      </p> */}
-        </div>
-      </div>
-      {/* <div className={styles.action2}>
-        <span className={styles.marketDescription}>Aotearoa / New Zealand</span>
-        <Button
-          external={true}
-          variant="secondary"
-          href="https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations"
-        >
-          NZ Shop
-        </Button>
-      </div> */}
-
-      {/* <div className={styles.action3}>
-        <Button variant="secondary" href="/stockists">
-          Find a Bookshop
-        </Button>
-      </div> */}
-      {/* <div>
-        <FreeSampleDownload />
-      </div> */}
-
-      {/* <div className={styles.action3}></div> */}
-
+    <div className={styles.buyGrid}>
       <div className={styles.bookImage}>
         <Image
           alt="Book cover for Mazmatics Fun Math for Kids Volume 1"
           src={bookProductImageClearCut}
-          // layout="intrinsic"
           width={bookProductImageSize.width * 0.5}
           height={bookProductImageSize.height * 0.5}
         />
       </div>
+
+      <ul className={styles.rowList}>
+        {rows.map((r) => {
+          const matched = r.region === region
+          return (
+            <li
+              key={r.region}
+              className={`${styles.row} ${matched ? styles.rowMatched : ''}`}
+            >
+              <p className={styles.rowEyebrow}>
+                Amazon {r.region}
+                {matched && (
+                  <span className={styles.matchedTag}>
+                    Closest to you
+                  </span>
+                )}
+              </p>
+              <p className={styles.rowShipping}>{r.shipping}</p>
+              <a
+                href={r.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={trackBuy(r.region)}
+                className={styles.rowCta}
+              >
+                <span className={styles.rowCtaLabel}>{r.label}</span>
+                <span aria-hidden="true" className={styles.rowCtaArrow}>
+                  &rarr;
+                </span>
+              </a>
+            </li>
+          )
+        })}
+      </ul>
     </div>
   )
 }

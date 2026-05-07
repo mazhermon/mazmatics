@@ -1,0 +1,37 @@
+.reveal {
+  --reveal-delay: 0ms;
+  --reveal-duration: 800ms;
+  transition: transform var(--reveal-duration) var(--ease-out-expo)
+      var(--reveal-delay),
+    opacity var(--reveal-duration) var(--ease-out-expo) var(--reveal-delay);
+  will-change: transform, opacity;
+}
+
+.up.hidden {
+  transform: translate3d(0, 14px, 0);
+  opacity: 0;
+}
+
+.up.shown {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+}
+
+.fade.hidden {
+  opacity: 0;
+}
+
+.fade.shown {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transition: none;
+  }
+  .up.hidden,
+  .fade.hidden {
+    transform: none;
+    opacity: 1;
+  }
+}

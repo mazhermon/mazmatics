@@ -22,10 +22,10 @@
 .eyebrow {
   display: inline-block;
   margin: 0 0 0.7rem;
-  font-family: var(--font-headings);
-  font-weight: 600;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
   font-size: 0.78rem;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
 }
 
@@ -44,7 +44,7 @@
 /* --- Author intro section (cream) --- */
 
 .authorSection {
-  background: oklch(0.985 0.008 290);
+  background: var(--paper);
 }
 
 .authorInner {
@@ -89,9 +89,11 @@
 }
 
 .signoff {
-  font-family: var(--font-script);
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   color: var(--abt-purple);
   margin: 0;
 }
@@ -118,9 +120,10 @@
 /* --- Foundation section (pale blue) --- */
 
 .foundationSection {
-  background: var(--abt-blue-soft);
+  background: var(--paper);
   position: relative;
   overflow: hidden;
+  border-top: 1px solid oklch(0.85 0.005 290);
 }
 
 .foundationInner {
@@ -231,7 +234,7 @@
 /* --- Make it yours (yellow band with sun ornament) --- */
 
 .makeItYoursSection {
-  background: var(--abt-yellow);
+  background: var(--yellow-1);
   position: relative;
   overflow: hidden;
   padding: 5rem 1.25rem 6rem;
@@ -315,7 +318,8 @@
 /* --- Testimonials section --- */
 
 .testimonialsSection {
-  background: oklch(0.99 0.005 290);
+  background: var(--paper);
+  border-top: 1px solid oklch(0.85 0.005 290);
 }
 
 .testimonialsInner {
