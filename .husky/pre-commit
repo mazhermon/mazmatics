@@ -1,4 +1,5 @@
 #!/usr/bin/env sh
-# Fast safety net: types + unit tests. Heavier e2e runs on pre-push to main.
+# Full safety net before any commit: types + unit + e2e + visual regression.
+# Bypass with `git commit --no-verify` if you genuinely need to.
 
-yarn typecheck && yarn test
+yarn typecheck && yarn test && yarn test:e2e
