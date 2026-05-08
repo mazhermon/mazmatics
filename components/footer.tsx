@@ -67,13 +67,8 @@ export const Footer = () => {
               </a>
             </li>
             <li>
-              <Link href="/feedback" className={styles.link}>
-                Feedback &amp; ideas
-              </Link>
-            </li>
-            <li>
               <Link href="/write-a-review" className={styles.link}>
-                Write a review
+                Write a review or send feedback
               </Link>
             </li>
           </ul>

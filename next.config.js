@@ -51,6 +51,21 @@ const nextConfig = {
         destination: '/get-the-book',
         permanent: true,
       },
+      {
+        // /feedback merged into /write-a-review (single post-purchase page
+        // with two CTAs: leave an Amazon review, or send Maz a note).
+        // Anchor lands the visitor on the note section.
+        source: '/feedback',
+        destination: '/write-a-review#note',
+        permanent: true,
+      },
+      {
+        // Subroute consolidation; same-page CTAs on /write-a-review handle
+        // the locale-aware Amazon review path now.
+        source: '/write-a-review/review-on-amazon',
+        destination: '/write-a-review',
+        permanent: true,
+      },
     ]
   },
 }

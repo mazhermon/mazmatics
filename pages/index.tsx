@@ -9,6 +9,7 @@ import { PressMention } from '../components/home/pressMention'
 import { WhyKidsLoveIt } from '../components/home/whyKidsLoveIt'
 import { LookInsideHome } from '../components/home/lookInsideHome'
 import { FinalCta } from '../components/home/finalCta'
+import { AlreadyGotIt } from '../components/home/alreadyGotIt'
 import { AppContext } from '../context/appContext'
 
 const Home: NextPage = () => {
@@ -81,6 +82,7 @@ const Home: NextPage = () => {
         <WhyKidsLoveIt />
         <LookInsideHome />
         <FinalCta />
+        <AlreadyGotIt />
       </main>
     </div>
   )

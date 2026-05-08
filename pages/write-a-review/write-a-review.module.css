@@ -1,7 +1,254 @@
-.container {
-  position: relative;
-  max-width: var(--site-container-max-width);
+.page {
+  width: 100%;
+  background: var(--paper, #fff);
+  color: oklch(0.22 0.015 290);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  width: 100%;
+  background: oklch(0.95 0.04 235);
+  padding: 4rem 1.25rem 3.5rem;
+  border-bottom: 1px solid oklch(0.85 0.04 235);
+}
+
+@media (min-width: 50rem) {
+  .hero {
+    padding: 6rem 2rem 5rem;
+  }
+}
+
+.heroInner {
+  max-width: 880px;
   margin: 0 auto;
-  padding: var(--site-container-padding);
-  overflow: hidden;
+}
+
+.eyebrow {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: oklch(0.4 0.18 295);
+}
+
+.title {
+  margin: 0 0 1rem;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(2.4rem, 5.6vw, 3.8rem);
+  line-height: 1;
+  letter-spacing: -0.025em;
+  color: oklch(0.22 0.015 290);
+  text-wrap: balance;
+}
+
+.lede {
+  margin: 0;
+  max-width: 36ch;
+  font-family: var(--font-copy);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: oklch(0.32 0.02 290);
+}
+
+/* ---------- Shared section pieces ---------- */
+.eyebrowAlt {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 900;
+  font-size: 0.75rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: oklch(0.4 0.18 295);
+}
+
+.sectionTitle {
+  margin: 0 0 0.9rem;
+  font-family: var(--font-headings-display);
+  font-weight: 900;
+  font-variation-settings: 'opsz' 144;
+  font-size: clamp(1.8rem, 4.2vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: oklch(0.22 0.015 290);
+}
+
+.sectionLede {
+  margin: 0 0 2rem;
+  max-width: 52ch;
+  font-family: var(--font-copy);
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: oklch(0.32 0.02 290);
+  text-wrap: pretty;
+}
+
+/* ---------- Review (primary) ---------- */
+.review {
+  width: 100%;
+  background: var(--yellow-1, #fff73e);
+  padding: 4.5rem 1.25rem 5rem;
+}
+
+@media (min-width: 50rem) {
+  .review {
+    padding: 6rem 2rem;
+  }
+}
+
+.reviewInner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1rem 1.5rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 999px;
+  box-shadow: 0 12px 28px -10px oklch(0.42 0.18 295 / 0.55);
+  transition: transform 220ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    box-shadow 220ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -10px oklch(0.42 0.18 295 / 0.6);
+}
+
+.primary:focus-visible {
+  outline: 3px solid oklch(0.22 0.015 290);
+  outline-offset: 4px;
+}
+
+.primaryLabel {
+  display: inline-block;
+}
+
+.primaryArrow {
+  display: inline-block;
+  transition: transform 220ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.primary:hover .primaryArrow {
+  transform: translateX(3px);
+}
+
+.otherRegions {
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+}
+
+.otherLink {
+  font-family: var(--font-headings-secondary);
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: oklch(0.32 0.18 295);
+  text-decoration: none;
+  border-bottom: 2px solid oklch(0.32 0.18 295 / 0.4);
+  padding-bottom: 0.15rem;
+  transition: color 200ms ease-out, border-color 200ms ease-out;
+}
+
+.otherLink:hover {
+  color: oklch(0.22 0.015 290);
+  border-bottom-color: currentColor;
+}
+
+.otherLink:focus-visible {
+  outline: 3px solid oklch(0.22 0.015 290);
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+/* ---------- Note (secondary) ---------- */
+.note {
+  width: 100%;
+  background: var(--paper, #fff);
+  padding: 4.5rem 1.25rem 5rem;
+  border-top: 1px solid oklch(0.88 0.02 290);
+  scroll-margin-top: 5rem;
+}
+
+@media (min-width: 50rem) {
+  .note {
+    padding: 6rem 2rem;
+  }
+}
+
+.noteInner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.95rem 1.4rem;
+  background: oklch(0.96 0.005 290);
+  color: oklch(0.22 0.015 290);
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid oklch(0.22 0.015 290 / 0.18);
+  border-radius: 999px;
+  transition: transform 220ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    border-color 220ms ease-out, background 220ms ease-out;
+}
+
+.secondary:hover {
+  transform: translateY(-2px);
+  border-color: oklch(0.22 0.015 290 / 0.4);
+  background: #fff;
+}
+
+.secondary:focus-visible {
+  outline: 3px solid oklch(0.32 0.18 295);
+  outline-offset: 4px;
+}
+
+.secondaryArrow {
+  display: inline-block;
+  transition: transform 220ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.secondary:hover .secondaryArrow {
+  transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primary,
+  .secondary,
+  .primaryArrow,
+  .secondaryArrow {
+    transition: none;
+  }
+  .primary:hover,
+  .secondary:hover,
+  .primary:hover .primaryArrow,
+  .secondary:hover .secondaryArrow {
+    transform: none;
+  }
 }

@@ -4,7 +4,10 @@ export type Country = 'NZ' | 'AU' | 'US' | 'GB' | null
 export interface Storefront {
   region: Region
   url: string
+  /** Deep link to Amazon's "write a review" form, scoped to this storefront. */
+  reviewUrl: string
   label: string
+  reviewLabel: string
 }
 
 const ASIN = '0473648911'
@@ -13,17 +16,23 @@ export const STOREFRONTS: Record<Region, Storefront> = {
   AU: {
     region: 'AU',
     url: `https://www.amazon.com.au/dp/${ASIN}`,
+    reviewUrl: `https://www.amazon.com.au/review/create-review?asin=${ASIN}`,
     label: 'Buy on Amazon Australia',
+    reviewLabel: 'Review on Amazon Australia',
   },
   US: {
     region: 'US',
     url: `https://www.amazon.com/dp/${ASIN}`,
+    reviewUrl: `https://www.amazon.com/review/create-review?asin=${ASIN}`,
     label: 'Buy on Amazon US',
+    reviewLabel: 'Review on Amazon US',
   },
   UK: {
     region: 'UK',
     url: `https://www.amazon.co.uk/dp/${ASIN}`,
+    reviewUrl: `https://www.amazon.co.uk/review/create-review?asin=${ASIN}`,
     label: 'Buy on Amazon UK',
+    reviewLabel: 'Review on Amazon UK',
   },
 }
 
