@@ -1,6 +1,8 @@
 import { test } from 'node:test'
 import { strict as assert } from 'node:assert'
 import {
+  STOREFRONTS,
+  ALL_STOREFRONTS,
   storefrontFor,
   shippingCopyFor,
   isHighConfidenceLocale,
@@ -134,4 +136,57 @@ test('shippingCopyForCountry: NZ-specific copy', () => {
   assert.equal(shippingCopyForCountry('US'), 'Prime eligible · ships within the US')
   assert.equal(shippingCopyForCountry('GB'), 'Ships within the UK')
   assert.equal(shippingCopyForCountry(null), null)
+})
+
+// STOREFRONTS shape — pin the data so accidental edits to URLs/labels surface
+// in CI rather than silently breaking the buy / review CTAs.
+
+test('STOREFRONTS: every region has a buy URL pointing at the right Amazon domain', () => {
+  assert.match(STOREFRONTS.AU.url, /^https:\/\/www\.amazon\.com\.au\/dp\/0473648911$/)
+  assert.match(STOREFRONTS.US.url, /^https:\/\/www\.amazon\.com\/dp\/0473648911$/)
+  assert.match(STOREFRONTS.UK.url, /^https:\/\/www\.amazon\.co\.uk\/dp\/0473648911$/)
+})
+
+test('STOREFRONTS: every region has a review URL pointing at the right Amazon create-review form', () => {
+  assert.match(
+    STOREFRONTS.AU.reviewUrl,
+    /^https:\/\/www\.amazon\.com\.au\/review\/create-review\?asin=0473648911$/,
+  )
+  assert.match(
+    STOREFRONTS.US.reviewUrl,
+    /^https:\/\/www\.amazon\.com\/review\/create-review\?asin=0473648911$/,
+  )
+  assert.match(
+    STOREFRONTS.UK.reviewUrl,
+    /^https:\/\/www\.amazon\.co\.uk\/review\/create-review\?asin=0473648911$/,
+  )
+})
+
+test('STOREFRONTS: review and buy URLs share the same ASIN and host per region', () => {
+  for (const region of ['AU', 'US', 'UK'] as const) {
+    const s = STOREFRONTS[region]
+    const buyHost = new URL(s.url).hostname
+    const reviewHost = new URL(s.reviewUrl).hostname
+    assert.equal(buyHost, reviewHost, `${region}: buy + review hosts must match`)
+    assert.ok(
+      s.url.includes('0473648911') && s.reviewUrl.includes('0473648911'),
+      `${region}: ASIN must appear in both URLs`,
+    )
+  }
+})
+
+test('STOREFRONTS: every region has non-empty buy + review labels', () => {
+  for (const region of ['AU', 'US', 'UK'] as const) {
+    const s = STOREFRONTS[region]
+    assert.ok(s.label.length > 0, `${region}: buy label is empty`)
+    assert.ok(s.reviewLabel.length > 0, `${region}: review label is empty`)
+  }
+})
+
+test('ALL_STOREFRONTS: contains all three regions in a stable order (AU, US, UK)', () => {
+  assert.equal(ALL_STOREFRONTS.length, 3)
+  assert.deepEqual(
+    ALL_STOREFRONTS.map((s) => s.region),
+    ['AU', 'US', 'UK'],
+  )
 })
