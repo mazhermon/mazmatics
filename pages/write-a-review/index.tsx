@@ -97,6 +97,12 @@ const WriteAReview = () => {
               </li>
             ))}
           </ul>
+
+          <p className={styles.fineprint}>
+            Heads up — Amazon has minimum-spend rules for who can post
+            reviews. If you hit that wall, the email option below works
+            just as well.
+          </p>
         </div>
       </section>
 

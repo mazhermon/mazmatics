@@ -179,6 +179,17 @@
   border-radius: 2px;
 }
 
+.fineprint {
+  margin: 1.75rem 0 0;
+  max-width: 50ch;
+  font-family: var(--font-copy);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: oklch(0.32 0.015 290 / 0.78);
+  font-style: italic;
+  text-wrap: pretty;
+}
+
 /* ---------- Note (secondary) ---------- */
 .note {
   width: 100%;
