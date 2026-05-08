@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+# Run the full Playwright suite (smoke + visual regression) only when pushing
+# to main. Other branches skip — pre-commit already ran types + unit tests.
+# Bypass with: git push --no-verify
+
+while read local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/main" ]; then
+    echo ""
+    echo "Pushing to main — running full e2e suite (~35s)..."
+    echo ""
+    yarn test:e2e || exit 1
+    exit 0
+  fi
+done
+
+exit 0

@@ -8,10 +8,12 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
+    "typecheck": "tsc --noEmit",
     "test": "node --test --import tsx --test-reporter=spec lib/*.test.ts",
     "test:e2e": "playwright test",
     "a11y": "axe http://localhost:3000 http://localhost:3000/about http://localhost:3000/get-the-book --exit",
-    "postbuild": "next-sitemap"
+    "postbuild": "next-sitemap",
+    "prepare": "husky"
   },
   "dependencies": {
     "@formkit/auto-animate": "^1.0.0-beta.5",

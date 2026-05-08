@@ -29,7 +29,9 @@ export default defineConfig({
     trace: 'on-first-retry',
     timezoneId: 'Australia/Sydney',
     locale: 'en-AU',
-    reducedMotion: 'reduce',
+    // Motion stability is handled by `animations: 'disabled'` at the
+    // screenshot level (above) plus the settle-page scroll triggering all
+    // Reveal IntersectionObservers before capture.
   },
 
   projects: [

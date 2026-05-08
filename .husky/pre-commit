@@ -1,1 +1,4 @@
-# Pre-commit hook (Husky v9+). Add commands below as needed.
+#!/usr/bin/env sh
+# Fast safety net: types + unit tests. Heavier e2e runs on pre-push to main.
+
+yarn typecheck && yarn test
