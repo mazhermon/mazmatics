@@ -38,6 +38,43 @@ const WriteAReview = () => {
           rel="canonical"
           href="https://www.mazmatics.com/write-a-review"
         />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Mazmatics" />
+        <meta
+          property="og:title"
+          content="Write a review or send feedback — Mazmatics"
+        />
+        <meta
+          property="og:description"
+          content={`Already got the book? Help us help more parents — leave an Amazon review or send Maz a note.`}
+        />
+        <meta
+          property="og:url"
+          content="https://www.mazmatics.com/write-a-review"
+        />
+        <meta
+          property="og:image"
+          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+        />
+        <meta property="og:image:width" content="900" />
+        <meta property="og:image:height" content="1350" />
+        <meta
+          property="og:image:alt"
+          content="Mazmatics Fun Math 4 Kids Vol. 1 book cover"
+        />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta
+          name="twitter:title"
+          content="Write a review or send feedback — Mazmatics"
+        />
+        <meta
+          name="twitter:description"
+          content="Already got the book? Help us help more parents."
+        />
+        <meta
+          name="twitter:image"
+          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

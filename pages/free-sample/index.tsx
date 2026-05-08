@@ -86,7 +86,12 @@ const FreeSample = () => {
               '@context': 'https://schema.org',
               '@type': 'Book',
               name: 'Mazmatics: Fun Math 4 Kids Vol. 1 — Free sample',
-              author: { '@type': 'Person', name: 'Maz Hermon' },
+              author: {
+                '@type': 'Person',
+                '@id': 'https://www.mazmatics.com/about#maz',
+                name: 'Maz Hermon',
+                url: 'https://www.mazmatics.com/about',
+              },
               inLanguage: 'en',
               bookFormat: 'https://schema.org/EBook',
               isAccessibleForFree: true,

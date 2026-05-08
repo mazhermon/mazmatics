@@ -4,6 +4,38 @@ A human-readable narrative of what's changed on the `redesign-may` branch and wh
 
 ---
 
+## 2026-05-08 — Post-launch SEO sweep + marketing playbook
+
+**What:** Live audit of the deployed site at `mazmatics.com`, fixed one regression I introduced earlier, expanded the structured-data graph, differentiated sitemap priorities, and wrote the marketing playbook + founder-action checklist that closes out the redesign-may project.
+
+### SEO regressions caught + fixed
+- **`/write-a-review` was missing OG, Twitter Card, and JSON-LD entirely.** When I rewrote the page to combine review + feedback into one (commit `ca904fa`), I copied the basic Head structure from the old page and lost the SEO additions. Live audit caught it via `curl + grep`. Re-added the full set.
+
+### Structured-data graph improvements
+- **Home now uses `@graph`** to link multiple entities under one script block: `Organization` (the brand), `WebSite` (the site as a whole), `Person` (Maz, with `@id` so other pages can reference back), and `Book` (Vol. 1 with author/illustrator/publisher all referenced by `@id`). Google now sees Mazmatics as a coherent entity graph rather than four loose schemas.
+- **`/get-the-book` and `/free-sample` Book schemas** now reference the canonical Person entity by `@id` (`https://www.mazmatics.com/about#maz`) so the author across all schemas resolves to one Person, not three lookalikes.
+
+### Sitemap differentiation
+- Added a `transform` function in `next-sitemap.config.js` that assigns explicit priorities (`/`: 1.0, `/get-the-book`: 0.9, `/free-sample`: 0.85, `/about`: 0.8, `/write-a-review`: 0.6) and weekly/monthly changefreq based on how often each page is updated. Replaces the flat default of `0.7 daily` for everything.
+
+### Live verification
+All 5 marketing pages return 200, all 5 redirects fire as 308 with correct Location headers, sitemap returns 200 with all 5 URLs, robots returns 200, 404 returns 404, HSTS set. Per-page meta + JSON-LD verified via curl + grep on the live site.
+
+### Marketing playbook (`docs/marketing/`)
+New folder. Two documents:
+- **`playbook.md`** — 90-day plan, 5 content pillars (book-in-action, behind-the-scenes, maths-joy moments, parent-helpful, review push), 21 specific post ideas with prompts, community engagement tactics, Vol. 2 launch ramp-up plan, measurement KPIs. Calibrated for solo-author bandwidth (1–3 hours/week, no paid budget).
+- **`founder-actions.md`** — checklist of admin tasks only Maz can do: Search Console + Bing registration, social-validator checks (FB Debugger, Twitter, Google Rich Results), Instagram + Facebook reactivation, MailerLite welcome automation, plus deferred items (per-page OG images, AggregateRating, privacy policy).
+
+### Verification
+`yarn typecheck` clean, `yarn build` clean, `yarn test` 30/30 passing, `yarn test:e2e` 29/30 passing (one mobile modal test intentionally skipped). Pre-commit hook fires on every commit running types + unit + e2e + visual regression.
+
+### Decisions captured
+- **Single-script `@graph` over multiple `<script>` blocks** for home structured data: cleaner, all entities cross-referenceable by `@id`, less script-tag bloat.
+- **Sitemap priority is a relative hint, not absolute ranking signal** — differentiating still helps Google understand site structure.
+- **Marketing plan calibrated for bandwidth, not ambition** — better to sustain 2 posts/week for a year than 6/week for two months. Brand voice (warm, scrappy, growth-mindset) doesn't survive output pressure.
+
+---
+
 ## 2026-05-07 → 2026-05-08 — Polish round + press coverage restored + cleanup
 
 **What:** Closing pass on the four-page agency redesign. Tightened the hero, simplified the why-kids-love-it imagery, fixed a modal click-close bug, restored the Stuff.co.nz press coverage as a credibility anchor (split between home and about), and cleared the cleanup items the previous entry flagged (orphans + debug screenshots).

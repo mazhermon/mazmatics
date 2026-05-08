@@ -60,15 +60,70 @@ const Home: NextPage = () => {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Book',
-              name: 'Mazmatics: Fun Math 4 Kids Vol. 1',
-              author: { '@type': 'Person', name: 'Maz Hermon' },
-              inLanguage: 'en',
-              bookFormat: 'https://schema.org/Paperback',
-              image:
-                'https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
-              description: `Activity and story book that helps kids 7-10 build a positive relationship with ${mathsWord}.`,
-              publisher: { '@type': 'Organization', name: 'Mazmatics' },
+              // @graph groups multiple structured-data entities under one
+              // script block so Google sees Mazmatics as a brand (Organization)
+              // that publishes a website (WebSite) selling a specific book
+              // (Book) authored by a specific person (Person).
+              '@graph': [
+                {
+                  '@type': 'Organization',
+                  '@id': 'https://www.mazmatics.com/#organization',
+                  name: 'Mazmatics',
+                  url: 'https://www.mazmatics.com',
+                  logo: 'https://www.mazmatics.com/images/Mazmatics-logo.png',
+                  sameAs: [
+                    'https://www.instagram.com/mazmaticsfun4kids/',
+                    'https://www.facebook.com/mazmaticsfunforkids',
+                  ],
+                },
+                {
+                  '@type': 'WebSite',
+                  '@id': 'https://www.mazmatics.com/#website',
+                  url: 'https://www.mazmatics.com',
+                  name: 'Mazmatics',
+                  description: `Fun ${mathsWord} 4 Kids — an activity and story book for kids 7-10.`,
+                  publisher: {
+                    '@id': 'https://www.mazmatics.com/#organization',
+                  },
+                  inLanguage: 'en',
+                },
+                {
+                  '@type': 'Person',
+                  '@id': 'https://www.mazmatics.com/about#maz',
+                  name: 'Maz Hermon',
+                  url: 'https://www.mazmatics.com/about',
+                  jobTitle: 'Author and illustrator',
+                  nationality: 'New Zealand',
+                  sameAs: [
+                    'https://www.instagram.com/mazmaticsfun4kids/',
+                    'https://www.facebook.com/mazmaticsfunforkids',
+                  ],
+                },
+                {
+                  '@type': 'Book',
+                  '@id':
+                    'https://www.mazmatics.com/#mazmatics-vol-1',
+                  name: 'Mazmatics: Fun Math 4 Kids Vol. 1',
+                  author: { '@id': 'https://www.mazmatics.com/about#maz' },
+                  illustrator: {
+                    '@id': 'https://www.mazmatics.com/about#maz',
+                  },
+                  publisher: {
+                    '@id': 'https://www.mazmatics.com/#organization',
+                  },
+                  inLanguage: 'en',
+                  bookFormat: 'https://schema.org/Paperback',
+                  numberOfPages: 145,
+                  audience: {
+                    '@type': 'PeopleAudience',
+                    suggestedMinAge: 7,
+                    suggestedMaxAge: 10,
+                  },
+                  image:
+                    'https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
+                  description: `Activity and story book that helps kids 7-10 build a positive relationship with ${mathsWord}.`,
+                },
+              ],
             }),
           }}
         />
