@@ -9,12 +9,40 @@
   margin-top: 0;
   background: var(--ft-bg);
   border-top: 1px solid var(--ft-line);
-  padding: 3rem 1.25rem 2.25rem;
+}
+
+/* Top signup strip — sits above the link columns to make email collection
+   the prominent CTA whenever a visitor reaches the footer. */
+.signupStrip {
+  background: var(--paper-warm, oklch(0.985 0.008 75));
+  border-bottom: 1px solid var(--ft-line);
+  padding: 2.25rem 1.25rem;
 }
 
 @media (min-width: 50rem) {
-  .siteFooter {
-    padding: 4rem 2rem 3rem;
+  .signupStrip {
+    padding: 2.75rem 2rem;
+  }
+}
+
+.signupStripInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.siteFooter > .inner {
+  padding-top: 3rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  padding-bottom: 2.25rem;
+}
+
+@media (min-width: 50rem) {
+  .siteFooter > .inner {
+    padding-top: 4rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 3rem;
   }
 }
 

@@ -7,6 +7,7 @@ import { AppContext } from '../context/appContext'
 import { ALL_STOREFRONTS } from '../lib/locale'
 import { FacebookIcon } from './icons/facebook'
 import { InstaIcon } from './icons/insta'
+import { MailingSignup } from './mailingSignup'
 import mazmaticsLogo from '../public/images/Mazmatics-logo.png'
 
 const COMPACT_REGION_LABEL: Record<string, string> = {
@@ -21,6 +22,17 @@ export const Footer = () => {
 
   return (
     <footer className={styles.siteFooter}>
+      <div className={styles.signupStrip}>
+        <div className={styles.signupStripInner}>
+          <MailingSignup
+            variant="inline"
+            location="footer"
+            heading="Be first when Vol. 2 ships."
+            lede="Occasional notes from Maz, no spam."
+            cta="Join"
+          />
+        </div>
+      </div>
       <div className={styles.inner}>
         <div className={styles.brandBlock}>
           <Link href="/" aria-label="Mazmatics — home" className={styles.brandLogo}>

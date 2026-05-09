@@ -5,6 +5,7 @@ import Link from 'next/link'
 import styles from './free-sample.module.css'
 import { AppContext } from '../../context/appContext'
 import { LookInside } from '../../components/LookInside'
+import { MailingSignup } from '../../components/mailingSignup'
 import {
   STOREFRONTS,
   regionForCountry,
@@ -219,6 +220,13 @@ const FreeSample = () => {
           </p>
         </div>
       </section>
+
+      <MailingSignup
+        location="free_sample_band"
+        eyebrow="One more thing"
+        heading="Be first when Vol. 2 ships."
+        lede="If the sample clicked, the mailing list is how you'll hear when the next one is ready."
+      />
     </div>
   )
 }

@@ -7,6 +7,7 @@ import { TestimonialList } from '../../components/testimonials/TestimonialList'
 import { CoreValues } from '../../components/CoreValues'
 import { AboutHeader } from '../../components/About/AboutHeader'
 import { StuffInterview } from '../../components/About/StuffInterview'
+import { MailingSignup } from '../../components/mailingSignup'
 import { WriteInThisBook } from '../../components/doodles/writeInThisBook'
 import { AppContext } from '../../context/appContext'
 
@@ -138,6 +139,13 @@ const About = () => {
       </section>
 
       <StuffInterview />
+
+      <MailingSignup
+        location="about_band"
+        eyebrow="Hear from Maz"
+        heading="Be first when Vol. 2 ships."
+        lede="A short note when the next book is out, plus the occasional behind-the-scenes from the desk where Mazmatics gets drawn."
+      />
 
       <CoreValues
         eyebrow="What we believe"

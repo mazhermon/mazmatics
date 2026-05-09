@@ -10,6 +10,7 @@ import { WhyKidsLoveIt } from '../components/home/whyKidsLoveIt'
 import { LookInsideHome } from '../components/home/lookInsideHome'
 import { FinalCta } from '../components/home/finalCta'
 import { AlreadyGotIt } from '../components/home/alreadyGotIt'
+import { MailingSignup } from '../components/mailingSignup'
 import { AppContext } from '../context/appContext'
 
 const Home: NextPage = () => {
@@ -137,6 +138,7 @@ const Home: NextPage = () => {
         <WhyKidsLoveIt />
         <LookInsideHome />
         <FinalCta />
+        <MailingSignup location="home_band" />
         <AlreadyGotIt />
       </main>
     </div>
