@@ -77,17 +77,15 @@ export const WhyKidsLoveIt: React.FC = () => {
                 <p className={styles.itemBody}>{it.body}</p>
               </div>
 
-              <div className={styles.detail} aria-hidden="true">
+              <div className={styles.detail}>
                 <Image
-                  alt=""
+                  alt={it.imageAlt}
                   src={it.image}
                   width={600}
                   height={600}
                   loading="eager"
                 />
               </div>
-
-              <span className={styles.srOnly}>{it.imageAlt}</span>
             </li>
           ))}
         </ol>
