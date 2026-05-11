@@ -71,7 +71,13 @@ const Home: NextPage = () => {
                   '@id': 'https://mazmatics.com/#organization',
                   name: 'Mazmatics',
                   url: 'https://mazmatics.com',
-                  logo: 'https://mazmatics.com/images/Mazmatics-logo.png',
+                  // logo as ImageObject (not bare URL string) — required for
+                  // Google's Logo rich result. Without ImageObject wrapper the
+                  // logo is ignored for rich-result eligibility.
+                  logo: {
+                    '@type': 'ImageObject',
+                    url: 'https://mazmatics.com/images/Mazmatics-logo.png',
+                  },
                   sameAs: [
                     'https://www.instagram.com/mazmaticsfun4kids/',
                     'https://www.facebook.com/mazmaticsfunforkids',

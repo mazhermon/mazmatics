@@ -61,6 +61,28 @@ const GetTheBook = () => {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://mazmatics.com',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Get the book',
+                },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
               '@type': 'Book',
               name: 'Mazmatics: Fun Math 4 Kids Vol. 1',
               author: {

@@ -84,6 +84,28 @@ const About = () => {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://mazmatics.com',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'About',
+                },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
               '@type': 'Person',
               name: 'Maz Hermon',
               jobTitle: 'Author, illustrator, web developer',

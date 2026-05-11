@@ -75,6 +75,28 @@ const WriteAReview = () => {
           name="twitter:image"
           content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://mazmatics.com',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Write a review',
+                },
+              ],
+            }),
+          }}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

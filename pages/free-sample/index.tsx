@@ -85,6 +85,28 @@ const FreeSample = () => {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
+              '@type': 'BreadcrumbList',
+              itemListElement: [
+                {
+                  '@type': 'ListItem',
+                  position: 1,
+                  name: 'Home',
+                  item: 'https://mazmatics.com',
+                },
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: 'Free sample',
+                },
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
               '@type': 'Book',
               name: 'Mazmatics: Fun Math 4 Kids Vol. 1 — Free sample',
               author: {
