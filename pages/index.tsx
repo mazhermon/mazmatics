@@ -56,33 +56,39 @@ const Home: NextPage = () => {
           name="twitter:image"
           content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
+        {/* Organization lives in its own top-level script tag (not inside
+            @graph) so Google's Rich Results Test reliably detects the Logo
+            rich result. RRT's Logo detector doesn't always traverse @graph. */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              // @graph groups multiple structured-data entities under one
-              // script block so Google sees Mazmatics as a brand (Organization)
-              // that publishes a website (WebSite) selling a specific book
-              // (Book) authored by a specific person (Person).
+              '@type': 'Organization',
+              '@id': 'https://mazmatics.com/#organization',
+              name: 'Mazmatics',
+              url: 'https://mazmatics.com',
+              logo: {
+                '@type': 'ImageObject',
+                url: 'https://mazmatics.com/images/Mazmatics-logo.png',
+                width: 1001,
+                height: 230,
+              },
+              sameAs: [
+                'https://www.instagram.com/mazmaticsfun4kids/',
+                'https://www.facebook.com/mazmaticsfunforkids',
+              ],
+            }),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              // @graph groups the remaining entities. Organization (above)
+              // can still be cross-referenced via its @id.
               '@graph': [
-                {
-                  '@type': 'Organization',
-                  '@id': 'https://mazmatics.com/#organization',
-                  name: 'Mazmatics',
-                  url: 'https://mazmatics.com',
-                  // logo as ImageObject (not bare URL string) — required for
-                  // Google's Logo rich result. Without ImageObject wrapper the
-                  // logo is ignored for rich-result eligibility.
-                  logo: {
-                    '@type': 'ImageObject',
-                    url: 'https://mazmatics.com/images/Mazmatics-logo.png',
-                  },
-                  sameAs: [
-                    'https://www.instagram.com/mazmaticsfun4kids/',
-                    'https://www.facebook.com/mazmaticsfunforkids',
-                  ],
-                },
                 {
                   '@type': 'WebSite',
                   '@id': 'https://mazmatics.com/#website',
