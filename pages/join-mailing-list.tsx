@@ -14,7 +14,7 @@ const JoinMailingList = () => {
         />
         <link
           rel="canonical"
-          href="https://www.mazmatics.com/join-mailing-list"
+          href="https://mazmatics.com/join-mailing-list"
         />
         {/* Signup form isn't a useful organic landing page — keep out of search
             so visitors find home/get-the-book first. */}

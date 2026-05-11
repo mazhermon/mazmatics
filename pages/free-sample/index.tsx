@@ -41,7 +41,7 @@ const FreeSample = () => {
         />
         <link
           rel="canonical"
-          href="https://www.mazmatics.com/free-sample"
+          href="https://mazmatics.com/free-sample"
         />
         <meta property="og:type" content="book" />
         <meta property="og:site_name" content="Mazmatics" />
@@ -55,11 +55,11 @@ const FreeSample = () => {
         />
         <meta
           property="og:url"
-          content="https://www.mazmatics.com/free-sample"
+          content="https://mazmatics.com/free-sample"
         />
         <meta
           property="og:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <meta property="og:image:width" content="900" />
         <meta property="og:image:height" content="1350" />
@@ -78,7 +78,7 @@ const FreeSample = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <script
           type="application/ld+json"
@@ -89,9 +89,9 @@ const FreeSample = () => {
               name: 'Mazmatics: Fun Math 4 Kids Vol. 1 — Free sample',
               author: {
                 '@type': 'Person',
-                '@id': 'https://www.mazmatics.com/about#maz',
+                '@id': 'https://mazmatics.com/about#maz',
                 name: 'Maz Hermon',
-                url: 'https://www.mazmatics.com/about',
+                url: 'https://mazmatics.com/about',
               },
               inLanguage: 'en',
               bookFormat: 'https://schema.org/EBook',
@@ -102,10 +102,10 @@ const FreeSample = () => {
                 suggestedMaxAge: 10,
               },
               image:
-                'https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
+                'https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
               description: `A three-page PDF sample of Mazmatics Fun ${mathsWord} 4 Kids Vol. 1. Free download to try before you buy the paperback.`,
               publisher: { '@type': 'Organization', name: 'Mazmatics' },
-              url: 'https://www.mazmatics.com/free-sample',
+              url: 'https://mazmatics.com/free-sample',
             }),
           }}
         />

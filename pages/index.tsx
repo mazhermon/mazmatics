@@ -24,7 +24,7 @@ const Home: NextPage = () => {
           name="description"
           content={`Mazmatics helps kids say "I like math" with activities, stories, codes and drawing prompts that make ${mathsWord} feel fun, relatable and enjoyable.`}
         />
-        <link rel="canonical" href="https://www.mazmatics.com/" />
+        <link rel="canonical" href="https://mazmatics.com/" />
         <meta property="og:type" content="book" />
         <meta property="og:site_name" content="Mazmatics" />
         <meta
@@ -35,10 +35,10 @@ const Home: NextPage = () => {
           property="og:description"
           content={`An activity and story book that turns ${mathsWord} frustration into fascination, for kids 7-10 who'd rather draw, decode and play their way to "I like ${mathsWord}".`}
         />
-        <meta property="og:url" content="https://www.mazmatics.com/" />
+        <meta property="og:url" content="https://mazmatics.com/" />
         <meta
           property="og:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <meta property="og:image:width" content="900" />
         <meta property="og:image:height" content="1350" />
@@ -54,7 +54,7 @@ const Home: NextPage = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <script
           type="application/ld+json"
@@ -68,10 +68,10 @@ const Home: NextPage = () => {
               '@graph': [
                 {
                   '@type': 'Organization',
-                  '@id': 'https://www.mazmatics.com/#organization',
+                  '@id': 'https://mazmatics.com/#organization',
                   name: 'Mazmatics',
-                  url: 'https://www.mazmatics.com',
-                  logo: 'https://www.mazmatics.com/images/Mazmatics-logo.png',
+                  url: 'https://mazmatics.com',
+                  logo: 'https://mazmatics.com/images/Mazmatics-logo.png',
                   sameAs: [
                     'https://www.instagram.com/mazmaticsfun4kids/',
                     'https://www.facebook.com/mazmaticsfunforkids',
@@ -79,20 +79,20 @@ const Home: NextPage = () => {
                 },
                 {
                   '@type': 'WebSite',
-                  '@id': 'https://www.mazmatics.com/#website',
-                  url: 'https://www.mazmatics.com',
+                  '@id': 'https://mazmatics.com/#website',
+                  url: 'https://mazmatics.com',
                   name: 'Mazmatics',
                   description: `Fun ${mathsWord} 4 Kids — an activity and story book for kids 7-10.`,
                   publisher: {
-                    '@id': 'https://www.mazmatics.com/#organization',
+                    '@id': 'https://mazmatics.com/#organization',
                   },
                   inLanguage: 'en',
                 },
                 {
                   '@type': 'Person',
-                  '@id': 'https://www.mazmatics.com/about#maz',
+                  '@id': 'https://mazmatics.com/about#maz',
                   name: 'Maz Hermon',
-                  url: 'https://www.mazmatics.com/about',
+                  url: 'https://mazmatics.com/about',
                   jobTitle: 'Author and illustrator',
                   nationality: 'New Zealand',
                   sameAs: [
@@ -103,14 +103,14 @@ const Home: NextPage = () => {
                 {
                   '@type': 'Book',
                   '@id':
-                    'https://www.mazmatics.com/#mazmatics-vol-1',
+                    'https://mazmatics.com/#mazmatics-vol-1',
                   name: 'Mazmatics: Fun Math 4 Kids Vol. 1',
-                  author: { '@id': 'https://www.mazmatics.com/about#maz' },
+                  author: { '@id': 'https://mazmatics.com/about#maz' },
                   illustrator: {
-                    '@id': 'https://www.mazmatics.com/about#maz',
+                    '@id': 'https://mazmatics.com/about#maz',
                   },
                   publisher: {
-                    '@id': 'https://www.mazmatics.com/#organization',
+                    '@id': 'https://mazmatics.com/#organization',
                   },
                   inLanguage: 'en',
                   bookFormat: 'https://schema.org/Paperback',
@@ -121,7 +121,7 @@ const Home: NextPage = () => {
                     suggestedMaxAge: 10,
                   },
                   image:
-                    'https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
+                    'https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
                   description: `Activity and story book that helps kids 7-10 build a positive relationship with ${mathsWord}.`,
                 },
               ],

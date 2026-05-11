@@ -18,7 +18,7 @@ const GetTheBook = () => {
           name="description"
           content={`Get Mazmatics Fun Math 4 Kids Vol. 1 paperback. An activity and story book that helps kids 7-10 build a positive relationship with ${mathsWord}.`}
         />
-        <link rel="canonical" href="https://www.mazmatics.com/get-the-book" />
+        <link rel="canonical" href="https://mazmatics.com/get-the-book" />
         <meta property="og:type" content="book" />
         <meta property="og:site_name" content="Mazmatics" />
         <meta
@@ -31,11 +31,11 @@ const GetTheBook = () => {
         />
         <meta
           property="og:url"
-          content="https://www.mazmatics.com/get-the-book"
+          content="https://mazmatics.com/get-the-book"
         />
         <meta
           property="og:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <meta property="og:image:width" content="900" />
         <meta property="og:image:height" content="1350" />
@@ -54,7 +54,7 @@ const GetTheBook = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <script
           type="application/ld+json"
@@ -65,15 +65,15 @@ const GetTheBook = () => {
               name: 'Mazmatics: Fun Math 4 Kids Vol. 1',
               author: {
                 '@type': 'Person',
-                '@id': 'https://www.mazmatics.com/about#maz',
+                '@id': 'https://mazmatics.com/about#maz',
                 name: 'Maz Hermon',
-                url: 'https://www.mazmatics.com/about',
+                url: 'https://mazmatics.com/about',
               },
               illustrator: {
                 '@type': 'Person',
-                '@id': 'https://www.mazmatics.com/about#maz',
+                '@id': 'https://mazmatics.com/about#maz',
                 name: 'Maz Hermon',
-                url: 'https://www.mazmatics.com/about',
+                url: 'https://mazmatics.com/about',
               },
               inLanguage: 'en',
               bookFormat: 'https://schema.org/Paperback',
@@ -84,10 +84,10 @@ const GetTheBook = () => {
                 suggestedMaxAge: 10,
               },
               image:
-                'https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
+                'https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
               description: `Activity and story book that helps kids 7-10 build a positive relationship with ${mathsWord}. Ships from Amazon AU, US and UK.`,
               publisher: { '@type': 'Organization', name: 'Mazmatics' },
-              url: 'https://www.mazmatics.com/get-the-book',
+              url: 'https://mazmatics.com/get-the-book',
             }),
           }}
         />

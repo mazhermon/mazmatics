@@ -36,7 +36,7 @@ const WriteAReview = () => {
         />
         <link
           rel="canonical"
-          href="https://www.mazmatics.com/write-a-review"
+          href="https://mazmatics.com/write-a-review"
         />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Mazmatics" />
@@ -50,11 +50,11 @@ const WriteAReview = () => {
         />
         <meta
           property="og:url"
-          content="https://www.mazmatics.com/write-a-review"
+          content="https://mazmatics.com/write-a-review"
         />
         <meta
           property="og:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <meta property="og:image:width" content="900" />
         <meta property="og:image:height" content="1350" />
@@ -73,7 +73,7 @@ const WriteAReview = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

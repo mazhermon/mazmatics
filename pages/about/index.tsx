@@ -44,7 +44,7 @@ const About = () => {
           name="description"
           content={`About Mazmatics. Why a Wellington dad and web developer wrote an activity and story book to help kids 7-10 say "I like ${mathsWord}".`}
         />
-        <link rel="canonical" href="https://www.mazmatics.com/about" />
+        <link rel="canonical" href="https://mazmatics.com/about" />
         <meta property="og:type" content="profile" />
         <meta property="og:site_name" content="Mazmatics" />
         <meta
@@ -55,10 +55,10 @@ const About = () => {
           property="og:description"
           content={`Why a Wellington dad and web developer wrote an activity and story book to help kids 7-10 say "I like ${mathsWord}".`}
         />
-        <meta property="og:url" content="https://www.mazmatics.com/about" />
+        <meta property="og:url" content="https://mazmatics.com/about" />
         <meta
           property="og:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <meta property="og:image:width" content="900" />
         <meta property="og:image:height" content="1350" />
@@ -77,7 +77,7 @@ const About = () => {
         />
         <meta
           name="twitter:image"
-          content="https://www.mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
+          content="https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg"
         />
         <script
           type="application/ld+json"
@@ -88,9 +88,9 @@ const About = () => {
               name: 'Maz Hermon',
               jobTitle: 'Author, illustrator, web developer',
               description: `Wellington-based dad, web developer and author of Mazmatics: Fun Math 4 Kids Vol. 1 — an activity and story book for kids 7-10.`,
-              url: 'https://www.mazmatics.com/about',
+              url: 'https://mazmatics.com/about',
               image:
-                'https://www.mazmatics.com/images/lindyLarge.png',
+                'https://mazmatics.com/images/lindyLarge.png',
               nationality: 'New Zealand',
               sameAs: [
                 'https://www.instagram.com/mazmaticsfun4kids/',
