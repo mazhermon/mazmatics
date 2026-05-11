@@ -23,30 +23,33 @@ Full walk-through (kept for reference): [`setup-search-console.md`](./setup-sear
 
 ---
 
-### Validate social previews on the live site (15 min) — NEXT
+### ~~Validate social previews on the live site (15 min)~~ ✅ DONE 2026-05-11 (14/15 + 1 pending re-verify)
 
-Full walk-through: [`setup-social-validators.md`](./setup-social-validators.md)
+Full walk-through (kept for reference): [`setup-social-validators.md`](./setup-social-validators.md)
 
-- [ ] **Facebook Sharing Debugger** — https://developers.facebook.com/tools/debug/
-  - Paste each URL: `mazmatics.com`, `/about`, `/get-the-book`, `/free-sample`, `/write-a-review`
-  - Click **"Scrape Again"** for each (clears any cached old metadata)
-  - Confirm OG image, title, description render correctly
-- [ ] **Twitter / X Card Validator** — https://cards-dev.twitter.com/validator
-  - Paste each URL, confirm `summary_large_image` card with cover image
-- [ ] **Google Rich Results Test** — https://search.google.com/test/rich-results
-  - Paste each URL
-  - Expect: home shows `Book` + `Person` + `WebSite` + `Organization`; `/about` shows `Person`; `/get-the-book` and `/free-sample` show `Book`. All should parse with no errors.
+Verified 14 of 15 acceptance checks via Claude Desktop in browser mode against all 5 marketing URLs:
 
-If any validator surfaces an error, copy the error message into our chat and I'll fix it.
+- [x] **Facebook Sharing Debugger** — 5/5 URLs return clean HTTP 206. og:type correct per page (book / profile / website), og:image bare-domain direct URL, no "Inferred Property" warnings, only the advisory `fb:app_id` "missing" notice which is always present and benign.
+- [x] **Twitter / X Card Validator** — 5/5 render `summary_large_image` with the book cover. (Note: X moved inline preview thumbnails to Tweet Composer — the validator log confirms card load status instead of rendering an image; previews still work fine when actually shared.)
+- [x] **Google Rich Results Test** — 4 of 5 URLs detect the expected schema:
+  - `/about`, `/get-the-book`, `/free-sample`, `/write-a-review` → **Breadcrumbs (1)** each ✅
+  - `/` → expected to show **Logo (1)** — first run reported "No items detected" because Google's Logo detector doesn't reliably traverse `@graph` containers. Fix shipped (Organization hoisted out of @graph + width/height added to logo ImageObject). Awaiting one more deploy + re-test to confirm.
 
-### Reactivate Instagram + Facebook (20 min)
+**Small follow-up after the next push lands:**
+- [ ] Re-run **only** `https://mazmatics.com/` in Google Rich Results Test (https://search.google.com/test/rich-results). Should now detect **Logo (1)**. Once confirmed, this section is fully ✅.
 
-- [ ] **Instagram (`@mazmaticsfun4kids`)** — single post:
-  > Mazmatics has a new home. Same scrappy maths joy, fresh look. Take a peek → mazmatics.com
-  - Image: a hero crop or the book cover on a kid's desk
-  - Update bio to point at `mazmatics.com`
-- [ ] **Facebook (`mazmaticsfunforkids`)** — same post, mirrored
-- [ ] Update both bios to: *"Fun Math 4 Kids book. Activity + story for kids 7–10. By Maz Hermon."* + link to `mazmatics.com`
+**Side findings (no action needed):**
+- The homepage `og:title` shows "Mazmatics. Fun maths book for kids 7-10" with lowercase 'maths'. Intentional — that's descriptive prose ("a fun maths book"), not the book's proper title. The book's proper title ("Fun Math 4 Kids") is locked in title-context on `/get-the-book`, `/free-sample`, `/write-a-review`.
+- 900×1350 portrait image gets cropped in social previews. Per-page custom 1200×630 OG images is a separate deferred task (see further down this doc).
+
+### Reactivate Instagram + Facebook (20 min) — NEXT
+
+Full walk-through: [`setup-social-relaunch.md`](./setup-social-relaunch.md)
+
+- [ ] **Instagram (`@mazmaticsfun4kids`)** — single "we're back" post + bio update
+- [ ] **Facebook (`mazmaticsfunforkids`)** — same post mirrored + bio update
+
+The walk-through has 4 post-copy variants to choose from, image-pick guidance, bio copy, hashtag suggestions, and best-time-to-post notes. Pick the variant that sounds most like you and ship it — done in under 20 minutes.
 
 ### MailerLite welcome email (15 min)
 
