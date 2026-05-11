@@ -1,8 +1,6 @@
-import { useContext } from 'react'
 import Head from 'next/head'
 
 import styles from './write-a-review.module.css'
-import { AppContext } from '../../context/appContext'
 import {
   ALL_STOREFRONTS,
   STOREFRONTS,
@@ -15,7 +13,6 @@ const FEEDBACK_EMAIL = 'hellomazmatics@gmail.com'
 const FEEDBACK_SUBJECT = 'Mazmatics feedback'
 
 const WriteAReview = () => {
-  const { mathsWord = 'maths' } = useContext(AppContext)
   const country = useResolvedCountry()
   const region = regionForCountry(country)
   const matched = STOREFRONTS[region]
@@ -29,10 +26,10 @@ const WriteAReview = () => {
   return (
     <div className={styles.page}>
       <Head>
-        <title>{`Write a review or send feedback — Mazmatics Fun ${mathsWord} 4 Kids`}</title>
+        <title>{`Write a review or send feedback — Mazmatics Fun Math 4 Kids`}</title>
         <meta
           name="description"
-          content={`Share your thoughts on Mazmatics Fun ${mathsWord} 4 Kids Vol. 1 — leave an Amazon review or send Maz a note directly.`}
+          content={`Share your thoughts on Mazmatics Fun Math 4 Kids Vol. 1 — leave an Amazon review or send Maz a note directly.`}
         />
         <link
           rel="canonical"

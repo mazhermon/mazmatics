@@ -34,10 +34,10 @@ const FreeSample = () => {
   return (
     <div className={styles.page}>
       <Head>
-        <title>{`Free sample — Mazmatics Fun ${mathsWord} 4 Kids`}</title>
+        <title>{`Free sample — Mazmatics Fun Math 4 Kids`}</title>
         <meta
           name="description"
-          content={`Three sample pages from Mazmatics Fun ${mathsWord} 4 Kids Vol. 1. Print it or open on a screen — see if it clicks for your kid before you buy.`}
+          content={`Three sample pages from Mazmatics Fun Math 4 Kids Vol. 1. Print it or open on a screen — see if it clicks for your kid before you buy.`}
         />
         <link
           rel="canonical"
@@ -47,7 +47,7 @@ const FreeSample = () => {
         <meta property="og:site_name" content="Mazmatics" />
         <meta
           property="og:title"
-          content={`Free sample — Mazmatics Fun ${mathsWord} 4 Kids`}
+          content={`Free sample — Mazmatics Fun Math 4 Kids`}
         />
         <meta
           property="og:description"
@@ -70,7 +70,7 @@ const FreeSample = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta
           name="twitter:title"
-          content={`Free sample — Mazmatics Fun ${mathsWord} 4 Kids`}
+          content={`Free sample — Mazmatics Fun Math 4 Kids`}
         />
         <meta
           name="twitter:description"
@@ -125,7 +125,7 @@ const FreeSample = () => {
               },
               image:
                 'https://mazmatics.com/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg',
-              description: `A three-page PDF sample of Mazmatics Fun ${mathsWord} 4 Kids Vol. 1. Free download to try before you buy the paperback.`,
+              description: `A three-page PDF sample of Mazmatics Fun Math 4 Kids Vol. 1. Free download to try before you buy the paperback.`,
               publisher: { '@type': 'Organization', name: 'Mazmatics' },
               url: 'https://mazmatics.com/free-sample',
             }),

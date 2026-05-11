@@ -88,7 +88,7 @@ const Home: NextPage = () => {
                   '@id': 'https://mazmatics.com/#website',
                   url: 'https://mazmatics.com',
                   name: 'Mazmatics',
-                  description: `Fun ${mathsWord} 4 Kids — an activity and story book for kids 7-10.`,
+                  description: `Fun Math 4 Kids — an activity and story book for kids 7-10.`,
                   publisher: {
                     '@id': 'https://mazmatics.com/#organization',
                   },
