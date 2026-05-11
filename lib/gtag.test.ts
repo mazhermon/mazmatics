@@ -7,6 +7,7 @@ import {
   trackNavBuyClick,
   trackMailingListSubmit,
   trackFreeSampleDownload,
+  trackIncentiveDownload,
 } from './gtag.js'
 
 // Capture every gtag invocation so each test can assert on the exact payload.
@@ -111,6 +112,17 @@ test('trackFreeSampleDownload: fires free_sample_downloaded under conversion cat
     assert.deepEqual(calls[0].params, {
       event_category: 'conversion',
       event_label: 'free_sample',
+    })
+  }))
+
+test('trackIncentiveDownload: fires incentive_download_clicked tagged by location', () =>
+  withFakeGtag(() => {
+    trackIncentiveDownload('home_band')
+    assert.equal(calls.length, 1)
+    assert.equal(calls[0].action, 'incentive_download_clicked')
+    assert.deepEqual(calls[0].params, {
+      event_category: 'conversion',
+      event_label: 'home_band',
     })
   }))
 

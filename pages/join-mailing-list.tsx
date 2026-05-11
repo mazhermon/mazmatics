@@ -24,9 +24,15 @@ const JoinMailingList = () => {
 
       <MailingSignup
         location="standalone_page"
-        eyebrow="The mailing list"
-        heading="Be first when Vol. 2 ships."
-        lede="A short note from Maz when the next book is out, plus the occasional behind-the-scenes from a Wellington dad still drawing maths jokes. We don't email often."
+        eyebrow="Free print + Vol. 2 updates"
+        heading="Hang a printable maths mobile in your kid's room."
+        lede="Free A4 print, sent to your inbox straight away. You'll also be first to hear when Vol. 2 ships, plus the occasional behind-the-scenes from a Wellington dad still drawing maths jokes. We don't email often."
+        cta="Send me the print"
+        incentive={{
+          downloadUrl: '/downloads/Mazmatics_PrintableMathsMobile.pdf',
+          downloadLabel: 'Download the print',
+          postSubmitHint: `Print on A4, trim along the cut lines, hang from string or wire.`,
+        }}
       />
     </>
   )

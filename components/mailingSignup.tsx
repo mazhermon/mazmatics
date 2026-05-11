@@ -5,11 +5,25 @@ import styles from './mailingSignup.module.css'
 import { TickCircle } from './icons/tickCircle'
 import { CrossCircle } from './icons/crossCircle'
 import { LoaderRing } from './icons/loaders/loaderRing'
-import { trackMailingListSubmit } from '../lib/gtag'
+import { trackMailingListSubmit, trackIncentiveDownload } from '../lib/gtag'
 
 type Variant = 'band' | 'inline'
 
 type FormState = 'IDLE' | 'LOADING' | 'SUCCESS' | 'ERROR'
+
+/**
+ * Optional lead-magnet shown after a successful signup. If set, the success
+ * state surfaces a prominent download CTA so the visitor gets immediate value
+ * for handing over their email.
+ */
+export interface IncentiveProps {
+  /** Public URL of the downloadable file (lives in /public/downloads/). */
+  downloadUrl: string
+  /** Button label, e.g. "Get the printable maths mobile". */
+  downloadLabel: string
+  /** One-line description shown beside the success message. */
+  postSubmitHint?: string
+}
 
 interface Props {
   /**
@@ -25,6 +39,8 @@ interface Props {
   lede?: string
   cta?: string
   successMessage?: string
+  /** Optional lead-magnet for higher conversion. */
+  incentive?: IncentiveProps
 }
 
 export const MailingSignup: React.FC<Props> = ({
@@ -35,6 +51,7 @@ export const MailingSignup: React.FC<Props> = ({
   lede = 'A note from Maz when the next book is out, plus the occasional behind-the-scenes from a Wellington dad still drawing maths jokes.',
   cta = 'Sign me up',
   successMessage = "You're in. Welcome aboard.",
+  incentive,
 }) => {
   const [email, setEmail] = useState('')
   const [state, setState] = useState<FormState>('IDLE')
@@ -120,13 +137,37 @@ export const MailingSignup: React.FC<Props> = ({
           {errorMessage}
         </p>
       )}
-      {state === 'SUCCESS' && (
+      {state === 'SUCCESS' && !incentive && (
         <p role="status" className={`${styles.message} ${styles.messageSuccess}`}>
           <span className={styles.messageIcon} aria-hidden="true">
             <TickCircle />
           </span>
           {successMessage}
         </p>
+      )}
+      {state === 'SUCCESS' && incentive && (
+        <div role="status" className={styles.successWithIncentive}>
+          <p className={styles.successHeadline}>
+            <span className={styles.messageIcon} aria-hidden="true">
+              <TickCircle />
+            </span>
+            {successMessage}
+          </p>
+          {incentive.postSubmitHint && (
+            <p className={styles.successHint}>{incentive.postSubmitHint}</p>
+          )}
+          <a
+            href={incentive.downloadUrl}
+            download
+            className={styles.downloadButton}
+            onClick={() => trackIncentiveDownload(location)}
+          >
+            {incentive.downloadLabel}
+            <span aria-hidden="true" className={styles.downloadArrow}>
+              &darr;
+            </span>
+          </a>
+        </div>
       )}
     </>
   )

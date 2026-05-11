@@ -246,8 +246,14 @@ const FreeSample = () => {
       <MailingSignup
         location="free_sample_band"
         eyebrow="One more thing"
-        heading="Be first when Vol. 2 ships."
-        lede="If the sample clicked, the mailing list is how you'll hear when the next one is ready."
+        heading={`Want a free printable ${mathsWord} mobile too?`}
+        lede="Pop your email in below — we'll send the print straight away, and let you know when Vol. 2 ships."
+        cta="Send me the print"
+        incentive={{
+          downloadUrl: '/downloads/Mazmatics_PrintableMathsMobile.pdf',
+          downloadLabel: 'Download the print',
+          postSubmitHint: `Print on A4, trim along the cut lines, hang from string or wire above your kid's desk or bed.`,
+        }}
       />
     </div>
   )

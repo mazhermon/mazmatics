@@ -150,7 +150,19 @@ const Home: NextPage = () => {
         <WhyKidsLoveIt />
         <LookInsideHome />
         <FinalCta />
-        <MailingSignup location="home_band" />
+        <MailingSignup
+          location="home_band"
+          eyebrow="Free print + Vol. 2 updates"
+          heading={`Hang a printable ${mathsWord} mobile in your kid's room.`}
+          lede={`Free A4 print. Pop your email in below and we'll send it your way, plus a note from Maz when Vol. 2 is ready.`}
+          cta="Send me the print"
+          successMessage="You're in. Welcome aboard."
+          incentive={{
+            downloadUrl: '/downloads/Mazmatics_PrintableMathsMobile.pdf',
+            downloadLabel: 'Download the print',
+            postSubmitHint: `Print on A4, trim along the cut lines, hang from string or wire. Best on slightly heavier paper if you have it.`,
+          }}
+        />
         <AlreadyGotIt />
       </main>
     </div>

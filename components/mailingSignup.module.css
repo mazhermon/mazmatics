@@ -279,6 +279,93 @@
   fill: oklch(0.42 0.16 145);
 }
 
+/* ============================================================
+   Success state with lead-magnet — replaces the plain message
+   when an `incentive` prop is set.
+   ============================================================ */
+
+.successWithIncentive {
+  margin: 1rem 0 0;
+  padding: 1.25rem;
+  background: oklch(0.94 0.06 145);
+  border-radius: 10px;
+  border: 1px solid oklch(0.82 0.08 145);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: flex-start;
+  max-width: 32rem;
+}
+
+.successHeadline {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-copy);
+  font-size: 1rem;
+  font-weight: 600;
+  color: oklch(0.32 0.16 145);
+}
+
+.successHint {
+  margin: 0;
+  font-family: var(--font-copy);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: oklch(0.36 0.05 145);
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.7rem 1.2rem;
+  background: oklch(0.32 0.16 145);
+  color: #fff;
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: transform 200ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
+    background 200ms ease-out;
+}
+
+.downloadButton:hover {
+  transform: translateY(-1px);
+  background: oklch(0.36 0.16 145);
+}
+
+.downloadButton:focus-visible {
+  outline: 3px solid oklch(0.62 0.16 100);
+  outline-offset: 3px;
+}
+
+.downloadArrow {
+  display: inline-block;
+  transition: transform 200ms var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
+}
+
+.downloadButton:hover .downloadArrow {
+  transform: translateY(2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .downloadButton,
+  .downloadArrow {
+    transition: none;
+  }
+  .downloadButton:hover {
+    transform: none;
+  }
+  .downloadButton:hover .downloadArrow {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .input,
   .button {
