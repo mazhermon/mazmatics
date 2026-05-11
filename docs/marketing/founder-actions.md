@@ -8,28 +8,30 @@ Time-boxed estimates next to each. Aim to clear the **immediate** list this week
 
 ## Immediate (this week, ~90 minutes total)
 
-### Search Console + Bing — get the site indexed properly (40 min)
+### ~~Search Console + Bing — get the site indexed properly (40 min)~~ ✅ DONE 2026-05-11
 
-- [ ] **Google Search Console** — https://search.google.com/search-console
-  - Add property `https://mazmatics.com` (URL prefix, not domain — the bare domain is the canonical, www redirects to it)
-  - Verify via the **HTML file method** (fastest — Google gives you a file, drop it in `public/`, push, click verify)
-  - Submit `https://mazmatics.com/sitemap.xml`
-  - Wait 2–4 days for first crawl data
-- [ ] **Bing Webmaster Tools** — https://www.bing.com/webmasters
-  - Use "Import from Google Search Console" — saves reverification
-  - Submit the same sitemap
+Full walk-through (kept for reference): [`setup-search-console.md`](./setup-search-console.md)
 
-**What this gives you:** visibility into what's indexed, what queries you appear for, click-through rates, mobile usability, and **a real backlinks report** (so you know who's linking in).
+- [x] **Google Search Console** — verified via Domain property + DNS TXT record. Sitemap submitted.
+- [x] **Bing Webmaster Tools** — site added, sitemap submitted.
+- [x] **IndexNow key file** — shipped at `public/3a622ef6925e4808a9ef85a5746fc596.txt`. Public by design (the file IS the key — that's how the protocol works).
 
-If you tell me the verification HTML filename Google generates, I can wire it into `public/` and push for you.
+**Small follow-up after the deploy lands:**
+- [ ] In Bing → IndexNow page, click **Verify / Refresh** so Bing fetches the key file and flips IndexNow status from "Not yet set up" to active. Confirm the file is reachable first: `curl -s https://mazmatics.com/3a622ef6925e4808a9ef85a5746fc596.txt` should print just the key.
 
-### Validate social previews on the live site (15 min)
+**What this gives you:** visibility into what's indexed, what queries you appear for, click-through rates, mobile usability, and **a real backlinks report** (so you know who's linking in). Data starts populating ~2–4 days after first crawl; query data takes about a week.
+
+---
+
+### Validate social previews on the live site (15 min) — NEXT
+
+Full walk-through: [`setup-social-validators.md`](./setup-social-validators.md)
 
 - [ ] **Facebook Sharing Debugger** — https://developers.facebook.com/tools/debug/
   - Paste each URL: `mazmatics.com`, `/about`, `/get-the-book`, `/free-sample`, `/write-a-review`
   - Click **"Scrape Again"** for each (clears any cached old metadata)
   - Confirm OG image, title, description render correctly
-- [ ] **Twitter Card Validator** — https://cards-dev.twitter.com/validator
+- [ ] **Twitter / X Card Validator** — https://cards-dev.twitter.com/validator
   - Paste each URL, confirm `summary_large_image` card with cover image
 - [ ] **Google Rich Results Test** — https://search.google.com/test/rich-results
   - Paste each URL
