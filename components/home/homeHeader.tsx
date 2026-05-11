@@ -24,59 +24,59 @@ export const HomeHeader = () => {
   return (
     <div className={styles.heroBand}>
       <header className={styles.homeHeader}>
-      <div className={styles.sunCorner} aria-hidden="true">
-        <DynamicSunSprite />
-      </div>
-      <div className={styles.homeHeader__content}>
-        <span className={styles.newReleasePill}>Available now</span>
-
-        <h1 className={styles.heroHeading}>
-          <span className={styles.underlinedWord}>Liking {mathsWord}</span> is a
-          superpower.
-          <br />
-          <span className={styles.heroSubline}>
-            Help your kids find theirs.
-          </span>
-        </h1>
-
-        <p className={styles.heroLede}>
-          An activity and story book for kids 7&ndash;10 who&apos;d rather
-          draw, decode and play their way to &ldquo;I like {mathsWord}.&rdquo;
-          We turn {mathsWord} frustration into fascination.
-        </p>
-
-        <div className={styles.ctaRow}>
-          <Link href="/get-the-book" className={styles.primaryBtn}>
-            Get the book
-          </Link>
-          <Link href="/free-sample" className={styles.secondaryBtn}>
-            Look inside
-          </Link>
+        <div className={styles.sunCorner} aria-hidden="true">
+          <DynamicSunSprite />
         </div>
-      </div>
+        <div className={styles.homeHeader__content}>
+          <span className={styles.newReleasePill}>Available now</span>
 
-      <div className={styles.homeHeader__heroImage}>
-        <div className={styles.lindy}>
-          <div className={styles.bookBackdrop} aria-hidden="true">
-            <Image
-              alt=""
-              src={bookCover}
-              width={900}
-              height={1350}
-            />
-          </div>
-          <div className={styles.lindyImageWrap}>
-            <Image
-              alt="Lindy, the giant girl adventurer character from the Mazmatics book, smiling"
-              src={lindyImage}
-              width={lindyImageSize.width / 3}
-              height={lindyImageSize.height / 3}
-              priority
-            />
+          <h1 className={styles.heroHeading}>
+            <span className={styles.underlinedWord}>Liking {mathsWord}</span> is
+            a superpower.
+            <br />
+            <span className={styles.heroSubline}>
+              Help your kids find theirs.
+            </span>
+          </h1>
+
+          <p className={styles.heroLede}>
+            An activity and story book for kids 7&ndash;10 who&apos;d rather
+            draw, decode and play their way to &ldquo;I like {mathsWord}.&rdquo;
+            We turn {mathsWord} frustration into fascination.
+          </p>
+
+          <div className={styles.ctaRow}>
+            <Link href="/get-the-book" className={styles.primaryBtn}>
+              Get the book
+            </Link>
+            <Link href="/free-sample" className={styles.secondaryBtn}>
+              Look inside
+            </Link>
           </div>
         </div>
-      </div>
-    </header>
+
+        <div className={styles.homeHeader__heroImage}>
+          <div className={styles.lindy}>
+            <div className={styles.bookBackdrop} aria-hidden="true">
+              <Image
+                alt="Mazmatics 1 fun math for kids book cover"
+                src={bookCover}
+                width={900}
+                height={1350}
+              />
+            </div>
+            <div className={styles.lindyImageWrap}>
+              <Image
+                alt="Lindy, the giant girl adventurer character from the Mazmatics book, smiling"
+                src={lindyImage}
+                width={lindyImageSize.width / 3}
+                height={lindyImageSize.height / 3}
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      </header>
     </div>
   )
 }

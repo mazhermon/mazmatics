@@ -19,7 +19,7 @@ const NotFoundPage = () => {
       <div style={contentStyle}>
         <div style={imageStyle} aria-hidden="true">
           <Image
-            alt=""
+            alt="Lindy the Mazmatics mascot smiling"
             src={lindyImage}
             width={500}
             height={595}
