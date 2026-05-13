@@ -1,0 +1,698 @@
+/* WIP page styling — throwaway. Each variant pair has its own
+   .vNPrimary + .vNSecondary classes. Pick one, port the chosen
+   pair into the real component, delete this file. */
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 6rem;
+  font-family: var(--font-copy);
+  color: var(--ink, oklch(0.22 0.015 290));
+}
+
+.intro {
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  font-size: 0.75rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: oklch(0.55 0.05 295);
+}
+
+.h1 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-headings-display);
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 0;
+  max-width: 56ch;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: oklch(0.4 0.02 290);
+}
+
+.grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 50rem) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.panel {
+  padding: 1.5rem;
+  background: oklch(0.985 0.005 290);
+  border: 1px solid oklch(0.88 0.02 290);
+  border-radius: 12px;
+}
+
+.panelHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.panelNum {
+  font-family: var(--font-headings-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: oklch(0.42 0.18 295);
+  letter-spacing: -0.02em;
+}
+
+.panelName {
+  margin: 0;
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: oklch(0.32 0.02 290);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Shared button reset — keeps the variants legible without each one
+   having to redeclare base reset properties. */
+.row :where(a) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    background 200ms ease-out, box-shadow 200ms ease-out,
+    color 200ms ease-out, border-color 200ms ease-out;
+}
+
+/* =====================================================================
+   V1 — Current control (purple solid + ghost)
+   ===================================================================== */
+.v1Primary {
+  padding: 0.9rem 1.4rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px -10px oklch(0.42 0.18 295 / 0.55);
+}
+.v1Primary:hover {
+  background: oklch(0.46 0.18 295);
+  transform: translateY(-1px);
+}
+.v1Secondary {
+  padding: 0.9rem 1.4rem;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  border: 2px solid oklch(0.32 0.02 290 / 0.2);
+  border-radius: 8px;
+}
+.v1Secondary:hover {
+  border-color: oklch(0.42 0.18 295);
+  color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V2 — Yellow primary
+   ===================================================================== */
+.v2Primary {
+  padding: 0.95rem 1.5rem;
+  background: oklch(0.93 0.16 95);
+  color: oklch(0.22 0.015 290);
+  border-radius: 8px;
+  box-shadow: 0 8px 20px -10px oklch(0.85 0.16 95 / 0.7);
+}
+.v2Primary:hover {
+  background: oklch(0.95 0.16 95);
+  transform: translateY(-1px);
+}
+.v2Secondary {
+  padding: 0.95rem 1.5rem;
+  background: transparent;
+  color: oklch(0.22 0.015 290);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+.v2Secondary:hover {
+  text-decoration-thickness: 3px;
+}
+
+/* =====================================================================
+   V3 — Bold black border
+   ===================================================================== */
+.v3Primary {
+  padding: 0.85rem 1.4rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border: 3px solid oklch(0.18 0.02 290);
+  border-radius: 6px;
+}
+.v3Primary:hover {
+  background: oklch(0.46 0.18 295);
+}
+.v3Secondary {
+  padding: 0.85rem 1.4rem;
+  background: #fff;
+  color: oklch(0.18 0.02 290);
+  border: 3px solid oklch(0.18 0.02 290);
+  border-radius: 6px;
+}
+.v3Secondary:hover {
+  background: oklch(0.93 0.16 95);
+}
+
+/* =====================================================================
+   V4 — Retro arcade hard shadow
+   ===================================================================== */
+.v4Primary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 4px;
+  box-shadow: 5px 5px 0 0 oklch(0.18 0.02 290);
+  position: relative;
+}
+.v4Primary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 0 oklch(0.18 0.02 290);
+}
+.v4Secondary {
+  padding: 0.9rem 1.5rem;
+  background: #fff;
+  color: oklch(0.18 0.02 290);
+  border-radius: 4px;
+  box-shadow: 5px 5px 0 0 oklch(0.42 0.18 295);
+}
+.v4Secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 0 oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V5 — Pill rounded
+   ===================================================================== */
+.v5Primary {
+  padding: 0.9rem 1.7rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 999px;
+}
+.v5Primary:hover {
+  background: oklch(0.46 0.18 295);
+  transform: translateY(-1px);
+}
+.v5Secondary {
+  padding: 0.9rem 1.7rem;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  border: 2px solid oklch(0.32 0.02 290 / 0.25);
+  border-radius: 999px;
+}
+.v5Secondary:hover {
+  border-color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V6 — Outlined primary
+   ===================================================================== */
+.v6Primary {
+  padding: 0.85rem 1.5rem;
+  background: transparent;
+  color: oklch(0.42 0.18 295);
+  border: 3px solid oklch(0.42 0.18 295);
+  border-radius: 8px;
+}
+.v6Primary:hover {
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+}
+.v6Secondary {
+  padding: 0.85rem 1.5rem;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+.v6Secondary:hover {
+  color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V7 — Magazine serif italic
+   ===================================================================== */
+.v7Primary {
+  padding: 0.7rem 0;
+  background: transparent;
+  color: oklch(0.18 0.02 290);
+  font-family: var(--font-headings-display);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  border-bottom: 3px solid oklch(0.42 0.18 295);
+  border-radius: 0;
+}
+.v7Primary:hover {
+  color: oklch(0.42 0.18 295);
+}
+.v7Secondary {
+  padding: 0.7rem 0;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  font-family: var(--font-headings-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1rem;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.v7Secondary:hover {
+  color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V8 — Sticker tilt + double shadow
+   ===================================================================== */
+.v8Primary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 10px;
+  transform: rotate(-2deg);
+  box-shadow:
+    0 1px 2px oklch(0.18 0.02 290 / 0.2),
+    0 8px 16px -4px oklch(0.42 0.18 295 / 0.4),
+    0 14px 28px -8px oklch(0.42 0.18 295 / 0.3);
+}
+.v8Primary:hover {
+  transform: rotate(-2deg) translateY(-2px);
+}
+.v8Secondary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.93 0.16 95);
+  color: oklch(0.18 0.02 290);
+  border-radius: 10px;
+  transform: rotate(1.5deg);
+  box-shadow:
+    0 1px 2px oklch(0.18 0.02 290 / 0.2),
+    0 6px 14px -4px oklch(0.85 0.16 95 / 0.5);
+}
+.v8Secondary:hover {
+  transform: rotate(1.5deg) translateY(-2px);
+}
+
+/* =====================================================================
+   V9 — Animated arrow
+   ===================================================================== */
+.v9Primary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 8px;
+}
+.v9Primary::after {
+  content: '→';
+  display: inline-block;
+  margin-left: 0.4rem;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v9Primary:hover::after {
+  transform: translateX(6px);
+}
+.v9Secondary {
+  padding: 0.9rem 1.5rem;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  border: 2px solid oklch(0.32 0.02 290 / 0.25);
+  border-radius: 8px;
+}
+.v9Secondary::after {
+  content: '↓';
+  display: inline-block;
+  margin-left: 0.4rem;
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.v9Secondary:hover::after {
+  transform: translateY(3px);
+}
+
+/* =====================================================================
+   V10 — Soft purple wash
+   ===================================================================== */
+.v10Primary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.92 0.06 295);
+  color: oklch(0.32 0.16 295);
+  border-radius: 8px;
+}
+.v10Primary:hover {
+  background: oklch(0.88 0.08 295);
+}
+.v10Secondary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.97 0.02 295);
+  color: oklch(0.4 0.1 295);
+  border-radius: 8px;
+}
+.v10Secondary:hover {
+  background: oklch(0.95 0.04 295);
+}
+
+/* =====================================================================
+   V11 — Asymmetric: big primary, mini ghost
+   ===================================================================== */
+.v11Primary {
+  padding: 1.2rem 2rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  font-size: 1.05rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px -10px oklch(0.42 0.18 295 / 0.6);
+}
+.v11Primary:hover {
+  background: oklch(0.46 0.18 295);
+  transform: translateY(-1px);
+}
+.v11Secondary {
+  padding: 0.55rem 0.9rem;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  font-size: 0.85rem;
+  border: 1px solid oklch(0.32 0.02 290 / 0.2);
+  border-radius: 6px;
+}
+.v11Secondary:hover {
+  color: oklch(0.42 0.18 295);
+  border-color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V12 — Icon prefix
+   ===================================================================== */
+.v12Primary {
+  padding: 0.9rem 1.4rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 8px;
+}
+.v12Primary::before {
+  content: '📕';
+  font-size: 1.05em;
+  filter: saturate(0) brightness(2.5);
+}
+.v12Secondary {
+  padding: 0.9rem 1.4rem;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  border: 2px solid oklch(0.32 0.02 290 / 0.25);
+  border-radius: 8px;
+}
+.v12Secondary::before {
+  content: '🔍';
+  font-size: 1.05em;
+  filter: saturate(0);
+}
+
+/* =====================================================================
+   V13 — Underlined text-link (minimal)
+   ===================================================================== */
+.v13Primary {
+  padding: 0.4rem 0;
+  background: transparent;
+  color: oklch(0.42 0.18 295);
+  font-size: 1.1rem;
+  border-bottom: 2px solid oklch(0.42 0.18 295);
+  border-radius: 0;
+}
+.v13Primary:hover {
+  color: oklch(0.32 0.16 295);
+}
+.v13Secondary {
+  padding: 0.4rem 0;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  font-size: 0.95rem;
+  border-bottom: 1px solid oklch(0.32 0.02 290 / 0.4);
+  border-radius: 0;
+}
+.v13Secondary:hover {
+  color: oklch(0.42 0.18 295);
+  border-color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V14 — Banner with cut-corner
+   ===================================================================== */
+.v14Primary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 0;
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%);
+}
+.v14Primary:hover {
+  background: oklch(0.46 0.18 295);
+}
+.v14Secondary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.93 0.16 95);
+  color: oklch(0.18 0.02 290);
+  border-radius: 0;
+  clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%, 0 14px);
+}
+.v14Secondary:hover {
+  background: oklch(0.95 0.16 95);
+}
+
+/* =====================================================================
+   V15 — Diagonal split fill
+   ===================================================================== */
+.v15Primary {
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(
+    115deg,
+    oklch(0.42 0.18 295) 0%,
+    oklch(0.42 0.18 295) 55%,
+    oklch(0.93 0.16 95) 55%,
+    oklch(0.93 0.16 95) 100%
+  );
+  color: #fff;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.v15Primary:hover {
+  filter: brightness(1.08);
+}
+.v15Secondary {
+  padding: 0.9rem 1.5rem;
+  background: linear-gradient(
+    115deg,
+    #fff 0%,
+    #fff 55%,
+    oklch(0.42 0.18 295 / 0.15) 55%,
+    oklch(0.42 0.18 295 / 0.15) 100%
+  );
+  color: oklch(0.22 0.015 290);
+  border: 2px solid oklch(0.32 0.02 290 / 0.15);
+  border-radius: 8px;
+}
+
+/* =====================================================================
+   V16 — All-caps small + wide spacing
+   ===================================================================== */
+.v16Primary {
+  padding: 0.95rem 1.4rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+.v16Primary:hover {
+  background: oklch(0.46 0.18 295);
+}
+.v16Secondary {
+  padding: 0.95rem 1.4rem;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  font-size: 0.78rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  border: 1px solid oklch(0.32 0.02 290 / 0.3);
+  border-radius: 4px;
+}
+.v16Secondary:hover {
+  border-color: oklch(0.42 0.18 295);
+  color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V17 — Numbered magazine TOC
+   ===================================================================== */
+.v17Primary {
+  padding: 0.7rem 0;
+  background: transparent;
+  color: oklch(0.18 0.02 290);
+  font-family: var(--font-headings-display);
+  font-size: 1.15rem;
+  font-weight: 800;
+  border-radius: 0;
+}
+.v17Primary::before {
+  content: '01';
+  margin-right: 0.6rem;
+  padding: 0.18em 0.5em;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  font-family: var(--font-headings-secondary);
+  font-size: 0.7em;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border-radius: 3px;
+}
+.v17Primary:hover {
+  color: oklch(0.42 0.18 295);
+}
+.v17Secondary {
+  padding: 0.7rem 0;
+  background: transparent;
+  color: oklch(0.32 0.02 290);
+  font-family: var(--font-headings-display);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0;
+}
+.v17Secondary::before {
+  content: '02';
+  margin-right: 0.6rem;
+  padding: 0.18em 0.5em;
+  background: oklch(0.97 0.02 295);
+  color: oklch(0.32 0.02 290);
+  font-family: var(--font-headings-secondary);
+  font-size: 0.7em;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  border: 1px solid oklch(0.32 0.02 290 / 0.2);
+  border-radius: 3px;
+}
+.v17Secondary:hover {
+  color: oklch(0.42 0.18 295);
+}
+
+/* =====================================================================
+   V18 — Dotted-line border
+   ===================================================================== */
+.v18Primary {
+  padding: 0.85rem 1.4rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border: 3px dotted oklch(0.18 0.02 290);
+  border-radius: 8px;
+}
+.v18Primary:hover {
+  background: oklch(0.46 0.18 295);
+}
+.v18Secondary {
+  padding: 0.85rem 1.4rem;
+  background: #fff;
+  color: oklch(0.22 0.015 290);
+  border: 3px dotted oklch(0.42 0.18 295);
+  border-radius: 8px;
+}
+.v18Secondary:hover {
+  background: oklch(0.97 0.02 295);
+}
+
+/* =====================================================================
+   V19 — Asymmetric corners (hand-drawn feel)
+   ===================================================================== */
+.v19Primary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 18px 8px 22px 6px;
+}
+.v19Primary:hover {
+  background: oklch(0.46 0.18 295);
+  transform: rotate(-1deg);
+}
+.v19Secondary {
+  padding: 0.9rem 1.5rem;
+  background: oklch(0.93 0.16 95);
+  color: oklch(0.22 0.015 290);
+  border-radius: 6px 20px 8px 16px;
+}
+.v19Secondary:hover {
+  background: oklch(0.95 0.16 95);
+  transform: rotate(1deg);
+}
+
+/* =====================================================================
+   V20 — Card with deep elevation
+   ===================================================================== */
+.v20Primary {
+  padding: 1rem 1.5rem;
+  background: oklch(0.42 0.18 295);
+  color: #fff;
+  border-radius: 12px;
+  box-shadow:
+    0 2px 4px oklch(0.42 0.18 295 / 0.2),
+    0 8px 16px -2px oklch(0.42 0.18 295 / 0.35),
+    0 24px 40px -8px oklch(0.42 0.18 295 / 0.4);
+}
+.v20Primary:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 4px 6px oklch(0.42 0.18 295 / 0.25),
+    0 12px 22px -2px oklch(0.42 0.18 295 / 0.4),
+    0 32px 50px -8px oklch(0.42 0.18 295 / 0.45);
+}
+.v20Secondary {
+  padding: 1rem 1.5rem;
+  background: #fff;
+  color: oklch(0.22 0.015 290);
+  border-radius: 12px;
+  box-shadow:
+    0 2px 4px oklch(0.18 0.02 290 / 0.08),
+    0 8px 16px -2px oklch(0.18 0.02 290 / 0.12);
+}
+.v20Secondary:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 4px 6px oklch(0.18 0.02 290 / 0.1),
+    0 12px 22px -2px oklch(0.18 0.02 290 / 0.15);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row :where(a) {
+    transition: none;
+  }
+  .row :where(a):hover {
+    transform: none !important;
+  }
+}
