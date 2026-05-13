@@ -6,6 +6,10 @@
   background: oklch(0.95 0.04 235);
   position: relative;
   border-bottom: 1px solid oklch(0.85 0.04 235);
+  /* The image group shifts +100px right on small screens to balance the
+     book-on-left composition. Clip any horizontal overflow at the band so
+     narrow viewports never get a horizontal page scrollbar. */
+  overflow-x: clip;
 }
 
 .homeHeader {
@@ -238,6 +242,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* On small screens the book-on-left composition reads left-biased inside
+     the centered flex cell. Nudge the whole image group right so the visual
+     weight balances against the headline column above it. Reset at desktop
+     where the two-column grid handles alignment. */
+  transform: translateX(100px);
+}
+
+@media (min-width: 60rem) {
+  .homeHeader__heroImage {
+    transform: none;
+  }
 }
 
 .lindy {
