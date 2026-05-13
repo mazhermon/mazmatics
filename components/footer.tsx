@@ -95,7 +95,7 @@ export const Footer = () => {
                 href="https://www.instagram.com/mazmaticsfun4kids/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Mazmatics on Instagram"
+                aria-label="@mazmaticsfun4kids on Instagram"
               >
                 <span className={styles.socialIcon} aria-hidden="true">
                   <InstaIcon />

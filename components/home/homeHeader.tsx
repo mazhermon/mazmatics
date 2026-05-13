@@ -63,6 +63,7 @@ export const HomeHeader = () => {
                 src={bookCover}
                 width={900}
                 height={1350}
+                priority
               />
             </div>
             <div className={styles.lindyImageWrap}>

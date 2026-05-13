@@ -11,7 +11,17 @@ import mazAPlus005 from '../public/images/Mazmatics-a-plus-005.jpg'
 import mazAPlus006 from '../public/images/Mazmatics-a-plus-006.jpg'
 import { trackLookInsideOpen } from '../lib/gtag'
 
-const contentImageSize = {
+/**
+ * Thumbnails render at ~300-400px max even on retina mobile, so capping the
+ * declared width at 600 keeps Next/Image's srcset from shipping the full
+ * 1200px source. The modal still uses the larger size for the zoom view.
+ */
+const thumbImageSize = {
+  width: 600,
+  height: 600,
+}
+
+const modalImageSize = {
   width: 1200,
   height: 1200,
 }
@@ -184,8 +194,8 @@ export const LookInside: React.FC<Props> = ({
             <Image
               alt={page.alt}
               src={page.src}
-              width={contentImageSize.width}
-              height={contentImageSize.height}
+              width={thumbImageSize.width}
+              height={thumbImageSize.height}
               loading="eager"
             />
           </button>
@@ -221,8 +231,8 @@ export const LookInside: React.FC<Props> = ({
                   <Image
                     alt={page.alt}
                     src={page.src}
-                    width={contentImageSize.width}
-                    height={contentImageSize.height}
+                    width={thumbImageSize.width}
+                    height={thumbImageSize.height}
                     loading="eager"
                   />
                 </button>
@@ -323,8 +333,8 @@ export const LookInside: React.FC<Props> = ({
               <Image
                 alt={PAGES[openIndex].alt}
                 src={PAGES[openIndex].src}
-                width={contentImageSize.width}
-                height={contentImageSize.height}
+                width={modalImageSize.width}
+                height={modalImageSize.height}
                 priority
               />
             </div>

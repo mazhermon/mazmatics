@@ -20,7 +20,8 @@ const COMPACT_REGION_LABEL: Record<string, string> = {
 export const NavBarBuyCTA: React.FC = () => {
   const country = useResolvedCountry()
   const region = regionForCountry(country)
-  const { url, label } = STOREFRONTS[region]
+  const { url } = STOREFRONTS[region]
+  const visibleLabel = COMPACT_REGION_LABEL[region] ?? 'Get the book'
 
   return (
     <a
@@ -29,9 +30,9 @@ export const NavBarBuyCTA: React.FC = () => {
       target="_blank"
       rel="noopener noreferrer"
       onClick={trackNavBuyClick}
-      aria-label={label}
+      aria-label={`${visibleLabel} (opens in a new tab)`}
     >
-      <span>{COMPACT_REGION_LABEL[region] ?? 'Get the book'}</span>
+      <span>{visibleLabel}</span>
       <svg
         className={styles.buyCTA__icon}
         viewBox="0 0 24 24"

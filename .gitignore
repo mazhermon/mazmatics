@@ -49,5 +49,8 @@ skills-lock.json
 /test-results/
 /playwright-report/
 
+# lighthouse JSON dumps — run-by-run artifacts, 600KB+ each
+/docs/audits/
+
 # transient debug screenshots at repo root (real assets live in /public/images/)
 /*.png
