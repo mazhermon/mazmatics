@@ -280,6 +280,24 @@
   transition: transform 380ms var(--ease-out-expo);
 }
 
+/* Mobile: no hover affordance, so animate the book out into its lifted
+   position on page load to draw attention. Settles at the same place
+   the desktop hover state lands, plus an extra 20px lift. */
+@media (max-width: 59.99rem) {
+  .bookBackdrop {
+    animation: bookEntrance 900ms cubic-bezier(0.16, 1, 0.3, 1) 200ms both;
+  }
+}
+
+@keyframes bookEntrance {
+  from {
+    transform: rotate(-8deg);
+  }
+  to {
+    transform: translate(-11px, -29px) rotate(-15deg);
+  }
+}
+
 @media (min-width: 60rem) {
   /* Nudge book up + left by ~50px so the sun (above the book on desktop)
      reads as shining down onto Lindy. */
@@ -306,10 +324,20 @@
 @media (prefers-reduced-motion: reduce) {
   .bookBackdrop {
     transition: none;
+    animation: none;
   }
   .lindy:hover .bookBackdrop,
   .lindy:focus-within .bookBackdrop {
     transform: rotate(-8deg);
+  }
+}
+
+/* Reduced-motion mobile: still settle the book in the lifted position
+   (it's the new resting place on small screens) but skip the entrance
+   animation entirely. */
+@media (prefers-reduced-motion: reduce) and (max-width: 59.99rem) {
+  .bookBackdrop {
+    transform: translate(-11px, -29px) rotate(-15deg);
   }
 }
 
@@ -341,5 +369,34 @@
 .lindyImageWrap img {
   width: 100% !important;
   height: auto !important;
+}
+
+/* Small-screen Lindy pose: shifted right + rotated clockwise, with a soft
+   oval ground-shadow that drifts off the right edge of the viewport. The
+   shadow is a ::after pseudo so it shares Lindy's positioning context but
+   doesn't affect the Image layout. */
+@media (max-width: 59.99rem) {
+  .lindyImageWrap {
+    transform: translateX(30px) rotate(10deg);
+    transform-origin: bottom center;
+  }
+
+  .lindyImageWrap::after {
+    content: '';
+    position: absolute;
+    bottom: -2%;
+    right: -55%;
+    width: 95%;
+    height: 14%;
+    background: radial-gradient(
+      ellipse at center,
+      oklch(0.32 0.04 290 / 0.22) 0%,
+      oklch(0.32 0.04 290 / 0.1) 45%,
+      oklch(0.32 0.04 290 / 0) 75%
+    );
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(2px);
+  }
 }
 
