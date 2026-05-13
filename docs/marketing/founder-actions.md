@@ -53,9 +53,17 @@ The walk-through has 4 post-copy variants to choose from, image-pick guidance, b
 
 ### MailerLite welcome email (15 min)
 
-- [ ] Create a 1-email automation that fires when someone joins the mailing list. Subject line: *"Hi from Mazmatics — and a free sample for your kid"*. Body: 4–6 sentences welcoming them, explaining what Mazmatics is, linking to `/free-sample`. Set the subject + reply-to as your own name (Maz Hermon), not "noreply@".
+Full walk-through: [`email-welcome.md`](./email-welcome.md) — copy is fully drafted (subject line, pre-header, body, two variants) and the setup steps in MailerLite are spelled out click-by-click.
+
+- [ ] Paste the drafted body into a new MailerLite automation triggered on "subscriber joins group."
+- [ ] From-name: `Maz Hermon`. Reply-to: your real inbox.
+- [ ] Test by signing up with a personal address — confirm the email arrives + both links work + a reply lands in your inbox.
 
 The 3-email sequence proper can come later. The single welcome covers 80% of the value.
+
+### Social post buffer (ongoing)
+
+Drafted in: [`post-buffer.md`](./post-buffer.md) — eight ready-to-ship posts (caption + image direction + hashtags) covering 4 weeks at the 2-posts-per-week target from the playbook. Strike them out as you ship; ask me for the next 8 when you've burnt through these.
 
 ---
 
