@@ -250,8 +250,11 @@
 }
 
 @media (min-width: 60rem) {
+  /* Two-column layout: still push the image group +100px right to clear
+     the centre of the grid and let the headline column breathe. heroBand's
+     overflow-x: clip absorbs any small-desktop overflow. */
   .homeHeader__heroImage {
-    transform: none;
+    transform: translateX(100px);
   }
 }
 
