@@ -59,7 +59,7 @@ You just joined the Mazmatics mailing list. Thanks, genuinely.
 
 If you signed up for the free maths-mobile print, it should already be downloading — if it didn't, here it is:
 
-→ https://mazmatics.com/downloads/Mazmatics_PrintableMathsMobile.pdf
+→ https://mazmatics.com/downloads/Mazmatics_TimesTableMobile_Vol1.pdf
 
 Print on A4, trim along the cut lines, hang it above your kid's desk or bed.
 

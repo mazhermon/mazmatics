@@ -250,7 +250,7 @@ const FreeSample = () => {
         lede="Pop your email in below — we'll send the print straight away, and let you know when Vol. 2 ships."
         cta="Send me the print"
         incentive={{
-          downloadUrl: '/downloads/Mazmatics_PrintableMathsMobile.pdf',
+          downloadUrl: '/downloads/Mazmatics_TimesTableMobile_Vol1.pdf',
           downloadLabel: 'Download the print',
           postSubmitHint: `Print on A4, trim along the cut lines, hang from string or wire above your kid's desk or bed.`,
         }}

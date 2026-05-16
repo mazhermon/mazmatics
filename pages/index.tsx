@@ -158,7 +158,7 @@ const Home: NextPage = () => {
           cta="Send me the print"
           successMessage="You're in. Welcome aboard."
           incentive={{
-            downloadUrl: '/downloads/Mazmatics_PrintableMathsMobile.pdf',
+            downloadUrl: '/downloads/Mazmatics_TimesTableMobile_Vol1.pdf',
             downloadLabel: 'Download the print',
             postSubmitHint: `Print on A4, trim along the cut lines, hang from string or wire. Best on slightly heavier paper if you have it.`,
           }}
