@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import Link from 'next/link'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 
 import styles from './finalCta.module.css'
 import { AppContext } from '../../context/appContext'
@@ -37,9 +37,9 @@ export const FinalCta: React.FC = () => {
           <Image
             alt="Mazmatics Fun Math 4 Kids Volume 1, paperback book cover"
             src={bookCover}
-            width={900 * 0.55}
-            height={1350 * 0.55}
-            priority={false}
+            width={900}
+            height={1350}
+            sizes="(min-width: 50rem) 416px, 352px"
           />
         </div>
 

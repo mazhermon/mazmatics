@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import Link from 'next/link'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import dynamic from 'next/dynamic'
 
 import lindyImage from '../../public/images/lindyLarge.png'
@@ -63,6 +63,7 @@ export const HomeHeader = () => {
                 src={bookCover}
                 width={900}
                 height={1350}
+                sizes="(min-width: 60rem) 260px, 50vw"
                 priority
               />
             </div>
@@ -70,8 +71,9 @@ export const HomeHeader = () => {
               <Image
                 alt="Lindy, the giant girl adventurer character from the Mazmatics book, smiling"
                 src={lindyImage}
-                width={lindyImageSize.width / 3}
-                height={lindyImageSize.height / 3}
+                width={lindyImageSize.width}
+                height={lindyImageSize.height}
+                sizes="(min-width: 60rem) 480px, 90vw"
                 priority
               />
             </div>

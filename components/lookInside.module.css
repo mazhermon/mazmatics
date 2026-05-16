@@ -329,18 +329,11 @@
   pointer-events: none;
 }
 
-/* The Image component renders a wrapper span; let it size to the available area */
-.modalImage > span {
-  max-width: 100%;
-  max-height: calc(100vh - 6rem);
-  pointer-events: auto;
-}
-
+/* Modern next/image renders the <img> directly (no wrapper span), so the
+   size + style constraints attach straight to the img. The !important
+   overrides counter next/image's inline `width: var(--w)` style. */
 .modalImage img {
   pointer-events: auto;
-}
-
-.modalImage img {
   max-width: 100% !important;
   max-height: calc(100vh - 6rem) !important;
   width: auto !important;

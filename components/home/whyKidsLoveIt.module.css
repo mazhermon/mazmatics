@@ -208,13 +208,11 @@
   }
 }
 
-.detail :global(span) {
-  display: block;
-}
-
 .detail :global(img) {
   display: block;
   border-radius: 4px;
+  width: 100%;
+  height: auto;
 }
 
 .srOnly {

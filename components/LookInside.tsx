@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 
 import styles from './lookInside.module.css'
 
@@ -12,19 +12,34 @@ import mazAPlus006 from '../public/images/Mazmatics-a-plus-006.jpg'
 import { trackLookInsideOpen } from '../lib/gtag'
 
 /**
- * Thumbnails render at ~300-400px max even on retina mobile, so capping the
- * declared width at 600 keeps Next/Image's srcset from shipping the full
- * 1200px source. The modal still uses the larger size for the zoom view.
+ * Modern next/image renders without a wrapper span and consults `sizes` to
+ * decide which srcset entry to fetch. The intrinsic width/height are kept
+ * at the source dimensions (1200×1200) so the browser knows the aspect
+ * ratio; actual delivered pixels are governed by THUMB_SIZES / MODAL_SIZES.
  */
 const thumbImageSize = {
-  width: 600,
-  height: 600,
+  width: 1200,
+  height: 1200,
 }
 
 const modalImageSize = {
   width: 1200,
   height: 1200,
 }
+
+/**
+ * Sizes hints. The strip variant on home goes from a snap-scrolling 78vw
+ * card on mobile, to 38vw at ≥40rem, to a 6-up grid (~200px each) at
+ * ≥64rem. The showcase variant on /free-sample + /get-the-book is hidden
+ * below 50rem (carousel takes over), then becomes a 3-up grid capped at
+ * 1100px. A single sizes string covers both layouts.
+ */
+const THUMB_SIZES =
+  '(min-width: 64rem) 200px, (min-width: 50rem) 380px, (min-width: 40rem) 38vw, 78vw'
+
+const CAROUSEL_SIZES = '(max-width: 50rem) 100vw, 600px'
+
+const MODAL_SIZES = '(min-width: 68rem) 1100px, 95vw'
 
 const ALL_PAGES = [
   {
@@ -196,6 +211,7 @@ export const LookInside: React.FC<Props> = ({
               src={page.src}
               width={thumbImageSize.width}
               height={thumbImageSize.height}
+              sizes={THUMB_SIZES}
               loading="eager"
             />
           </button>
@@ -233,6 +249,7 @@ export const LookInside: React.FC<Props> = ({
                     src={page.src}
                     width={thumbImageSize.width}
                     height={thumbImageSize.height}
+                    sizes={CAROUSEL_SIZES}
                     loading="eager"
                   />
                 </button>
@@ -335,6 +352,7 @@ export const LookInside: React.FC<Props> = ({
                 src={PAGES[openIndex].src}
                 width={modalImageSize.width}
                 height={modalImageSize.height}
+                sizes={MODAL_SIZES}
                 priority
               />
             </div>
