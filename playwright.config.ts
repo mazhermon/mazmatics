@@ -25,7 +25,10 @@ export default defineConfig({
   },
 
   use: {
-    baseURL: 'http://localhost:3000',
+    // Tests run on port 3100 so the developer's `yarn dev` on port 3000
+    // (or any other project parked there) never conflicts with the Playwright
+    // webServer. Maz's existing dev workflow on 3000 stays untouched.
+    baseURL: 'http://localhost:3100',
     trace: 'on-first-retry',
     timezoneId: 'Australia/Sydney',
     locale: 'en-AU',
@@ -51,8 +54,8 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'yarn dev',
-    url: 'http://localhost:3000',
+    command: 'yarn dev -p 3100',
+    url: 'http://localhost:3100',
     reuseExistingServer: true,
     timeout: 120_000,
   },
