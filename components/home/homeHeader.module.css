@@ -351,14 +351,12 @@
   }
 }
 
-.bookBackdrop > span {
+/* Modern next/image renders the <img> directly inside .bookBackdrop;
+   stretch it to fill the (rotated, absolutely-positioned) container so
+   the book art covers the full bottom-left card. */
+.bookBackdrop img {
   position: absolute !important;
   inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-}
-
-.bookBackdrop img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;

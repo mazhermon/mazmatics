@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 
 import styles from './whyKidsLoveIt.module.css'
 import { AppContext } from '../../context/appContext'
@@ -81,8 +81,9 @@ export const WhyKidsLoveIt: React.FC = () => {
                 <Image
                   alt={it.imageAlt}
                   src={it.image}
-                  width={600}
-                  height={600}
+                  width={1200}
+                  height={1200}
+                  sizes="(min-width: 50rem) 320px, 288px"
                   loading="eager"
                 />
               </div>

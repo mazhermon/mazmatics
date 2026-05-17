@@ -14,6 +14,10 @@ export default defineConfig({
   fullyParallel: true,
   // Auto-retry once on CI/local — useful for flaky font-loading races on first paint.
   retries: process.env.CI ? 2 : 1,
+  // Cap parallel workers so multiple browsers + a single Next dev server
+  // don't starve each other on resource-constrained machines. Default
+  // (= CPU count) caused 30s settlePage timeouts on this laptop.
+  workers: 2,
   reporter: [['list']],
 
   expect: {
@@ -54,7 +58,10 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'yarn dev -p 3100',
+    // Use next dev directly (skip the yarn wrapper) so signal handling
+    // is one process tree — yarn's wrapper has been observed to lose the
+    // child server mid-run on this machine.
+    command: 'node_modules/.bin/next dev -p 3100',
     url: 'http://localhost:3100',
     reuseExistingServer: true,
     timeout: 120_000,
