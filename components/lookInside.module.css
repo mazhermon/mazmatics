@@ -334,7 +334,10 @@
 }
 
 /* Fill the modalImage box; object-fit absorbs any aspect-ratio drift
-   between the loaded srcset variant and the locked 1:1 container. */
+   between the loaded srcset variant and the locked 1:1 container.
+   No background — empty bands left by object-fit:contain stay
+   transparent against the dark modal backdrop instead of showing
+   white rectangles on either side. */
 .modalImage img {
   display: block;
   pointer-events: auto;
@@ -343,7 +346,6 @@
   object-fit: contain;
   border-radius: 4px;
   box-shadow: 0 20px 60px -12px rgba(0, 0, 0, 0.6);
-  background-color: var(--white);
 }
 
 .modalClose,

@@ -58,7 +58,10 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: 'yarn dev -p 3100',
+    // Use next dev directly (skip the yarn wrapper) so signal handling
+    // is one process tree — yarn's wrapper has been observed to lose the
+    // child server mid-run on this machine.
+    command: 'node_modules/.bin/next dev -p 3100',
     url: 'http://localhost:3100',
     reuseExistingServer: true,
     timeout: 120_000,
