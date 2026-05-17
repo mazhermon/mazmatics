@@ -101,6 +101,25 @@
   max-width: 32ch;
 }
 
+.brandFinePrint {
+  margin: 0.6rem 0 0;
+  font-family: var(--font-copy);
+  font-size: 0.78rem;
+  color: var(--ft-muted);
+}
+
+.fineLink {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--ft-muted);
+}
+
+.fineLink:hover {
+  color: var(--purple-2, oklch(0.42 0.18 295));
+  text-decoration-color: var(--purple-2, oklch(0.42 0.18 295));
+}
+
 .col {
   display: flex;
   flex-direction: column;

@@ -46,6 +46,11 @@ export const Footer = () => {
           <p className={styles.brandLine}>
             © {year} Mazmatics. Sparking joy in {mathsWord} discovery.
           </p>
+          <p className={styles.brandFinePrint}>
+            <Link href="/privacy" className={styles.fineLink}>
+              Privacy
+            </Link>
+          </p>
         </div>
 
         <nav aria-label="Buy the book" className={styles.col}>
