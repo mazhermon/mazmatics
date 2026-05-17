@@ -14,6 +14,10 @@ export default defineConfig({
   fullyParallel: true,
   // Auto-retry once on CI/local — useful for flaky font-loading races on first paint.
   retries: process.env.CI ? 2 : 1,
+  // Cap parallel workers so multiple browsers + a single Next dev server
+  // don't starve each other on resource-constrained machines. Default
+  // (= CPU count) caused 30s settlePage timeouts on this laptop.
+  workers: 2,
   reporter: [['list']],
 
   expect: {
