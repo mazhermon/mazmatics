@@ -1,0 +1,70 @@
+.page {
+  font-family: var(--font-copy);
+  color: var(--ink, oklch(0.22 0.015 290));
+  padding-bottom: 4rem;
+}
+
+.intro {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 2rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: oklch(0.55 0.05 295);
+}
+
+.h1 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-headings-display);
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 0;
+  max-width: 60ch;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: oklch(0.4 0.02 290);
+}
+
+.variantBlock {
+  margin-top: 2.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid oklch(0.88 0.02 290);
+}
+
+.variantLabel {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0.5rem 1.5rem 1rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.variantNum {
+  font-family: var(--font-headings-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: oklch(0.42 0.18 295);
+}
+
+.variantName {
+  margin: 0;
+  font-family: var(--font-headings-secondary);
+  font-weight: 800;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: oklch(0.32 0.02 290);
+}
