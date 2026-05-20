@@ -35,9 +35,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# claude code / playwright runtime
+# claude code / playwright runtime — everything under .claude/ is either
+# runtime state (scheduled_tasks.lock), per-user settings, or installed
+# skills. None of it belongs in the repo.
 .playwright-mcp/
-.claude/skills/
+.claude/
 skills-lock.json
 
 # next-sitemap generated artefacts (rebuilt by `yarn build`)
@@ -51,6 +53,12 @@ skills-lock.json
 
 # lighthouse JSON dumps — run-by-run artifacts, 600KB+ each
 /docs/audits/
+
+# Local-only WIP / exploration pages. Files placed under pages/wip/ route
+# normally in `yarn dev` (localhost:3000/wip/*) but are never tracked, never
+# deployed. Use for variant comparisons, button explorations, etc. Promote
+# anything you want to keep into the real codebase via a regular commit.
+/pages/wip/
 
 # transient debug screenshots at repo root (real assets live in /public/images/)
 /*.png

@@ -31,6 +31,19 @@ The brand voice: warm, playful, growth-mindset, inclusive ("I like math"), home-
 - Buy-now links live in `components/getTheBookLinks` and currently point to Amazon AU / US / UK. The NZ-only shopify link was recently removed (commit `3b94637`).
 - The current branch is `redesign-may` — this is the working branch for the in-progress redesign. `main` is the deployed branch.
 
+## Push / deploy governance
+**Pushing to `main` is Maz-controlled.** `main` auto-deploys to mazmatics.com via Vercel. Never `git push` to `main` without an explicit "yes push" / "ship it" / "deploy now" from Maz. Committing locally is fine; pushing is the gate.
+
+When working on multi-commit features, name what's about to land in plain language before push and wait for greenlight. Don't slip prod-bound commits past inside larger batches.
+
+## Local-only experiments
+WIP / exploration / variant-comparison pages go in `pages/wip/`, which is gitignored project-wide. Files placed there:
+- Route normally during `yarn dev` (e.g. `localhost:3000/wip/hero-variants`)
+- Are never tracked, never pushed, never deployed
+- Cost zero to throw away
+
+Promote anything worth keeping into the real codebase via a regular commit. Don't put experiments in any other folder under `pages/` — they'll auto-route and end up on prod.
+
 ## Accessibility standard
 **WCAG 2.2 AA at minimum, AAA where pragmatic.** Every component built or revised must be evaluated against AA criteria (contrast, keyboard, focus, alt text, landmarks, reduced-motion). Don't ship a page until it passes an axe-core / Lighthouse a11y check. This is non-negotiable; document any deliberate AA-not-AAA tradeoffs in the spec or commit message rather than failing silently.
 
