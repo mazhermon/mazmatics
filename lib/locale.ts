@@ -39,6 +39,35 @@ export const STOREFRONTS: Record<Region, Storefront> = {
 export const ALL_STOREFRONTS: Storefront[] = [STOREFRONTS.AU, STOREFRONTS.US, STOREFRONTS.UK]
 
 /**
+ * NZ-only direct store. Shown as the *primary* buy option to visitors
+ * resolved to New Zealand (see showNzDirectShop). International visitors
+ * never see this — they buy via Amazon. NZ shoppers prefer buying direct.
+ *
+ * URL is the original product deep link from before the Sept-2025 removal
+ * (slug confirmed still valid). Do not add price/shipping-cost copy here —
+ * keep `shipping` to an evergreen geographic statement only.
+ */
+export interface NzDirectShop {
+  url: string
+  label: string
+  shipping: string
+}
+
+export const NZ_DIRECT_SHOP: NzDirectShop = {
+  url: 'https://shop.mazmatics.com/product/fun-math-for-kids-mazmatics-volume-1-good-foundations',
+  label: 'Buy direct from Mazmatics',
+  shipping: 'Ships within Aotearoa New Zealand',
+}
+
+/**
+ * Whether to surface the NZ direct store. Gated strictly to NZ so the
+ * option never distracts international shoppers, who buy via Amazon.
+ */
+export function showNzDirectShop(country: Country): boolean {
+  return country === 'NZ'
+}
+
+/**
  * Resolve the user's country from available signals.
  *
  * Priority is **timezone first**, then explicit-region locale, then en-GB.

@@ -9,6 +9,8 @@ import {
   resolveCountry,
   regionForCountry,
   shippingCopyForCountry,
+  NZ_DIRECT_SHOP,
+  showNzDirectShop,
 } from './locale'
 
 test('en-US → amazon.com US storefront', () => {
@@ -189,4 +191,22 @@ test('ALL_STOREFRONTS: contains all three regions in a stable order (AU, US, UK)
     ALL_STOREFRONTS.map((s) => s.region),
     ['AU', 'US', 'UK'],
   )
+})
+
+test('NZ_DIRECT_SHOP points at the shop.mazmatics.com subdomain', () => {
+  assert.equal(new URL(NZ_DIRECT_SHOP.url).hostname, 'shop.mazmatics.com')
+  assert.ok(NZ_DIRECT_SHOP.url.startsWith('https://'))
+})
+
+test('NZ_DIRECT_SHOP has non-empty label + shipping copy', () => {
+  assert.ok(NZ_DIRECT_SHOP.label.length > 0)
+  assert.ok(NZ_DIRECT_SHOP.shipping.length > 0)
+})
+
+test('showNzDirectShop is true only when country is NZ', () => {
+  assert.equal(showNzDirectShop('NZ'), true)
+  assert.equal(showNzDirectShop('AU'), false)
+  assert.equal(showNzDirectShop('US'), false)
+  assert.equal(showNzDirectShop('GB'), false)
+  assert.equal(showNzDirectShop(null), false)
 })
