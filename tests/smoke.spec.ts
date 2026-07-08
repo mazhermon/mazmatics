@@ -49,6 +49,10 @@ test.describe('routing', () => {
   test('/get-the-book matches the AU primary based on pinned timezone', async ({ page }) => {
     await page.goto('/get-the-book')
     await expect(page.getByRole('link', { name: /Amazon Australia/i }).first()).toBeVisible()
+    // International (AU-pinned) visitors must NOT see the NZ direct shop.
+    await expect(
+      page.getByRole('link', { name: /Buy direct from Mazmatics/i }),
+    ).toHaveCount(0)
   })
 
   test('/write-a-review surfaces a locale-matched review CTA', async ({ page }) => {
@@ -86,5 +90,36 @@ test.describe('Look Inside modal', () => {
     // with the backdrop button, making selector targeting brittle.
     await page.keyboard.press('Escape')
     await expect(page.getByRole('dialog')).not.toBeVisible()
+  })
+})
+
+test.describe('NZ direct shop (Pacific/Auckland)', () => {
+  test.use({ timezoneId: 'Pacific/Auckland' })
+
+  test('/get-the-book leads with the NZ direct shop for NZ visitors', async ({
+    page,
+  }) => {
+    await page.goto('/get-the-book')
+    const direct = page.getByRole('link', {
+      name: /Buy direct from Mazmatics/i,
+    })
+    await expect(direct).toBeVisible()
+    await expect(direct).toHaveAttribute(
+      'href',
+      /^https:\/\/shop\.mazmatics\.com\//,
+    )
+    // Amazon AU stays reachable for NZ shoppers who prefer it.
+    await expect(
+      page.getByRole('link', { name: /Amazon Australia/i }).first(),
+    ).toBeVisible()
+  })
+
+  test('home FinalCta primary is the NZ direct shop for NZ visitors', async ({
+    page,
+  }) => {
+    await page.goto('/')
+    await expect(
+      page.getByRole('link', { name: /Buy direct from Mazmatics/i }).first(),
+    ).toBeVisible()
   })
 })
