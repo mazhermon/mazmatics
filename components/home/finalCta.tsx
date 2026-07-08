@@ -9,9 +9,11 @@ import {
   STOREFRONTS,
   regionForCountry,
   shippingCopyForCountry,
+  NZ_DIRECT_SHOP,
+  showNzDirectShop,
 } from '../../lib/locale'
 import { useResolvedCountry } from '../../context/services/useResolvedCountry'
-import { trackAmazonCTA } from '../../lib/gtag'
+import { trackAmazonCTA, trackNzShopCTA } from '../../lib/gtag'
 import bookCover from '../../public/images/Mazmatics_Fun_Math_For_Kids_Vol_1_Cover_900_web-small.jpg'
 
 export const FinalCta: React.FC = () => {
@@ -22,10 +24,21 @@ export const FinalCta: React.FC = () => {
   const shipping = shippingCopyForCountry(country)
   const others = ALL_STOREFRONTS.filter((s) => s.region !== region)
 
+  const nzDirect = showNzDirectShop(country)
+  // When NZ, the direct shop is primary and ALL Amazon storefronts move into
+  // the "other regions" list so Amazon stays reachable for NZ shoppers too.
+  const otherStorefronts = nzDirect ? ALL_STOREFRONTS : others
+  const primaryUrl = nzDirect ? NZ_DIRECT_SHOP.url : matched.url
+  const primaryLabel = nzDirect ? NZ_DIRECT_SHOP.label : matched.label
+  const primaryShipping = nzDirect ? NZ_DIRECT_SHOP.shipping : shipping
+
   const handlePrimary = () =>
     trackAmazonCTA({ region, location: 'home_final_cta' })
   const handleOther = (otherRegion: 'AU' | 'US' | 'UK') => () =>
     trackAmazonCTA({ region: otherRegion, location: 'home_final_cta_other' })
+  const handlePrimaryClick = nzDirect
+    ? () => trackNzShopCTA({ location: 'home_final_cta' })
+    : handlePrimary
 
   return (
     <section
@@ -55,22 +68,28 @@ export const FinalCta: React.FC = () => {
           </p>
 
           <a
-            href={matched.url}
+            href={primaryUrl}
             target="_blank"
             rel="noopener noreferrer"
             className={styles.primary}
-            onClick={handlePrimary}
+            onClick={handlePrimaryClick}
           >
-            <span className={styles.primaryLabel}>{matched.label}</span>
+            <span className={styles.primaryLabel}>{primaryLabel}</span>
             <span aria-hidden="true" className={styles.primaryArrow}>
               &rarr;
             </span>
           </a>
 
-          {shipping && <p className={styles.shipping}>{shipping}</p>}
+          {nzDirect && (
+            <p className={styles.nzBadge}>Aotearoa NZ &middot; direct</p>
+          )}
+
+          {primaryShipping && (
+            <p className={styles.shipping}>{primaryShipping}</p>
+          )}
 
           <ul className={styles.otherRegions}>
-            {others.map((s) => (
+            {otherStorefronts.map((s) => (
               <li key={s.region}>
                 <a
                   href={s.url}
