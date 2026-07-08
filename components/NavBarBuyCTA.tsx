@@ -1,9 +1,14 @@
 import React from 'react'
 import styles from './navbar.module.css'
 
-import { regionForCountry, STOREFRONTS } from '../lib/locale'
+import {
+  regionForCountry,
+  STOREFRONTS,
+  NZ_DIRECT_SHOP,
+  showNzDirectShop,
+} from '../lib/locale'
 import { useResolvedCountry } from '../context/services/useResolvedCountry'
-import { trackNavBuyClick } from '../lib/gtag'
+import { trackNavBuyClick, trackNzShopCTA } from '../lib/gtag'
 
 const COMPACT_REGION_LABEL: Record<string, string> = {
   AU: 'Get on Amazon AU',
@@ -20,8 +25,14 @@ const COMPACT_REGION_LABEL: Record<string, string> = {
 export const NavBarBuyCTA: React.FC = () => {
   const country = useResolvedCountry()
   const region = regionForCountry(country)
-  const { url } = STOREFRONTS[region]
-  const visibleLabel = COMPACT_REGION_LABEL[region] ?? 'Get the book'
+  const nzDirect = showNzDirectShop(country)
+  const url = nzDirect ? NZ_DIRECT_SHOP.url : STOREFRONTS[region].url
+  const visibleLabel = nzDirect
+    ? 'Buy direct (NZ)'
+    : COMPACT_REGION_LABEL[region] ?? 'Get the book'
+  const handleClick = nzDirect
+    ? () => trackNzShopCTA({ location: 'persistent_nav' })
+    : trackNavBuyClick
 
   return (
     <a
@@ -29,7 +40,7 @@ export const NavBarBuyCTA: React.FC = () => {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={trackNavBuyClick}
+      onClick={handleClick}
       aria-label={`${visibleLabel} (opens in a new tab)`}
     >
       <span>{visibleLabel}</span>
