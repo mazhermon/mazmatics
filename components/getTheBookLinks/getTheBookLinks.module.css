@@ -316,10 +316,38 @@
   align-items: center;
 }
 
-.nzShopDetails {
-  max-width: 400px;
-  margin-top: 3rem;
-  text-align: center;
+/* NZ direct-shop lead row. Shown only to NZ visitors, above the Amazon rows.
+   The 2px accent border + "Recommended for NZ" text (not colour alone) mark
+   it as the single primary recommendation; its CTA gets the filled treatment
+   while the Amazon rows drop to ghost. */
+.nzRow.row {
+  border: 2px solid oklch(0.5 0.16 295);
+  border-radius: 8px;
+  padding: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 50rem) {
+  .nzRow.row {
+    padding: 1.5rem 1.75rem;
+  }
+}
+
+.nzRow .rowCta {
+  background: oklch(0.5 0.16 295);
+  color: #fff;
+  border-color: oklch(0.5 0.16 295);
+  box-shadow: 0 1px 2px oklch(0.4 0.13 295 / 0.18),
+    0 10px 24px oklch(0.4 0.13 295 / 0.22);
+}
+
+.nzRow .rowCta:hover,
+.nzRow .rowCta:focus-visible {
+  background: oklch(0.42 0.16 295);
+  border-color: oklch(0.42 0.16 295);
+  color: #fff;
+  box-shadow: 0 2px 4px oklch(0.4 0.13 295 / 0.24),
+    0 16px 36px oklch(0.4 0.13 295 / 0.3);
 }
 
 /* // decoration */

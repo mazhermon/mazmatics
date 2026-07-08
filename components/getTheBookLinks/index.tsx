@@ -11,10 +11,12 @@ import {
   STOREFRONTS,
   regionForCountry,
   shippingCopyForCountry,
+  NZ_DIRECT_SHOP,
+  showNzDirectShop,
   type Storefront,
 } from '../../lib/locale'
 import { useResolvedCountry } from '../../context/services/useResolvedCountry'
-import { trackAmazonCTA } from '../../lib/gtag'
+import { trackAmazonCTA, trackNzShopCTA } from '../../lib/gtag'
 
 interface Props {
   /** When true, render a single locale-aware Amazon button + "other regions"
@@ -42,6 +44,7 @@ export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
      once it's actually known — otherwise the matched row would briefly
      mis-render (e.g. flashing "US closest to you" for an AU visitor). */
   const region = country ? regionForCountry(country) : null
+  const nzDirect = showNzDirectShop(country)
 
   if (compact) {
     return (
@@ -93,16 +96,40 @@ export const GetTheBookLinks: React.FC<Props> = ({ compact = false }) => {
       </div>
 
       <ul className={styles.rowList}>
+        {nzDirect && (
+          <li className={`${styles.row} ${styles.nzRow}`}>
+            <p className={styles.rowEyebrow}>
+              Aotearoa New Zealand
+              <span className={styles.matchedTag}>Recommended for NZ</span>
+            </p>
+            <p className={styles.rowShipping}>{NZ_DIRECT_SHOP.shipping}</p>
+            <a
+              href={NZ_DIRECT_SHOP.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => trackNzShopCTA({ location: 'get_the_book' })}
+              className={styles.rowCta}
+            >
+              <span className={styles.rowCtaLabel}>{NZ_DIRECT_SHOP.label}</span>
+              <span aria-hidden="true" className={styles.rowCtaArrow}>
+                &rarr;
+              </span>
+            </a>
+          </li>
+        )}
         {rows.map((r) => {
           const matched = r.region === region
+          // When the NZ direct row leads, demote Amazon rows to ghost so there
+          // is a single clear primary recommendation for NZ visitors.
+          const showMatched = matched && !nzDirect
           return (
             <li
               key={r.region}
-              className={`${styles.row} ${matched ? styles.rowMatched : ''}`}
+              className={`${styles.row} ${showMatched ? styles.rowMatched : ''}`}
             >
               <p className={styles.rowEyebrow}>
                 Amazon {r.region}
-                {matched && (
+                {showMatched && (
                   <span className={styles.matchedTag}>
                     Closest to you
                   </span>
