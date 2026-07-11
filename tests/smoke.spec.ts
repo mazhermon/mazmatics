@@ -70,6 +70,23 @@ test.describe('routing', () => {
     ).toHaveCount(0)
   })
 
+  test('footer + /free-sample stay Amazon-only for international visitors', async ({
+    page,
+  }) => {
+    await page.goto('/free-sample')
+    // Primary buy is the matched Amazon storefront (AU pinned), not the shop.
+    await expect(
+      page.getByRole('link', { name: /Buy on Amazon Australia/i }).first(),
+    ).toBeVisible()
+    // Neither the free-sample CTA nor the footer expose the NZ direct shop.
+    await expect(
+      page.getByRole('link', { name: /Buy direct from Mazmatics/i }),
+    ).toHaveCount(0)
+    await expect(
+      page.getByRole('link', { name: /Mazmatics \(direct\)/i }),
+    ).toHaveCount(0)
+  })
+
   test('/write-a-review surfaces a locale-matched review CTA', async ({ page }) => {
     await page.goto('/write-a-review')
     await expect(
@@ -150,5 +167,39 @@ test.describe('NZ direct shop (Pacific/Auckland)', () => {
       'href',
       /^https:\/\/shop\.mazmatics\.com\//,
     )
+  })
+
+  test('footer offers the NZ direct shop for NZ visitors', async ({ page }) => {
+    await page.goto('/')
+    const footerDirect = page.getByRole('link', {
+      name: /Mazmatics \(direct\)/i,
+    })
+    await expect(footerDirect).toBeVisible()
+    await expect(footerDirect).toHaveAttribute(
+      'href',
+      /^https:\/\/shop\.mazmatics\.com\//,
+    )
+    // Amazon storefronts remain listed alongside it.
+    await expect(
+      page.getByRole('link', { name: /Amazon AU/i }).first(),
+    ).toBeVisible()
+  })
+
+  test('/free-sample offers NZ direct primary + Amazon AU alternate for NZ', async ({
+    page,
+  }) => {
+    await page.goto('/free-sample')
+    const direct = page
+      .getByRole('link', { name: /Buy direct from Mazmatics/i })
+      .first()
+    await expect(direct).toBeVisible()
+    await expect(direct).toHaveAttribute(
+      'href',
+      /^https:\/\/shop\.mazmatics\.com\//,
+    )
+    // Amazon AU stays reachable as the alternate for NZ shoppers.
+    await expect(
+      page.getByRole('link', { name: /Buy on Amazon Australia/i }).first(),
+    ).toBeVisible()
   })
 })

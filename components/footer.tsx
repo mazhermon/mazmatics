@@ -4,7 +4,9 @@ import Image from 'next/legacy/image'
 
 import styles from './footer.module.css'
 import { AppContext } from '../context/appContext'
-import { ALL_STOREFRONTS } from '../lib/locale'
+import { ALL_STOREFRONTS, NZ_DIRECT_SHOP, showNzDirectShop } from '../lib/locale'
+import { useResolvedCountry } from '../context/services/useResolvedCountry'
+import { trackNzShopCTA } from '../lib/gtag'
 import { FacebookIcon } from './icons/facebook'
 import { InstaIcon } from './icons/insta'
 import { MailingSignup } from './mailingSignup'
@@ -19,6 +21,9 @@ const COMPACT_REGION_LABEL: Record<string, string> = {
 export const Footer = () => {
   const { mathsWord = 'maths' } = useContext(AppContext)
   const year = new Date().getFullYear()
+  // NZ visitors also get the direct-shop option here; hidden for everyone else
+  // so international shoppers can't accidentally order from an NZ-ship-only store.
+  const nzDirect = showNzDirectShop(useResolvedCountry())
 
   return (
     <footer className={styles.siteFooter}>
@@ -56,6 +61,19 @@ export const Footer = () => {
         <nav aria-label="Buy the book" className={styles.col}>
           <p className={styles.colTitle}>Get the book</p>
           <ul className={styles.linkList}>
+            {nzDirect && (
+              <li>
+                <a
+                  className={styles.link}
+                  href={NZ_DIRECT_SHOP.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackNzShopCTA({ location: 'footer' })}
+                >
+                  Mazmatics (direct)
+                </a>
+              </li>
+            )}
             {ALL_STOREFRONTS.map((s) => (
               <li key={s.region}>
                 <a

@@ -294,8 +294,32 @@
   line-height: 1;
 }
 
+.nzBadge {
+  display: inline-block;
+  margin: 0.75rem 0 0;
+  font-family: var(--font-headings-secondary);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  /* Strong near-black — text carries the "NZ / direct" meaning, not colour
+     alone. >7:1 on --paper (AAA). */
+  color: oklch(0.22 0.015 290);
+}
+
+.nzBadge + .shipping {
+  margin-top: 0.25rem;
+}
+
 .shipping {
   margin: 0.75rem 0 0;
+  font-family: var(--font-copy);
+  font-size: 0.9rem;
+  color: oklch(0.45 0.025 290);
+}
+
+.altBuy {
+  margin: 0.6rem 0 0;
   font-family: var(--font-copy);
   font-size: 0.9rem;
   color: oklch(0.45 0.025 290);

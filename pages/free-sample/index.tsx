@@ -10,9 +10,15 @@ import {
   STOREFRONTS,
   regionForCountry,
   shippingCopyForCountry,
+  NZ_DIRECT_SHOP,
+  showNzDirectShop,
 } from '../../lib/locale'
 import { useResolvedCountry } from '../../context/services/useResolvedCountry'
-import { trackAmazonCTA, trackFreeSampleDownload } from '../../lib/gtag'
+import {
+  trackAmazonCTA,
+  trackFreeSampleDownload,
+  trackNzShopCTA,
+} from '../../lib/gtag'
 
 const SAMPLE_PDF =
   '/downloads/Mazmatics_FunMathForKids_vol1_Free_Sample_PDF.pdf'
@@ -24,12 +30,22 @@ const FreeSample = () => {
   const matched = STOREFRONTS[region]
   const shipping = shippingCopyForCountry(country)
 
+  // NZ visitors get the direct shop as the primary buy, with Amazon AU kept as
+  // an alternate. Everyone else sees only their matched Amazon storefront.
+  const nzDirect = showNzDirectShop(country)
+  const primaryUrl = nzDirect ? NZ_DIRECT_SHOP.url : matched.url
+  const primaryLabel = nzDirect ? NZ_DIRECT_SHOP.label : matched.label
+  const primaryShipping = nzDirect ? NZ_DIRECT_SHOP.shipping : shipping
+
   const onDownload = () => {
     trackFreeSampleDownload()
   }
 
   const onAmazon = () =>
     trackAmazonCTA({ region, location: 'free_sample_footer' })
+  const onPrimary = nzDirect
+    ? () => trackNzShopCTA({ location: 'free_sample' })
+    : onAmazon
 
   return (
     <div className={styles.page}>
@@ -216,19 +232,36 @@ const FreeSample = () => {
           </p>
 
           <a
-            href={matched.url}
+            href={primaryUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={onAmazon}
+            onClick={onPrimary}
             className={styles.amazonBtn}
           >
-            <span className={styles.amazonLabel}>{matched.label}</span>
+            <span className={styles.amazonLabel}>{primaryLabel}</span>
             <span aria-hidden="true" className={styles.amazonArrow}>
               &rarr;
             </span>
           </a>
-          {shipping && (
-            <p className={styles.shipping}>{shipping}</p>
+          {nzDirect && (
+            <p className={styles.nzBadge}>Aotearoa NZ &middot; direct</p>
+          )}
+          {primaryShipping && (
+            <p className={styles.shipping}>{primaryShipping}</p>
+          )}
+          {nzDirect && (
+            <p className={styles.altBuy}>
+              Prefer Amazon?{' '}
+              <a
+                href={matched.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={onAmazon}
+                className={styles.aboutLink}
+              >
+                {matched.label}
+              </a>
+            </p>
           )}
 
           <p className={styles.aboutAuthor}>
