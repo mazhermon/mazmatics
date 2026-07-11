@@ -70,23 +70,32 @@ export const Footer = () => {
                   rel="noopener noreferrer"
                   onClick={() => trackNzShopCTA({ location: 'footer' })}
                 >
-                  Mazmatics (direct)
+                  Mazmatics direct (NZ only)
                 </a>
               </li>
             )}
-            {ALL_STOREFRONTS.map((s) => (
-              <li key={s.region}>
-                <a
-                  className={styles.link}
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={s.label}
-                >
-                  {COMPACT_REGION_LABEL[s.region] ?? s.label}
-                </a>
-              </li>
-            ))}
+            {ALL_STOREFRONTS.map((s) => {
+              // Amazon AU ships to NZ, so signal that to NZ visitors who are
+              // weighing it against the direct shop. International footer stays
+              // "Amazon AU".
+              const label =
+                s.region === 'AU' && nzDirect
+                  ? 'Amazon AU/NZ'
+                  : COMPACT_REGION_LABEL[s.region] ?? s.label
+              return (
+                <li key={s.region}>
+                  <a
+                    className={styles.link}
+                    href={s.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={s.label}
+                  >
+                    {label}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         </nav>
 

@@ -83,7 +83,7 @@ test.describe('routing', () => {
       page.getByRole('link', { name: /Buy direct from Mazmatics/i }),
     ).toHaveCount(0)
     await expect(
-      page.getByRole('link', { name: /Mazmatics \(direct\)/i }),
+      page.getByRole('link', { name: /Mazmatics direct \(NZ only\)/i }),
     ).toHaveCount(0)
   })
 
@@ -172,16 +172,16 @@ test.describe('NZ direct shop (Pacific/Auckland)', () => {
   test('footer offers the NZ direct shop for NZ visitors', async ({ page }) => {
     await page.goto('/')
     const footerDirect = page.getByRole('link', {
-      name: /Mazmatics \(direct\)/i,
+      name: /Mazmatics direct \(NZ only\)/i,
     })
     await expect(footerDirect).toBeVisible()
     await expect(footerDirect).toHaveAttribute(
       'href',
       /^https:\/\/shop\.mazmatics\.com\//,
     )
-    // Amazon storefronts remain listed alongside it.
+    // Amazon AU is relabelled "Amazon AU/NZ" for NZ visitors and stays listed.
     await expect(
-      page.getByRole('link', { name: /Amazon AU/i }).first(),
+      page.getByText('Amazon AU/NZ').first(),
     ).toBeVisible()
   })
 
