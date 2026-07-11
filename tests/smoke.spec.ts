@@ -55,6 +55,21 @@ test.describe('routing', () => {
     ).toHaveCount(0)
   })
 
+  test('header buy pill points at Amazon AU for international visitors', async ({
+    page,
+  }) => {
+    await page.goto('/')
+    // The persistent nav pill is labelled "Get on Amazon AU" (distinct from the
+    // in-page "Buy on Amazon Australia" CTA) and links to the AU storefront.
+    const pill = page.getByRole('link', { name: /Get on Amazon AU/i })
+    await expect(pill).toBeVisible()
+    await expect(pill).toHaveAttribute('href', /amazon\.com\.au/)
+    // It must not become the NZ direct shop for AU-pinned visitors.
+    await expect(
+      page.getByRole('link', { name: /Buy direct \(NZ\)/i }),
+    ).toHaveCount(0)
+  })
+
   test('/write-a-review surfaces a locale-matched review CTA', async ({ page }) => {
     await page.goto('/write-a-review')
     await expect(
@@ -121,5 +136,19 @@ test.describe('NZ direct shop (Pacific/Auckland)', () => {
     await expect(
       page.getByRole('link', { name: /Buy direct from Mazmatics/i }).first(),
     ).toBeVisible()
+  })
+
+  test('header buy pill points at the NZ direct shop for NZ visitors', async ({
+    page,
+  }) => {
+    await page.goto('/')
+    // The persistent nav pill relabels to "Buy direct (NZ)" and links to the
+    // direct shop for NZ visitors (Amazon storefront for everyone else).
+    const pill = page.getByRole('link', { name: /Buy direct \(NZ\)/i })
+    await expect(pill).toBeVisible()
+    await expect(pill).toHaveAttribute(
+      'href',
+      /^https:\/\/shop\.mazmatics\.com\//,
+    )
   })
 })
