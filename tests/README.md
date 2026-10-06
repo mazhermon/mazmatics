@@ -76,3 +76,16 @@ frame-by-frame and ignores reduced-motion).
   catches visual regressions with much less code. If a component grows
   meaningful internal state, add testing-library coverage at that point.
 - **CI workflow.** No GitHub Actions yet. Tests run locally and pre-merge.
+
+## NZ direct-shop switch
+
+`NEXT_PUBLIC_SELL_DIRECT_NZ` is pinned for the Playwright dev server in
+`playwright.config.ts` (default `false`). The "NZ direct shop off" specs run by
+default; to check the "on" state run:
+
+```sh
+NEXT_PUBLIC_SELL_DIRECT_NZ=true yarn test:e2e tests/smoke.spec.ts
+```
+
+Kill any server already on :3100 first, because `reuseExistingServer` would
+otherwise keep the old value.

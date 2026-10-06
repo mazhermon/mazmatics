@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test'
+import { SELL_DIRECT_NZ } from '../lib/locale'
 
 /**
  * Functional smoke tests that don't need pixel snapshots — guard the
@@ -125,8 +126,52 @@ test.describe('Look Inside modal', () => {
   })
 })
 
-test.describe('NZ direct shop (Pacific/Auckland)', () => {
+test.describe('NZ direct shop off (Pacific/Auckland)', () => {
   test.use({ timezoneId: 'Pacific/Auckland' })
+  test.skip(SELL_DIRECT_NZ, 'NEXT_PUBLIC_SELL_DIRECT_NZ is on')
+
+  test('header buy pill points at Amazon AU for NZ visitors', async ({ page }) => {
+    await page.goto('/')
+    const pill = page.getByRole('link', { name: /Get on Amazon AU/i })
+    await expect(pill).toBeVisible()
+    await expect(pill).toHaveAttribute('href', /amazon\.com\.au/)
+    await expect(
+      page.getByRole('link', { name: /Buy direct \(NZ\)/i }),
+    ).toHaveCount(0)
+  })
+
+  test('/get-the-book recommends Amazon AU and hides the direct shop', async ({
+    page,
+  }) => {
+    await page.goto('/get-the-book')
+    await expect(page.getByText('Closest to you').first()).toBeVisible()
+    await expect(
+      page.getByRole('link', { name: /Amazon Australia/i }).first(),
+    ).toBeVisible()
+    await expect(
+      page.getByRole('link', { name: /Buy direct from Mazmatics/i }),
+    ).toHaveCount(0)
+  })
+
+  test('footer + /free-sample stay Amazon-only for NZ visitors', async ({
+    page,
+  }) => {
+    await page.goto('/free-sample')
+    await expect(
+      page.getByRole('link', { name: /Buy on Amazon Australia/i }).first(),
+    ).toBeVisible()
+    await expect(
+      page.getByRole('link', { name: /Buy direct from Mazmatics/i }),
+    ).toHaveCount(0)
+    await expect(
+      page.getByRole('link', { name: /Mazmatics direct \(NZ only\)/i }),
+    ).toHaveCount(0)
+  })
+})
+
+test.describe('NZ direct shop on (Pacific/Auckland)', () => {
+  test.use({ timezoneId: 'Pacific/Auckland' })
+  test.skip(!SELL_DIRECT_NZ, 'NEXT_PUBLIC_SELL_DIRECT_NZ is off')
 
   test('/get-the-book leads with the NZ direct shop for NZ visitors', async ({
     page,

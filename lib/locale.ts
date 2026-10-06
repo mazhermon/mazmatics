@@ -59,12 +59,29 @@ export const NZ_DIRECT_SHOP: NzDirectShop = {
   shipping: 'Ships within Aotearoa New Zealand',
 }
 
+/** Reads an on/off env value. Only true/1/yes/on (any case) count as on. */
+export function parseFlag(value: string | undefined): boolean {
+  return ['true', '1', 'yes', 'on'].includes((value ?? '').trim().toLowerCase())
+}
+
 /**
- * Whether to surface the NZ direct store. Gated strictly to NZ so the
- * option never distracts international shoppers, who buy via Amazon.
+ * Master switch for selling direct in NZ. Set NEXT_PUBLIC_SELL_DIRECT_NZ=true
+ * in Vercel (then redeploy) to turn the direct shop on; unset or anything else
+ * means off, and NZ visitors fall back to Amazon AU everywhere. NEXT_PUBLIC_
+ * values are inlined at build time, so a change needs a redeploy, not a commit.
  */
-export function showNzDirectShop(country: Country): boolean {
-  return country === 'NZ'
+export const SELL_DIRECT_NZ = parseFlag(process.env.NEXT_PUBLIC_SELL_DIRECT_NZ)
+
+/**
+ * Whether to surface the NZ direct store. Requires the SELL_DIRECT_NZ switch,
+ * and is gated strictly to NZ so the option never distracts international
+ * shoppers, who buy via Amazon.
+ */
+export function showNzDirectShop(
+  country: Country,
+  enabled: boolean = SELL_DIRECT_NZ,
+): boolean {
+  return enabled && country === 'NZ'
 }
 
 /**

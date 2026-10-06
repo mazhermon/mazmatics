@@ -65,5 +65,12 @@ export default defineConfig({
     url: 'http://localhost:3100',
     reuseExistingServer: true,
     timeout: 120_000,
+    // Pin the sell-direct switch explicitly (process env beats .env files) so
+    // the server and the specs agree on it. Default off, matching prod while
+    // the NZ shop is paused. Run `NEXT_PUBLIC_SELL_DIRECT_NZ=true yarn test:e2e`
+    // to exercise the "on" state.
+    env: {
+      NEXT_PUBLIC_SELL_DIRECT_NZ: process.env.NEXT_PUBLIC_SELL_DIRECT_NZ ?? 'false',
+    },
   },
 })

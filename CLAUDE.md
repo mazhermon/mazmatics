@@ -28,7 +28,7 @@ The brand voice: warm, playful, growth-mindset, inclusive ("I like math"), home-
 ## Conventions
 - Don't introduce a new styling system unless we agree first. Decide explicitly per component whether to keep CSS Modules or migrate to Tailwind — don't mix on the same component.
 - Always route the word "math/maths" through `AppContext.mathsWord` rather than hardcoding.
-- Buy-now links live in `lib/locale.ts` (storefront data) + `components/getTheBookLinks`, `components/home/finalCta`, `components/NavBarBuyCTA`. Amazon AU/US/UK for everyone; the NZ-only direct shop (`shop.mazmatics.com`, `NZ_DIRECT_SHOP`) is shown as the primary option only to visitors resolved to NZ via `showNzDirectShop` / `useResolvedCountry`.
+- Buy-now links live in `lib/locale.ts` (storefront data) + `components/getTheBookLinks`, `components/home/finalCta`, `components/NavBarBuyCTA`. Amazon AU/US/UK for everyone; the NZ-only direct shop (`shop.mazmatics.com`, `NZ_DIRECT_SHOP`) is shown as the primary option only to visitors resolved to NZ via `showNzDirectShop` / `useResolvedCountry`. Direct selling is switched on/off with the `NEXT_PUBLIC_SELL_DIRECT_NZ` env var (Vercel → redeploy; unset = off, NZ falls back to Amazon AU). Every surface must gate on `showNzDirectShop`, never on `country === 'NZ'` directly.
 - The current branch is `redesign-may` — this is the working branch for the in-progress redesign. `main` is the deployed branch.
 
 ## Push / deploy governance

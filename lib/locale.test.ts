@@ -11,6 +11,7 @@ import {
   shippingCopyForCountry,
   NZ_DIRECT_SHOP,
   showNzDirectShop,
+  parseFlag,
 } from './locale'
 
 test('en-US → amazon.com US storefront', () => {
@@ -203,10 +204,25 @@ test('NZ_DIRECT_SHOP has non-empty label + shipping copy', () => {
   assert.ok(NZ_DIRECT_SHOP.shipping.length > 0)
 })
 
-test('showNzDirectShop is true only when country is NZ', () => {
-  assert.equal(showNzDirectShop('NZ'), true)
-  assert.equal(showNzDirectShop('AU'), false)
-  assert.equal(showNzDirectShop('US'), false)
-  assert.equal(showNzDirectShop('GB'), false)
-  assert.equal(showNzDirectShop(null), false)
+test('showNzDirectShop is true only when selling direct and country is NZ', () => {
+  assert.equal(showNzDirectShop('NZ', true), true)
+  assert.equal(showNzDirectShop('AU', true), false)
+  assert.equal(showNzDirectShop('US', true), false)
+  assert.equal(showNzDirectShop('GB', true), false)
+  assert.equal(showNzDirectShop(null, true), false)
+})
+
+test('showNzDirectShop is false for everyone when selling direct is off', () => {
+  assert.equal(showNzDirectShop('NZ', false), false)
+  assert.equal(showNzDirectShop('AU', false), false)
+  assert.equal(showNzDirectShop(null, false), false)
+})
+
+test('parseFlag only treats explicit on-values as on', () => {
+  for (const v of ['true', 'TRUE', '1', 'yes', 'on', ' true ']) {
+    assert.equal(parseFlag(v), true, v)
+  }
+  for (const v of [undefined, '', 'false', '0', 'no', 'off', 'nope']) {
+    assert.equal(parseFlag(v), false, String(v))
+  }
 })
